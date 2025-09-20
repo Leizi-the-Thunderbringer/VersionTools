@@ -1,0 +1,88 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# C++ files
+*.cpp text
+*.cxx text
+*.cc text
+*.c text
+*.h text
+*.hpp text
+*.hxx text
+
+# CMake files
+*.cmake text
+CMakeLists.txt text
+
+# Swift files
+*.swift text
+
+# Qt files
+*.ui text
+*.qrc text
+*.ts text
+
+# Documentation
+*.md text
+*.txt text
+*.rst text
+
+# Configuration files
+*.json text
+*.xml text
+*.yaml text
+*.yml text
+*.ini text
+*.cfg text
+*.conf text
+
+# Shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Windows batch files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.bmp binary
+*.tiff binary
+
+# Archives
+*.zip binary
+*.tar binary
+*.gz binary
+*.rar binary
+*.7z binary
+
+# Executables
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.app binary
+
+# Qt specific binary files
+*.qm binary
+
+# macOS specific
+*.plist text
+
+# Xcode project files
+*.pbxproj text
+*.storyboard text
+*.xib text
+
+# Export ignore patterns for git archive
+# This ensures certain files are not included in source distributions
+.gitattributes export-ignore
+.gitignore export-ignore
+.github/ export-ignore
+build/ export-ignore
+docs/build/ export-ignore
+*.log export-ignore
