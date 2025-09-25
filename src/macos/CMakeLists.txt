@@ -20,14 +20,23 @@ set(SWIFT_SOURCES
     Views/PlaceholderViews.swift
     Views/Dialogs.swift
     Models/GitManagerWrapper.swift
-    Utils/GitBridge.cpp
-    Utils/GitBridge.h
-    Utils/GitBridge-Bridging-Header.h
+)
+
+# Objective-C++ Bridge files
+set(OBJC_SOURCES
+    Utils/GitBridge.mm
 )
 
 # 检查哪些文件实际存在
 set(EXISTING_SOURCES)
 foreach(source ${SWIFT_SOURCES})
+    if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${source})
+        list(APPEND EXISTING_SOURCES ${source})
+    endif()
+endforeach()
+
+# Add Objective-C++ sources if they exist
+foreach(source ${OBJC_SOURCES})
     if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${source})
         list(APPEND EXISTING_SOURCES ${source})
     endif()
@@ -63,6 +72,9 @@ target_link_libraries(VersionTools
 # Swift-C++互操作
 set_target_properties(VersionTools PROPERTIES
     Swift_MODULE_NAME "VersionTools"
+    XCODE_ATTRIBUTE_SWIFT_OBJC_BRIDGING_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/Utils/GitBridge-Bridging-Header.h"
+    XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC YES
+    XCODE_ATTRIBUTE_CLANG_CXX_LANGUAGE_STANDARD "gnu++17"
 )
 
 # 如果有Info.plist文件

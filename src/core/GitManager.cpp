@@ -6,6 +6,7 @@
 #include <filesystem>
 #include <future>
 #include <thread>
+#include <fstream>
 
 #ifdef USE_LIBGIT2
 #include <git2.h>
@@ -110,7 +111,7 @@ GitRepository GitManager::getRepositoryInfo() const {
             // Handle git worktrees and submodules
             std::ifstream gitFile(gitDir);
             std::string line;
-            if (std::getline(gitFile, line) && line.starts_with("gitdir: ")) {
+            if (std::getline(gitFile, line) && line.substr(0, 8) == "gitdir: ") {
                 repo.gitDirectory = line.substr(8);
             }
         }
@@ -135,7 +136,7 @@ GitStatus GitManager::getStatus() const {
     GitStatus status;
     auto lines = parseGitOutput(result.output);
     
-    if (!lines.empty() && lines[0].starts_with("##")) {
+    if (!lines.empty() && lines[0].substr(0, 2) == "##") {
         std::string branchLine = lines[0].substr(3);
         
         // Parse branch information
@@ -437,10 +438,10 @@ GitFileChange GitManager::parseFileChange(const std::string& statusLine) const {
     } else if (unstagedFlag == 'D') {
         change.status = FileStatus::Deleted;
         change.isStaged = false;
-    } else if (statusLine.starts_with("??")) {
+    } else if (statusLine.substr(0, 2) == "??") {
         change.status = FileStatus::Untracked;
         change.isStaged = false;
-    } else if (statusLine.starts_with("!!")) {
+    } else if (statusLine.substr(0, 2) == "!!") {
         change.status = FileStatus::Ignored;
         change.isStaged = false;
     } else if (unstagedFlag == 'U' || stagedFlag == 'U') {
@@ -485,5 +486,50 @@ std::future<GitOperationResult> GitManager::cloneRepositoryAsync(const std::stri
 
 // Additional method implementations would continue here...
 // For brevity, I'm showing the core structure and key methods
+
+// Branch operations - Stub implementations
+std::vector<GitBranch> GitManager::getBranches(bool includeRemote) const {
+    std::vector<GitBranch> branches;
+
+    // TODO: Implement actual branch listing
+    // For now, return empty list
+    return branches;
+}
+
+GitOperationResult GitManager::createBranch(const std::string& name, const std::string& startPoint) {
+    // TODO: Implement branch creation
+    return GitOperationResult{GitCommandResult::Failed, "", "Not implemented", -1};
+}
+
+GitOperationResult GitManager::deleteBranch(const std::string& name, bool force) {
+    // TODO: Implement branch deletion
+    return GitOperationResult{GitCommandResult::Failed, "", "Not implemented", -1};
+}
+
+GitOperationResult GitManager::checkoutBranch(const std::string& name) {
+    // TODO: Implement branch checkout
+    return GitOperationResult{GitCommandResult::Failed, "", "Not implemented", -1};
+}
+
+// Stash operations - Stub implementation
+std::vector<GitStash> GitManager::getStashes() const {
+    std::vector<GitStash> stashes;
+
+    // TODO: Implement stash listing
+    return stashes;
+}
+
+// Diff operations - Stub implementations
+GitDiff GitManager::getCommitDiff(const std::string& commitHash) const {
+    GitDiff diff;
+    // TODO: Implement commit diff
+    return diff;
+}
+
+std::vector<GitDiff> GitManager::getCommitDiffAll(const std::string& commitHash) const {
+    std::vector<GitDiff> diffs;
+    // TODO: Implement commit diff all
+    return diffs;
+}
 
 }

@@ -83,7 +83,7 @@ struct ChangesView: View {
                     )
                 }
             }
-            .listStyle(.insetGrouped)
+            .listStyle(.sidebar)
         }
         .navigationTitle("Changes")
         .sheet(isPresented: $showingCommitDialog) {

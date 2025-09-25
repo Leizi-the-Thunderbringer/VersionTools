@@ -86,7 +86,6 @@ struct SettingsView: View {
             }
             .padding()
             .frame(width: 500, height: 400)
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") {

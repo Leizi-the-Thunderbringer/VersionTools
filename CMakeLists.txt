@@ -30,14 +30,16 @@ elseif(UNIX)
     message(STATUS "Building for Linux with Qt")
 endif()
 
-# 编译选项
+# 编译选项 - 仅应用于C++代码
 if(MSVC)
     add_compile_options(/W4)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
     add_definitions(-DNOMINMAX)
     add_definitions(-DWIN32_LEAN_AND_MEAN)
 else()
-    add_compile_options(-Wall -Wextra -Wpedantic)
+    # 为C++设置警告选项，但不为Swift设置
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic")
     # 移除 -Werror 以避免构建问题
 endif()
 

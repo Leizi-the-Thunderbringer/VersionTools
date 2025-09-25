@@ -1,6 +1,6 @@
 #import "GitBridge.h"
-#include "../../../core/GitManager.h"
-#include "../../../core/GitUtils.h"
+#include "core/GitManager.h"
+#include "core/GitUtils.h"
 #include <memory>
 
 using namespace VersionTools;

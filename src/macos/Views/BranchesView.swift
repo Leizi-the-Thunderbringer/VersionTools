@@ -216,7 +216,7 @@ struct BranchRowView: View {
                     
                     Text(lastCommit.shortHash)
                         .font(.caption2)
-                        .fontFamily(.monospaced)
+                        .font(.system(.body, design: .monospaced))
                         .foregroundColor(.blue)
                 }
             }
@@ -327,7 +327,7 @@ struct BranchDetailView: View {
         .onAppear {
             loadBranchCommits()
         }
-        .onChange(of: branch.fullName) { _ in
+        .onChange(of: branch.fullName) {
             loadBranchCommits()
         }
     }
@@ -387,7 +387,7 @@ struct CommitRowCompactView: View {
             
             Text(commit.shortHash)
                 .font(.caption)
-                .fontFamily(.monospaced)
+                .font(.system(.body, design: .monospaced))
                 .foregroundColor(.blue)
                 .padding(.horizontal, 4)
                 .padding(.vertical, 1)

@@ -56,6 +56,16 @@ public:
 private:
     class Impl;
     std::unique_ptr<Impl> pImpl;
+
+#ifdef _WIN32
+    SystemCommandResult executeWindows(const std::string& command,
+                                       const std::vector<std::string>& args,
+                                       const std::string& workingDirectory);
+#else
+    SystemCommandResult executeUnix(const std::string& command,
+                                    const std::vector<std::string>& args,
+                                    const std::string& workingDirectory);
+#endif
 };
 
 }

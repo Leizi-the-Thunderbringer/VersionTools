@@ -92,6 +92,7 @@ struct HistoryView: View {
 struct CommitRowView: View {
     let commit: GitCommitWrapper
     let isSelected: Bool
+    let isLast: Bool = false
     let onSelect: () -> Void
     
     var body: some View {
@@ -102,7 +103,7 @@ struct CommitRowView: View {
                     .fill(isSelected ? Color.blue : Color.secondary)
                     .frame(width: 8, height: 8)
                 
-                if commit != commit { // Not the last commit
+                if !isLast { // Not the last commit
                     Rectangle()
                         .fill(Color.secondary.opacity(0.3))
                         .frame(width: 1)
@@ -136,7 +137,8 @@ struct CommitRowView: View {
                 HStack {
                     Text(commit.shortHash)
                         .font(.caption)
-                        .fontFamily(.monospaced)
+
+                        .font(.system(.body, design: .monospaced))
                         .foregroundColor(.blue)
                         .padding(.horizontal, 4)
                         .padding(.vertical, 1)
@@ -207,7 +209,7 @@ struct CommitDetailView: View {
         .onAppear {
             loadCommitDetails()
         }
-        .onChange(of: commit.hash) { _ in
+        .onChange(of: commit.hash) {
             loadCommitDetails()
         }
     }
@@ -260,7 +262,7 @@ struct CommitOverviewView: View {
                             ForEach(commit.parentHashes, id: \.self) { parentHash in
                                 Text(parentHash)
                                     .font(.caption)
-                                    .fontFamily(.monospaced)
+                                    .font(.system(.body, design: .monospaced))
                                     .foregroundColor(.blue)
                                     .padding(.leading, 20)
                             }

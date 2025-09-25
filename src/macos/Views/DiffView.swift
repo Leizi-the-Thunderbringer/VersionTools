@@ -77,10 +77,10 @@ struct DiffView: View {
         .onAppear {
             loadDiff()
         }
-        .onChange(of: file.filePath) { _ in
+        .onChange(of: file.filePath) {
             loadDiff()
         }
-        .onChange(of: commitHash) { _ in
+        .onChange(of: commitHash) {
             loadDiff()
         }
     }
@@ -143,7 +143,7 @@ struct DiffHunkView: View {
                 
                 Text("@@ -\(hunk.oldStart),\(hunk.oldCount) +\(hunk.newStart),\(hunk.newCount) @@")
                     .font(.caption)
-                    .fontFamily(.monospaced)
+                    .font(.system(.body, design: .monospaced))
                     .foregroundColor(.secondary)
             }
             .padding(.vertical, 8)
@@ -185,7 +185,7 @@ struct DiffLineView: View {
                         .foregroundColor(.secondary)
                 }
                 .font(.caption)
-                .fontFamily(.monospaced)
+                .font(.system(.body, design: .monospaced))
                 .padding(.trailing, 8)
             }
             

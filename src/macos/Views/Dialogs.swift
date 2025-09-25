@@ -85,7 +85,6 @@ struct CommitDialogView: View {
             }
             .padding()
             .frame(width: 500, height: 500)
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -178,7 +177,6 @@ struct NewBranchDialogView: View {
             }
             .padding()
             .frame(width: 400, height: 300)
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -301,7 +299,6 @@ struct MergeBranchDialogView: View {
             }
             .padding()
             .frame(width: 450, height: 350)
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {

@@ -106,39 +106,118 @@ class GitManagerWrapper: ObservableObject {
     
     @MainActor
     private func loadStatus() async {
-        let status = await Task.detached {
-            self.gitBridge.getRepositoryStatus()
-        }.value
-        
-        repositoryStatus = status
-        currentBranch = status?.currentBranch
+        let statusDict = gitBridge.getRepositoryStatus()
+
+        if let dict = statusDict as? [String: Any] {
+            repositoryStatus = GitRepositoryStatus(
+                currentBranch: dict["currentBranch"] as? String ?? "",
+                upstreamBranch: dict["upstreamBranch"] as? String,
+                aheadCount: dict["aheadCount"] as? Int ?? 0,
+                behindCount: dict["behindCount"] as? Int ?? 0,
+                stagedChangesCount: dict["stagedChangesCount"] as? Int ?? 0,
+                unstagedChangesCount: dict["unstagedChangesCount"] as? Int ?? 0,
+                stashCount: dict["stashCount"] as? Int ?? 0,
+                hasUncommittedChanges: dict["hasUncommittedChanges"] as? Bool ?? false
+            )
+            currentBranch = repositoryStatus?.currentBranch
+        }
     }
     
     @MainActor
     private func loadChanges() async {
-        let changes = await Task.detached {
-            self.gitBridge.getFileChanges()
-        }.value
-        
-        stagedChanges = changes.filter { $0.isStaged }
-        unstagedChanges = changes.filter { !$0.isStaged }
+        let changesArray = gitBridge.getFileChanges()
+
+        var staged: [GitFileChangeWrapper] = []
+        var unstaged: [GitFileChangeWrapper] = []
+
+        if let changes = changesArray as? [[String: Any]] {
+            for change in changes {
+                let wrapper = GitFileChangeWrapper(
+                    filePath: change["filePath"] as? String ?? "",
+                    fileName: change["fileName"] as? String ?? "",
+                    directoryPath: change["directoryPath"] as? String ?? "",
+                    status: GitFileStatus(rawValue: change["status"] as? Int ?? 0) ?? .modified,
+                    isStaged: change["isStaged"] as? Bool ?? false,
+                    linesAdded: change["linesAdded"] as? Int ?? 0,
+                    linesDeleted: change["linesDeleted"] as? Int ?? 0
+                )
+
+                if wrapper.isStaged {
+                    staged.append(wrapper)
+                } else {
+                    unstaged.append(wrapper)
+                }
+            }
+        }
+
+        stagedChanges = staged
+        unstagedChanges = unstaged
     }
     
     @MainActor
     private func loadCommitHistoryAsync() async {
-        let commits = await Task.detached {
-            self.gitBridge.getCommitHistory(maxCount: 100)
-        }.value
-        
+        let commitsArray = gitBridge.getCommitHistory(100)
+
+        var commits: [GitCommitWrapper] = []
+        if let commitsData = commitsArray as? [[String: Any]] {
+            for commitData in commitsData {
+                let commit = GitCommitWrapper(
+                    hash: commitData["hash"] as? String ?? "",
+                    shortHash: commitData["shortHash"] as? String ?? "",
+                    author: commitData["author"] as? String ?? "",
+                    email: commitData["email"] as? String ?? "",
+                    message: commitData["message"] as? String ?? "",
+                    shortMessage: commitData["shortMessage"] as? String ?? "",
+                    fullMessage: commitData["message"] as? String ?? "",
+                    timestamp: commitData["timestamp"] as? Date ?? Date(),
+                    parentHashes: commitData["parentHashes"] as? [String] ?? [],
+                    isMerge: commitData["isMerge"] as? Bool ?? false
+                )
+                commits.append(commit)
+            }
+        }
+
         commitHistory = commits
     }
     
     @MainActor
     private func loadBranchesAsync() async {
-        let branches = await Task.detached {
-            self.gitBridge.getBranches()
-        }.value
-        
+        let branchesArray = gitBridge.getBranches()
+
+        var branches: [GitBranchWrapper] = []
+        if let branchesData = branchesArray as? [[String: Any]] {
+            for branchData in branchesData {
+                var lastCommit: GitCommitWrapper?
+                if let commitData = branchData["lastCommit"] as? [String: Any] {
+                    lastCommit = GitCommitWrapper(
+                        hash: commitData["hash"] as? String ?? "",
+                        shortHash: commitData["shortHash"] as? String ?? "",
+                        author: commitData["author"] as? String ?? "",
+                        email: "",
+                        message: commitData["message"] as? String ?? "",
+                        shortMessage: commitData["message"] as? String ?? "",
+                        fullMessage: commitData["message"] as? String ?? "",
+                        timestamp: commitData["timestamp"] as? Date ?? Date(),
+                        parentHashes: [],
+                        isMerge: false
+                    )
+                }
+
+                let branch = GitBranchWrapper(
+                    name: branchData["name"] as? String ?? "",
+                    fullName: branchData["fullName"] as? String ?? "",
+                    displayName: branchData["displayName"] as? String ?? "",
+                    isRemote: branchData["isRemote"] as? Bool ?? false,
+                    isCurrent: branchData["isCurrent"] as? Bool ?? false,
+                    upstreamBranch: branchData["upstreamBranch"] as? String,
+                    aheadCount: branchData["aheadCount"] as? Int ?? 0,
+                    behindCount: branchData["behindCount"] as? Int ?? 0,
+                    lastCommit: lastCommit
+                )
+                branches.append(branch)
+            }
+        }
+
         localBranches = branches.filter { !$0.isRemote }
         remoteBranches = branches.filter { $0.isRemote }
         allBranches = branches
@@ -247,7 +326,24 @@ class GitManagerWrapper: ObservableObject {
     
     func loadCommitChanges(commitHash: String, completion: @escaping ([GitFileChangeWrapper]) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
-            let changes = self.gitBridge.getCommitChanges(commitHash)
+            let changesArray = self.gitBridge.getCommitChanges(commitHash)
+
+            var changes: [GitFileChangeWrapper] = []
+            if let changesData = changesArray as? [[String: Any]] {
+                for change in changesData {
+                    let wrapper = GitFileChangeWrapper(
+                        filePath: change["filePath"] as? String ?? "",
+                        fileName: change["fileName"] as? String ?? "",
+                        directoryPath: change["directoryPath"] as? String ?? "",
+                        status: GitFileStatus(rawValue: change["status"] as? Int ?? 0) ?? .modified,
+                        isStaged: change["isStaged"] as? Bool ?? false,
+                        linesAdded: change["linesAdded"] as? Int ?? 0,
+                        linesDeleted: change["linesDeleted"] as? Int ?? 0
+                    )
+                    changes.append(wrapper)
+                }
+            }
+
             DispatchQueue.main.async {
                 completion(changes)
             }
@@ -256,7 +352,49 @@ class GitManagerWrapper: ObservableObject {
     
     func loadFileDiff(filePath: String, commitHash: String, completion: @escaping (GitDiffWrapper?) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
-            let diff = self.gitBridge.getFileDiff(filePath, commitHash: commitHash)
+            let diffDict = self.gitBridge.getFileDiff(filePath, commitHash: commitHash)
+
+            var diff: GitDiffWrapper?
+            if let diffData = diffDict as? [String: Any] {
+                var hunks: [GitDiffHunkWrapper] = []
+                if let hunksArray = diffData["hunks"] as? [[String: Any]] {
+                    for hunkData in hunksArray {
+                        var lines: [GitDiffLineWrapper] = []
+                        if let linesArray = hunkData["lines"] as? [[String: Any]] {
+                            for lineData in linesArray {
+                                let lineType = GitDiffLineType(rawValue: lineData["type"] as? Int ?? 0) ?? .context
+                                let line = GitDiffLineWrapper(
+                                    type: lineType,
+                                    content: lineData["content"] as? String ?? "",
+                                    oldLineNumber: lineData["oldLineNumber"] as? Int ?? 0,
+                                    newLineNumber: lineData["newLineNumber"] as? Int ?? 0
+                                )
+                                lines.append(line)
+                            }
+                        }
+
+                        let hunk = GitDiffHunkWrapper(
+                            header: hunkData["header"] as? String ?? "",
+                            oldStart: hunkData["oldStart"] as? Int ?? 0,
+                            oldCount: hunkData["oldCount"] as? Int ?? 0,
+                            newStart: hunkData["newStart"] as? Int ?? 0,
+                            newCount: hunkData["newCount"] as? Int ?? 0,
+                            lines: lines
+                        )
+                        hunks.append(hunk)
+                    }
+                }
+
+                diff = GitDiffWrapper(
+                    filePath: diffData["filePath"] as? String ?? "",
+                    isBinary: diffData["isBinary"] as? Bool ?? false,
+                    isNewFile: diffData["isNewFile"] as? Bool ?? false,
+                    isDeletedFile: diffData["isDeletedFile"] as? Bool ?? false,
+                    hunks: hunks,
+                    rawContent: diffData["rawContent"] as? String ?? ""
+                )
+            }
+
             DispatchQueue.main.async {
                 completion(diff)
             }
@@ -265,7 +403,27 @@ class GitManagerWrapper: ObservableObject {
     
     func loadBranchCommits(branchName: String, completion: @escaping ([GitCommitWrapper]) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
-            let commits = self.gitBridge.getBranchCommits(branchName, maxCount: 50)
+            let commitsArray = self.gitBridge.getBranchCommits(branchName, maxCount: 50)
+
+            var commits: [GitCommitWrapper] = []
+            if let commitsData = commitsArray as? [[String: Any]] {
+                for commitData in commitsData {
+                    let commit = GitCommitWrapper(
+                        hash: commitData["hash"] as? String ?? "",
+                        shortHash: commitData["shortHash"] as? String ?? "",
+                        author: commitData["author"] as? String ?? "",
+                        email: commitData["email"] as? String ?? "",
+                        message: commitData["message"] as? String ?? "",
+                        shortMessage: commitData["shortMessage"] as? String ?? "",
+                        fullMessage: commitData["message"] as? String ?? "",
+                        timestamp: commitData["timestamp"] as? Date ?? Date(),
+                        parentHashes: commitData["parentHashes"] as? [String] ?? [],
+                        isMerge: commitData["isMerge"] as? Bool ?? false
+                    )
+                    commits.append(commit)
+                }
+            }
+
             DispatchQueue.main.async {
                 completion(commits)
             }
@@ -323,15 +481,15 @@ struct GitFileChangeWrapper: Hashable, Identifiable {
     )
 }
 
-enum GitFileStatus {
-    case added
-    case modified
-    case deleted
-    case renamed
-    case copied
-    case untracked
-    case conflicted
-    case ignored
+enum GitFileStatus: Int {
+    case added = 0
+    case modified = 1
+    case deleted = 2
+    case renamed = 3
+    case copied = 4
+    case untracked = 5
+    case conflicted = 6
+    case ignored = 7
 }
 
 struct GitCommitWrapper: Identifiable {
@@ -407,9 +565,9 @@ struct GitDiffLineWrapper {
     let newLineNumber: Int
 }
 
-enum GitDiffLineType {
-    case context
-    case addition
-    case deletion
-    case header
+enum GitDiffLineType: Int {
+    case context = 0
+    case addition = 1
+    case deletion = 2
+    case header = 3
 }
