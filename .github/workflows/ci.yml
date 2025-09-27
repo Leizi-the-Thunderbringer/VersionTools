@@ -13,11 +13,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up CMake
-      uses: lukka/get-cmake@latest
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
+    - name: Install dependencies
+      run: |
+        brew install libgit2
+        brew install cmake
 
     - name: Configure CMake
-      run: cmake -B build -S .
+      run: cmake -B build -S . -G Xcode
 
     - name: Build
       run: cmake --build build --config Release
@@ -34,9 +41,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Set up Xcode
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
+    - name: Install dependencies
+      run: |
+        brew install libgit2
+        brew install cmake
+
     - name: Build Release
       run: |
-        cmake -B build -S .
+        cmake -B build -S . -G Xcode
         cmake --build build --config Release
 
     - name: Create Release
