@@ -288,35 +288,36 @@ SystemCommandResult SystemCommand::executeUnix(const std::string& command,
         
         if (result == pid) {
             // Process has finished
-            break;
+            // Final read to get any remaining output
+            ssize_t bytesRead;
+            while ((bytesRead = read(pipeOut[0], buffer, sizeof(buffer) - 1)) > 0) {
+                buffer[bytesRead] = '\0';
+                output += buffer;
+            }
+
+            while ((bytesRead = read(pipeErr[0], buffer, sizeof(buffer) - 1)) > 0) {
+                buffer[bytesRead] = '\0';
+                error += buffer;
+            }
+
+            close(pipeOut[0]);
+            close(pipeErr[0]);
+
+            pImpl->childPid = -1;
+
+            int exitCode = WIFEXITED(status) ? WEXITSTATUS(status) : -1;
+            return {exitCode, output, error};
         }
         
         // Small delay to prevent busy waiting
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
-    
-    // Final read to get any remaining output
-    ssize_t bytesRead;
-    while ((bytesRead = read(pipeOut[0], buffer, sizeof(buffer) - 1)) > 0) {
-        buffer[bytesRead] = '\0';
-        output += buffer;
-    }
-    
-    while ((bytesRead = read(pipeErr[0], buffer, sizeof(buffer) - 1)) > 0) {
-        buffer[bytesRead] = '\0';
-        error += buffer;
-    }
-    
+
+    // Should not reach here, but handle cleanup if it does
     close(pipeOut[0]);
     close(pipeErr[0]);
-    
-    int status;
-    waitpid(pid, &status, 0);
-    
     pImpl->childPid = -1;
-    
-    int exitCode = WIFEXITED(status) ? WEXITSTATUS(status) : -1;
-    return {exitCode, output, error};
+    return {-1, output, error};
 }
 #endif
 

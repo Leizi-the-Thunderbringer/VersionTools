@@ -331,9 +331,66 @@ using namespace VersionTools;
     return result.isSuccess();
 }
 
+- (BOOL)createBranch:(NSString *)branchName fromCommit:(NSString *)startPoint {
+    std::string name = [branchName UTF8String];
+    std::string start = startPoint ? [startPoint UTF8String] : "";
+    auto result = gitManager->createBranch(name, start);
+    return result.isSuccess();
+}
+
 - (BOOL)deleteBranch:(NSString *)branchName {
     std::string name = [branchName UTF8String];
-    auto result = gitManager->deleteBranch(name);
+    auto result = gitManager->deleteBranch(name, false);
+    return result.isSuccess();
+}
+
+- (BOOL)deleteBranch:(NSString *)branchName force:(BOOL)force {
+    std::string name = [branchName UTF8String];
+    auto result = gitManager->deleteBranch(name, force);
+    return result.isSuccess();
+}
+
+// Stash operations
+- (NSArray *)getStashes {
+    auto stashes = gitManager->getStashes();
+    NSMutableArray *stashArray = [NSMutableArray array];
+
+    for (const auto& stash : stashes) {
+        auto timeT = std::chrono::system_clock::to_time_t(stash.timestamp);
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeT];
+
+        NSDictionary *stashDict = @{
+            @"name": [NSString stringWithUTF8String:stash.name.c_str()],
+            @"message": [NSString stringWithUTF8String:stash.message.c_str()],
+            @"branch": stash.branch.empty() ? [NSNull null] : [NSString stringWithUTF8String:stash.branch.c_str()],
+            @"timestamp": date,
+            @"index": @(stash.index)
+        };
+
+        [stashArray addObject:stashDict];
+    }
+
+    return stashArray;
+}
+
+- (BOOL)createStash:(NSString *)message {
+    std::string msg = message ? [message UTF8String] : "";
+    auto result = gitManager->stash(msg, false);
+    return result.isSuccess();
+}
+
+- (BOOL)applyStash:(int)index {
+    auto result = gitManager->stashApply(index);
+    return result.isSuccess();
+}
+
+- (BOOL)popStash:(int)index {
+    auto result = gitManager->stashPop(index);
+    return result.isSuccess();
+}
+
+- (BOOL)dropStash:(int)index {
+    auto result = gitManager->stashDrop(index);
     return result.isSuccess();
 }
 

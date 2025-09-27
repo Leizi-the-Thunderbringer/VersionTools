@@ -23,7 +23,7 @@ struct ContentView: View {
                 case .tags:
                     TagsView(gitManager: gitManager)
                 case .stashes:
-                    StashesView(gitManager: gitManager)
+                    StashView(gitManager: gitManager)
                 case .none:
                     WelcomeView()
                 }

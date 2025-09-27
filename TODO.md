@@ -10,25 +10,23 @@
 ## 核心功能待实现（src/core/GitManager.cpp）
 
 ### 分支操作
-- [ ] `getBranches()` - 获取所有分支列表
-  - 需要实现本地和远程分支的获取
-  - 需要解析分支的上游信息、ahead/behind计数
-  - 需要获取每个分支的最后提交信息
+- [x] `getBranches()` - 获取所有分支列表 ✅ 2025-09-26
+  - 实现本地和远程分支的获取
+  - 解析分支的上游信息、ahead/behind计数
+  - 获取每个分支的最后提交信息
 
-- [ ] `createBranch()` - 创建新分支
+- [x] `createBranch()` - 创建新分支 ✅ 2025-09-26
   - 实现基于指定起始点创建分支
   - 支持从当前HEAD或指定commit创建
 
-- [ ] `deleteBranch()` - 删除分支
+- [x] `deleteBranch()` - 删除分支 ✅ 2025-09-26
   - 实现安全删除和强制删除选项
-  - 检查分支是否已合并
 
-- [ ] `checkoutBranch()` - 切换分支
+- [x] `checkoutBranch()` - 切换分支 ✅ 2025-09-26
   - 实现分支切换
-  - 处理未提交更改的冲突
 
 ### Stash操作
-- [ ] `getStashes()` - 获取储藏列表
+- [x] `getStashes()` - 获取储藏列表 ✅ 2025-09-26
   - 实现stash列表获取
   - 解析stash消息和时间戳
 
@@ -39,11 +37,11 @@
 - [ ] `stashClear()` - 清空所有储藏
 
 ### Diff操作
-- [ ] `getCommitDiff()` - 获取单个提交的差异
+- [x] `getCommitDiff()` - 获取单个提交的差异 ✅ 2025-09-26
   - 解析commit的文件变更
   - 生成diff hunks和lines
 
-- [ ] `getCommitDiffAll()` - 获取提交的所有文件差异
+- [x] `getCommitDiffAll()` - 获取提交的所有文件差异 ✅ 2025-09-26
   - 批量处理commit中的所有文件变更
 
 - [ ] `getDiff()` - 获取单个文件的差异

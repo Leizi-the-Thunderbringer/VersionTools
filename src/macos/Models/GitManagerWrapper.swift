@@ -15,6 +15,7 @@ class GitManagerWrapper: ObservableObject {
     @Published var remoteBranches: [GitBranchWrapper] = []
     @Published var allBranches: [GitBranchWrapper] = []
     @Published var currentBranchInfo: GitBranchWrapper?
+    @Published var stashes: [GitStashWrapper] = []  // 添加 stash 列表
     
     private var gitBridge: GitBridge
     
@@ -429,6 +430,82 @@ class GitManagerWrapper: ObservableObject {
             }
         }
     }
+
+    // MARK: - Stash Operations
+
+    func loadStashes() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let stashesArray = self.gitBridge.getStashes()
+
+            var stashList: [GitStashWrapper] = []
+            if let stashesData = stashesArray as? [[String: Any]] {
+                for stashData in stashesData {
+                    let stash = GitStashWrapper(
+                        name: stashData["name"] as? String ?? "",
+                        message: stashData["message"] as? String ?? "",
+                        branch: stashData["branch"] as? String,
+                        timestamp: stashData["timestamp"] as? Date ?? Date(),
+                        index: stashData["index"] as? Int ?? 0
+                    )
+                    stashList.append(stash)
+                }
+            }
+
+            DispatchQueue.main.async {
+                self.stashes = stashList
+            }
+        }
+    }
+
+    func createStash(message: String, completion: @escaping (Bool) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let success = self.gitBridge.createStash(message)
+            DispatchQueue.main.async {
+                if success {
+                    self.loadStashes()
+                    self.refreshStatus()
+                }
+                completion(success)
+            }
+        }
+    }
+
+    func applyStash(index: Int, completion: @escaping (Bool) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let success = self.gitBridge.applyStash(Int32(index))
+            DispatchQueue.main.async {
+                if success {
+                    self.refreshStatus()
+                }
+                completion(success)
+            }
+        }
+    }
+
+    func popStash(index: Int, completion: @escaping (Bool) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let success = self.gitBridge.popStash(Int32(index))
+            DispatchQueue.main.async {
+                if success {
+                    self.loadStashes()
+                    self.refreshStatus()
+                }
+                completion(success)
+            }
+        }
+    }
+
+    func dropStash(index: Int, completion: @escaping (Bool) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let success = self.gitBridge.dropStash(Int32(index))
+            DispatchQueue.main.async {
+                if success {
+                    self.loadStashes()
+                }
+                completion(success)
+            }
+        }
+    }
     
     // MARK: - Error Handling
     
@@ -570,4 +647,34 @@ enum GitDiffLineType: Int {
     case addition = 1
     case deletion = 2
     case header = 3
+}
+
+struct GitStashWrapper: Identifiable, Hashable {
+    let id = UUID()
+    let name: String
+    let message: String
+    let branch: String?
+    let timestamp: Date
+    let index: Int
+
+    var formattedDate: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.string(from: timestamp)
+    }
+
+    var relativeTime: String {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .short
+        return formatter.localizedString(for: timestamp, relativeTo: Date())
+    }
+
+    static func == (lhs: GitStashWrapper, rhs: GitStashWrapper) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

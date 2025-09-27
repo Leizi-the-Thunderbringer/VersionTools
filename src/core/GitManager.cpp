@@ -7,6 +7,8 @@
 #include <future>
 #include <thread>
 #include <fstream>
+#include <iomanip>
+#include <ctime>
 
 #ifdef USE_LIBGIT2
 #include <git2.h>
@@ -76,36 +78,35 @@ GitOperationResult GitManager::openRepository(const std::string& path) {
 
 bool GitManager::isValidRepository(const std::string& path) const {
     namespace fs = std::filesystem;
-    
-    fs::path repoPath(path);
-    if (!fs::exists(repoPath)) {
+
+    std::filesystem::path repoPath(path);
+    if (!std::filesystem::exists(repoPath)) {
         return false;
     }
-    
+
     // Check for .git directory or file
-    fs::path gitPath = repoPath / ".git";
-    if (fs::exists(gitPath)) {
+    std::filesystem::path gitPath = repoPath / ".git";
+    if (std::filesystem::exists(gitPath)) {
         return true;
     }
-    
+
     // Check if this is a bare repository
-    fs::path headPath = repoPath / "HEAD";
-    fs::path objectsPath = repoPath / "objects";
-    fs::path refsPath = repoPath / "refs";
-    
-    return fs::exists(headPath) && fs::exists(objectsPath) && fs::exists(refsPath);
+    std::filesystem::path headPath = repoPath / "HEAD";
+    std::filesystem::path objectsPath = repoPath / "objects";
+    std::filesystem::path refsPath = repoPath / "refs";
+
+    return std::filesystem::exists(headPath) && std::filesystem::exists(objectsPath) && std::filesystem::exists(refsPath);
 }
 
 GitRepository GitManager::getRepositoryInfo() const {
     GitRepository repo;
     repo.path = pImpl->repositoryPath;
     repo.workingDirectory = pImpl->repositoryPath;
-    
-    namespace fs = std::filesystem;
-    fs::path gitDir = fs::path(pImpl->repositoryPath) / ".git";
-    
-    if (fs::exists(gitDir)) {
-        if (fs::is_directory(gitDir)) {
+
+    std::filesystem::path gitDir = std::filesystem::path(pImpl->repositoryPath) / ".git";
+
+    if (std::filesystem::exists(gitDir)) {
+        if (std::filesystem::is_directory(gitDir)) {
             repo.gitDirectory = gitDir.string();
         } else {
             // Handle git worktrees and submodules
@@ -120,10 +121,10 @@ GitRepository GitManager::getRepositoryInfo() const {
         repo.gitDirectory = pImpl->repositoryPath;
         repo.isBare = true;
     }
-    
+
     repo.head = getCurrentBranch();
     repo.status = getStatus();
-    
+
     return repo;
 }
 
@@ -171,8 +172,9 @@ GitStatus GitManager::getStatus() const {
         if (lines[i].length() >= 3) {
             GitFileChange change = parseFileChange(lines[i]);
             status.changes.push_back(change);
-            
-            if (change.status != FileStatus::Untracked) {
+
+            // Any change (including untracked files) means we have uncommitted changes
+            if (change.status != FileStatus::Ignored) {
                 status.hasUncommittedChanges = true;
             }
             if (change.isStaged) {
@@ -276,11 +278,11 @@ GitOperationResult GitManager::commitWithFiles(const std::string& message,
     return commit(message);
 }
 
-std::vector<GitCommit> GitManager::getCommitHistory(int maxCount, 
+std::vector<GitCommit> GitManager::getCommitHistory(int maxCount,
                                                    GitLogOptions options,
                                                    const std::string& branch,
                                                    const std::string& filePath) const {
-    std::vector<std::string> args = {"log", "--pretty=format:%H|%h|%an|%ae|%s|%B|%ct|%P"};
+    std::vector<std::string> args = {"log", "--pretty=format:%H|%h|%an|%ae|%s|%ct|%P", "-z"};
     
     if (maxCount > 0) {
         args.push_back("-" + std::to_string(maxCount));
@@ -311,16 +313,17 @@ std::vector<GitCommit> GitManager::getCommitHistory(int maxCount,
     if (!result.isSuccess()) {
         return {};
     }
-    
+
     std::vector<GitCommit> commits;
-    auto commitBlocks = GitUtils::split(result.output, "\n\n");
-    
+    // Split by null character since we used -z flag
+    auto commitBlocks = GitUtils::split(result.output, std::string(1, '\0'));
+
     for (const auto& block : commitBlocks) {
         if (!block.empty()) {
             commits.push_back(parseCommit(block));
         }
     }
-    
+
     return commits;
 }
 
@@ -336,7 +339,7 @@ std::optional<GitCommit> GitManager::getCommit(const std::string& hash) const {
 
 GitOperationResult GitManager::executeGitCommand(const std::vector<std::string>& args,
                                                const std::string& workingDir,
-                                               ProgressCallback progressCallback) const {
+                                               ProgressCallback /*progressCallback*/) const {
     std::string gitCommand = "git";
     std::string dir = workingDir.empty() ? pImpl->repositoryPath : workingDir;
     
@@ -363,37 +366,32 @@ std::vector<std::string> GitManager::parseGitOutput(const std::string& output,
 }
 
 GitCommit GitManager::parseCommit(const std::string& commitData) const {
-    auto lines = GitUtils::split(commitData, "\n");
-    if (lines.empty()) {
+    auto parts = GitUtils::split(commitData, "|");
+    if (parts.size() < 7) {
         return {};
     }
-    
-    auto parts = GitUtils::split(lines[0], "|");
-    if (parts.size() < 8) {
-        return {};
-    }
-    
+
     GitCommit commit;
     commit.hash = parts[0];
     commit.shortHash = parts[1];
     commit.author = parts[2];
     commit.email = parts[3];
     commit.shortMessage = parts[4];
-    commit.message = parts[5];
-    
+    commit.message = parts[4];  // Use the subject as the full message
+
     // Parse timestamp
     try {
-        auto timestamp = std::chrono::seconds(std::stoll(parts[6]));
+        auto timestamp = std::chrono::seconds(std::stoll(parts[5]));
         commit.timestamp = std::chrono::system_clock::time_point(timestamp);
     } catch (...) {
         commit.timestamp = std::chrono::system_clock::now();
     }
-    
+
     // Parse parent hashes
-    if (!parts[7].empty()) {
-        commit.parentHashes = GitUtils::split(parts[7], " ");
+    if (!parts[6].empty()) {
+        commit.parentHashes = GitUtils::split(parts[6], " ");
     }
-    
+
     return commit;
 }
 
@@ -401,12 +399,12 @@ GitFileChange GitManager::parseFileChange(const std::string& statusLine) const {
     if (statusLine.length() < 3) {
         return {};
     }
-    
+
     GitFileChange change;
     char stagedFlag = statusLine[0];
     char unstagedFlag = statusLine[1];
     change.filePath = statusLine.substr(3);
-    
+
     // Handle renames and copies
     if (change.filePath.find(" -> ") != std::string::npos) {
         auto parts = GitUtils::split(change.filePath, " -> ");
@@ -415,9 +413,15 @@ GitFileChange GitManager::parseFileChange(const std::string& statusLine) const {
             change.filePath = parts[1];
         }
     }
-    
+
     // Determine status based on flags
-    if (stagedFlag == 'A') {
+    if (statusLine.substr(0, 2) == "??") {
+        change.status = FileStatus::Untracked;
+        change.isStaged = false;
+    } else if (statusLine.substr(0, 2) == "!!") {
+        change.status = FileStatus::Ignored;
+        change.isStaged = false;
+    } else if (stagedFlag == 'A') {
         change.status = FileStatus::Added;
         change.isStaged = true;
     } else if (stagedFlag == 'M') {
@@ -438,17 +442,15 @@ GitFileChange GitManager::parseFileChange(const std::string& statusLine) const {
     } else if (unstagedFlag == 'D') {
         change.status = FileStatus::Deleted;
         change.isStaged = false;
-    } else if (statusLine.substr(0, 2) == "??") {
-        change.status = FileStatus::Untracked;
-        change.isStaged = false;
-    } else if (statusLine.substr(0, 2) == "!!") {
-        change.status = FileStatus::Ignored;
-        change.isStaged = false;
     } else if (unstagedFlag == 'U' || stagedFlag == 'U') {
         change.status = FileStatus::Conflicted;
         change.isStaged = false;
+    } else if (unstagedFlag == 'A') {
+        // Added but not staged (shouldn't happen in normal workflow)
+        change.status = FileStatus::Added;
+        change.isStaged = false;
     }
-    
+
     return change;
 }
 
@@ -487,48 +489,403 @@ std::future<GitOperationResult> GitManager::cloneRepositoryAsync(const std::stri
 // Additional method implementations would continue here...
 // For brevity, I'm showing the core structure and key methods
 
-// Branch operations - Stub implementations
+// Branch operations
 std::vector<GitBranch> GitManager::getBranches(bool includeRemote) const {
     std::vector<GitBranch> branches;
 
-    // TODO: Implement actual branch listing
-    // For now, return empty list
+    // First, get current branch
+    std::string currentBranch = getCurrentBranch();
+
+    // Get all branches using for-each-ref (more reliable than branch command)
+    std::vector<std::string> args = {"for-each-ref", "--format=%(refname:short)|%(objectname:short)|%(committerdate:iso)|%(upstream:short)|%(upstream:track)|%(subject)"};
+
+    if (includeRemote) {
+        args.push_back("refs/heads");
+        args.push_back("refs/remotes");
+    } else {
+        args.push_back("refs/heads");
+    }
+
+    auto result = executeGitCommand(args);
+    if (!result.isSuccess()) {
+        return branches;
+    }
+
+    auto lines = parseGitOutput(result.output, "\n");
+    for (const auto& line : lines) {
+        if (line.empty()) continue;
+
+        auto parts = GitUtils::split(line, "|");
+        if (parts.size() < 6) continue;
+
+        GitBranch branch;
+        branch.name = parts[0];
+        branch.fullName = parts[0];
+
+        // Check if it's a remote branch
+        if (branch.name.find("origin/") == 0 || branch.name.find("remotes/") == 0) {
+            branch.isRemote = true;
+            // Remove remote prefix
+            if (branch.name.find("remotes/") == 0) {
+                branch.name = branch.name.substr(8);
+            }
+        } else {
+            branch.isRemote = false;
+        }
+
+        // Check if current branch
+        branch.isCurrent = (branch.name == currentBranch || branch.fullName == currentBranch);
+
+        // Parse upstream branch
+        if (!parts[3].empty()) {
+            branch.upstreamBranch = parts[3];
+        }
+
+        // Parse ahead/behind counts from tracking info
+        if (!parts[4].empty()) {
+            std::regex aheadRegex("ahead (\\d+)");
+            std::regex behindRegex("behind (\\d+)");
+            std::smatch matches;
+
+            if (std::regex_search(parts[4], matches, aheadRegex)) {
+                branch.aheadCount = std::stoi(matches[1]);
+            }
+            if (std::regex_search(parts[4], matches, behindRegex)) {
+                branch.behindCount = std::stoi(matches[1]);
+            }
+        }
+
+        // Create minimal commit info from available data
+        if (!parts[1].empty()) {
+            GitCommit commit;
+            commit.shortHash = parts[1];
+            commit.hash = parts[1]; // We only have short hash for now
+            commit.shortMessage = parts[5];
+
+            // Parse date
+            if (!parts[2].empty()) {
+                try {
+                    // Parse ISO date format
+                    std::tm tm = {};
+                    std::istringstream ss(parts[2]);
+                    ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
+                    commit.timestamp = std::chrono::system_clock::from_time_t(std::mktime(&tm));
+                } catch (...) {
+                    commit.timestamp = std::chrono::system_clock::now();
+                }
+            }
+            branch.lastCommit = commit;
+        }
+
+        branches.push_back(branch);
+    }
+
     return branches;
 }
 
 GitOperationResult GitManager::createBranch(const std::string& name, const std::string& startPoint) {
-    // TODO: Implement branch creation
-    return GitOperationResult{GitCommandResult::Failed, "", "Not implemented", -1};
+    std::vector<std::string> args = {"branch", name};
+
+    // Add start point if provided
+    if (!startPoint.empty()) {
+        args.push_back(startPoint);
+    }
+
+    return executeGitCommand(args);
 }
 
 GitOperationResult GitManager::deleteBranch(const std::string& name, bool force) {
-    // TODO: Implement branch deletion
-    return GitOperationResult{GitCommandResult::Failed, "", "Not implemented", -1};
+    std::vector<std::string> args = {"branch"};
+
+    // Use -d for safe delete or -D for force delete
+    args.push_back(force ? "-D" : "-d");
+    args.push_back(name);
+
+    return executeGitCommand(args);
 }
 
 GitOperationResult GitManager::checkoutBranch(const std::string& name) {
-    // TODO: Implement branch checkout
-    return GitOperationResult{GitCommandResult::Failed, "", "Not implemented", -1};
+    return executeGitCommand({"checkout", name});
 }
 
-// Stash operations - Stub implementation
+// Stash operations
 std::vector<GitStash> GitManager::getStashes() const {
     std::vector<GitStash> stashes;
 
-    // TODO: Implement stash listing
+    // Get stash list with more detailed information
+    auto result = executeGitCommand({"stash", "list", "--format=%gd|%s|%cn|%ct"});
+    if (!result.isSuccess() || result.output.empty()) {
+        return stashes;
+    }
+
+    auto lines = parseGitOutput(result.output, "\n");
+    int index = 0;
+
+    for (const auto& line : lines) {
+        if (line.empty()) continue;
+
+        auto parts = GitUtils::split(line, "|");
+        if (parts.size() < 4) continue;
+
+        GitStash stash;
+        stash.name = parts[0];
+        stash.message = parts[1];
+        stash.index = index++;
+
+        // Extract branch name from the message if present
+        std::regex branchRegex("On ([^:]+):");
+        std::smatch matches;
+        if (std::regex_search(stash.message, matches, branchRegex)) {
+            stash.branch = matches[1];
+        }
+
+        // Parse timestamp
+        try {
+            auto timestamp = std::chrono::seconds(std::stoll(parts[3]));
+            stash.timestamp = std::chrono::system_clock::time_point(timestamp);
+        } catch (...) {
+            stash.timestamp = std::chrono::system_clock::now();
+        }
+
+        stashes.push_back(stash);
+    }
+
     return stashes;
 }
 
-// Diff operations - Stub implementations
+// Stash operations
+GitOperationResult GitManager::stash(const std::string& message, bool includeUntracked) {
+    std::vector<std::string> args = {"stash", "push"};
+
+    if (!message.empty()) {
+        args.push_back("-m");
+        args.push_back(message);
+    }
+
+    if (includeUntracked) {
+        args.push_back("--include-untracked");
+    }
+
+    return executeGitCommand(args);
+}
+
+GitOperationResult GitManager::stashPop(int index) {
+    std::vector<std::string> args = {"stash", "pop"};
+
+    if (index > 0) {
+        args.push_back("stash@{" + std::to_string(index) + "}");
+    }
+
+    return executeGitCommand(args);
+}
+
+GitOperationResult GitManager::stashApply(int index) {
+    std::vector<std::string> args = {"stash", "apply"};
+
+    if (index >= 0) {
+        args.push_back("stash@{" + std::to_string(index) + "}");
+    }
+
+    return executeGitCommand(args);
+}
+
+GitOperationResult GitManager::stashDrop(int index) {
+    std::vector<std::string> args = {"stash", "drop"};
+
+    if (index >= 0) {
+        args.push_back("stash@{" + std::to_string(index) + "}");
+    }
+
+    return executeGitCommand(args);
+}
+
+GitOperationResult GitManager::stashClear() {
+    return executeGitCommand({"stash", "clear"});
+}
+
+// Diff operations
 GitDiff GitManager::getCommitDiff(const std::string& commitHash) const {
     GitDiff diff;
-    // TODO: Implement commit diff
+
+    // Get diff for the first changed file in a commit
+    auto filesResult = executeGitCommand({"diff-tree", "--no-commit-id", "--name-status", "-r", commitHash});
+    if (!filesResult.isSuccess() || filesResult.output.empty()) {
+        return diff;
+    }
+
+    auto files = parseGitOutput(filesResult.output, "\n");
+    if (files.empty()) {
+        return diff;
+    }
+
+    // Get the first file's diff
+    auto fileParts = GitUtils::split(files[0], "\t");
+    if (fileParts.size() < 2) {
+        return diff;
+    }
+
+    std::string fileName = fileParts[1];
+    diff.filePath = fileName;
+
+    // Determine file status
+    if (fileParts[0] == "A") {
+        diff.isNewFile = true;
+    } else if (fileParts[0] == "D") {
+        diff.isDeletedFile = true;
+    }
+
+    // Get the actual diff content
+    // Use show for the commit to handle initial commits properly
+    auto diffResult = executeGitCommand({"show", commitHash, "--", fileName});
+    if (!diffResult.isSuccess()) {
+        return diff;
+    }
+
+    // Parse diff hunks
+    auto lines = parseGitOutput(diffResult.output, "\n");
+    GitDiffHunk* currentHunk = nullptr;
+
+    for (const auto& line : lines) {
+        if (line.empty()) continue;
+
+        // Check for hunk header
+        if (line.substr(0, 2) == "@@") {
+            std::regex hunkRegex("@@ -(\\d+)(?:,(\\d+))? \\+(\\d+)(?:,(\\d+))? @@");
+            std::smatch matches;
+            if (std::regex_search(line, matches, hunkRegex)) {
+                GitDiffHunk hunk;
+                hunk.header = line;
+                hunk.oldStart = std::stoi(matches[1]);
+                hunk.oldCount = matches[2].matched ? std::stoi(matches[2]) : 1;
+                hunk.newStart = std::stoi(matches[3]);
+                hunk.newCount = matches[4].matched ? std::stoi(matches[4]) : 1;
+                diff.hunks.push_back(hunk);
+                currentHunk = &diff.hunks.back();
+            }
+        } else if (currentHunk && !line.empty()) {
+            GitDiffLine diffLine;
+            if (line[0] == '+') {
+                diffLine.type = GitDiffLine::Type::Addition;
+                diffLine.content = line.substr(1);
+            } else if (line[0] == '-') {
+                diffLine.type = GitDiffLine::Type::Deletion;
+                diffLine.content = line.substr(1);
+            } else if (line[0] == ' ') {
+                diffLine.type = GitDiffLine::Type::Context;
+                diffLine.content = line.substr(1);
+            } else if (line.substr(0, 4) == "diff" || line.substr(0, 5) == "index" ||
+                      line.substr(0, 3) == "+++" || line.substr(0, 3) == "---") {
+                diffLine.type = GitDiffLine::Type::Header;
+                diffLine.content = line;
+            } else {
+                continue;
+            }
+            currentHunk->lines.push_back(diffLine);
+        }
+    }
+
     return diff;
 }
 
 std::vector<GitDiff> GitManager::getCommitDiffAll(const std::string& commitHash) const {
     std::vector<GitDiff> diffs;
-    // TODO: Implement commit diff all
+
+    // Get all changed files in a commit
+    auto filesResult = executeGitCommand({"diff-tree", "--no-commit-id", "--name-status", "-r", commitHash});
+    if (!filesResult.isSuccess() || filesResult.output.empty()) {
+        return diffs;
+    }
+
+    auto files = parseGitOutput(filesResult.output, "\n");
+
+    for (const auto& file : files) {
+        if (file.empty()) continue;
+
+        auto fileParts = GitUtils::split(file, "\t");
+        if (fileParts.size() < 2) continue;
+
+        std::string fileName = fileParts[1];
+        GitDiff diff;
+        diff.filePath = fileName;
+
+        // Determine file status
+        if (fileParts[0] == "A") {
+            diff.isNewFile = true;
+        } else if (fileParts[0] == "D") {
+            diff.isDeletedFile = true;
+        } else if (fileParts[0].find("R") != std::string::npos && fileParts.size() >= 3) {
+            // Handle renames
+            diff.oldPath = fileParts[1];
+            diff.filePath = fileParts[2];
+        }
+
+        // Get the actual diff content for this file
+        // Use show for the commit to handle initial commits properly
+        auto diffResult = executeGitCommand({"show", commitHash, "--", fileName});
+        if (!diffResult.isSuccess()) {
+            continue;
+        }
+
+        // Check if binary
+        if (diffResult.output.find("Binary files") != std::string::npos) {
+            diff.isBinary = true;
+            diffs.push_back(diff);
+            continue;
+        }
+
+        // Parse diff hunks
+        auto lines = parseGitOutput(diffResult.output, "\n");
+        GitDiffHunk* currentHunk = nullptr;
+        int oldLineNum = 0, newLineNum = 0;
+
+        for (const auto& line : lines) {
+            if (line.empty()) continue;
+
+            // Check for hunk header
+            if (line.substr(0, 2) == "@@") {
+                std::regex hunkRegex("@@ -(\\d+)(?:,(\\d+))? \\+(\\d+)(?:,(\\d+))? @@");
+                std::smatch matches;
+                if (std::regex_search(line, matches, hunkRegex)) {
+                    GitDiffHunk hunk;
+                    hunk.header = line;
+                    hunk.oldStart = std::stoi(matches[1]);
+                    hunk.oldCount = matches[2].matched ? std::stoi(matches[2]) : 1;
+                    hunk.newStart = std::stoi(matches[3]);
+                    hunk.newCount = matches[4].matched ? std::stoi(matches[4]) : 1;
+                    diff.hunks.push_back(hunk);
+                    currentHunk = &diff.hunks.back();
+                    oldLineNum = hunk.oldStart;
+                    newLineNum = hunk.newStart;
+                }
+            } else if (currentHunk && !line.empty()) {
+                GitDiffLine diffLine;
+                if (line[0] == '+') {
+                    diffLine.type = GitDiffLine::Type::Addition;
+                    diffLine.content = line.substr(1);
+                    diffLine.newLineNumber = newLineNum++;
+                } else if (line[0] == '-') {
+                    diffLine.type = GitDiffLine::Type::Deletion;
+                    diffLine.content = line.substr(1);
+                    diffLine.oldLineNumber = oldLineNum++;
+                } else if (line[0] == ' ') {
+                    diffLine.type = GitDiffLine::Type::Context;
+                    diffLine.content = line.substr(1);
+                    diffLine.oldLineNumber = oldLineNum++;
+                    diffLine.newLineNumber = newLineNum++;
+                } else if (line.substr(0, 4) == "diff" || line.substr(0, 5) == "index" ||
+                          line.substr(0, 3) == "+++" || line.substr(0, 3) == "---") {
+                    diffLine.type = GitDiffLine::Type::Header;
+                    diffLine.content = line;
+                } else {
+                    continue;
+                }
+                currentHunk->lines.push_back(diffLine);
+            }
+        }
+
+        diffs.push_back(diff);
+    }
+
     return diffs;
 }
 

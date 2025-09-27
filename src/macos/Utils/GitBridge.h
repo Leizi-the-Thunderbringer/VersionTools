@@ -25,6 +25,15 @@
 // Branch operations
 - (BOOL)checkoutBranch:(NSString *)branchName;
 - (BOOL)createBranch:(NSString *)branchName;
+- (BOOL)createBranch:(NSString *)branchName fromCommit:(NSString *)startPoint;
 - (BOOL)deleteBranch:(NSString *)branchName;
+- (BOOL)deleteBranch:(NSString *)branchName force:(BOOL)force;
+
+// Stash operations
+- (NSArray *)getStashes;
+- (BOOL)createStash:(NSString *)message;
+- (BOOL)applyStash:(int)index;
+- (BOOL)popStash:(int)index;
+- (BOOL)dropStash:(int)index;
 
 @end

@@ -19,6 +19,7 @@ set(SWIFT_SOURCES
     Views/DiffView.swift
     Views/PlaceholderViews.swift
     Views/Dialogs.swift
+    Views/StashView.swift
     Models/GitManagerWrapper.swift
 )
 
