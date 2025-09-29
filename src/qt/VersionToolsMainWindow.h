@@ -92,9 +92,7 @@ private:
     // Git integration
     std::unique_ptr<GitManager> m_gitManager;
     GitWorker *m_gitWorker;
-    
+
     QString m_currentRepositoryPath;
     QString m_currentBranch;
 };
-
-#endif // VERSIONTOOLSMAINWINDOW_H
