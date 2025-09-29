@@ -1,0 +1,5 @@
+2025-09-29T03:46:40.8900000Z Requested labels: windows-latest
+2025-09-29T03:46:40.8900000Z Job defined at: Leizi-the-Thunderbringer/VersionTools/.github/workflows/build-and-release.yml@refs/heads/main
+2025-09-29T03:46:40.8900000Z Waiting for a runner to pick up this job...
+2025-09-29T03:46:40.8960000Z Job is about to start running on the hosted runner: GitHub Actions 1000000330
+2025-09-29T03:46:40.8960000Z Job is waiting for a hosted runner to come online.
