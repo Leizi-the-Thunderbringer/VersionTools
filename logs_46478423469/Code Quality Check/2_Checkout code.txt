@@ -1,0 +1,72 @@
+﻿2025-09-29T06:56:36.2257664Z ##[group]Run actions/checkout@v4
+2025-09-29T06:56:36.2258516Z with:
+2025-09-29T06:56:36.2258986Z   repository: Leizi-the-Thunderbringer/VersionTools
+2025-09-29T06:56:36.2259717Z   token: ***
+2025-09-29T06:56:36.2260101Z   ssh-strict: true
+2025-09-29T06:56:36.2260659Z   ssh-user: git
+2025-09-29T06:56:36.2261054Z   persist-credentials: true
+2025-09-29T06:56:36.2261498Z   clean: true
+2025-09-29T06:56:36.2261898Z   sparse-checkout-cone-mode: true
+2025-09-29T06:56:36.2262372Z   fetch-depth: 1
+2025-09-29T06:56:36.2262762Z   fetch-tags: false
+2025-09-29T06:56:36.2263166Z   show-progress: true
+2025-09-29T06:56:36.2263567Z   lfs: false
+2025-09-29T06:56:36.2263951Z   submodules: false
+2025-09-29T06:56:36.2264353Z   set-safe-directory: true
+2025-09-29T06:56:36.2265516Z env:
+2025-09-29T06:56:36.2265913Z   CMAKE_VERSION: 3.20.0
+2025-09-29T06:56:36.2266344Z   QT_VERSION: 6.5.0
+2025-09-29T06:56:36.2266727Z ##[endgroup]
+2025-09-29T06:56:36.3365785Z Syncing repository: Leizi-the-Thunderbringer/VersionTools
+2025-09-29T06:56:36.3368878Z ##[group]Getting Git version info
+2025-09-29T06:56:36.3370341Z Working directory is '/home/runner/work/VersionTools/VersionTools'
+2025-09-29T06:56:36.3372130Z [command]/usr/bin/git version
+2025-09-29T06:56:36.3435680Z git version 2.51.0
+2025-09-29T06:56:36.3463090Z ##[endgroup]
+2025-09-29T06:56:36.3478942Z Temporarily overriding HOME='/home/runner/work/_temp/91358e98-84aa-4e0c-91c0-fd5f84235f79' before making global git config changes
+2025-09-29T06:56:36.3481500Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-29T06:56:36.3485720Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/VersionTools/VersionTools
+2025-09-29T06:56:36.3528491Z Deleting the contents of '/home/runner/work/VersionTools/VersionTools'
+2025-09-29T06:56:36.3532883Z ##[group]Initializing the repository
+2025-09-29T06:56:36.3537703Z [command]/usr/bin/git init /home/runner/work/VersionTools/VersionTools
+2025-09-29T06:56:36.3661929Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-29T06:56:36.3663400Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-29T06:56:36.3664307Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-29T06:56:36.3665471Z hint:
+2025-09-29T06:56:36.3666026Z hint: 	git config --global init.defaultBranch <name>
+2025-09-29T06:56:36.3666682Z hint:
+2025-09-29T06:56:36.3667622Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-29T06:56:36.3669211Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-29T06:56:36.3670658Z hint:
+2025-09-29T06:56:36.3671374Z hint: 	git branch -m <name>
+2025-09-29T06:56:36.3672256Z hint:
+2025-09-29T06:56:36.3673314Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-29T06:56:36.3675056Z Initialized empty Git repository in /home/runner/work/VersionTools/VersionTools/.git/
+2025-09-29T06:56:36.3680138Z [command]/usr/bin/git remote add origin https://github.com/Leizi-the-Thunderbringer/VersionTools
+2025-09-29T06:56:36.3719353Z ##[endgroup]
+2025-09-29T06:56:36.3720721Z ##[group]Disabling automatic garbage collection
+2025-09-29T06:56:36.3724274Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-29T06:56:36.3754295Z ##[endgroup]
+2025-09-29T06:56:36.3755475Z ##[group]Setting up auth
+2025-09-29T06:56:36.3762286Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-29T06:56:36.3793537Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-29T06:56:36.4152138Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-29T06:56:36.4188974Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-29T06:56:36.4439486Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-29T06:56:36.4489988Z ##[endgroup]
+2025-09-29T06:56:36.4491424Z ##[group]Fetching the repository
+2025-09-29T06:56:36.4499294Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +fa8c6467227cde7f6f29b27ca843ea0104fafa96:refs/remotes/origin/main
+2025-09-29T06:56:37.6560589Z From https://github.com/Leizi-the-Thunderbringer/VersionTools
+2025-09-29T06:56:37.6562607Z  * [new ref]         fa8c6467227cde7f6f29b27ca843ea0104fafa96 -> origin/main
+2025-09-29T06:56:37.6597706Z ##[endgroup]
+2025-09-29T06:56:37.6598993Z ##[group]Determining the checkout info
+2025-09-29T06:56:37.6600967Z ##[endgroup]
+2025-09-29T06:56:37.6606093Z [command]/usr/bin/git sparse-checkout disable
+2025-09-29T06:56:37.6649969Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-29T06:56:37.6680032Z ##[group]Checking out the ref
+2025-09-29T06:56:37.6684814Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-09-29T06:56:37.7210861Z Switched to a new branch 'main'
+2025-09-29T06:56:37.7212139Z branch 'main' set up to track 'origin/main'.
+2025-09-29T06:56:37.7219823Z ##[endgroup]
+2025-09-29T06:56:37.7257857Z [command]/usr/bin/git log -1 --format=%H
+2025-09-29T06:56:37.7279870Z fa8c6467227cde7f6f29b27ca843ea0104fafa96

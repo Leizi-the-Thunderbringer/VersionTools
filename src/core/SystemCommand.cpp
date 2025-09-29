@@ -85,7 +85,11 @@ SystemCommandResult SystemCommand::executeWindows(const std::string& command, co
 
     // Create pipes for stdout and stderr
     if (!CreatePipe(&hStdoutRead, &hStdoutWrite, &sa, 0) || !CreatePipe(&hStderrRead, &hStderrWrite, &sa, 0)) {
-        return {-1, "", "Failed to create pipes", false};
+        SystemCommandResult result;
+        result.exitCode = -1;
+        result.output = "";
+        result.error = "Failed to create pipes";
+        return result;
     }
 
     // Make sure the read handles are not inherited
@@ -122,7 +126,11 @@ SystemCommandResult SystemCommand::executeWindows(const std::string& command, co
     if (!success) {
         CloseHandle(hStdoutRead);
         CloseHandle(hStderrRead);
-        return {-1, "", "Failed to create process", false};
+        SystemCommandResult result;
+        result.exitCode = -1;
+        result.output = "";
+        result.error = "Failed to create process";
+        return result;
     }
 
     pImpl->process = pi.hProcess;
@@ -142,7 +150,11 @@ SystemCommandResult SystemCommand::executeWindows(const std::string& command, co
         CloseHandle(pi.hThread);
         CloseHandle(hStdoutRead);
         CloseHandle(hStderrRead);
-        return {-1, "", "Process timed out or was cancelled", false};
+        SystemCommandResult result;
+        result.exitCode = -1;
+        result.output = "";
+        result.error = "Process timed out or was cancelled";
+        return result;
     }
 
     // Read stdout
@@ -168,7 +180,11 @@ SystemCommandResult SystemCommand::executeWindows(const std::string& command, co
     pImpl->process = INVALID_HANDLE_VALUE;
     pImpl->thread = INVALID_HANDLE_VALUE;
 
-    return {static_cast<int>(exitCode), output, error};
+    SystemCommandResult result;
+    result.exitCode = static_cast<int>(exitCode);
+    result.output = output;
+    result.error = error;
+    return result;
 }
 
 #else // Unix/Linux/macOS
@@ -178,7 +194,11 @@ SystemCommandResult SystemCommand::executeUnix(const std::string& command, const
     int pipeOut[2], pipeErr[2];
 
     if (pipe(pipeOut) == -1 || pipe(pipeErr) == -1) {
-        return {-1, "", "Failed to create pipes"};
+        SystemCommandResult result;
+        result.exitCode = -1;
+        result.output = "";
+        result.error = "Failed to create pipes";
+        return result;
     }
 
     pid_t pid = fork();
@@ -187,7 +207,11 @@ SystemCommandResult SystemCommand::executeUnix(const std::string& command, const
         close(pipeOut[1]);
         close(pipeErr[0]);
         close(pipeErr[1]);
-        return {-1, "", "Failed to fork process"};
+        SystemCommandResult result;
+        result.exitCode = -1;
+        result.output = "";
+        result.error = "Failed to fork process";
+        return result;
     }
 
     if (pid == 0) {
@@ -254,7 +278,11 @@ SystemCommandResult SystemCommand::executeUnix(const std::string& command, const
             close(pipeOut[0]);
             close(pipeErr[0]);
             pImpl->childPid = -1;
-            return {-1, "", "Process timed out"};
+            SystemCommandResult result;
+            result.exitCode = -1;
+            result.output = "";
+            result.error = "Process timed out";
+            return result;
         }
 
         // Check if process is still running
@@ -289,7 +317,11 @@ SystemCommandResult SystemCommand::executeUnix(const std::string& command, const
             pImpl->childPid = -1;
 
             int exitCode = WIFEXITED(status) ? WEXITSTATUS(status) : -1;
-            return {exitCode, output, error};
+            SystemCommandResult result;
+            result.exitCode = exitCode;
+            result.output = output;
+            result.error = error;
+            return result;
         }
 
         // Small delay to prevent busy waiting
@@ -300,7 +332,11 @@ SystemCommandResult SystemCommand::executeUnix(const std::string& command, const
     close(pipeOut[0]);
     close(pipeErr[0]);
     pImpl->childPid = -1;
-    return {-1, output, error};
+    SystemCommandResult result;
+    result.exitCode = -1;
+    result.output = output;
+    result.error = error;
+    return result;
 }
 #endif
 

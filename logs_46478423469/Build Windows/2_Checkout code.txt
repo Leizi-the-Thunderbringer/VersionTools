@@ -1,0 +1,83 @@
+﻿2025-09-29T06:56:39.3740651Z ##[group]Run actions/checkout@v4
+2025-09-29T06:56:39.3742043Z with:
+2025-09-29T06:56:39.3742450Z   fetch-depth: 0
+2025-09-29T06:56:39.3742759Z   submodules: recursive
+2025-09-29T06:56:39.3743104Z   repository: Leizi-the-Thunderbringer/VersionTools
+2025-09-29T06:56:39.3743842Z   token: ***
+2025-09-29T06:56:39.3744084Z   ssh-strict: true
+2025-09-29T06:56:39.3744343Z   ssh-user: git
+2025-09-29T06:56:39.3744611Z   persist-credentials: true
+2025-09-29T06:56:39.3744901Z   clean: true
+2025-09-29T06:56:39.3745189Z   sparse-checkout-cone-mode: true
+2025-09-29T06:56:39.3745506Z   fetch-tags: false
+2025-09-29T06:56:39.3745761Z   show-progress: true
+2025-09-29T06:56:39.3746013Z   lfs: false
+2025-09-29T06:56:39.3746264Z   set-safe-directory: true
+2025-09-29T06:56:39.3746836Z env:
+2025-09-29T06:56:39.3747086Z   CMAKE_VERSION: 3.20.0
+2025-09-29T06:56:39.3747345Z   QT_VERSION: 6.5.0
+2025-09-29T06:56:39.3747589Z ##[endgroup]
+2025-09-29T06:56:39.5792365Z Syncing repository: Leizi-the-Thunderbringer/VersionTools
+2025-09-29T06:56:39.5794879Z ##[group]Getting Git version info
+2025-09-29T06:56:39.5795923Z Working directory is 'D:\a\VersionTools\VersionTools'
+2025-09-29T06:56:39.6798173Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-09-29T06:56:40.6813607Z git version 2.51.0.windows.1
+2025-09-29T06:56:40.6872890Z ##[endgroup]
+2025-09-29T06:56:40.6899264Z Temporarily overriding HOME='D:\a\_temp\b58ba184-cfd3-45e8-8f26-b5b4440f1365' before making global git config changes
+2025-09-29T06:56:40.6900341Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-29T06:56:40.6912028Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VersionTools\VersionTools
+2025-09-29T06:56:40.8456458Z Deleting the contents of 'D:\a\VersionTools\VersionTools'
+2025-09-29T06:56:40.8464812Z ##[group]Initializing the repository
+2025-09-29T06:56:40.8475291Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\VersionTools\VersionTools
+2025-09-29T06:56:41.1131170Z Initialized empty Git repository in D:/a/VersionTools/VersionTools/.git/
+2025-09-29T06:56:41.1182316Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Leizi-the-Thunderbringer/VersionTools
+2025-09-29T06:56:41.2228233Z ##[endgroup]
+2025-09-29T06:56:41.2228771Z ##[group]Disabling automatic garbage collection
+2025-09-29T06:56:41.2245767Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-09-29T06:56:41.2600601Z ##[endgroup]
+2025-09-29T06:56:41.2601270Z ##[group]Setting up auth
+2025-09-29T06:56:41.2616496Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-09-29T06:56:41.2965605Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-09-29T06:56:43.7041144Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-29T06:56:43.7379459Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-09-29T06:56:44.2981166Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-09-29T06:56:44.3312506Z ##[endgroup]
+2025-09-29T06:56:44.3313384Z ##[group]Fetching the repository
+2025-09-29T06:56:44.3327533Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2025-09-29T06:56:46.3655864Z From https://github.com/Leizi-the-Thunderbringer/VersionTools
+2025-09-29T06:56:46.3656787Z  * [new branch]      add-claude-github-actions-1758812080389 -> origin/add-claude-github-actions-1758812080389
+2025-09-29T06:56:46.3659819Z  * [new branch]      main       -> origin/main
+2025-09-29T06:56:46.3660112Z  * [new tag]         v1.0.0     -> v1.0.0
+2025-09-29T06:56:46.4240168Z [command]"C:\Program Files\Git\bin\git.exe" branch --list --remote origin/main
+2025-09-29T06:56:46.5312615Z   origin/main
+2025-09-29T06:56:46.5361587Z [command]"C:\Program Files\Git\bin\git.exe" rev-parse refs/remotes/origin/main
+2025-09-29T06:56:46.5842447Z fa8c6467227cde7f6f29b27ca843ea0104fafa96
+2025-09-29T06:56:46.5881184Z ##[endgroup]
+2025-09-29T06:56:46.5883573Z ##[group]Determining the checkout info
+2025-09-29T06:56:46.5884317Z ##[endgroup]
+2025-09-29T06:56:46.5896446Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-09-29T06:56:46.6550214Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-09-29T06:56:46.6881366Z ##[group]Checking out the ref
+2025-09-29T06:56:46.6898116Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2025-09-29T06:56:46.8460554Z branch 'main' set up to track 'origin/main'.
+2025-09-29T06:56:46.8469791Z Switched to a new branch 'main'
+2025-09-29T06:56:46.8522042Z ##[endgroup]
+2025-09-29T06:56:46.8522754Z ##[group]Setting up auth for fetching submodules
+2025-09-29T06:56:46.8536877Z [command]"C:\Program Files\Git\bin\git.exe" config --global http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-09-29T06:56:46.8875728Z [command]"C:\Program Files\Git\bin\git.exe" config --global --unset-all url.https://github.com/.insteadOf
+2025-09-29T06:56:46.9214201Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add url.https://github.com/.insteadOf git@github.com:
+2025-09-29T06:56:46.9543473Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add url.https://github.com/.insteadOf org-227833005@github.com:
+2025-09-29T06:56:46.9862519Z ##[endgroup]
+2025-09-29T06:56:46.9862900Z ##[group]Fetching submodules
+2025-09-29T06:56:46.9874125Z [command]"C:\Program Files\Git\bin\git.exe" submodule sync --recursive
+2025-09-29T06:56:47.5842626Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 submodule update --init --force --recursive
+2025-09-29T06:56:48.3594235Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local gc.auto 0"
+2025-09-29T06:56:49.1199395Z ##[endgroup]
+2025-09-29T06:56:49.1199834Z ##[group]Persisting credentials for submodules
+2025-09-29T06:56:49.1215277Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :\""
+2025-09-29T06:56:49.8345167Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url\""
+2025-09-29T06:56:50.5629564Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'"
+2025-09-29T06:56:51.2908590Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --add 'url.https://github.com/.insteadOf' 'org-227833005@github.com:'"
+2025-09-29T06:56:51.9269343Z ##[endgroup]
+2025-09-29T06:56:51.9890230Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-09-29T06:56:52.0195398Z fa8c6467227cde7f6f29b27ca843ea0104fafa96

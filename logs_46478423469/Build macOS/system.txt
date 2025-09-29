@@ -1,0 +1,5 @@
+2025-09-29T06:56:32.6720000Z Requested labels: macos-latest
+2025-09-29T06:56:32.6720000Z Job defined at: Leizi-the-Thunderbringer/VersionTools/.github/workflows/build-and-release.yml@refs/heads/main
+2025-09-29T06:56:32.6720000Z Waiting for a runner to pick up this job...
+2025-09-29T06:56:33.2210000Z Job is waiting for a hosted runner to come online.
+2025-09-29T06:56:33.2220000Z Job is about to start running on the hosted runner: GitHub Actions 1000000339

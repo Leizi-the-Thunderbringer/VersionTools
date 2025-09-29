@@ -1,0 +1,63 @@
+﻿2025-09-29T06:58:00.3454910Z ##[group]Run cd build
+2025-09-29T06:58:00.3455154Z [36;1mcd build[0m
+2025-09-29T06:58:00.3455334Z [36;1mninja -j$(nproc)[0m
+2025-09-29T06:58:00.3487376Z shell: /usr/bin/bash -e {0}
+2025-09-29T06:58:00.3487588Z env:
+2025-09-29T06:58:00.3487747Z   CMAKE_VERSION: 3.20.0
+2025-09-29T06:58:00.3487933Z   QT_VERSION: 6.5.0
+2025-09-29T06:58:00.3488112Z ##[endgroup]
+2025-09-29T06:58:00.3953692Z [1/16] Automatic MOC and UIC for target GitCore
+2025-09-29T06:58:00.4066317Z [2/16] Building CXX object src/core/CMakeFiles/GitCore.dir/GitCore_autogen/mocs_compilation.cpp.o
+2025-09-29T06:58:02.0888547Z [3/16] Building CXX object src/core/CMakeFiles/GitCore.dir/SystemCommand.cpp.o
+2025-09-29T06:58:04.8414707Z [4/16] Building CXX object src/core/CMakeFiles/GitCore.dir/GitUtils.cpp.o
+2025-09-29T06:58:06.9359284Z [5/16] Building CXX object src/core/CMakeFiles/GitCore.dir/GitManager.cpp.o
+2025-09-29T06:58:14.3945744Z [6/16] Linking CXX static library lib/libGitCore.a
+2025-09-29T06:58:15.0633928Z [7/16] Automatic MOC and UIC for target VersionTools
+2025-09-29T06:58:15.0634582Z AutoMoc warning
+2025-09-29T06:58:15.0634865Z ---------------
+2025-09-29T06:58:15.0635193Z "SRC:/src/qt/VersionToolsMainWindow.cpp"
+2025-09-29T06:58:15.0636177Z includes the moc file "VersionToolsMainWindow.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-09-29T06:58:15.0637019Z 
+2025-09-29T06:58:15.0637143Z AutoMoc warning
+2025-09-29T06:58:15.0637416Z ---------------
+2025-09-29T06:58:15.0637725Z "SRC:/src/qt/utils/GitWorker.cpp"
+2025-09-29T06:58:15.0638540Z includes the moc file "GitWorker.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-09-29T06:58:15.0639265Z 
+2025-09-29T06:58:15.0639395Z AutoMoc warning
+2025-09-29T06:58:15.0639622Z ---------------
+2025-09-29T06:58:15.0639825Z "SRC:/src/qt/widgets/SidebarWidget.cpp"
+2025-09-29T06:58:15.0640364Z includes the moc file "SidebarWidget.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-09-29T06:58:15.0640988Z 
+2025-09-29T06:58:15.0641468Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:385:1: note: No relevant classes found. No output generated.
+2025-09-29T06:58:15.0642645Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:144:1: note: No relevant classes found. No output generated.
+2025-09-29T06:58:15.0643808Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/widgets/SidebarWidget.cpp:197:1: note: No relevant classes found. No output generated.
+2025-09-29T06:58:15.0705768Z [8/16] Automatic RCC for resources/resources.qrc
+2025-09-29T06:58:15.2924969Z [9/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o
+2025-09-29T06:58:15.2929556Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o 
+2025-09-29T06:58:15.2940054Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o -c /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp
+2025-09-29T06:58:15.2947642Z In file included from /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:1:
+2025-09-29T06:58:15.2950152Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.h:100:2: error: #endif without #if
+2025-09-29T06:58:15.2952889Z   100 | #endif // VERSIONTOOLSMAINWINDOW_H
+2025-09-29T06:58:15.2954544Z       |  ^~~~~
+2025-09-29T06:58:15.2956655Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:4:10: fatal error: widgets/HistoryWidget.h: No such file or directory
+2025-09-29T06:58:15.2958059Z     4 | #include "widgets/HistoryWidget.h"
+2025-09-29T06:58:15.2958646Z       |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+2025-09-29T06:58:15.2960921Z compilation terminated.
+2025-09-29T06:58:16.5453850Z [10/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/VersionTools_autogen/mocs_compilation.cpp.o
+2025-09-29T06:58:16.5455017Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/VersionTools_autogen/mocs_compilation.cpp.o 
+2025-09-29T06:58:16.5458841Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/VersionTools_autogen/mocs_compilation.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/VersionTools_autogen/mocs_compilation.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/VersionTools_autogen/mocs_compilation.cpp.o -c /home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/mocs_compilation.cpp
+2025-09-29T06:58:16.5463045Z In file included from /home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/EWIEGA46WW/moc_VersionToolsMainWindow.cpp:10,
+2025-09-29T06:58:16.5463926Z                  from /home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/mocs_compilation.cpp:2:
+2025-09-29T06:58:16.5464836Z /home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/EWIEGA46WW/../../../../../src/qt/VersionToolsMainWindow.h:100:2: error: #endif without #if
+2025-09-29T06:58:16.5465761Z   100 | #endif // VERSIONTOOLSMAINWINDOW_H
+2025-09-29T06:58:16.5465994Z       |  ^~~~~
+2025-09-29T06:58:16.8090176Z [11/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/main.cpp.o
+2025-09-29T06:58:16.8090900Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/main.cpp.o 
+2025-09-29T06:58:16.8094199Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/main.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/main.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/main.cpp.o -c /home/runner/work/VersionTools/VersionTools/src/qt/main.cpp
+2025-09-29T06:58:16.8097363Z In file included from /home/runner/work/VersionTools/VersionTools/src/qt/main.cpp:5:
+2025-09-29T06:58:16.8097998Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.h:100:2: error: #endif without #if
+2025-09-29T06:58:16.8098502Z   100 | #endif // VERSIONTOOLSMAINWINDOW_H
+2025-09-29T06:58:16.8098736Z       |  ^~~~~
+2025-09-29T06:58:17.2068338Z [12/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/widgets/SidebarWidget.cpp.o
+2025-09-29T06:58:17.2069354Z ninja: build stopped: subcommand failed.
+2025-09-29T06:58:17.2085672Z ##[error]Process completed with exit code 1.
