@@ -34,11 +34,19 @@ jobs:
 
       - name: Configure CMake
         run: |
+          # Find libgit2 location
+          export PKG_CONFIG_PATH="$(brew --prefix)/lib/pkgconfig:$PKG_CONFIG_PATH"
+          export LIBGIT2_PREFIX="$(brew --prefix libgit2)"
+          echo "libgit2 found at: $LIBGIT2_PREFIX"
+
           mkdir build
           cd build
           cmake -GXcode \
             -DCMAKE_BUILD_TYPE=Release \
             -DBUILD_TESTS=ON \
+            -DCMAKE_PREFIX_PATH="${LIBGIT2_PREFIX}" \
+            -DLIBGIT2_INCLUDE_DIR="${LIBGIT2_PREFIX}/include" \
+            -DLIBGIT2_LIBRARY="${LIBGIT2_PREFIX}/lib/libgit2.dylib" \
             ..
 
       - name: Build

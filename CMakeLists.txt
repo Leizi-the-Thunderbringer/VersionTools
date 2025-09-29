@@ -71,24 +71,75 @@ endif()
 
 # Git依赖
 find_package(PkgConfig)
-if(PkgConfig_FOUND)
-    pkg_check_modules(LIBGIT2 libgit2)
-    if(LIBGIT2_FOUND)
-        message(STATUS "Found libgit2: ${LIBGIT2_VERSION}")
+
+# macOS上的特殊处理 - 如果在标准位置找不到，检查Homebrew位置
+if(APPLE)
+    # 首先尝试用pkg-config
+    if(PkgConfig_FOUND)
+        pkg_check_modules(LIBGIT2 libgit2)
+    endif()
+
+    # 如果pkg-config没找到，手动查找
+    if(NOT LIBGIT2_FOUND)
+        # 查找Homebrew路径
+        execute_process(
+            COMMAND brew --prefix libgit2
+            OUTPUT_VARIABLE BREW_LIBGIT2_PREFIX
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+            ERROR_QUIET
+        )
+
+        if(BREW_LIBGIT2_PREFIX)
+            set(LIBGIT2_INCLUDE_DIR "${BREW_LIBGIT2_PREFIX}/include")
+            set(LIBGIT2_LIBRARY "${BREW_LIBGIT2_PREFIX}/lib/libgit2.dylib")
+
+            if(EXISTS ${LIBGIT2_INCLUDE_DIR} AND EXISTS ${LIBGIT2_LIBRARY})
+                set(LIBGIT2_FOUND TRUE)
+                set(LIBGIT2_INCLUDE_DIRS ${LIBGIT2_INCLUDE_DIR})
+                set(LIBGIT2_LIBRARIES ${LIBGIT2_LIBRARY})
+                message(STATUS "Found libgit2 via Homebrew at ${BREW_LIBGIT2_PREFIX}")
+            endif()
+        endif()
+    endif()
+
+    # 如果还没找到，尝试标准位置
+    if(NOT LIBGIT2_FOUND)
+        find_path(LIBGIT2_INCLUDE_DIR git2.h
+            PATHS /usr/local/include /opt/homebrew/include /opt/local/include
+        )
+        find_library(LIBGIT2_LIBRARY NAMES git2
+            PATHS /usr/local/lib /opt/homebrew/lib /opt/local/lib
+        )
+        if(LIBGIT2_INCLUDE_DIR AND LIBGIT2_LIBRARY)
+            set(LIBGIT2_FOUND TRUE)
+            set(LIBGIT2_INCLUDE_DIRS ${LIBGIT2_INCLUDE_DIR})
+            set(LIBGIT2_LIBRARIES ${LIBGIT2_LIBRARY})
+            message(STATUS "Found libgit2 manually")
+        endif()
     endif()
 else()
-    # 手动查找libgit2
-    find_path(LIBGIT2_INCLUDE_DIR git2.h)
-    find_library(LIBGIT2_LIBRARY NAMES git2)
-    if(LIBGIT2_INCLUDE_DIR AND LIBGIT2_LIBRARY)
-        set(LIBGIT2_FOUND TRUE)
-        set(LIBGIT2_INCLUDE_DIRS ${LIBGIT2_INCLUDE_DIR})
-        set(LIBGIT2_LIBRARIES ${LIBGIT2_LIBRARY})
-        message(STATUS "Found libgit2 manually")
+    # Linux/Windows的原始代码
+    if(PkgConfig_FOUND)
+        pkg_check_modules(LIBGIT2 libgit2)
+        if(LIBGIT2_FOUND)
+            message(STATUS "Found libgit2: ${LIBGIT2_VERSION}")
+        endif()
     else()
-        message(WARNING "libgit2 not found, will use system git commands")
-        add_definitions(-DUSE_SYSTEM_GIT)
+        # 手动查找libgit2
+        find_path(LIBGIT2_INCLUDE_DIR git2.h)
+        find_library(LIBGIT2_LIBRARY NAMES git2)
+        if(LIBGIT2_INCLUDE_DIR AND LIBGIT2_LIBRARY)
+            set(LIBGIT2_FOUND TRUE)
+            set(LIBGIT2_INCLUDE_DIRS ${LIBGIT2_INCLUDE_DIR})
+            set(LIBGIT2_LIBRARIES ${LIBGIT2_LIBRARY})
+            message(STATUS "Found libgit2 manually")
+        endif()
     endif()
+endif()
+
+if(NOT LIBGIT2_FOUND)
+    message(WARNING "libgit2 not found, will use system git commands")
+    add_definitions(-DUSE_SYSTEM_GIT)
 endif()
 
 # 线程支持

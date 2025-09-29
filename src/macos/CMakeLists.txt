@@ -82,6 +82,11 @@ target_link_libraries(VersionTools
     "-framework AppKit"
 )
 
+# 如果找到了libgit2，确保它被链接
+if(LIBGIT2_FOUND)
+    target_link_libraries(VersionTools ${LIBGIT2_LIBRARIES})
+endif()
+
 # Swift-C++互操作
 set_target_properties(VersionTools PROPERTIES
     Swift_MODULE_NAME "VersionTools"
