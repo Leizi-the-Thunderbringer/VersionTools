@@ -19,9 +19,11 @@ struct ContentView: View {
                 case .branches:
                     BranchesView(gitManager: gitManager)
                 case .remotes:
-                    RemotesView(gitManager: gitManager)
+                    RemotesView()
+                        .environmentObject(gitManager)
                 case .tags:
-                    TagsView(gitManager: gitManager)
+                    TagsView()
+                        .environmentObject(gitManager)
                 case .stashes:
                     StashView(gitManager: gitManager)
                 case .none:

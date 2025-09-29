@@ -36,4 +36,7 @@
 - (BOOL)popStash:(int)index;
 - (BOOL)dropStash:(int)index;
 
+// Raw command execution
+- (NSString *)executeRawCommand:(NSString *)command;
+
 @end

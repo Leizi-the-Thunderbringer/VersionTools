@@ -2,50 +2,6 @@
 
 import SwiftUI
 
-struct RemotesView: View {
-    @ObservedObject var gitManager: GitManagerWrapper
-    
-    var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "globe")
-                .font(.system(size: 48))
-                .foregroundColor(.secondary)
-            
-            Text("Remotes")
-                .font(.headline)
-            
-            Text("Remote repository management coming soon")
-                .font(.body)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle("Remotes")
-    }
-}
-
-struct TagsView: View {
-    @ObservedObject var gitManager: GitManagerWrapper
-    
-    var body: some View {
-        VStack(spacing: 20) {
-            Image(systemName: "tag.fill")
-                .font(.system(size: 48))
-                .foregroundColor(.secondary)
-            
-            Text("Tags")
-                .font(.headline)
-            
-            Text("Tag management coming soon")
-                .font(.body)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle("Tags")
-    }
-}
-
 struct StashesView: View {
     @ObservedObject var gitManager: GitManagerWrapper
     
@@ -99,5 +55,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    RemotesView(gitManager: GitManagerWrapper())
+    StashesView(gitManager: GitManagerWrapper())
 }

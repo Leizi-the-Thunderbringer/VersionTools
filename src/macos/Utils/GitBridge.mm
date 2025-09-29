@@ -1,6 +1,7 @@
 #import "GitBridge.h"
 #include "core/GitManager.h"
 #include "core/GitUtils.h"
+#include "core/SystemCommand.h"
 #include <memory>
 
 using namespace VersionTools;
@@ -392,6 +393,25 @@ using namespace VersionTools;
 - (BOOL)dropStash:(int)index {
     auto result = gitManager->stashDrop(index);
     return result.isSuccess();
+}
+
+// Raw command execution
+- (NSString *)executeRawCommand:(NSString *)command {
+    if (!gitManager) {
+        return nil;
+    }
+
+    std::string cmd = [command UTF8String];
+    SystemCommand systemCmd;
+    auto result = systemCmd.execute(cmd, {}, gitManager->getRepositoryPath());
+
+    if (result.exitCode == 0) {
+        return [NSString stringWithUTF8String:result.output.c_str()];
+    }
+
+    // Return error as output if command failed
+    std::string errorOutput = result.error.empty() ? result.output : result.error;
+    return [NSString stringWithUTF8String:errorOutput.c_str()];
 }
 
 // Helper method to convert commits to NSArray

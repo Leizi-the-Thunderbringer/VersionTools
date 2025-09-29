@@ -9,6 +9,7 @@
 #include <fstream>
 #include <iomanip>
 #include <ctime>
+#include <set>
 
 #ifdef USE_LIBGIT2
 #include <git2.h>
@@ -22,17 +23,36 @@ public:
     std::string lastError;
     LogCallback logCallback;
     ProgressCallback progressCallback;
-    
+
     Impl(const std::string& repoPath) : repositoryPath(repoPath) {
 #ifdef USE_LIBGIT2
         git_libgit2_init();
 #endif
     }
-    
+
     ~Impl() {
 #ifdef USE_LIBGIT2
         git_libgit2_shutdown();
 #endif
+    }
+
+    GitOperationResult executeGitCommand(const std::string& command) {
+        GitOperationResult result;
+        std::string fullCommand = "git " + command;
+
+        SystemCommand cmd;
+        auto cmdResult = cmd.execute(fullCommand, {}, repositoryPath);
+
+        result.exitCode = cmdResult.exitCode;
+        result.output = cmdResult.output;
+        result.error = cmdResult.error;
+        result.result = cmdResult.exitCode == 0 ? GitCommandResult::Success : GitCommandResult::Failed;
+
+        if (!result.isSuccess()) {
+            lastError = result.error.empty() ? result.output : result.error;
+        }
+
+        return result;
     }
 };
 
@@ -889,4 +909,200 @@ std::vector<GitDiff> GitManager::getCommitDiffAll(const std::string& commitHash)
     return diffs;
 }
 
+// Remote operations
+std::vector<GitRemote> GitManager::getRemotes() const {
+    std::vector<GitRemote> remotes;
+
+    auto result = pImpl->executeGitCommand("remote -v");
+    if (result.isSuccess()) {
+        std::istringstream stream(result.output);
+        std::string line;
+        std::set<std::string> seenNames;
+
+        while (std::getline(stream, line)) {
+            if (!line.empty()) {
+                auto parts = GitUtils::split(line, "\t");
+                if (parts.size() >= 2) {
+                    std::string name = parts[0];
+
+                    // Only add each remote once (git remote -v shows fetch and push URLs)
+                    if (seenNames.find(name) == seenNames.end()) {
+                        GitRemote remote;
+                        remote.name = name;
+
+                        // Parse URL and type from the second part
+                        auto urlParts = GitUtils::split(parts[1], " ");
+                        if (!urlParts.empty()) {
+                            remote.url = urlParts[0];
+                            remote.pushUrl = urlParts[0]; // Default to same as fetch
+                        }
+
+                        remotes.push_back(remote);
+                        seenNames.insert(name);
+                    }
+                }
+            }
+        }
+
+        // Get push URLs if different from fetch URLs
+        for (auto& remote : remotes) {
+            auto pushResult = pImpl->executeGitCommand("remote get-url --push " + remote.name);
+            if (pushResult.isSuccess() && !pushResult.output.empty()) {
+                remote.pushUrl = GitUtils::trim(pushResult.output);
+            }
+        }
+    }
+
+    return remotes;
 }
+
+GitOperationResult GitManager::addRemote(const std::string& name, const std::string& url) {
+    if (name.empty() || url.empty()) {
+        GitOperationResult result;
+        result.result = GitCommandResult::Failed;
+        result.error = "Remote name and URL cannot be empty";
+        return result;
+    }
+
+    std::string command = "remote add " + name + " " + url;
+    return pImpl->executeGitCommand(command);
+}
+
+GitOperationResult GitManager::removeRemote(const std::string& name) {
+    if (name.empty()) {
+        GitOperationResult result;
+        result.result = GitCommandResult::Failed;
+        result.error = "Remote name cannot be empty";
+        return result;
+    }
+
+    std::string command = "remote remove " + name;
+    return pImpl->executeGitCommand(command);
+}
+
+GitOperationResult GitManager::renameRemote(const std::string& oldName, const std::string& newName) {
+    if (oldName.empty() || newName.empty()) {
+        GitOperationResult result;
+        result.result = GitCommandResult::Failed;
+        result.error = "Remote names cannot be empty";
+        return result;
+    }
+
+    std::string command = "remote rename " + oldName + " " + newName;
+    return pImpl->executeGitCommand(command);
+}
+
+// Tag operations
+std::vector<GitTag> GitManager::getTags() const {
+    std::vector<GitTag> tags;
+
+    // Get all tags with their details
+    auto result = pImpl->executeGitCommand(
+        "for-each-ref --format='%(refname:short)|%(objectname:short)|%(taggerdate:short)|%(subject)' refs/tags"
+    );
+
+    if (result.isSuccess()) {
+        std::istringstream stream(result.output);
+        std::string line;
+
+        while (std::getline(stream, line)) {
+            if (!line.empty()) {
+                auto parts = GitUtils::split(line, "|");
+                if (!parts.empty()) {
+                    GitTag tag;
+                    tag.name = parts[0];
+
+                    if (parts.size() > 1) {
+                        tag.commitHash = parts[1];
+                    }
+
+                    if (parts.size() > 2 && !parts[2].empty()) {
+                        tag.date = parts[2];
+                        tag.isAnnotated = true;
+                    } else {
+                        tag.isAnnotated = false;
+                    }
+
+                    if (parts.size() > 3) {
+                        tag.message = parts[3];
+                    }
+
+                    tags.push_back(tag);
+                }
+            }
+        }
+    }
+
+    return tags;
+}
+
+GitOperationResult GitManager::createTag(const std::string& name, const std::string& message,
+                                       const std::string& commitHash) {
+    if (name.empty()) {
+        GitOperationResult result;
+        result.result = GitCommandResult::Failed;
+        result.error = "Tag name cannot be empty";
+        return result;
+    }
+
+    std::string command = "tag";
+
+    if (!message.empty()) {
+        // Create annotated tag
+        command += " -a " + name + " -m \"" + message + "\"";
+    } else {
+        // Create lightweight tag
+        command += " " + name;
+    }
+
+    if (commitHash != "HEAD" && !commitHash.empty()) {
+        command += " " + commitHash;
+    }
+
+    return pImpl->executeGitCommand(command);
+}
+
+GitOperationResult GitManager::deleteTag(const std::string& name) {
+    if (name.empty()) {
+        GitOperationResult result;
+        result.result = GitCommandResult::Failed;
+        result.error = "Tag name cannot be empty";
+        return result;
+    }
+
+    std::string command = "tag -d " + name;
+    return pImpl->executeGitCommand(command);
+}
+
+GitOperationResult GitManager::pushTags(const std::string& remote) {
+    std::string command = "push " + remote + " --tags";
+    return pImpl->executeGitCommand(command);
+}
+
+}
+
+// 不会写啦，召唤夷陵老祖帮我写
+// 话说莫玄羽献舍算未定义行为吗
+// 其实我也不知道
+// 风邪盘·····罗盘刻纹和指纹都甚是诡异，盘身堪堪可置于掌心。（现修真界通用的风邪盘是魏无羡所做的第一版，确实精密不足。魏无羡原本正在着手改进，谁教没改完老巢就被人捣了，也就只好委屈下大家，继续用精密不足的第一版了）
+// 并非普通罗盘。不是用来指东南西北的，而是用来指凶邪妖煞的。
+// 这可能不是罗盘，是nullptr
+// 召阴旗
+/*黑旗，上有纹饰咒文。
+夷陵老祖出品，后被仙门百家效仿。
+不同品级的召阴旗有不同的画法和威力。画法有误使用稍有不慎便会酿出大祸。*/
+/*插在某个活人身上，将会把一定范围内的阴灵、冤魂、凶尸、邪祟都吸引过去，只攻击这名活人。由于被插旗者仿佛变成了活生生的靶子，所以又称“靶旗”。
+也可以插在房子上，但房子里必须有活人，那么攻击范围就会扩大至屋子里的所有人。
+因为插旗处附近一定阴气缭绕，仿佛黑风盘旋，也被叫做“黑风旗”。*/
+// 夷陵老祖的东西，果然不是普通人能懂的
+// 这是weak_ptr
+// 当然也小心变成nullptr
+// 以一人元神操控尸傀和恶灵。横笛一支吹彻长夜，纵鬼兵鬼将如千军万马，所向披靡，人挡杀人佛挡杀佛。笛声有如天人之音。这夷陵老祖的并发模型有点厉害
+// 不会竞态条件吗
+// 靠，这西门子S7-1200不停的死机
+// 要去买个新的了
+// 以及HwlloChen大佬的华硕天选4不要突然变成天选姬（不过加了AD域应该不会这样的，除非······夷陵老祖给我AD域控制器附体了）
+// 以及我的MacBook Pro M1不要半夜自己malloc出1000000个0的heap然后里面存了个夷陵老祖的元神
+// 还有，我的iPhone 14 Pro Max不要突然变成iPhone 14 Pro Max夷陵老祖版
+// 以及，我的iPad Pro 12.9不要突然变成iPad Pro 12.9夷陵老祖版
+// 以及我的ThinkPad X1 Carbon不要突然变成ThinkPad X1 Carbon夷陵老祖版

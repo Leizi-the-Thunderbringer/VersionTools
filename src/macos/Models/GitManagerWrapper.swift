@@ -310,7 +310,7 @@ class GitManagerWrapper: ObservableObject {
             }
         }
     }
-    
+
     func deleteBranch(_ branchName: String, completion: @escaping (Bool) -> Void) {
         DispatchQueue.global(qos: .userInitiated).async {
             let success = self.gitBridge.deleteBranch(branchName)
@@ -319,6 +319,17 @@ class GitManagerWrapper: ObservableObject {
                     self.refreshBranches()
                 }
                 completion(success)
+            }
+        }
+    }
+
+    // MARK: - Command Execution
+
+    func executeCommand(_ command: String) async throws -> String {
+        return await withCheckedContinuation { continuation in
+            DispatchQueue.global(qos: .userInitiated).async {
+                let result = self.gitBridge.executeRawCommand(command)
+                continuation.resume(returning: result ?? "")
             }
         }
     }
@@ -676,5 +687,83 @@ struct GitStashWrapper: Identifiable, Hashable {
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
+    }
+}
+
+// MARK: - Remote and Tag Support
+
+struct GitRemote {
+    let name: String
+    let fetchUrl: String
+    let pushUrl: String
+}
+
+struct GitTag: Identifiable {
+    let name: String
+    let targetHash: String
+    let message: String
+    let timestamp: Date
+    let isAnnotated: Bool
+
+    var id: String { name }
+}
+
+extension GitManagerWrapper {
+    // MARK: - Remote Operations
+
+    func getRemotes() -> [GitRemote] {
+        // TODO: Implement in GitBridge
+        return []
+    }
+
+    func addRemote(name: String, url: String) -> Bool {
+        // TODO: Implement in GitBridge
+        return false
+    }
+
+    func removeRemote(name: String) -> Bool {
+        // TODO: Implement in GitBridge
+        return false
+    }
+
+    func fetch(remoteName: String) -> Bool {
+        // TODO: Implement in GitBridge
+        return false
+    }
+
+    func pull(remoteName: String, branch: String) -> Bool {
+        // TODO: Implement in GitBridge
+        return false
+    }
+
+    func push(remoteName: String, branch: String, force: Bool) -> Bool {
+        // TODO: Implement in GitBridge
+        return false
+    }
+
+    // MARK: - Tag Operations
+
+    func getTags() -> [GitTag] {
+        // TODO: Implement in GitBridge
+        return []
+    }
+
+    func createTag(name: String, message: String, commitHash: String) -> Bool {
+        // TODO: Implement in GitBridge
+        return false
+    }
+
+    func deleteTag(name: String) -> Bool {
+        // TODO: Implement in GitBridge
+        return false
+    }
+
+    func pushTags(remoteName: String) -> Bool {
+        // TODO: Implement in GitBridge
+        return false
+    }
+
+    func checkoutBranch(name: String) -> Bool {
+        return gitBridge.checkoutBranch(name)
     }
 }

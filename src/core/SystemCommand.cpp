@@ -276,28 +276,24 @@ SystemCommandResult SystemCommand::executeUnix(const std::string& command,
         
         // Read from pipes
         ssize_t bytesRead;
-        while ((bytesRead = read(pipeOut[0], buffer, sizeof(buffer) - 1)) > 0) {
-            buffer[bytesRead] = '\0';
-            output += buffer;
+        while ((bytesRead = read(pipeOut[0], buffer, sizeof(buffer))) > 0) {
+            output.append(buffer, bytesRead);
         }
-        
-        while ((bytesRead = read(pipeErr[0], buffer, sizeof(buffer) - 1)) > 0) {
-            buffer[bytesRead] = '\0';
-            error += buffer;
+
+        while ((bytesRead = read(pipeErr[0], buffer, sizeof(buffer))) > 0) {
+            error.append(buffer, bytesRead);
         }
-        
+
         if (result == pid) {
             // Process has finished
             // Final read to get any remaining output
             ssize_t bytesRead;
-            while ((bytesRead = read(pipeOut[0], buffer, sizeof(buffer) - 1)) > 0) {
-                buffer[bytesRead] = '\0';
-                output += buffer;
+            while ((bytesRead = read(pipeOut[0], buffer, sizeof(buffer))) > 0) {
+                output.append(buffer, bytesRead);
             }
 
-            while ((bytesRead = read(pipeErr[0], buffer, sizeof(buffer) - 1)) > 0) {
-                buffer[bytesRead] = '\0';
-                error += buffer;
+            while ((bytesRead = read(pipeErr[0], buffer, sizeof(buffer))) > 0) {
+                error.append(buffer, bytesRead);
             }
 
             close(pipeOut[0]);

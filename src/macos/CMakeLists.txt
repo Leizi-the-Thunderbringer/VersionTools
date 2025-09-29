@@ -20,6 +20,8 @@ set(SWIFT_SOURCES
     Views/PlaceholderViews.swift
     Views/Dialogs.swift
     Views/StashView.swift
+    Views/RemotesView.swift
+    Views/TagsView.swift
     Models/GitManagerWrapper.swift
 )
 
@@ -60,6 +62,16 @@ if(NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/main.swift)
 endif()
 
 add_executable(VersionTools MACOSX_BUNDLE ${EXISTING_SOURCES})
+
+# 设置应用图标
+set(APP_ICON "${CMAKE_SOURCE_DIR}/icons/AppIcon.icns")
+if(EXISTS ${APP_ICON})
+    set_source_files_properties(${APP_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+    target_sources(VersionTools PRIVATE ${APP_ICON})
+    set_target_properties(VersionTools PROPERTIES
+        MACOSX_BUNDLE_ICON_FILE "AppIcon.icns"
+    )
+endif()
 
 # 链接框架
 target_link_libraries(VersionTools

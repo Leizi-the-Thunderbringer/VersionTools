@@ -114,6 +114,7 @@ struct GitTag {
     std::string name;
     std::string message;
     std::string commitHash;
+    std::string date;  // Date string for display
     bool isAnnotated;
     std::chrono::system_clock::time_point timestamp;
 };
