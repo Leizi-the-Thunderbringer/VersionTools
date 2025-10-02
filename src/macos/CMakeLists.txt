@@ -84,19 +84,19 @@ target_link_libraries(VersionTools
 
 # libgit2必须直接链接到macOS应用程序
 if(LIBGIT2_FOUND)
+    # 直接使用完整路径的库文件
     target_link_libraries(VersionTools ${LIBGIT2_LIBRARIES})
-    # 添加库搜索路径
-    get_filename_component(LIBGIT2_LIB_DIR ${LIBGIT2_LIBRARIES} DIRECTORY)
-    target_link_directories(VersionTools PRIVATE ${LIBGIT2_LIB_DIR})
+    message(STATUS "Linking libgit2: ${LIBGIT2_LIBRARIES}")
 else()
     # 如果没找到libgit2，尝试直接链接
     find_library(GIT2_LIBRARY git2 PATHS /usr/local/lib /opt/homebrew/lib)
     if(GIT2_LIBRARY)
         target_link_libraries(VersionTools ${GIT2_LIBRARY})
-        get_filename_component(GIT2_LIB_DIR ${GIT2_LIBRARY} DIRECTORY)
-        target_link_directories(VersionTools PRIVATE ${GIT2_LIB_DIR})
+        message(STATUS "Linking libgit2 (found): ${GIT2_LIBRARY}")
     else()
-        target_link_libraries(VersionTools git2)
+        # 最后的尝试：使用-lgit2并添加搜索路径
+        target_link_libraries(VersionTools "-L/opt/homebrew/lib" "-lgit2")
+        message(STATUS "Linking libgit2 with -lgit2")
     endif()
 endif()
 

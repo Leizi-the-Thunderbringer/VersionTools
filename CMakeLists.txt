@@ -77,6 +77,16 @@ if(APPLE)
     # 首先尝试用pkg-config
     if(PkgConfig_FOUND)
         pkg_check_modules(LIBGIT2 libgit2)
+        if(LIBGIT2_FOUND)
+            # pkg_check_modules可能只设置链接标志，强制查找实际库文件
+            find_library(LIBGIT2_ACTUAL_LIB NAMES git2 libgit2
+                PATHS ${LIBGIT2_LIBRARY_DIRS} /opt/homebrew/lib /usr/local/lib
+                NO_DEFAULT_PATH)
+            if(LIBGIT2_ACTUAL_LIB)
+                set(LIBGIT2_LIBRARIES ${LIBGIT2_ACTUAL_LIB})
+                message(STATUS "Found libgit2: ${LIBGIT2_VERSION} at ${LIBGIT2_ACTUAL_LIB}")
+            endif()
+        endif()
     endif()
 
     # 如果pkg-config没找到，手动查找
