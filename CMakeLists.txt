@@ -202,11 +202,12 @@ if(BUILD_TESTS)
 endif()
 
 # CPack配置
-include(CPack)
 set(CPACK_PACKAGE_NAME "VersionTools")
 set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Modern Version Control GUI Tool")
-set(CPACK_PACKAGE_VENDOR "VersionTools Project")
+set(CPACK_PACKAGE_VENDOR "Zixiao-Tech")
+set(CPACK_PACKAGE_CONTACT "Zixiao-Tech <support@zixiao.tech>")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Zixiao-Tech <support@zixiao.tech>")
 
 if(PLATFORM_LINUX)
     set(CPACK_GENERATOR "DEB;RPM;TGZ")
@@ -219,3 +220,5 @@ elseif(PLATFORM_WINDOWS)
 elseif(PLATFORM_MACOS)
     set(CPACK_GENERATOR "DragNDrop")
 endif()
+
+include(CPack)

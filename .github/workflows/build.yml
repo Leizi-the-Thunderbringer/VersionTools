@@ -28,7 +28,11 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -GXcode -DCMAKE_BUILD_TYPE=Release
+          # 设置libgit2路径
+          export PKG_CONFIG_PATH="$(brew --prefix libgit2)/lib/pkgconfig:$PKG_CONFIG_PATH"
+          cmake .. -GXcode -DCMAKE_BUILD_TYPE=Release \
+            -DLIBGIT2_INCLUDE_DIR=$(brew --prefix libgit2)/include \
+            -DLIBGIT2_LIBRARY=$(brew --prefix libgit2)/lib/libgit2.dylib
 
       - name: Build
         run: |
