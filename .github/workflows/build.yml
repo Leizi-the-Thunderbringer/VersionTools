@@ -28,12 +28,12 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake .. -GXcode -DCMAKE_BUILD_TYPE=Release
 
       - name: Build
         run: |
           cd build
-          make -j$(sysctl -n hw.ncpu)
+          cmake --build . --config Release -- -j$(sysctl -n hw.ncpu)
 
       - name: Upload macOS artifact
         uses: actions/upload-artifact@v4
@@ -111,7 +111,6 @@ jobs:
           host: 'windows'
           target: 'desktop'
           arch: 'win64_msvc2019_64'
-          modules: 'qtbase qttools'
 
       - name: Configure CMake
         run: |

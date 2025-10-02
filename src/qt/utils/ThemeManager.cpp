@@ -2,6 +2,7 @@
 #include <QApplication>
 #include <QStyleFactory>
 #include <QPalette>
+#include <QStyle>
 
 void ThemeManager::applyModernTheme(QApplication *app)
 {

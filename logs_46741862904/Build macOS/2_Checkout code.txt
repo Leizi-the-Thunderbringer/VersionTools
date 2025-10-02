@@ -1,0 +1,70 @@
+﻿2025-10-02T06:52:38.3400260Z ##[group]Run actions/checkout@v4
+2025-10-02T06:52:38.3400930Z with:
+2025-10-02T06:52:38.3401300Z   repository: Zixiao-Tech/VersionTools
+2025-10-02T06:52:38.3402010Z   token: ***
+2025-10-02T06:52:38.3402330Z   ssh-strict: true
+2025-10-02T06:52:38.3402670Z   ssh-user: git
+2025-10-02T06:52:38.3403000Z   persist-credentials: true
+2025-10-02T06:52:38.3403390Z   clean: true
+2025-10-02T06:52:38.3403740Z   sparse-checkout-cone-mode: true
+2025-10-02T06:52:38.3404150Z   fetch-depth: 1
+2025-10-02T06:52:38.3404520Z   fetch-tags: false
+2025-10-02T06:52:38.3404860Z   show-progress: true
+2025-10-02T06:52:38.3405200Z   lfs: false
+2025-10-02T06:52:38.3405540Z   submodules: false
+2025-10-02T06:52:38.3405900Z   set-safe-directory: true
+2025-10-02T06:52:38.3406420Z ##[endgroup]
+2025-10-02T06:52:38.8630760Z Syncing repository: Zixiao-Tech/VersionTools
+2025-10-02T06:52:38.8632720Z ##[group]Getting Git version info
+2025-10-02T06:52:38.8633330Z Working directory is '/Users/runner/work/VersionTools/VersionTools'
+2025-10-02T06:52:38.8634490Z [command]/opt/homebrew/bin/git version
+2025-10-02T06:52:38.9269140Z git version 2.50.1
+2025-10-02T06:52:38.9301660Z ##[endgroup]
+2025-10-02T06:52:38.9331680Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/735d4859-9a88-4024-8e96-64e70e8201eb/.gitconfig'
+2025-10-02T06:52:38.9340060Z Temporarily overriding HOME='/Users/runner/work/_temp/735d4859-9a88-4024-8e96-64e70e8201eb' before making global git config changes
+2025-10-02T06:52:38.9341360Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-02T06:52:38.9344370Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/VersionTools/VersionTools
+2025-10-02T06:52:38.9493040Z Deleting the contents of '/Users/runner/work/VersionTools/VersionTools'
+2025-10-02T06:52:38.9495970Z ##[group]Initializing the repository
+2025-10-02T06:52:38.9499890Z [command]/opt/homebrew/bin/git init /Users/runner/work/VersionTools/VersionTools
+2025-10-02T06:52:38.9775620Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-02T06:52:38.9777820Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-02T06:52:38.9778850Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-02T06:52:38.9779550Z hint:
+2025-10-02T06:52:38.9780360Z hint: 	git config --global init.defaultBranch <name>
+2025-10-02T06:52:38.9781130Z hint:
+2025-10-02T06:52:38.9781660Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-02T06:52:38.9783780Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-02T06:52:38.9784460Z hint:
+2025-10-02T06:52:38.9784910Z hint: 	git branch -m <name>
+2025-10-02T06:52:38.9785320Z hint:
+2025-10-02T06:52:38.9786040Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-02T06:52:38.9787130Z Initialized empty Git repository in /Users/runner/work/VersionTools/VersionTools/.git/
+2025-10-02T06:52:38.9789440Z [command]/opt/homebrew/bin/git remote add origin https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:52:38.9892590Z ##[endgroup]
+2025-10-02T06:52:38.9893300Z ##[group]Disabling automatic garbage collection
+2025-10-02T06:52:38.9894390Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2025-10-02T06:52:39.0017980Z ##[endgroup]
+2025-10-02T06:52:39.0018690Z ##[group]Setting up auth
+2025-10-02T06:52:39.0020730Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-02T06:52:39.0105990Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-02T06:52:39.1228440Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-02T06:52:39.1322500Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-02T06:52:39.2093000Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-02T06:52:39.2158990Z ##[endgroup]
+2025-10-02T06:52:39.2160380Z ##[group]Fetching the repository
+2025-10-02T06:52:39.2164980Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3138547846f7fd27ed918cc5f57c1cb3dbe6b509:refs/remotes/origin/main
+2025-10-02T06:52:40.6246240Z From https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:52:40.6249160Z  * [new ref]         3138547846f7fd27ed918cc5f57c1cb3dbe6b509 -> origin/main
+2025-10-02T06:52:40.6332950Z ##[endgroup]
+2025-10-02T06:52:40.6334850Z ##[group]Determining the checkout info
+2025-10-02T06:52:40.6336850Z ##[endgroup]
+2025-10-02T06:52:40.6338200Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2025-10-02T06:52:40.6424930Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-02T06:52:40.6502110Z ##[group]Checking out the ref
+2025-10-02T06:52:40.6504660Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-10-02T06:52:40.7338980Z Switched to a new branch 'main'
+2025-10-02T06:52:40.7439120Z branch 'main' set up to track 'origin/main'.
+2025-10-02T06:52:40.7644790Z ##[endgroup]
+2025-10-02T06:52:40.7671680Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2025-10-02T06:52:40.7686770Z 3138547846f7fd27ed918cc5f57c1cb3dbe6b509

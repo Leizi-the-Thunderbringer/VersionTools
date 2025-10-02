@@ -1,0 +1,303 @@
+﻿2025-10-02T06:52:37.9336832Z Current runner version: '2.328.0'
+2025-10-02T06:52:37.9359403Z ##[group]Runner Image Provisioner
+2025-10-02T06:52:37.9360137Z Hosted Compute Agent
+2025-10-02T06:52:37.9360623Z Version: 20250912.392
+2025-10-02T06:52:37.9361204Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-02T06:52:37.9361825Z Build Date: 2025-09-12T15:23:14Z
+2025-10-02T06:52:37.9362324Z ##[endgroup]
+2025-10-02T06:52:37.9362819Z ##[group]Operating System
+2025-10-02T06:52:37.9363347Z Microsoft Windows Server 2025
+2025-10-02T06:52:37.9363853Z 10.0.26100
+2025-10-02T06:52:37.9364249Z Datacenter
+2025-10-02T06:52:37.9364671Z ##[endgroup]
+2025-10-02T06:52:37.9365070Z ##[group]Runner Image
+2025-10-02T06:52:37.9365634Z Image: windows-2025
+2025-10-02T06:52:37.9366423Z Version: 20250921.36.1
+2025-10-02T06:52:37.9367729Z Included Software: https://github.com/actions/runner-images/blob/win25/20250921.36/images/windows/Windows2025-Readme.md
+2025-10-02T06:52:37.9369388Z Image Release: https://github.com/actions/runner-images/releases/tag/win25%2F20250921.36
+2025-10-02T06:52:37.9370324Z ##[endgroup]
+2025-10-02T06:52:37.9372988Z ##[group]GITHUB_TOKEN Permissions
+2025-10-02T06:52:37.9374817Z Actions: write
+2025-10-02T06:52:37.9375328Z Attestations: write
+2025-10-02T06:52:37.9375777Z Checks: write
+2025-10-02T06:52:37.9376206Z Contents: write
+2025-10-02T06:52:37.9376618Z Deployments: write
+2025-10-02T06:52:37.9377092Z Discussions: write
+2025-10-02T06:52:37.9377904Z Issues: write
+2025-10-02T06:52:37.9378432Z Metadata: read
+2025-10-02T06:52:37.9378861Z Models: read
+2025-10-02T06:52:37.9379282Z Packages: write
+2025-10-02T06:52:37.9379794Z Pages: write
+2025-10-02T06:52:37.9380339Z PullRequests: write
+2025-10-02T06:52:37.9380805Z RepositoryProjects: write
+2025-10-02T06:52:37.9381268Z SecurityEvents: write
+2025-10-02T06:52:37.9381910Z Statuses: write
+2025-10-02T06:52:37.9382311Z ##[endgroup]
+2025-10-02T06:52:37.9384332Z Secret source: Actions
+2025-10-02T06:52:37.9384951Z Prepare workflow directory
+2025-10-02T06:52:37.9718217Z Prepare all required actions
+2025-10-02T06:52:37.9762715Z Getting action download info
+2025-10-02T06:52:38.4329639Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-10-02T06:52:38.5646686Z Download action repository 'microsoft/setup-msbuild@v2' (SHA:6fb02220983dee41ce7ae257b6f4d8f9bf5ed4ce)
+2025-10-02T06:52:39.0340819Z Download action repository 'jurplel/install-qt-action@v4' (SHA:d325aaf2a8baeeda41ad0b5d39f84a6af9bcf005)
+2025-10-02T06:52:45.6989617Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-10-02T06:52:46.0247864Z Getting action download info
+2025-10-02T06:52:46.2229438Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2025-10-02T06:52:46.3874269Z Complete job name: Build Windows
+2025-10-02T06:52:46.6172604Z ##[group]Run actions/checkout@v4
+2025-10-02T06:52:46.6173392Z with:
+2025-10-02T06:52:46.6173738Z   repository: Zixiao-Tech/VersionTools
+2025-10-02T06:52:46.6174409Z   token: ***
+2025-10-02T06:52:46.6174639Z   ssh-strict: true
+2025-10-02T06:52:46.6174856Z   ssh-user: git
+2025-10-02T06:52:46.6175073Z   persist-credentials: true
+2025-10-02T06:52:46.6175328Z   clean: true
+2025-10-02T06:52:46.6175570Z   sparse-checkout-cone-mode: true
+2025-10-02T06:52:46.6175833Z   fetch-depth: 1
+2025-10-02T06:52:46.6176047Z   fetch-tags: false
+2025-10-02T06:52:46.6176265Z   show-progress: true
+2025-10-02T06:52:46.6176491Z   lfs: false
+2025-10-02T06:52:46.6176686Z   submodules: false
+2025-10-02T06:52:46.6176904Z   set-safe-directory: true
+2025-10-02T06:52:46.6177505Z ##[endgroup]
+2025-10-02T06:52:46.8078959Z Syncing repository: Zixiao-Tech/VersionTools
+2025-10-02T06:52:46.8081062Z ##[group]Getting Git version info
+2025-10-02T06:52:46.8081734Z Working directory is 'D:\a\VersionTools\VersionTools'
+2025-10-02T06:52:46.9581634Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-10-02T06:52:48.3232271Z git version 2.51.0.windows.1
+2025-10-02T06:52:48.3288228Z ##[endgroup]
+2025-10-02T06:52:48.3312979Z Temporarily overriding HOME='D:\a\_temp\078b2e83-17f2-4e71-95d3-45733ce06d97' before making global git config changes
+2025-10-02T06:52:48.3313869Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-02T06:52:48.3325650Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VersionTools\VersionTools
+2025-10-02T06:52:48.5143389Z Deleting the contents of 'D:\a\VersionTools\VersionTools'
+2025-10-02T06:52:48.5149756Z ##[group]Initializing the repository
+2025-10-02T06:52:48.5164661Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\VersionTools\VersionTools
+2025-10-02T06:52:48.7723731Z Initialized empty Git repository in D:/a/VersionTools/VersionTools/.git/
+2025-10-02T06:52:48.7770481Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:52:48.9020075Z ##[endgroup]
+2025-10-02T06:52:48.9020730Z ##[group]Disabling automatic garbage collection
+2025-10-02T06:52:48.9031455Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-10-02T06:52:48.9308063Z ##[endgroup]
+2025-10-02T06:52:48.9308414Z ##[group]Setting up auth
+2025-10-02T06:52:48.9328699Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-10-02T06:52:48.9624296Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-10-02T06:52:51.9205151Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-02T06:52:51.9495495Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-10-02T06:52:52.4379285Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-10-02T06:52:52.4668825Z ##[endgroup]
+2025-10-02T06:52:52.4670373Z ##[group]Fetching the repository
+2025-10-02T06:52:52.4683179Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3138547846f7fd27ed918cc5f57c1cb3dbe6b509:refs/remotes/origin/main
+2025-10-02T06:52:54.6762232Z From https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:52:54.6762893Z  * [new ref]         3138547846f7fd27ed918cc5f57c1cb3dbe6b509 -> origin/main
+2025-10-02T06:52:54.7254512Z ##[endgroup]
+2025-10-02T06:52:54.7255069Z ##[group]Determining the checkout info
+2025-10-02T06:52:54.7258463Z ##[endgroup]
+2025-10-02T06:52:54.7276872Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-10-02T06:52:54.7929332Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-10-02T06:52:54.8221091Z ##[group]Checking out the ref
+2025-10-02T06:52:54.8236421Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2025-10-02T06:52:55.0327431Z branch 'main' set up to track 'origin/main'.
+2025-10-02T06:52:55.0336189Z Switched to a new branch 'main'
+2025-10-02T06:52:55.0410411Z ##[endgroup]
+2025-10-02T06:52:55.0989429Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-10-02T06:52:55.1280770Z 3138547846f7fd27ed918cc5f57c1cb3dbe6b509
+2025-10-02T06:52:55.1622735Z ##[group]Run microsoft/setup-msbuild@v2
+2025-10-02T06:52:55.1623055Z with:
+2025-10-02T06:52:55.1623246Z   msbuild-architecture: x86
+2025-10-02T06:52:55.1623457Z ##[endgroup]
+2025-10-02T06:52:55.3129084Z [command]C:\ProgramData\Chocolatey\bin\vswhere.exe -products * -requires Microsoft.Component.MSBuild -property installationPath -latest
+2025-10-02T06:52:56.4435467Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise
+2025-10-02T06:52:56.5037759Z ##[group]Run jurplel/install-qt-action@v4
+2025-10-02T06:52:56.5038480Z with:
+2025-10-02T06:52:56.5038728Z   version: 6.7.0
+2025-10-02T06:52:56.5038987Z   host: windows
+2025-10-02T06:52:56.5039251Z   target: desktop
+2025-10-02T06:52:56.5039530Z   arch: win64_msvc2019_64
+2025-10-02T06:52:56.5039869Z   modules: qtbase qttools
+2025-10-02T06:52:56.5040166Z   install-deps: true
+2025-10-02T06:52:56.5040448Z   cache: false
+2025-10-02T06:52:56.5040740Z   cache-key-prefix: install-qt-action
+2025-10-02T06:52:56.5041129Z   setup-python: true
+2025-10-02T06:52:56.5041436Z   add-tools-to-path: true
+2025-10-02T06:52:56.5041742Z   set-env: true
+2025-10-02T06:52:56.5042024Z   no-qt-binaries: false
+2025-10-02T06:52:56.5042361Z   tools-only: false
+2025-10-02T06:52:56.5042634Z   aqtversion: ==3.3.*
+2025-10-02T06:52:56.5042943Z   py7zrversion: ==1.0.*
+2025-10-02T06:52:56.5043235Z   source: false
+2025-10-02T06:52:56.5043495Z   documentation: false
+2025-10-02T06:52:56.5043874Z   examples: false
+2025-10-02T06:52:56.5044150Z   use-official: false
+2025-10-02T06:52:56.5044463Z ##[endgroup]
+2025-10-02T06:52:56.5278688Z ##[group]Run actions/setup-python@v5
+2025-10-02T06:52:56.5279052Z with:
+2025-10-02T06:52:56.5279299Z   python-version: >=3.9.0 <=3.13.3
+2025-10-02T06:52:56.5279652Z   check-latest: false
+2025-10-02T06:52:56.5280088Z   token: ***
+2025-10-02T06:52:56.5280347Z   update-environment: true
+2025-10-02T06:52:56.5280686Z   allow-prereleases: false
+2025-10-02T06:52:56.5281008Z   freethreaded: false
+2025-10-02T06:52:56.5281292Z ##[endgroup]
+2025-10-02T06:52:56.7704267Z ##[group]Installed versions
+2025-10-02T06:52:56.7853432Z Successfully set up CPython (3.12.10)
+2025-10-02T06:52:56.7854880Z ##[endgroup]
+2025-10-02T06:52:56.8131203Z ##[group]Run jurplel/install-qt-action/action@v4
+2025-10-02T06:52:56.8131468Z with:
+2025-10-02T06:52:56.8131611Z   version: 6.7.0
+2025-10-02T06:52:56.8131769Z   host: windows
+2025-10-02T06:52:56.8131917Z   target: desktop
+2025-10-02T06:52:56.8132116Z   arch: win64_msvc2019_64
+2025-10-02T06:52:56.8132305Z   install-deps: true
+2025-10-02T06:52:56.8132476Z   modules: qtbase qttools
+2025-10-02T06:52:56.8132652Z   cache: false
+2025-10-02T06:52:56.8132827Z   cache-key-prefix: install-qt-action
+2025-10-02T06:52:56.8133068Z   add-tools-to-path: true
+2025-10-02T06:52:56.8133244Z   set-env: true
+2025-10-02T06:52:56.8133404Z   no-qt-binaries: false
+2025-10-02T06:52:56.8133574Z   tools-only: false
+2025-10-02T06:52:56.8133737Z   aqtversion: ==3.3.*
+2025-10-02T06:52:56.8133908Z   py7zrversion: ==1.0.*
+2025-10-02T06:52:56.8134090Z   source: false
+2025-10-02T06:52:56.8134255Z   documentation: false
+2025-10-02T06:52:56.8134425Z   examples: false
+2025-10-02T06:52:56.8134592Z   use-official: false
+2025-10-02T06:52:56.8134749Z env:
+2025-10-02T06:52:56.8134988Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:52:56.8135422Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2025-10-02T06:52:56.8135856Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:52:56.8136220Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:52:56.8136597Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:52:56.8136882Z ##[endgroup]
+2025-10-02T06:52:57.3034473Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:52:57.3086487Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m pip install setuptools>=70.1.0 py7zr==1.0.*
+2025-10-02T06:53:07.4497850Z Collecting setuptools>=70.1.0
+2025-10-02T06:53:07.4779302Z   Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+2025-10-02T06:53:07.6380450Z Collecting py7zr==1.0.*
+2025-10-02T06:53:07.6466665Z   Downloading py7zr-1.0.0-py3-none-any.whl.metadata (17 kB)
+2025-10-02T06:53:07.7720592Z Collecting texttable (from py7zr==1.0.*)
+2025-10-02T06:53:07.7754360Z   Downloading texttable-1.7.0-py2.py3-none-any.whl.metadata (9.8 kB)
+2025-10-02T06:53:07.9325455Z Collecting pycryptodomex>=3.20.0 (from py7zr==1.0.*)
+2025-10-02T06:53:07.9375170Z   Downloading pycryptodomex-3.23.0-cp37-abi3-win_amd64.whl.metadata (3.5 kB)
+2025-10-02T06:53:08.0635322Z Collecting brotli>=1.1.0 (from py7zr==1.0.*)
+2025-10-02T06:53:08.0682050Z   Downloading Brotli-1.1.0-cp312-cp312-win_amd64.whl.metadata (5.6 kB)
+2025-10-02T06:53:08.2513229Z Collecting psutil (from py7zr==1.0.*)
+2025-10-02T06:53:08.2558076Z   Downloading psutil-7.1.0-cp37-abi3-win_amd64.whl.metadata (23 kB)
+2025-10-02T06:53:08.4830530Z Collecting pyzstd>=0.16.1 (from py7zr==1.0.*)
+2025-10-02T06:53:08.4877939Z   Downloading pyzstd-0.17.0-cp312-cp312-win_amd64.whl.metadata (2.6 kB)
+2025-10-02T06:53:08.6429801Z Collecting pyppmd<1.3.0,>=1.1.0 (from py7zr==1.0.*)
+2025-10-02T06:53:08.6499847Z   Downloading pyppmd-1.2.0-cp312-cp312-win_amd64.whl.metadata (5.6 kB)
+2025-10-02T06:53:08.8136514Z Collecting pybcj<1.1.0,>=1.0.0 (from py7zr==1.0.*)
+2025-10-02T06:53:08.8193507Z   Downloading pybcj-1.0.6-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+2025-10-02T06:53:08.8944271Z Collecting multivolumefile>=0.2.3 (from py7zr==1.0.*)
+2025-10-02T06:53:08.8993485Z   Downloading multivolumefile-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+2025-10-02T06:53:09.0099706Z Collecting inflate64<1.1.0,>=1.0.0 (from py7zr==1.0.*)
+2025-10-02T06:53:09.0144647Z   Downloading inflate64-1.0.3-cp312-cp312-win_amd64.whl.metadata (4.5 kB)
+2025-10-02T06:53:09.1184935Z Collecting typing-extensions>=4.13.2 (from pyzstd>=0.16.1->py7zr==1.0.*)
+2025-10-02T06:53:09.1218328Z   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+2025-10-02T06:53:09.1471691Z Downloading py7zr-1.0.0-py3-none-any.whl (69 kB)
+2025-10-02T06:53:09.1868382Z Downloading inflate64-1.0.3-cp312-cp312-win_amd64.whl (35 kB)
+2025-10-02T06:53:09.2333693Z Downloading pybcj-1.0.6-cp312-cp312-win_amd64.whl (24 kB)
+2025-10-02T06:53:09.2824336Z Downloading pyppmd-1.2.0-cp312-cp312-win_amd64.whl (46 kB)
+2025-10-02T06:53:09.3395095Z Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2025-10-02T06:53:09.4237618Z    ---------------------------------------- 1.2/1.2 MB 12.0 MB/s  0:00:00
+2025-10-02T06:53:09.4287288Z Downloading Brotli-1.1.0-cp312-cp312-win_amd64.whl (357 kB)
+2025-10-02T06:53:09.5312292Z Downloading multivolumefile-0.2.3-py3-none-any.whl (17 kB)
+2025-10-02T06:53:09.5960085Z Downloading pycryptodomex-3.23.0-cp37-abi3-win_amd64.whl (1.8 MB)
+2025-10-02T06:53:09.6654155Z    ---------------------------------------- 1.8/1.8 MB 24.9 MB/s  0:00:00
+2025-10-02T06:53:09.6705472Z Downloading pyzstd-0.17.0-cp312-cp312-win_amd64.whl (246 kB)
+2025-10-02T06:53:09.7363792Z Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2025-10-02T06:53:09.7721023Z Downloading psutil-7.1.0-cp37-abi3-win_amd64.whl (247 kB)
+2025-10-02T06:53:09.8312308Z Downloading texttable-1.7.0-py2.py3-none-any.whl (10 kB)
+2025-10-02T06:53:09.9869392Z Installing collected packages: texttable, brotli, typing-extensions, setuptools, pyppmd, pycryptodomex, pybcj, psutil, multivolumefile, inflate64, pyzstd, py7zr
+2025-10-02T06:53:14.1736000Z 
+2025-10-02T06:53:14.1756362Z Successfully installed brotli-1.1.0 inflate64-1.0.3 multivolumefile-0.2.3 psutil-7.1.0 py7zr-1.0.0 pybcj-1.0.6 pycryptodomex-3.23.0 pyppmd-1.2.0 pyzstd-0.17.0 setuptools-80.9.0 texttable-1.7.0 typing-extensions-4.15.0
+2025-10-02T06:53:14.5025336Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:53:14.5034500Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m pip install aqtinstall==3.3.*
+2025-10-02T06:53:16.0202759Z Collecting aqtinstall==3.3.*
+2025-10-02T06:53:16.0452204Z   Downloading aqtinstall-3.3.0-py3-none-any.whl.metadata (11 kB)
+2025-10-02T06:53:16.1338468Z Collecting bs4 (from aqtinstall==3.3.*)
+2025-10-02T06:53:16.1370667Z   Downloading bs4-0.0.2-py2.py3-none-any.whl.metadata (411 bytes)
+2025-10-02T06:53:16.2086781Z Collecting defusedxml (from aqtinstall==3.3.*)
+2025-10-02T06:53:16.2117564Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+2025-10-02T06:53:16.3102556Z Collecting humanize (from aqtinstall==3.3.*)
+2025-10-02T06:53:16.3133511Z   Downloading humanize-4.13.0-py3-none-any.whl.metadata (7.8 kB)
+2025-10-02T06:53:16.3733221Z Collecting patch-ng (from aqtinstall==3.3.*)
+2025-10-02T06:53:16.3765328Z   Downloading patch-ng-1.18.1.tar.gz (17 kB)
+2025-10-02T06:53:16.4457398Z   Installing build dependencies: started
+2025-10-02T06:53:19.2054469Z   Installing build dependencies: finished with status 'done'
+2025-10-02T06:53:19.2071077Z   Getting requirements to build wheel: started
+2025-10-02T06:53:19.7800785Z   Getting requirements to build wheel: finished with status 'done'
+2025-10-02T06:53:19.7830815Z   Preparing metadata (pyproject.toml): started
+2025-10-02T06:53:20.0814423Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-10-02T06:53:20.0845341Z Requirement already satisfied: py7zr>=0.22.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from aqtinstall==3.3.*) (1.0.0)
+2025-10-02T06:53:20.1486311Z Collecting requests>=2.31.0 (from aqtinstall==3.3.*)
+2025-10-02T06:53:20.1516705Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+2025-10-02T06:53:20.3048341Z Collecting semantic-version (from aqtinstall==3.3.*)
+2025-10-02T06:53:20.3080012Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+2025-10-02T06:53:20.3293023Z Requirement already satisfied: texttable in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from aqtinstall==3.3.*) (1.7.0)
+2025-10-02T06:53:20.3312486Z Requirement already satisfied: pycryptodomex>=3.20.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (3.23.0)
+2025-10-02T06:53:20.3320111Z Requirement already satisfied: brotli>=1.1.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.1.0)
+2025-10-02T06:53:20.3329797Z Requirement already satisfied: psutil in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (7.1.0)
+2025-10-02T06:53:20.3335900Z Requirement already satisfied: pyzstd>=0.16.1 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (0.17.0)
+2025-10-02T06:53:20.3342183Z Requirement already satisfied: pyppmd<1.3.0,>=1.1.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.2.0)
+2025-10-02T06:53:20.3348305Z Requirement already satisfied: pybcj<1.1.0,>=1.0.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.0.6)
+2025-10-02T06:53:20.3354032Z Requirement already satisfied: multivolumefile>=0.2.3 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (0.2.3)
+2025-10-02T06:53:20.3360382Z Requirement already satisfied: inflate64<1.1.0,>=1.0.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.0.3)
+2025-10-02T06:53:20.3464159Z Requirement already satisfied: typing-extensions>=4.13.2 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from pyzstd>=0.16.1->py7zr>=0.22.0->aqtinstall==3.3.*) (4.15.0)
+2025-10-02T06:53:20.4758299Z Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:53:20.4793840Z   Downloading charset_normalizer-3.4.3-cp312-cp312-win_amd64.whl.metadata (37 kB)
+2025-10-02T06:53:20.5801674Z Collecting idna<4,>=2.5 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:53:20.5831936Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-10-02T06:53:20.6890425Z Collecting urllib3<3,>=1.21.1 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:53:20.6920272Z   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+2025-10-02T06:53:20.7855962Z Collecting certifi>=2017.4.17 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:53:20.7886224Z   Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+2025-10-02T06:53:20.8828634Z Collecting beautifulsoup4 (from bs4->aqtinstall==3.3.*)
+2025-10-02T06:53:20.8860379Z   Downloading beautifulsoup4-4.14.2-py3-none-any.whl.metadata (3.8 kB)
+2025-10-02T06:53:20.9674976Z Collecting soupsieve>1.2 (from beautifulsoup4->bs4->aqtinstall==3.3.*)
+2025-10-02T06:53:20.9704154Z   Downloading soupsieve-2.8-py3-none-any.whl.metadata (4.6 kB)
+2025-10-02T06:53:21.0462827Z Downloading aqtinstall-3.3.0-py3-none-any.whl (71 kB)
+2025-10-02T06:53:21.0798022Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-10-02T06:53:21.1328040Z Downloading charset_normalizer-3.4.3-cp312-cp312-win_amd64.whl (107 kB)
+2025-10-02T06:53:21.1838233Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-10-02T06:53:21.2330413Z Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+2025-10-02T06:53:21.2927700Z Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+2025-10-02T06:53:21.3466575Z Downloading bs4-0.0.2-py2.py3-none-any.whl (1.2 kB)
+2025-10-02T06:53:21.3780284Z Downloading beautifulsoup4-4.14.2-py3-none-any.whl (106 kB)
+2025-10-02T06:53:21.4441213Z Downloading soupsieve-2.8-py3-none-any.whl (36 kB)
+2025-10-02T06:53:21.4959215Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+2025-10-02T06:53:21.5272180Z Downloading humanize-4.13.0-py3-none-any.whl (128 kB)
+2025-10-02T06:53:21.5601759Z Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2025-10-02T06:53:21.6680189Z Building wheels for collected packages: patch-ng
+2025-10-02T06:53:21.6708261Z   Building wheel for patch-ng (pyproject.toml): started
+2025-10-02T06:53:21.9989094Z   Building wheel for patch-ng (pyproject.toml): finished with status 'done'
+2025-10-02T06:53:22.0009049Z   Created wheel for patch-ng: filename=patch_ng-1.18.1-py3-none-any.whl size=17028 sha256=4483930452be92b65d7c6108d4897303d9d055b45c3a932db8cc40bd3da1b2dc
+2025-10-02T06:53:22.0010663Z   Stored in directory: c:\users\runneradmin\appdata\local\pip\cache\wheels\4b\c7\08\eacf6adfcdfc005d1d86534183df45e060e1c7454de0db26e2
+2025-10-02T06:53:22.0039441Z Successfully built patch-ng
+2025-10-02T06:53:22.0421039Z Installing collected packages: urllib3, soupsieve, semantic-version, patch-ng, idna, humanize, defusedxml, charset_normalizer, certifi, requests, beautifulsoup4, bs4, aqtinstall
+2025-10-02T06:53:23.6480796Z 
+2025-10-02T06:53:23.6510943Z Successfully installed aqtinstall-3.3.0 beautifulsoup4-4.14.2 bs4-0.0.2 certifi-2025.8.3 charset_normalizer-3.4.3 defusedxml-0.7.1 humanize-4.13.0 idna-3.10 patch-ng-1.18.1 requests-2.32.5 semantic-version-2.10.0 soupsieve-2.8 urllib3-2.5.0
+2025-10-02T06:53:23.9555374Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:53:23.9565217Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m aqt version
+2025-10-02T06:53:24.9128140Z INFO    : aqtinstall(aqt) v3.3.0 on Python 3.12.10 [CPython MSC v.1943 64 bit (AMD64)]
+2025-10-02T06:53:25.0232053Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:53:25.0243073Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m aqt install-qt windows desktop 6.7.0 win64_msvc2019_64 --autodesktop --outputdir D:\a\VersionTools\Qt --modules qtbase qttools
+2025-10-02T06:53:25.3320379Z INFO    : aqtinstall(aqt) v3.3.0 on Python 3.12.10 [CPython MSC v.1943 64 bit (AMD64)]
+2025-10-02T06:53:27.5457374Z ERROR   : The packages ['qtbase', 'qttools'] were not found while parsing XML of package information!
+2025-10-02T06:53:27.5457892Z ==============================Suggested follow-up:==============================
+2025-10-02T06:53:27.5458355Z * Please use 'aqt list-qt windows desktop --modules 6.7.0 <arch>' to show modules available.
+2025-10-02T06:53:27.5787377Z ##[error]Error: The process 'C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe' failed with exit code 1
+2025-10-02T06:53:27.6067447Z Post job cleanup.
+2025-10-02T06:53:27.6232584Z Post job cleanup.
+2025-10-02T06:53:27.8575593Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-10-02T06:53:27.8836196Z git version 2.51.0.windows.1
+2025-10-02T06:53:27.8908580Z Temporarily overriding HOME='D:\a\_temp\d3c2b7e2-1f66-4276-8af1-c699201a0de3' before making global git config changes
+2025-10-02T06:53:27.8909299Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-02T06:53:27.8919885Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VersionTools\VersionTools
+2025-10-02T06:53:27.9229997Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-10-02T06:53:27.9518770Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-10-02T06:53:28.4797181Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-02T06:53:28.5054495Z http.https://github.com/.extraheader
+2025-10-02T06:53:28.5096979Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-10-02T06:53:28.5384423Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-10-02T06:53:29.0450972Z Cleaning up orphan processes

@@ -1,5 +1,5 @@
 #include "GitWorker.h"
-#include "../core/GitManager.h"
+#include "core/GitManager.h"
 #include <QDebug>
 
 using namespace VersionTools;

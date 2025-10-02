@@ -1,0 +1,119 @@
+﻿2025-10-02T06:54:01.5857459Z ##[group]Run cd build
+2025-10-02T06:54:01.5857715Z [36;1mcd build[0m
+2025-10-02T06:54:01.5857883Z [36;1mninja[0m
+2025-10-02T06:54:01.5890499Z shell: /usr/bin/bash -e {0}
+2025-10-02T06:54:01.5890729Z ##[endgroup]
+2025-10-02T06:54:01.6345032Z [1/16] Automatic MOC and UIC for target GitCore
+2025-10-02T06:54:01.6457209Z [2/16] Building CXX object src/core/CMakeFiles/GitCore.dir/GitCore_autogen/mocs_compilation.cpp.o
+2025-10-02T06:54:04.8708726Z [3/16] Building CXX object src/core/CMakeFiles/GitCore.dir/SystemCommand.cpp.o
+2025-10-02T06:54:07.5911945Z [4/16] Building CXX object src/core/CMakeFiles/GitCore.dir/GitUtils.cpp.o
+2025-10-02T06:54:09.4079165Z [5/16] Building CXX object src/core/CMakeFiles/GitCore.dir/GitManager.cpp.o
+2025-10-02T06:54:21.7920900Z [6/16] Linking CXX static library lib/libGitCore.a
+2025-10-02T06:54:22.7790837Z [7/16] Automatic MOC and UIC for target VersionTools
+2025-10-02T06:54:22.7791394Z AutoMoc warning
+2025-10-02T06:54:22.7791673Z ---------------
+2025-10-02T06:54:22.7792038Z "SRC:/src/qt/VersionToolsMainWindow.cpp"
+2025-10-02T06:54:22.7793154Z includes the moc file "VersionToolsMainWindow.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-10-02T06:54:22.7794020Z 
+2025-10-02T06:54:22.7794133Z AutoMoc warning
+2025-10-02T06:54:22.7794409Z ---------------
+2025-10-02T06:54:22.7794722Z "SRC:/src/qt/utils/GitWorker.cpp"
+2025-10-02T06:54:22.7795568Z includes the moc file "GitWorker.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-10-02T06:54:22.7796017Z 
+2025-10-02T06:54:22.7796083Z AutoMoc warning
+2025-10-02T06:54:22.7796245Z ---------------
+2025-10-02T06:54:22.7796427Z "SRC:/src/qt/widgets/SidebarWidget.cpp"
+2025-10-02T06:54:22.7796971Z includes the moc file "SidebarWidget.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-10-02T06:54:22.7797429Z 
+2025-10-02T06:54:22.7797920Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:385:1: note: No relevant classes found. No output generated.
+2025-10-02T06:54:22.7798899Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:144:1: note: No relevant classes found. No output generated.
+2025-10-02T06:54:22.7799852Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/widgets/SidebarWidget.cpp:197:1: note: No relevant classes found. No output generated.
+2025-10-02T06:54:22.7861938Z [8/16] Automatic RCC for resources/resources.qrc
+2025-10-02T06:54:23.2503641Z [9/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o
+2025-10-02T06:54:23.2505083Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o 
+2025-10-02T06:54:23.2527569Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o -c /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp
+2025-10-02T06:54:23.2534716Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:5:10: fatal error: widgets/BranchesWidget.h: No such file or directory
+2025-10-02T06:54:23.2535944Z     5 | #include "widgets/BranchesWidget.h"
+2025-10-02T06:54:23.2536399Z       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+2025-10-02T06:54:23.2537406Z compilation terminated.
+2025-10-02T06:54:24.8101390Z [10/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/utils/ThemeManager.cpp.o
+2025-10-02T06:54:24.8102431Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/utils/ThemeManager.cpp.o 
+2025-10-02T06:54:24.8108870Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/utils/ThemeManager.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/utils/ThemeManager.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/utils/ThemeManager.cpp.o -c /home/runner/work/VersionTools/VersionTools/src/qt/utils/ThemeManager.cpp
+2025-10-02T06:54:24.8123730Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/ThemeManager.cpp: In static member function ‘static void ThemeManager::setLightPalette(QPalette&)’:
+2025-10-02T06:54:24.8126097Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/ThemeManager.cpp:89:36: error: invalid use of incomplete type ‘class QStyle’
+2025-10-02T06:54:24.8127491Z    89 |     palette = QApplication::style()->standardPalette();
+2025-10-02T06:54:24.8128127Z       |                                    ^~
+2025-10-02T06:54:24.8128917Z In file included from /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QApplication:1,
+2025-10-02T06:54:24.8129976Z                  from /home/runner/work/VersionTools/VersionTools/src/qt/utils/ThemeManager.h:3,
+2025-10-02T06:54:24.8141345Z                  from /home/runner/work/VersionTools/VersionTools/src/qt/utils/ThemeManager.cpp:1:
+2025-10-02T06:54:24.8142750Z /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qapplication.h:18:7: note: forward declaration of ‘class QStyle’
+2025-10-02T06:54:24.8143587Z    18 | class QStyle;
+2025-10-02T06:54:24.8143900Z       |       ^~~~~~
+2025-10-02T06:54:24.9038440Z [11/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o
+2025-10-02T06:54:24.9043532Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o 
+2025-10-02T06:54:24.9052208Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o -c /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp
+2025-10-02T06:54:24.9061006Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:7:21: error: expected constructor, destructor, or type conversion before ‘(’ token
+2025-10-02T06:54:24.9064048Z     7 | GitWorker::GitWorker(GitManager *gitManager, QObject *parent)
+2025-10-02T06:54:24.9066312Z       |                     ^
+2025-10-02T06:54:24.9069385Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::openRepository(const QString&)’:
+2025-10-02T06:54:24.9082792Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:17:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T06:54:24.9084256Z    17 |     auto result = m_gitManager->openRepository(path.toStdString());
+2025-10-02T06:54:24.9084771Z       |                               ^~
+2025-10-02T06:54:24.9085484Z In file included from /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:1:
+2025-10-02T06:54:24.9099014Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T06:54:24.9100051Z     7 | class GitManager;
+2025-10-02T06:54:24.9100847Z       |       ^~~~~~~~~~
+2025-10-02T06:54:24.9102136Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::refreshStatus()’:
+2025-10-02T06:54:24.9104004Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:37:35: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T06:54:24.9105156Z    37 |         auto status = m_gitManager->getStatus();
+2025-10-02T06:54:24.9105647Z       |                                   ^~
+2025-10-02T06:54:24.9106738Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T06:54:24.9107658Z     7 | class GitManager;
+2025-10-02T06:54:24.9107984Z       |       ^~~~~~~~~~
+2025-10-02T06:54:24.9109292Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::stageFiles(const QStringList&)’:
+2025-10-02T06:54:24.9111213Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:55:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T06:54:24.9112332Z    55 |     auto result = m_gitManager->addFiles(fileList);
+2025-10-02T06:54:24.9112877Z       |                               ^~
+2025-10-02T06:54:24.9113892Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T06:54:24.9114739Z     7 | class GitManager;
+2025-10-02T06:54:24.9115071Z       |       ^~~~~~~~~~
+2025-10-02T06:54:24.9116462Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::unstageFiles(const QStringList&)’:
+2025-10-02T06:54:24.9118412Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:75:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T06:54:24.9119560Z    75 |     auto result = m_gitManager->resetFiles(fileList);
+2025-10-02T06:54:24.9120044Z       |                               ^~
+2025-10-02T06:54:24.9121387Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T06:54:24.9122349Z     7 | class GitManager;
+2025-10-02T06:54:24.9122680Z       |       ^~~~~~~~~~
+2025-10-02T06:54:24.9124050Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::commitChanges(const QString&)’:
+2025-10-02T06:54:24.9126003Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:90:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T06:54:24.9127185Z    90 |     auto result = m_gitManager->commit(message.toStdString());
+2025-10-02T06:54:24.9127697Z       |                               ^~
+2025-10-02T06:54:24.9128698Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T06:54:24.9129628Z     7 | class GitManager;
+2025-10-02T06:54:24.9129965Z       |       ^~~~~~~~~~
+2025-10-02T06:54:24.9131304Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::fetchRepository()’:
+2025-10-02T06:54:24.9133114Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:105:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T06:54:24.9134218Z   105 |     auto result = m_gitManager->fetch();
+2025-10-02T06:54:24.9134669Z       |                               ^~
+2025-10-02T06:54:24.9136115Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T06:54:24.9137030Z     7 | class GitManager;
+2025-10-02T06:54:24.9137358Z       |       ^~~~~~~~~~
+2025-10-02T06:54:24.9138622Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::pullRepository()’:
+2025-10-02T06:54:24.9140969Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:120:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T06:54:24.9142080Z   120 |     auto result = m_gitManager->pull();
+2025-10-02T06:54:24.9142527Z       |                               ^~
+2025-10-02T06:54:24.9143734Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T06:54:24.9144688Z     7 | class GitManager;
+2025-10-02T06:54:24.9145024Z       |       ^~~~~~~~~~
+2025-10-02T06:54:24.9146233Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::pushRepository()’:
+2025-10-02T06:54:24.9148003Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:135:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T06:54:24.9149108Z   135 |     auto result = m_gitManager->push();
+2025-10-02T06:54:24.9149617Z       |                               ^~
+2025-10-02T06:54:24.9150957Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T06:54:24.9151906Z     7 | class GitManager;
+2025-10-02T06:54:24.9152247Z       |       ^~~~~~~~~~
+2025-10-02T06:54:25.3303830Z [12/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/main.cpp.o
+2025-10-02T06:54:25.3656813Z [13/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/VersionTools_autogen/mocs_compilation.cpp.o
+2025-10-02T06:54:25.6237467Z [14/16] Building CXX object src/qt/CMakeFiles/VersionTools.dir/widgets/SidebarWidget.cpp.o
+2025-10-02T06:54:25.6238027Z ninja: build stopped: subcommand failed.
+2025-10-02T06:54:25.6254688Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,57 @@
+﻿2025-10-02T06:52:46.6172562Z ##[group]Run actions/checkout@v4
+2025-10-02T06:52:46.6173380Z with:
+2025-10-02T06:52:46.6173731Z   repository: Zixiao-Tech/VersionTools
+2025-10-02T06:52:46.6174403Z   token: ***
+2025-10-02T06:52:46.6174628Z   ssh-strict: true
+2025-10-02T06:52:46.6174853Z   ssh-user: git
+2025-10-02T06:52:46.6175070Z   persist-credentials: true
+2025-10-02T06:52:46.6175321Z   clean: true
+2025-10-02T06:52:46.6175556Z   sparse-checkout-cone-mode: true
+2025-10-02T06:52:46.6175830Z   fetch-depth: 1
+2025-10-02T06:52:46.6176044Z   fetch-tags: false
+2025-10-02T06:52:46.6176262Z   show-progress: true
+2025-10-02T06:52:46.6176488Z   lfs: false
+2025-10-02T06:52:46.6176683Z   submodules: false
+2025-10-02T06:52:46.6176901Z   set-safe-directory: true
+2025-10-02T06:52:46.6177496Z ##[endgroup]
+2025-10-02T06:52:46.8078905Z Syncing repository: Zixiao-Tech/VersionTools
+2025-10-02T06:52:46.8081037Z ##[group]Getting Git version info
+2025-10-02T06:52:46.8081672Z Working directory is 'D:\a\VersionTools\VersionTools'
+2025-10-02T06:52:46.9581597Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-10-02T06:52:48.3232200Z git version 2.51.0.windows.1
+2025-10-02T06:52:48.3288172Z ##[endgroup]
+2025-10-02T06:52:48.3312943Z Temporarily overriding HOME='D:\a\_temp\078b2e83-17f2-4e71-95d3-45733ce06d97' before making global git config changes
+2025-10-02T06:52:48.3313860Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-02T06:52:48.3325621Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VersionTools\VersionTools
+2025-10-02T06:52:48.5143331Z Deleting the contents of 'D:\a\VersionTools\VersionTools'
+2025-10-02T06:52:48.5149733Z ##[group]Initializing the repository
+2025-10-02T06:52:48.5164634Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\VersionTools\VersionTools
+2025-10-02T06:52:48.7723679Z Initialized empty Git repository in D:/a/VersionTools/VersionTools/.git/
+2025-10-02T06:52:48.7770425Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:52:48.9020025Z ##[endgroup]
+2025-10-02T06:52:48.9020721Z ##[group]Disabling automatic garbage collection
+2025-10-02T06:52:48.9031433Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-10-02T06:52:48.9308040Z ##[endgroup]
+2025-10-02T06:52:48.9308402Z ##[group]Setting up auth
+2025-10-02T06:52:48.9328679Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-10-02T06:52:48.9624262Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-10-02T06:52:51.9205098Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-02T06:52:51.9495417Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-10-02T06:52:52.4379242Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-10-02T06:52:52.4668798Z ##[endgroup]
+2025-10-02T06:52:52.4670349Z ##[group]Fetching the repository
+2025-10-02T06:52:52.4683161Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3138547846f7fd27ed918cc5f57c1cb3dbe6b509:refs/remotes/origin/main
+2025-10-02T06:52:54.6762173Z From https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:52:54.6762889Z  * [new ref]         3138547846f7fd27ed918cc5f57c1cb3dbe6b509 -> origin/main
+2025-10-02T06:52:54.7254478Z ##[endgroup]
+2025-10-02T06:52:54.7255064Z ##[group]Determining the checkout info
+2025-10-02T06:52:54.7258452Z ##[endgroup]
+2025-10-02T06:52:54.7274749Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-10-02T06:52:54.7929296Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-10-02T06:52:54.8221038Z ##[group]Checking out the ref
+2025-10-02T06:52:54.8236404Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2025-10-02T06:52:55.0327395Z branch 'main' set up to track 'origin/main'.
+2025-10-02T06:52:55.0336171Z Switched to a new branch 'main'
+2025-10-02T06:52:55.0410393Z ##[endgroup]
+2025-10-02T06:52:55.0989391Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-10-02T06:52:55.1280744Z 3138547846f7fd27ed918cc5f57c1cb3dbe6b509

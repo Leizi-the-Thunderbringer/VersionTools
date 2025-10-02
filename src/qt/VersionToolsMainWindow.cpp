@@ -5,7 +5,7 @@
 #include "widgets/BranchesWidget.h"
 #include "utils/GitWorker.h"
 #include "dialogs/SettingsDialog.h"
-#include "../core/GitManager.h"
+#include "core/GitManager.h"
 
 #include <QApplication>
 #include <QMenuBar>
