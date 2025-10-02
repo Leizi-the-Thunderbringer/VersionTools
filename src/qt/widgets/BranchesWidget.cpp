@@ -10,3 +10,9 @@ BranchesWidget::BranchesWidget(VersionTools::GitManager *gitManager, QWidget *pa
     auto *layout = new QVBoxLayout(this);
     layout->addWidget(new QLabel(tr("Branches Widget - Coming Soon"), this));
 }
+
+void BranchesWidget::setRepository(const QString &path)
+{
+    (void)path;
+    // TODO: Load branches
+}

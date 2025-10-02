@@ -1,0 +1,17 @@
+﻿2025-10-02T06:58:46.6568350Z ##[group]Run brew install cmake libgit2
+2025-10-02T06:58:46.6569490Z [36;1mbrew install cmake libgit2[0m
+2025-10-02T06:58:46.6620350Z shell: /bin/bash -e {0}
+2025-10-02T06:58:46.6621140Z env:
+2025-10-02T06:58:46.6621800Z   MD_APPLE_SDK_ROOT: /Applications/Xcode_26.app
+2025-10-02T06:58:46.6622710Z ##[endgroup]
+2025-10-02T06:58:52.5219330Z ##[warning]cmake 4.1.1 is already installed and up-to-date.
+To reinstall 4.1.1, run:
+  brew reinstall cmake
+
+2025-10-02T06:58:53.2268210Z [32m==>[0m [1mFetching downloads for: [32mlibgit2[39m[0m
+2025-10-02T06:58:53.2286990Z [34m==>[0m [1mDownloading https://ghcr.io/v2/homebrew/core/libgit2/manifests/1.9.1[0m
+2025-10-02T06:58:53.6287130Z [32m==>[0m [1mFetching [32mlibgit2[39m[0m
+2025-10-02T06:58:53.6301240Z [34m==>[0m [1mDownloading https://ghcr.io/v2/homebrew/core/libgit2/blobs/sha256:3be60ae5bc7e68b788b021eaf00927f595c28bfed352cd5bf8c212494392dfb8[0m
+2025-10-02T06:58:54.0332940Z [34m==>[0m [1mPouring libgit2--1.9.1.arm64_sequoia.bottle.tar.gz[0m
+2025-10-02T06:58:54.4280080Z 🍺  /opt/homebrew/Cellar/libgit2/1.9.1: 109 files, 4.9MB
+2025-10-02T06:58:54.4286070Z [34m==>[0m [1mNo outdated dependents to upgrade![0m

@@ -1,0 +1,681 @@
+﻿2025-10-02T06:58:43.2527203Z Current runner version: '2.328.0'
+2025-10-02T06:58:43.2556554Z ##[group]Runner Image Provisioner
+2025-10-02T06:58:43.2557716Z Hosted Compute Agent
+2025-10-02T06:58:43.2558600Z Version: 20250912.392
+2025-10-02T06:58:43.2559575Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-02T06:58:43.2560632Z Build Date: 2025-09-12T15:23:14Z
+2025-10-02T06:58:43.2561499Z ##[endgroup]
+2025-10-02T06:58:43.2562348Z ##[group]Operating System
+2025-10-02T06:58:43.2563224Z Microsoft Windows Server 2025
+2025-10-02T06:58:43.2564440Z 10.0.26100
+2025-10-02T06:58:43.2565173Z Datacenter
+2025-10-02T06:58:43.2565846Z ##[endgroup]
+2025-10-02T06:58:43.2566510Z ##[group]Runner Image
+2025-10-02T06:58:43.2567316Z Image: windows-2025
+2025-10-02T06:58:43.2568081Z Version: 20250921.36.1
+2025-10-02T06:58:43.2569742Z Included Software: https://github.com/actions/runner-images/blob/win25/20250921.36/images/windows/Windows2025-Readme.md
+2025-10-02T06:58:43.2573560Z Image Release: https://github.com/actions/runner-images/releases/tag/win25%2F20250921.36
+2025-10-02T06:58:43.2575348Z ##[endgroup]
+2025-10-02T06:58:43.2579630Z ##[group]GITHUB_TOKEN Permissions
+2025-10-02T06:58:43.2582543Z Actions: write
+2025-10-02T06:58:43.2583332Z Attestations: write
+2025-10-02T06:58:43.2584615Z Checks: write
+2025-10-02T06:58:43.2585418Z Contents: write
+2025-10-02T06:58:43.2586155Z Deployments: write
+2025-10-02T06:58:43.2586992Z Discussions: write
+2025-10-02T06:58:43.2587730Z Issues: write
+2025-10-02T06:58:43.2588516Z Metadata: read
+2025-10-02T06:58:43.2589336Z Models: read
+2025-10-02T06:58:43.2590078Z Packages: write
+2025-10-02T06:58:43.2590773Z Pages: write
+2025-10-02T06:58:43.2591561Z PullRequests: write
+2025-10-02T06:58:43.2592345Z RepositoryProjects: write
+2025-10-02T06:58:43.2593217Z SecurityEvents: write
+2025-10-02T06:58:43.2594297Z Statuses: write
+2025-10-02T06:58:43.2594987Z ##[endgroup]
+2025-10-02T06:58:43.2597936Z Secret source: Actions
+2025-10-02T06:58:43.2599133Z Prepare workflow directory
+2025-10-02T06:58:43.2949401Z Prepare all required actions
+2025-10-02T06:58:43.2986953Z Getting action download info
+2025-10-02T06:58:43.5987809Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-10-02T06:58:43.7301783Z Download action repository 'microsoft/setup-msbuild@v2' (SHA:6fb02220983dee41ce7ae257b6f4d8f9bf5ed4ce)
+2025-10-02T06:58:43.9278356Z Download action repository 'jurplel/install-qt-action@v4' (SHA:d325aaf2a8baeeda41ad0b5d39f84a6af9bcf005)
+2025-10-02T06:58:46.6733663Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-10-02T06:58:46.9635299Z Getting action download info
+2025-10-02T06:58:47.1089544Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2025-10-02T06:58:47.2746999Z Complete job name: Build Windows
+2025-10-02T06:58:47.3988781Z ##[group]Run actions/checkout@v4
+2025-10-02T06:58:47.3989843Z with:
+2025-10-02T06:58:47.3990232Z   repository: Zixiao-Tech/VersionTools
+2025-10-02T06:58:47.3990946Z   token: ***
+2025-10-02T06:58:47.3991280Z   ssh-strict: true
+2025-10-02T06:58:47.3991618Z   ssh-user: git
+2025-10-02T06:58:47.3991958Z   persist-credentials: true
+2025-10-02T06:58:47.3992869Z   clean: true
+2025-10-02T06:58:47.3993252Z   sparse-checkout-cone-mode: true
+2025-10-02T06:58:47.3993675Z   fetch-depth: 1
+2025-10-02T06:58:47.3994008Z   fetch-tags: false
+2025-10-02T06:58:47.3994351Z   show-progress: true
+2025-10-02T06:58:47.3994702Z   lfs: false
+2025-10-02T06:58:47.3995006Z   submodules: false
+2025-10-02T06:58:47.3995353Z   set-safe-directory: true
+2025-10-02T06:58:47.3996054Z ##[endgroup]
+2025-10-02T06:58:47.5691404Z Syncing repository: Zixiao-Tech/VersionTools
+2025-10-02T06:58:47.5693222Z ##[group]Getting Git version info
+2025-10-02T06:58:47.5693754Z Working directory is 'D:\a\VersionTools\VersionTools'
+2025-10-02T06:58:47.6940341Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-10-02T06:58:48.0249452Z git version 2.51.0.windows.1
+2025-10-02T06:58:48.0315118Z ##[endgroup]
+2025-10-02T06:58:48.0340041Z Temporarily overriding HOME='D:\a\_temp\50168cf4-ae94-4a2c-8cc6-ce86dbc27113' before making global git config changes
+2025-10-02T06:58:48.0340786Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-02T06:58:48.0352103Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VersionTools\VersionTools
+2025-10-02T06:58:48.0870526Z Deleting the contents of 'D:\a\VersionTools\VersionTools'
+2025-10-02T06:58:48.0877310Z ##[group]Initializing the repository
+2025-10-02T06:58:48.0887300Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\VersionTools\VersionTools
+2025-10-02T06:58:48.1470856Z Initialized empty Git repository in D:/a/VersionTools/VersionTools/.git/
+2025-10-02T06:58:48.1531411Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:58:48.2062158Z ##[endgroup]
+2025-10-02T06:58:48.2062921Z ##[group]Disabling automatic garbage collection
+2025-10-02T06:58:48.2073537Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-10-02T06:58:48.2390019Z ##[endgroup]
+2025-10-02T06:58:48.2390394Z ##[group]Setting up auth
+2025-10-02T06:58:48.2404262Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-10-02T06:58:48.2720921Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-10-02T06:58:49.5201995Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-02T06:58:49.5498305Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-10-02T06:58:50.0587381Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-10-02T06:58:50.0886865Z ##[endgroup]
+2025-10-02T06:58:50.0887291Z ##[group]Fetching the repository
+2025-10-02T06:58:50.0907920Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bc026dd79f178c1866687aca1f3d84bc25841d3f:refs/remotes/origin/main
+2025-10-02T06:58:51.0465352Z From https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:58:51.0466660Z  * [new ref]         bc026dd79f178c1866687aca1f3d84bc25841d3f -> origin/main
+2025-10-02T06:58:51.0710413Z ##[endgroup]
+2025-10-02T06:58:51.0710792Z ##[group]Determining the checkout info
+2025-10-02T06:58:51.0713498Z ##[endgroup]
+2025-10-02T06:58:51.0728707Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-10-02T06:58:51.1116670Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-10-02T06:58:51.1408460Z ##[group]Checking out the ref
+2025-10-02T06:58:51.1422291Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2025-10-02T06:58:51.2829317Z branch 'main' set up to track 'origin/main'.
+2025-10-02T06:58:51.2835407Z Switched to a new branch 'main'
+2025-10-02T06:58:51.2900495Z ##[endgroup]
+2025-10-02T06:58:51.3253744Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-10-02T06:58:51.3506652Z bc026dd79f178c1866687aca1f3d84bc25841d3f
+2025-10-02T06:58:51.3858913Z ##[group]Run microsoft/setup-msbuild@v2
+2025-10-02T06:58:51.3859307Z with:
+2025-10-02T06:58:51.3859535Z   msbuild-architecture: x86
+2025-10-02T06:58:51.3859796Z ##[endgroup]
+2025-10-02T06:58:51.5176673Z [command]C:\ProgramData\Chocolatey\bin\vswhere.exe -products * -requires Microsoft.Component.MSBuild -property installationPath -latest
+2025-10-02T06:58:51.8432137Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise
+2025-10-02T06:58:51.8803174Z ##[group]Run jurplel/install-qt-action@v4
+2025-10-02T06:58:51.8803506Z with:
+2025-10-02T06:58:51.8803688Z   version: 6.7.0
+2025-10-02T06:58:51.8803873Z   host: windows
+2025-10-02T06:58:51.8804046Z   target: desktop
+2025-10-02T06:58:51.8804208Z   arch: win64_msvc2019_64
+2025-10-02T06:58:51.8804398Z   install-deps: true
+2025-10-02T06:58:51.8804582Z   cache: false
+2025-10-02T06:58:51.8804763Z   cache-key-prefix: install-qt-action
+2025-10-02T06:58:51.8804990Z   setup-python: true
+2025-10-02T06:58:51.8805171Z   add-tools-to-path: true
+2025-10-02T06:58:51.8805343Z   set-env: true
+2025-10-02T06:58:51.8805503Z   no-qt-binaries: false
+2025-10-02T06:58:51.8805677Z   tools-only: false
+2025-10-02T06:58:51.8805834Z   aqtversion: ==3.3.*
+2025-10-02T06:58:51.8805994Z   py7zrversion: ==1.0.*
+2025-10-02T06:58:51.8806159Z   source: false
+2025-10-02T06:58:51.8806314Z   documentation: false
+2025-10-02T06:58:51.8806478Z   examples: false
+2025-10-02T06:58:51.8806688Z   use-official: false
+2025-10-02T06:58:51.8806856Z ##[endgroup]
+2025-10-02T06:58:51.9029179Z ##[group]Run actions/setup-python@v5
+2025-10-02T06:58:51.9029404Z with:
+2025-10-02T06:58:51.9029554Z   python-version: >=3.9.0 <=3.13.3
+2025-10-02T06:58:51.9029761Z   check-latest: false
+2025-10-02T06:58:51.9030033Z   token: ***
+2025-10-02T06:58:51.9030203Z   update-environment: true
+2025-10-02T06:58:51.9030405Z   allow-prereleases: false
+2025-10-02T06:58:51.9030582Z   freethreaded: false
+2025-10-02T06:58:51.9030749Z ##[endgroup]
+2025-10-02T06:58:52.1250418Z ##[group]Installed versions
+2025-10-02T06:58:52.1532380Z Successfully set up CPython (3.12.10)
+2025-10-02T06:58:52.1533071Z ##[endgroup]
+2025-10-02T06:58:52.1809344Z ##[group]Run jurplel/install-qt-action/action@v4
+2025-10-02T06:58:52.1809598Z with:
+2025-10-02T06:58:52.1809746Z   version: 6.7.0
+2025-10-02T06:58:52.1809892Z   host: windows
+2025-10-02T06:58:52.1810044Z   target: desktop
+2025-10-02T06:58:52.1810204Z   arch: win64_msvc2019_64
+2025-10-02T06:58:52.1810407Z   install-deps: true
+2025-10-02T06:58:52.1810572Z   cache: false
+2025-10-02T06:58:52.1810743Z   cache-key-prefix: install-qt-action
+2025-10-02T06:58:52.1810971Z   add-tools-to-path: true
+2025-10-02T06:58:52.1811143Z   set-env: true
+2025-10-02T06:58:52.1811300Z   no-qt-binaries: false
+2025-10-02T06:58:52.1811467Z   tools-only: false
+2025-10-02T06:58:52.1811629Z   aqtversion: ==3.3.*
+2025-10-02T06:58:52.1811791Z   py7zrversion: ==1.0.*
+2025-10-02T06:58:52.1812058Z   source: false
+2025-10-02T06:58:52.1812337Z   documentation: false
+2025-10-02T06:58:52.1812541Z   examples: false
+2025-10-02T06:58:52.1812701Z   use-official: false
+2025-10-02T06:58:52.1812852Z env:
+2025-10-02T06:58:52.1813073Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:58:52.1813501Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2025-10-02T06:58:52.1813899Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:58:52.1814258Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:58:52.1814613Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:58:52.1814885Z ##[endgroup]
+2025-10-02T06:58:52.6277072Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:58:52.6303894Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m pip install setuptools>=70.1.0 py7zr==1.0.*
+2025-10-02T06:58:56.6933450Z Collecting setuptools>=70.1.0
+2025-10-02T06:58:56.7417802Z   Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+2025-10-02T06:58:56.8277685Z Collecting py7zr==1.0.*
+2025-10-02T06:58:56.8362384Z   Downloading py7zr-1.0.0-py3-none-any.whl.metadata (17 kB)
+2025-10-02T06:58:56.9005355Z Collecting texttable (from py7zr==1.0.*)
+2025-10-02T06:58:56.9091543Z   Downloading texttable-1.7.0-py2.py3-none-any.whl.metadata (9.8 kB)
+2025-10-02T06:58:57.0376743Z Collecting pycryptodomex>=3.20.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.0477505Z   Downloading pycryptodomex-3.23.0-cp37-abi3-win_amd64.whl.metadata (3.5 kB)
+2025-10-02T06:58:57.1228192Z Collecting brotli>=1.1.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.1325063Z   Downloading Brotli-1.1.0-cp312-cp312-win_amd64.whl.metadata (5.6 kB)
+2025-10-02T06:58:57.2439513Z Collecting psutil (from py7zr==1.0.*)
+2025-10-02T06:58:57.2524148Z   Downloading psutil-7.1.0-cp37-abi3-win_amd64.whl.metadata (23 kB)
+2025-10-02T06:58:57.4075726Z Collecting pyzstd>=0.16.1 (from py7zr==1.0.*)
+2025-10-02T06:58:57.4169938Z   Downloading pyzstd-0.17.0-cp312-cp312-win_amd64.whl.metadata (2.6 kB)
+2025-10-02T06:58:57.5350998Z Collecting pyppmd<1.3.0,>=1.1.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.5481499Z   Downloading pyppmd-1.2.0-cp312-cp312-win_amd64.whl.metadata (5.6 kB)
+2025-10-02T06:58:57.6297169Z Collecting pybcj<1.1.0,>=1.0.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.6393908Z   Downloading pybcj-1.0.6-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+2025-10-02T06:58:57.6850009Z Collecting multivolumefile>=0.2.3 (from py7zr==1.0.*)
+2025-10-02T06:58:57.6932588Z   Downloading multivolumefile-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+2025-10-02T06:58:57.7848203Z Collecting inflate64<1.1.0,>=1.0.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.7947903Z   Downloading inflate64-1.0.3-cp312-cp312-win_amd64.whl.metadata (4.5 kB)
+2025-10-02T06:58:57.8592757Z Collecting typing-extensions>=4.13.2 (from pyzstd>=0.16.1->py7zr==1.0.*)
+2025-10-02T06:58:57.8676056Z   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+2025-10-02T06:58:57.8984074Z Downloading py7zr-1.0.0-py3-none-any.whl (69 kB)
+2025-10-02T06:58:57.9298782Z Downloading inflate64-1.0.3-cp312-cp312-win_amd64.whl (35 kB)
+2025-10-02T06:58:57.9945456Z Downloading pybcj-1.0.6-cp312-cp312-win_amd64.whl (24 kB)
+2025-10-02T06:58:58.0226154Z Downloading pyppmd-1.2.0-cp312-cp312-win_amd64.whl (46 kB)
+2025-10-02T06:58:58.0523243Z Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2025-10-02T06:58:58.0983269Z    ---------------------------------------- 1.2/1.2 MB 20.0 MB/s  0:00:00
+2025-10-02T06:58:58.1081256Z Downloading Brotli-1.1.0-cp312-cp312-win_amd64.whl (357 kB)
+2025-10-02T06:58:58.1365270Z Downloading multivolumefile-0.2.3-py3-none-any.whl (17 kB)
+2025-10-02T06:58:58.1694127Z Downloading pycryptodomex-3.23.0-cp37-abi3-win_amd64.whl (1.8 MB)
+2025-10-02T06:58:58.2286179Z    ---------------------------------------- 1.8/1.8 MB 32.8 MB/s  0:00:00
+2025-10-02T06:58:58.2383142Z Downloading pyzstd-0.17.0-cp312-cp312-win_amd64.whl (246 kB)
+2025-10-02T06:58:58.2663077Z Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2025-10-02T06:58:58.2919385Z Downloading psutil-7.1.0-cp37-abi3-win_amd64.whl (247 kB)
+2025-10-02T06:58:58.3174324Z Downloading texttable-1.7.0-py2.py3-none-any.whl (10 kB)
+2025-10-02T06:58:58.4227298Z Installing collected packages: texttable, brotli, typing-extensions, setuptools, pyppmd, pycryptodomex, pybcj, psutil, multivolumefile, inflate64, pyzstd, py7zr
+2025-10-02T06:59:02.9037104Z 
+2025-10-02T06:59:02.9059893Z Successfully installed brotli-1.1.0 inflate64-1.0.3 multivolumefile-0.2.3 psutil-7.1.0 py7zr-1.0.0 pybcj-1.0.6 pycryptodomex-3.23.0 pyppmd-1.2.0 pyzstd-0.17.0 setuptools-80.9.0 texttable-1.7.0 typing-extensions-4.15.0
+2025-10-02T06:59:03.2351745Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:59:03.2361748Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m pip install aqtinstall==3.3.*
+2025-10-02T06:59:04.7248621Z Collecting aqtinstall==3.3.*
+2025-10-02T06:59:04.7885795Z   Downloading aqtinstall-3.3.0-py3-none-any.whl.metadata (11 kB)
+2025-10-02T06:59:04.8390759Z Collecting bs4 (from aqtinstall==3.3.*)
+2025-10-02T06:59:04.8566150Z   Downloading bs4-0.0.2-py2.py3-none-any.whl.metadata (411 bytes)
+2025-10-02T06:59:04.9052105Z Collecting defusedxml (from aqtinstall==3.3.*)
+2025-10-02T06:59:04.9226576Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+2025-10-02T06:59:04.9871840Z Collecting humanize (from aqtinstall==3.3.*)
+2025-10-02T06:59:05.0045687Z   Downloading humanize-4.13.0-py3-none-any.whl.metadata (7.8 kB)
+2025-10-02T06:59:05.0649805Z Collecting patch-ng (from aqtinstall==3.3.*)
+2025-10-02T06:59:05.0869406Z   Downloading patch-ng-1.18.1.tar.gz (17 kB)
+2025-10-02T06:59:05.1315708Z   Installing build dependencies: started
+2025-10-02T06:59:07.8038265Z   Installing build dependencies: finished with status 'done'
+2025-10-02T06:59:07.8053982Z   Getting requirements to build wheel: started
+2025-10-02T06:59:08.4068011Z   Getting requirements to build wheel: finished with status 'done'
+2025-10-02T06:59:08.4100249Z   Preparing metadata (pyproject.toml): started
+2025-10-02T06:59:08.7199700Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-10-02T06:59:08.7231560Z Requirement already satisfied: py7zr>=0.22.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from aqtinstall==3.3.*) (1.0.0)
+2025-10-02T06:59:08.7756706Z Collecting requests>=2.31.0 (from aqtinstall==3.3.*)
+2025-10-02T06:59:08.7932739Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+2025-10-02T06:59:08.8517091Z Collecting semantic-version (from aqtinstall==3.3.*)
+2025-10-02T06:59:08.8740504Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+2025-10-02T06:59:08.8999067Z Requirement already satisfied: texttable in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from aqtinstall==3.3.*) (1.7.0)
+2025-10-02T06:59:08.9018517Z Requirement already satisfied: pycryptodomex>=3.20.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (3.23.0)
+2025-10-02T06:59:08.9026638Z Requirement already satisfied: brotli>=1.1.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.1.0)
+2025-10-02T06:59:08.9049080Z Requirement already satisfied: psutil in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (7.1.0)
+2025-10-02T06:59:08.9056237Z Requirement already satisfied: pyzstd>=0.16.1 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (0.17.0)
+2025-10-02T06:59:08.9063064Z Requirement already satisfied: pyppmd<1.3.0,>=1.1.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.2.0)
+2025-10-02T06:59:08.9073739Z Requirement already satisfied: pybcj<1.1.0,>=1.0.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.0.6)
+2025-10-02T06:59:08.9080696Z Requirement already satisfied: multivolumefile>=0.2.3 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (0.2.3)
+2025-10-02T06:59:08.9087507Z Requirement already satisfied: inflate64<1.1.0,>=1.0.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.0.3)
+2025-10-02T06:59:08.9206118Z Requirement already satisfied: typing-extensions>=4.13.2 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from pyzstd>=0.16.1->py7zr>=0.22.0->aqtinstall==3.3.*) (4.15.0)
+2025-10-02T06:59:09.0545408Z Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:59:09.0753437Z   Downloading charset_normalizer-3.4.3-cp312-cp312-win_amd64.whl.metadata (37 kB)
+2025-10-02T06:59:09.1416878Z Collecting idna<4,>=2.5 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:59:09.1622323Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-10-02T06:59:09.2561110Z Collecting urllib3<3,>=1.21.1 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:59:09.2762506Z   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+2025-10-02T06:59:09.3463322Z Collecting certifi>=2017.4.17 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:59:09.3673312Z   Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+2025-10-02T06:59:09.4455110Z Collecting beautifulsoup4 (from bs4->aqtinstall==3.3.*)
+2025-10-02T06:59:09.4657655Z   Downloading beautifulsoup4-4.14.2-py3-none-any.whl.metadata (3.8 kB)
+2025-10-02T06:59:09.5312044Z Collecting soupsieve>1.2 (from beautifulsoup4->bs4->aqtinstall==3.3.*)
+2025-10-02T06:59:09.5513478Z   Downloading soupsieve-2.8-py3-none-any.whl.metadata (4.6 kB)
+2025-10-02T06:59:09.6088536Z Downloading aqtinstall-3.3.0-py3-none-any.whl (71 kB)
+2025-10-02T06:59:09.6656905Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-10-02T06:59:09.7087680Z Downloading charset_normalizer-3.4.3-cp312-cp312-win_amd64.whl (107 kB)
+2025-10-02T06:59:09.7480518Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-10-02T06:59:09.7882709Z Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+2025-10-02T06:59:09.8341478Z Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+2025-10-02T06:59:09.8742907Z Downloading bs4-0.0.2-py2.py3-none-any.whl (1.2 kB)
+2025-10-02T06:59:09.9134638Z Downloading beautifulsoup4-4.14.2-py3-none-any.whl (106 kB)
+2025-10-02T06:59:09.9618645Z Downloading soupsieve-2.8-py3-none-any.whl (36 kB)
+2025-10-02T06:59:10.0028824Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+2025-10-02T06:59:10.0444714Z Downloading humanize-4.13.0-py3-none-any.whl (128 kB)
+2025-10-02T06:59:10.0871566Z Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2025-10-02T06:59:10.1482750Z Building wheels for collected packages: patch-ng
+2025-10-02T06:59:10.1584036Z   Building wheel for patch-ng (pyproject.toml): started
+2025-10-02T06:59:10.5152566Z   Building wheel for patch-ng (pyproject.toml): finished with status 'done'
+2025-10-02T06:59:10.5174007Z   Created wheel for patch-ng: filename=patch_ng-1.18.1-py3-none-any.whl size=17028 sha256=7c4eb51cc1c7b959319c98e3a2609a3ee86a74cd747bf389277768116ad83b0e
+2025-10-02T06:59:10.5175698Z   Stored in directory: c:\users\runneradmin\appdata\local\pip\cache\wheels\4b\c7\08\eacf6adfcdfc005d1d86534183df45e060e1c7454de0db26e2
+2025-10-02T06:59:10.5205316Z Successfully built patch-ng
+2025-10-02T06:59:10.5582876Z Installing collected packages: urllib3, soupsieve, semantic-version, patch-ng, idna, humanize, defusedxml, charset_normalizer, certifi, requests, beautifulsoup4, bs4, aqtinstall
+2025-10-02T06:59:12.1062522Z 
+2025-10-02T06:59:12.1093572Z Successfully installed aqtinstall-3.3.0 beautifulsoup4-4.14.2 bs4-0.0.2 certifi-2025.8.3 charset_normalizer-3.4.3 defusedxml-0.7.1 humanize-4.13.0 idna-3.10 patch-ng-1.18.1 requests-2.32.5 semantic-version-2.10.0 soupsieve-2.8 urllib3-2.5.0
+2025-10-02T06:59:12.4193923Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:59:12.4202835Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m aqt version
+2025-10-02T06:59:13.0744666Z INFO    : aqtinstall(aqt) v3.3.0 on Python 3.12.10 [CPython MSC v.1943 64 bit (AMD64)]
+2025-10-02T06:59:13.1898178Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:59:13.1907619Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m aqt install-qt windows desktop 6.7.0 win64_msvc2019_64 --autodesktop --outputdir D:\a\VersionTools\Qt
+2025-10-02T06:59:13.5151908Z INFO    : aqtinstall(aqt) v3.3.0 on Python 3.12.10 [CPython MSC v.1943 64 bit (AMD64)]
+2025-10-02T06:59:16.6175588Z INFO    : Downloading qtsvg...
+2025-10-02T06:59:16.6186016Z INFO    : Downloading qtbase...
+2025-10-02T06:59:16.6591294Z INFO    : Downloading qtdeclarative...
+2025-10-02T06:59:16.6684193Z INFO    : Downloading qttools...
+2025-10-02T06:59:17.4007847Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:17.4869292Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:17.5019462Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:17.5212147Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:18.3752152Z INFO    : Finished installation of qtsvg-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 2.59668480
+2025-10-02T06:59:19.2371680Z INFO    : Downloading qttranslations...
+2025-10-02T06:59:20.2704140Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:21.3597330Z INFO    : Finished installation of qttranslations-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 2.96294720
+2025-10-02T06:59:22.6296510Z INFO    : Downloading d3dcompiler_47...
+2025-10-02T06:59:22.9406604Z INFO    : Finished installation of qttools-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 7.14044320
+2025-10-02T06:59:23.5627744Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:23.8043885Z INFO    : Downloading opengl32sw...
+2025-10-02T06:59:24.2866344Z INFO    : Finished installation of d3dcompiler_47-x64.7z in 2.89447170
+2025-10-02T06:59:24.7368207Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:25.9538791Z INFO    : Finished installation of qtbase-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 10.17835950
+2025-10-02T06:59:26.1465302Z INFO    : Finished installation of opengl32sw-64-mesa_11_2_2-signed_sha256.7z in 3.17064850
+2025-10-02T06:59:37.6969927Z INFO    : Finished installation of qtdeclarative-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 21.91243790
+2025-10-02T06:59:37.8164182Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\bin\qmake.exe
+2025-10-02T06:59:37.8205364Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Concurrent.prl
+2025-10-02T06:59:37.8210398Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Concurrentd.prl
+2025-10-02T06:59:37.8215023Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Core.prl
+2025-10-02T06:59:37.8220384Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Cored.prl
+2025-10-02T06:59:37.8224789Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DBus.prl
+2025-10-02T06:59:37.8229484Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DBusd.prl
+2025-10-02T06:59:37.8234076Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Designer.prl
+2025-10-02T06:59:37.8238900Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DesignerComponents.prl
+2025-10-02T06:59:37.8243734Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DesignerComponentsd.prl
+2025-10-02T06:59:37.8248337Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Designerd.prl
+2025-10-02T06:59:37.8253159Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DeviceDiscoverySupport.prl
+2025-10-02T06:59:37.8257843Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DeviceDiscoverySupportd.prl
+2025-10-02T06:59:37.8262844Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6EntryPoint.prl
+2025-10-02T06:59:37.8267594Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6EntryPointd.prl
+2025-10-02T06:59:37.8272160Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6ExampleIcons.prl
+2025-10-02T06:59:37.8276934Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6ExampleIconsd.prl
+2025-10-02T06:59:37.8281879Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6FbSupport.prl
+2025-10-02T06:59:37.8286409Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6FbSupportd.prl
+2025-10-02T06:59:37.8292025Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Gui.prl
+2025-10-02T06:59:37.8295870Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Guid.prl
+2025-10-02T06:59:37.8300742Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Help.prl
+2025-10-02T06:59:37.8305642Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Helpd.prl
+2025-10-02T06:59:37.8310196Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsAnimation.prl
+2025-10-02T06:59:37.8314907Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsAnimationd.prl
+2025-10-02T06:59:37.8319845Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsFolderListModel.prl
+2025-10-02T06:59:37.8324569Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsFolderListModeld.prl
+2025-10-02T06:59:37.8329464Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsQmlModels.prl
+2025-10-02T06:59:37.8334163Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsQmlModelsd.prl
+2025-10-02T06:59:37.8339777Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsSettings.prl
+2025-10-02T06:59:37.8344652Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsSettingsd.prl
+2025-10-02T06:59:37.8349079Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsSharedImage.prl
+2025-10-02T06:59:37.8353687Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsSharedImaged.prl
+2025-10-02T06:59:37.8358311Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsWavefrontMesh.prl
+2025-10-02T06:59:37.8363206Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsWavefrontMeshd.prl
+2025-10-02T06:59:37.8367700Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Network.prl
+2025-10-02T06:59:37.8372274Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Networkd.prl
+2025-10-02T06:59:37.8376760Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6OpenGL.prl
+2025-10-02T06:59:37.8381847Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6OpenGLd.prl
+2025-10-02T06:59:37.8386413Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6OpenGLWidgets.prl
+2025-10-02T06:59:37.8390999Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6OpenGLWidgetsd.prl
+2025-10-02T06:59:37.8395622Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6PacketProtocol.prl
+2025-10-02T06:59:37.8400774Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6PacketProtocold.prl
+2025-10-02T06:59:37.8405571Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6PrintSupport.prl
+2025-10-02T06:59:37.8410238Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6PrintSupportd.prl
+2025-10-02T06:59:37.8414727Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Qml.prl
+2025-10-02T06:59:37.8419803Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlBuiltins.prl
+2025-10-02T06:59:37.8426284Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlBuiltinsd.prl
+2025-10-02T06:59:37.8431371Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlCompiler.prl
+2025-10-02T06:59:37.8436056Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlCompilerd.prl
+2025-10-02T06:59:37.8440902Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlCore.prl
+2025-10-02T06:59:37.8447321Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlCored.prl
+2025-10-02T06:59:37.8452065Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Qmld.prl
+2025-10-02T06:59:37.8456721Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlDebug.prl
+2025-10-02T06:59:37.8462551Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlDebugd.prl
+2025-10-02T06:59:37.8467260Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlDom.prl
+2025-10-02T06:59:37.8472167Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlDomd.prl
+2025-10-02T06:59:37.8476776Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlLocalStorage.prl
+2025-10-02T06:59:37.8482273Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlLocalStoraged.prl
+2025-10-02T06:59:37.8486862Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlLS.prl
+2025-10-02T06:59:37.8491702Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlLSd.prl
+2025-10-02T06:59:37.8496659Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlModels.prl
+2025-10-02T06:59:37.8501507Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlModelsd.prl
+2025-10-02T06:59:37.8505963Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlNetwork.prl
+2025-10-02T06:59:37.8510534Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlNetworkd.prl
+2025-10-02T06:59:37.8515134Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlToolingSettings.prl
+2025-10-02T06:59:37.8520255Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlToolingSettingsd.prl
+2025-10-02T06:59:37.8524857Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlTypeRegistrar.prl
+2025-10-02T06:59:37.8529607Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlTypeRegistrard.prl
+2025-10-02T06:59:37.8534302Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlWorkerScript.prl
+2025-10-02T06:59:37.8539252Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlWorkerScriptd.prl
+2025-10-02T06:59:37.8543924Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlXmlListModel.prl
+2025-10-02T06:59:37.8548478Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlXmlListModeld.prl
+2025-10-02T06:59:37.8552987Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Quick.prl
+2025-10-02T06:59:37.8557856Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2.prl
+2025-10-02T06:59:37.8562456Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Basic.prl
+2025-10-02T06:59:37.8567067Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Basicd.prl
+2025-10-02T06:59:37.8571719Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2BasicStyleImpl.prl
+2025-10-02T06:59:37.8576568Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2BasicStyleImpld.prl
+2025-10-02T06:59:37.8581329Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2d.prl
+2025-10-02T06:59:37.8585913Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Fusion.prl
+2025-10-02T06:59:37.8590963Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Fusiond.prl
+2025-10-02T06:59:37.8595537Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2FusionStyleImpl.prl
+2025-10-02T06:59:37.8600674Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2FusionStyleImpld.prl
+2025-10-02T06:59:37.8605248Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Imagine.prl
+2025-10-02T06:59:37.8609880Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Imagined.prl
+2025-10-02T06:59:37.8614576Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2ImagineStyleImpl.prl
+2025-10-02T06:59:37.8620073Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2ImagineStyleImpld.prl
+2025-10-02T06:59:37.8624672Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Impl.prl
+2025-10-02T06:59:37.8629473Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Impld.prl
+2025-10-02T06:59:37.8634125Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Material.prl
+2025-10-02T06:59:37.8639031Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Materiald.prl
+2025-10-02T06:59:37.8644029Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2MaterialStyleImpl.prl
+2025-10-02T06:59:37.8648867Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2MaterialStyleImpld.prl
+2025-10-02T06:59:37.8654178Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Universal.prl
+2025-10-02T06:59:37.8664258Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Universald.prl
+2025-10-02T06:59:37.8669940Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2UniversalStyleImpl.prl
+2025-10-02T06:59:37.8674794Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2UniversalStyleImpld.prl
+2025-10-02T06:59:37.8679904Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2WindowsStyleImpl.prl
+2025-10-02T06:59:37.8684551Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2WindowsStyleImpld.prl
+2025-10-02T06:59:37.8689252Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControlsTestUtils.prl
+2025-10-02T06:59:37.8694490Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControlsTestUtilsd.prl
+2025-10-02T06:59:37.8699330Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Quickd.prl
+2025-10-02T06:59:37.8704061Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2.prl
+2025-10-02T06:59:37.8708745Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2d.prl
+2025-10-02T06:59:37.8713358Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2QuickImpl.prl
+2025-10-02T06:59:37.8718399Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2QuickImpld.prl
+2025-10-02T06:59:37.8722894Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2Utils.prl
+2025-10-02T06:59:37.8727657Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2Utilsd.prl
+2025-10-02T06:59:37.8732295Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickEffects.prl
+2025-10-02T06:59:37.8737384Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickEffectsd.prl
+2025-10-02T06:59:37.8742049Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickLayouts.prl
+2025-10-02T06:59:37.8746617Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickLayoutsd.prl
+2025-10-02T06:59:37.8751258Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickParticles.prl
+2025-10-02T06:59:37.8756286Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickParticlesd.prl
+2025-10-02T06:59:37.8760653Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickShapes.prl
+2025-10-02T06:59:37.8765461Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickShapesd.prl
+2025-10-02T06:59:37.8770329Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTemplates2.prl
+2025-10-02T06:59:37.8775709Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTemplates2d.prl
+2025-10-02T06:59:37.8780691Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTest.prl
+2025-10-02T06:59:37.8784912Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTestd.prl
+2025-10-02T06:59:37.8789520Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTestUtils.prl
+2025-10-02T06:59:37.8795220Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTestUtilsd.prl
+2025-10-02T06:59:37.8799535Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickWidgets.prl
+2025-10-02T06:59:37.8804151Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickWidgetsd.prl
+2025-10-02T06:59:37.8808653Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Sql.prl
+2025-10-02T06:59:37.8814504Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Sqld.prl
+2025-10-02T06:59:37.8819623Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Svg.prl
+2025-10-02T06:59:37.8824011Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Svgd.prl
+2025-10-02T06:59:37.8828705Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6SvgWidgets.prl
+2025-10-02T06:59:37.8833605Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6SvgWidgetsd.prl
+2025-10-02T06:59:37.8838359Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Test.prl
+2025-10-02T06:59:37.8843169Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Testd.prl
+2025-10-02T06:59:37.8847505Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6UiTools.prl
+2025-10-02T06:59:37.8851983Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6UiToolsd.prl
+2025-10-02T06:59:37.8857064Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Widgets.prl
+2025-10-02T06:59:37.8861505Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Widgetsd.prl
+2025-10-02T06:59:37.8865921Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Xml.prl
+2025-10-02T06:59:37.8870387Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Xmld.prl
+2025-10-02T06:59:37.8878394Z INFO    : Finished installation
+2025-10-02T06:59:37.8878866Z INFO    : Time elapsed: 24.37271130 second
+2025-10-02T06:59:37.9698402Z ##[group]Run mkdir build
+2025-10-02T06:59:37.9698736Z [36;1mmkdir build[0m
+2025-10-02T06:59:37.9699186Z [36;1mcd build[0m
+2025-10-02T06:59:37.9699473Z [36;1mcmake .. -G "Visual Studio 17 2022" -A x64 -DCMAKE_BUILD_TYPE=Release[0m
+2025-10-02T06:59:38.0519319Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-10-02T06:59:38.0519709Z env:
+2025-10-02T06:59:38.0520003Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:59:38.0520519Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2025-10-02T06:59:38.0521030Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:59:38.0521465Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:59:38.0521896Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:59:38.0522275Z   QT_ROOT_DIR: D:\a\VersionTools\Qt\6.7.0\msvc2019_64
+2025-10-02T06:59:38.0522688Z   QT_PLUGIN_PATH: D:\a\VersionTools\Qt\6.7.0\msvc2019_64\plugins
+2025-10-02T06:59:38.0523156Z   QML2_IMPORT_PATH: D:\a\VersionTools\Qt\6.7.0\msvc2019_64\qml
+2025-10-02T06:59:38.0523508Z ##[endgroup]
+2025-10-02T06:59:43.1685629Z 
+2025-10-02T06:59:43.1694035Z     Directory: D:\a\VersionTools\VersionTools
+2025-10-02T06:59:43.1694425Z 
+2025-10-02T06:59:43.1696542Z [32;1mMode   [0m[32;1m              LastWriteTime[0m [32;1;3m        Length[0m[32;1m Name[0m
+2025-10-02T06:59:43.1697424Z [32;1m----   [0m [32;1m             -------------[0m [32;1m        ------[0m [32;1m----[0m
+2025-10-02T06:59:43.1968326Z d----           10/2/2025  6:59 AM                [44;1mbuild[0m
+2025-10-02T06:59:52.6746031Z -- The CXX compiler identification is MSVC 19.44.35217.0
+2025-10-02T06:59:53.6263656Z -- The C compiler identification is MSVC 19.44.35217.0
+2025-10-02T06:59:53.7434397Z -- Detecting CXX compiler ABI info
+2025-10-02T06:59:54.7733529Z -- Detecting CXX compiler ABI info - done
+2025-10-02T06:59:54.7896198Z -- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+2025-10-02T06:59:54.7938370Z -- Detecting CXX compile features
+2025-10-02T06:59:54.7949686Z -- Detecting CXX compile features - done
+2025-10-02T06:59:54.8148335Z -- Detecting C compiler ABI info
+2025-10-02T06:59:55.5515370Z -- Detecting C compiler ABI info - done
+2025-10-02T06:59:55.5681105Z -- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+2025-10-02T06:59:55.5685400Z -- Detecting C compile features
+2025-10-02T06:59:55.5692089Z -- Detecting C compile features - done
+2025-10-02T06:59:55.5717556Z -- Building for Windows with Qt
+2025-10-02T06:59:55.6631795Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2025-10-02T06:59:57.0666162Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+2025-10-02T06:59:57.0667103Z -- Looking for pthread_create in pthreads
+2025-10-02T06:59:57.6776138Z -- Looking for pthread_create in pthreads - not found
+2025-10-02T06:59:57.6776773Z -- Looking for pthread_create in pthread
+2025-10-02T06:59:58.2757716Z -- Looking for pthread_create in pthread - not found
+2025-10-02T06:59:58.2821956Z -- Found Threads: TRUE
+2025-10-02T06:59:58.2851871Z -- Performing Test HAVE_STDATOMIC
+2025-10-02T06:59:59.5667666Z -- Performing Test HAVE_STDATOMIC - Success
+2025-10-02T06:59:59.5680111Z -- Found WrapAtomic: TRUE
+2025-10-02T06:59:59.9059140Z -- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
+2025-10-02T06:59:59.9354881Z -- Found Qt6: 6.7.0
+2025-10-02T07:00:01.1545095Z -- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
+2025-10-02T07:00:01.1598747Z CMake Warning at CMakeLists.txt:141 (message):
+2025-10-02T07:00:01.1599392Z   libgit2 not found, will use system git commands
+2025-10-02T07:00:01.1599784Z 
+2025-10-02T07:00:01.1599795Z 
+2025-10-02T07:00:01.2023057Z -- Configuring done (17.4s)
+2025-10-02T07:00:01.4918415Z -- Generating done (0.3s)
+2025-10-02T07:00:01.4938559Z -- Build files have been written to: D:/a/VersionTools/VersionTools/build
+2025-10-02T07:00:01.5417778Z 
+2025-10-02T07:00:01.7613536Z ##[group]Run cd build
+2025-10-02T07:00:01.7613834Z [36;1mcd build[0m
+2025-10-02T07:00:01.7614032Z [36;1mcmake --build . --config Release[0m
+2025-10-02T07:00:01.7687285Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-10-02T07:00:01.7687603Z env:
+2025-10-02T07:00:01.7687842Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T07:00:01.7688268Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2025-10-02T07:00:01.7688656Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T07:00:01.7689037Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T07:00:01.7689410Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T07:00:01.7689750Z   QT_ROOT_DIR: D:\a\VersionTools\Qt\6.7.0\msvc2019_64
+2025-10-02T07:00:01.7690065Z   QT_PLUGIN_PATH: D:\a\VersionTools\Qt\6.7.0\msvc2019_64\plugins
+2025-10-02T07:00:01.7690427Z   QML2_IMPORT_PATH: D:\a\VersionTools\Qt\6.7.0\msvc2019_64\qml
+2025-10-02T07:00:01.7690692Z ##[endgroup]
+2025-10-02T07:00:02.2507730Z MSBuild version 17.14.23+b0019275e for .NET Framework
+2025-10-02T07:00:02.2840722Z 
+2025-10-02T07:00:02.6371950Z   1>Checking Build System
+2025-10-02T07:00:02.7467497Z   Automatic MOC and UIC for target GitCore
+2025-10-02T07:00:02.8423865Z   Building Custom Rule D:/a/VersionTools/VersionTools/src/core/CMakeLists.txt
+2025-10-02T07:00:02.9678491Z   GitManager.cpp
+2025-10-02T07:00:05.4280302Z   GitUtils.cpp
+2025-10-02T07:00:06.1134604Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\algorithm(3799,24): warning C4244: '=': conversion from 'int' to 'char', possible loss of data [D:\a\VersionTools\VersionTools\build\src\core\GitCore.vcxproj]
+2025-10-02T07:00:06.1163836Z   (compiling source file '../../../src/core/GitUtils.cpp')
+2025-10-02T07:00:06.1164748Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\algorithm(3799,24):
+2025-10-02T07:00:06.1165303Z       the template instantiation context (the oldest one first) is
+2025-10-02T07:00:06.1165688Z           D:\a\VersionTools\VersionTools\src\core\GitUtils.cpp(69,10):
+2025-10-02T07:00:06.1166671Z           see reference to function template instantiation '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,int(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)' being compiled
+2025-10-02T07:00:06.1167813Z           with
+2025-10-02T07:00:06.1167965Z           [
+2025-10-02T07:00:06.1168220Z               _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+2025-10-02T07:00:06.1168534Z               _Elem=char,
+2025-10-02T07:00:06.1168820Z               _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+2025-10-02T07:00:06.1169134Z               _Fn=int (__cdecl *)(int)
+2025-10-02T07:00:06.1169343Z           ]
+2025-10-02T07:00:06.1169479Z   
+2025-10-02T07:00:06.4672843Z   SystemCommand.cpp
+2025-10-02T07:00:07.9606988Z D:\a\VersionTools\VersionTools\src\core\SystemCommand.cpp(148,39): warning C4245: 'argument': conversion from 'int' to 'UINT', signed/unsigned mismatch [D:\a\VersionTools\VersionTools\build\src\core\GitCore.vcxproj]
+2025-10-02T07:00:07.9665459Z D:\a\VersionTools\VersionTools\src\core\SystemCommand.cpp(374,42): warning C4245: 'argument': conversion from 'int' to 'UINT', signed/unsigned mismatch [D:\a\VersionTools\VersionTools\build\src\core\GitCore.vcxproj]
+2025-10-02T07:00:08.2692497Z   mocs_compilation_Release.cpp
+2025-10-02T07:00:08.2838770Z   Generating Code...
+2025-10-02T07:00:12.9048765Z   GitCore.vcxproj -> D:\a\VersionTools\VersionTools\build\lib\Release\GitCore.lib
+2025-10-02T07:00:12.9556433Z   Automatic MOC and UIC for target VersionTools
+2025-10-02T07:00:12.9979659Z   AutoMoc warning
+2025-10-02T07:00:12.9980026Z   ---------------
+2025-10-02T07:00:12.9983093Z   "SRC:/src/qt/VersionToolsMainWindow.cpp"
+2025-10-02T07:00:12.9984306Z   includes the moc file "VersionToolsMainWindow.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+2025-10-02T07:00:12.9985358Z   
+2025-10-02T07:00:12.9985602Z   AutoMoc warning
+2025-10-02T07:00:12.9985873Z   ---------------
+2025-10-02T07:00:12.9986199Z   "SRC:/src/qt/utils/GitWorker.cpp"
+2025-10-02T07:00:12.9987186Z   includes the moc file "GitWorker.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+2025-10-02T07:00:12.9988119Z   
+2025-10-02T07:00:12.9988379Z   AutoMoc warning
+2025-10-02T07:00:12.9988647Z   ---------------
+2025-10-02T07:00:12.9988978Z   "SRC:/src/qt/widgets/SidebarWidget.cpp"
+2025-10-02T07:00:12.9989985Z   includes the moc file "SidebarWidget.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+2025-10-02T07:00:12.9990950Z   
+2025-10-02T07:00:13.7342422Z   AutoMoc: D:/a/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp(385:1): note: No relevant classes found. No output generated.
+2025-10-02T07:00:13.8066478Z   AutoMoc: D:/a/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp(144:1): note: No relevant classes found. No output generated.
+2025-10-02T07:00:13.9253773Z   AutoMoc: D:/a/VersionTools/VersionTools/src/qt/widgets/SidebarWidget.cpp(197:1): note: No relevant classes found. No output generated.
+2025-10-02T07:00:13.9624639Z   1>Automatic RCC for resources/resources.qrc
+2025-10-02T07:00:14.0300483Z   Building Custom Rule D:/a/VersionTools/VersionTools/src/qt/CMakeLists.txt
+2025-10-02T07:00:14.0996638Z   main.cpp
+2025-10-02T07:00:16.4767714Z   VersionToolsMainWindow.cpp
+2025-10-02T07:00:18.8591067Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(181,40): error C2661: 'HistoryWidget::HistoryWidget': no overloaded function takes 2 arguments [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8593283Z       D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(181,40):
+2025-10-02T07:00:18.8593800Z       while trying to match the argument list '(GitManager *, VersionToolsMainWindow *)'
+2025-10-02T07:00:18.8594152Z   
+2025-10-02T07:00:18.8594964Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(182,42): error C2665: 'BranchesWidget::BranchesWidget': no overloaded function could convert all the argument types [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8596223Z       D:\a\VersionTools\VersionTools\src\qt\widgets\BranchesWidget.h(14,5):
+2025-10-02T07:00:18.8596677Z       could be 'BranchesWidget::BranchesWidget(VersionTools::GitManager *,QWidget *)'
+2025-10-02T07:00:18.8597141Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(182,42):
+2025-10-02T07:00:18.8597840Z           'BranchesWidget::BranchesWidget(VersionTools::GitManager *,QWidget *)': cannot convert argument 1 from 'GitManager *' to 'VersionTools::GitManager *'
+2025-10-02T07:00:18.8598504Z               D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(182,59):
+2025-10-02T07:00:18.8599102Z               Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+2025-10-02T07:00:18.8599687Z       D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(182,42):
+2025-10-02T07:00:18.8600149Z       while trying to match the argument list '(GitManager *, VersionToolsMainWindow *)'
+2025-10-02T07:00:18.8600486Z   
+2025-10-02T07:00:18.8675052Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(280,22): error C2039: 'setRepository': is not a member of 'HistoryWidget' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8677031Z       D:\a\VersionTools\VersionTools\src\qt\widgets\HistoryWidget.h(8,7):
+2025-10-02T07:00:18.8677842Z       see declaration of 'HistoryWidget'
+2025-10-02T07:00:18.8680125Z   
+2025-10-02T07:00:18.8681392Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(281,23): error C2039: 'setRepository': is not a member of 'BranchesWidget' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8682584Z       D:\a\VersionTools\VersionTools\src\qt\widgets\BranchesWidget.h(9,7):
+2025-10-02T07:00:18.8683039Z       see declaration of 'BranchesWidget'
+2025-10-02T07:00:18.8683289Z   
+2025-10-02T07:00:18.8683906Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(289,46): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8684678Z       D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.h(24,7):
+2025-10-02T07:00:18.8685013Z       see declaration of 'GitManager'
+2025-10-02T07:00:18.8685217Z   
+2025-10-02T07:00:18.8686000Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(289,60): error C2039: 'getCurrentBranch': is not a member of 'std::unique_ptr<GitManager,std::default_delete<GitManager>>' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8687070Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+2025-10-02T07:00:18.8687606Z       see declaration of 'std::unique_ptr<GitManager,std::default_delete<GitManager>>'
+2025-10-02T07:00:18.8687924Z   
+2025-10-02T07:00:18.8688497Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(293,19): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8689235Z       D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.h(24,7):
+2025-10-02T07:00:18.8689553Z       see declaration of 'GitManager'
+2025-10-02T07:00:18.8689753Z   
+2025-10-02T07:00:18.8690816Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(293,33): error C2039: 'getStatus': is not a member of 'std::unique_ptr<GitManager,std::default_delete<GitManager>>' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8691809Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+2025-10-02T07:00:18.8692334Z       see declaration of 'std::unique_ptr<GitManager,std::default_delete<GitManager>>'
+2025-10-02T07:00:18.8692831Z   
+2025-10-02T07:00:18.8716284Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(294,35): error C3536: 'status': cannot be used before it is initialized [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:18.8949271Z   SidebarWidget.cpp
+2025-10-02T07:00:21.4587234Z   GitWorker.cpp
+2025-10-02T07:00:22.9926165Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(7,22): error C2872: 'GitManager': ambiguous symbol [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9927532Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9928038Z       could be 'GitManager'
+2025-10-02T07:00:22.9928461Z       D:\a\VersionTools\VersionTools\src\core\GitManager.h(35,7):
+2025-10-02T07:00:22.9929041Z       or       'VersionTools::GitManager'
+2025-10-02T07:00:22.9929421Z   
+2025-10-02T07:00:22.9930426Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(17,19): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9931719Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9932271Z       see declaration of 'GitManager'
+2025-10-02T07:00:22.9932624Z   
+2025-10-02T07:00:22.9933643Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(19,9): error C3536: 'result': cannot be used before it is initialized [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9935986Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(37,23): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9937302Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9937838Z       see declaration of 'GitManager'
+2025-10-02T07:00:22.9938195Z   
+2025-10-02T07:00:22.9952465Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(55,19): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9953459Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9953808Z       see declaration of 'GitManager'
+2025-10-02T07:00:22.9954043Z   
+2025-10-02T07:00:22.9954713Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(57,9): error C3536: 'result': cannot be used before it is initialized [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9958430Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(75,19): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9960179Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9960869Z       see declaration of 'GitManager'
+2025-10-02T07:00:22.9961231Z   
+2025-10-02T07:00:22.9962733Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(77,9): error C3536: 'result': cannot be used before it is initialized [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9965117Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(90,19): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9966419Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9967000Z       see declaration of 'GitManager'
+2025-10-02T07:00:22.9967376Z   
+2025-10-02T07:00:22.9968461Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(92,9): error C3536: 'result': cannot be used before it is initialized [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9970289Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(105,19): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9971799Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9972281Z       see declaration of 'GitManager'
+2025-10-02T07:00:22.9972586Z   
+2025-10-02T07:00:22.9973549Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(107,9): error C3536: 'result': cannot be used before it is initialized [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9975356Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(120,19): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9976535Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9977040Z       see declaration of 'GitManager'
+2025-10-02T07:00:22.9977350Z   
+2025-10-02T07:00:22.9978358Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(122,9): error C3536: 'result': cannot be used before it is initialized [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9980128Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(135,19): error C2027: use of undefined type 'GitManager' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:22.9981261Z       D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.h(7,7):
+2025-10-02T07:00:22.9981758Z       see declaration of 'GitManager'
+2025-10-02T07:00:22.9982082Z   
+2025-10-02T07:00:22.9983197Z D:\a\VersionTools\VersionTools\src\qt\utils\GitWorker.cpp(137,9): error C3536: 'result': cannot be used before it is initialized [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:23.0078190Z   ThemeManager.cpp
+2025-10-02T07:00:24.6861173Z   ChangesWidget.cpp
+2025-10-02T07:00:26.4923541Z D:\a\VersionTools\VersionTools\src\qt\widgets\ChangesWidget.cpp(5,16): error C2511: 'ChangesWidget::ChangesWidget(QWidget *)': overloaded member function not found in 'ChangesWidget' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:26.4925453Z       D:\a\VersionTools\VersionTools\src\qt\widgets\ChangesWidget.h(23,7):
+2025-10-02T07:00:26.4926065Z       see declaration of 'ChangesWidget'
+2025-10-02T07:00:26.4926430Z   
+2025-10-02T07:00:26.4928089Z D:\a\VersionTools\VersionTools\src\qt\widgets\ChangesWidget.cpp(7,1): error C2550: 'ChangesWidget::{ctor}': constructor initializer lists are only allowed on constructor definitions [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:26.4930803Z D:\a\VersionTools\VersionTools\src\qt\widgets\ChangesWidget.cpp(8,36): error C2671: 'ChangesWidget::{ctor}': static member functions do not have 'this' pointers [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:26.4933291Z D:\a\VersionTools\VersionTools\src\qt\widgets\ChangesWidget.cpp(9,70): error C2671: 'ChangesWidget::{ctor}': static member functions do not have 'this' pointers [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:00:26.5033018Z   HistoryWidget.cpp
+2025-10-02T07:00:28.1992913Z   BranchesWidget.cpp
+2025-10-02T07:00:30.1832180Z   SettingsDialog.cpp
+2025-10-02T07:00:31.9238600Z   qrc_resources.cpp
+2025-10-02T07:00:31.9287869Z   mocs_compilation_Release.cpp
+2025-10-02T07:00:34.5805860Z   Generating Code...
+2025-10-02T07:00:35.1568612Z ##[error]Process completed with exit code 1.
+2025-10-02T07:00:35.1798326Z Post job cleanup.
+2025-10-02T07:00:35.1962335Z Post job cleanup.
+2025-10-02T07:00:35.4369023Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-10-02T07:00:35.4672381Z git version 2.51.0.windows.1
+2025-10-02T07:00:35.4761331Z Temporarily overriding HOME='D:\a\_temp\d96d8d8c-f496-4cd5-b6f3-b78e1749a02e' before making global git config changes
+2025-10-02T07:00:35.4762388Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-02T07:00:35.4779007Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VersionTools\VersionTools
+2025-10-02T07:00:35.5142697Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-10-02T07:00:35.5493841Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-10-02T07:00:36.1027841Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-02T07:00:36.1287996Z http.https://github.com/.extraheader
+2025-10-02T07:00:36.1333189Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-10-02T07:00:36.1646291Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-10-02T07:00:36.7323625Z Cleaning up orphan processes
+2025-10-02T07:00:36.7701314Z Terminate orphan process: pid (1524) (vctip)

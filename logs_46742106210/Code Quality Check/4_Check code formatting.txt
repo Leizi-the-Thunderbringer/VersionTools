@@ -1,0 +1,1952 @@
+﻿2025-10-02T07:00:52.6764603Z ##[group]Run find src -name "*.cpp" -o -name "*.h" | xargs clang-format --dry-run --Werror || true
+2025-10-02T07:00:52.6765231Z [36;1mfind src -name "*.cpp" -o -name "*.h" | xargs clang-format --dry-run --Werror || true[0m
+2025-10-02T07:00:52.6799302Z shell: /usr/bin/bash -e {0}
+2025-10-02T07:00:52.6799521Z ##[endgroup]
+2025-10-02T07:00:56.3237458Z src/qt/utils/GitWorker.cpp:7:32: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3244830Z GitWorker::GitWorker(GitManager *gitManager, QObject *parent)
+2025-10-02T07:00:56.3245543Z                                ^
+2025-10-02T07:00:56.3246014Z src/qt/utils/GitWorker.cpp:7:34: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3246623Z GitWorker::GitWorker(GitManager *gitManager, QObject *parent)
+2025-10-02T07:00:56.3246979Z                                  ^
+2025-10-02T07:00:56.3247427Z src/qt/utils/GitWorker.cpp:7:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3248102Z GitWorker::GitWorker(GitManager *gitManager, QObject *parent)
+2025-10-02T07:00:56.3248487Z                                                     ^
+2025-10-02T07:00:56.3249212Z src/qt/utils/GitWorker.cpp:7:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3250087Z GitWorker::GitWorker(GitManager *gitManager, QObject *parent)
+2025-10-02T07:00:56.3250635Z                                                       ^
+2025-10-02T07:00:56.3251357Z src/qt/utils/GitWorker.cpp:7:62: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3252412Z GitWorker::GitWorker(GitManager *gitManager, QObject *parent)
+2025-10-02T07:00:56.3252968Z                                                              ^
+2025-10-02T07:00:56.3253718Z src/qt/utils/GitWorker.cpp:8:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3254450Z     : QObject(parent)
+2025-10-02T07:00:56.3254764Z                      ^
+2025-10-02T07:00:56.3255413Z src/qt/utils/GitWorker.cpp:9:31: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3256126Z     , m_gitManager(gitManager)
+2025-10-02T07:00:56.3256493Z                               ^
+2025-10-02T07:00:56.3257093Z src/qt/utils/GitWorker.cpp:10:2: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3257727Z {
+2025-10-02T07:00:56.3257952Z  ^
+2025-10-02T07:00:56.3258549Z src/qt/utils/GitWorker.cpp:13:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3259296Z void GitWorker::openRepository(const QString &path)
+2025-10-02T07:00:56.3259646Z                                             ^
+2025-10-02T07:00:56.3260042Z src/qt/utils/GitWorker.cpp:13:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3260484Z void GitWorker::openRepository(const QString &path)
+2025-10-02T07:00:56.3260751Z                                               ^
+2025-10-02T07:00:56.3261677Z src/qt/utils/GitWorker.cpp:13:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3262146Z void GitWorker::openRepository(const QString &path)
+2025-10-02T07:00:56.3262416Z                                                    ^
+2025-10-02T07:00:56.3262803Z src/qt/utils/GitWorker.cpp:15:56: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3263241Z     emit operationStarted(tr("Opening repository..."));
+2025-10-02T07:00:56.3263512Z                                                        ^
+2025-10-02T07:00:56.3263894Z src/qt/utils/GitWorker.cpp:17:68: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3264398Z     auto result = m_gitManager->openRepository(path.toStdString());
+2025-10-02T07:00:56.3264704Z                                                                    ^
+2025-10-02T07:00:56.3265123Z src/qt/utils/GitWorker.cpp:21:63: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3265843Z         emit operationFinished(tr("Repository opened"), true);
+2025-10-02T07:00:56.3266130Z                                                               ^
+2025-10-02T07:00:56.3266528Z src/qt/utils/GitWorker.cpp:31:32: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3266954Z void GitWorker::refreshStatus()
+2025-10-02T07:00:56.3267157Z                                ^
+2025-10-02T07:00:56.3267512Z src/qt/utils/GitWorker.cpp:33:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3267940Z     emit operationStarted(tr("Refreshing status..."));
+2025-10-02T07:00:56.3268206Z                                                       ^
+2025-10-02T07:00:56.3268592Z src/qt/utils/GitWorker.cpp:40:34: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3269000Z     } catch (const std::exception &e) {
+2025-10-02T07:00:56.3269220Z                                  ^
+2025-10-02T07:00:56.3269588Z src/qt/utils/GitWorker.cpp:40:36: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3270006Z     } catch (const std::exception &e) {
+2025-10-02T07:00:56.3270223Z                                    ^
+2025-10-02T07:00:56.3270591Z src/qt/utils/GitWorker.cpp:46:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3271348Z void GitWorker::stageFiles(const QStringList &files)
+2025-10-02T07:00:56.3271944Z                                             ^
+2025-10-02T07:00:56.3272601Z src/qt/utils/GitWorker.cpp:46:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3273363Z void GitWorker::stageFiles(const QStringList &files)
+2025-10-02T07:00:56.3273797Z                                               ^
+2025-10-02T07:00:56.3274454Z src/qt/utils/GitWorker.cpp:46:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3275167Z void GitWorker::stageFiles(const QStringList &files)
+2025-10-02T07:00:56.3275633Z                                                     ^
+2025-10-02T07:00:56.3276283Z src/qt/utils/GitWorker.cpp:48:51: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3276983Z     emit operationStarted(tr("Staging files..."));
+2025-10-02T07:00:56.3277431Z                                                   ^
+2025-10-02T07:00:56.3278148Z src/qt/utils/GitWorker.cpp:51:23: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3278819Z     for (const QString &file : files) {
+2025-10-02T07:00:56.3279180Z                       ^
+2025-10-02T07:00:56.3279759Z src/qt/utils/GitWorker.cpp:51:25: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3280433Z     for (const QString &file : files) {
+2025-10-02T07:00:56.3280780Z                         ^
+2025-10-02T07:00:56.3281426Z src/qt/utils/GitWorker.cpp:53:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3282253Z     }
+2025-10-02T07:00:56.3282407Z      ^
+2025-10-02T07:00:56.3282745Z src/qt/utils/GitWorker.cpp:55:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3283196Z     auto result = m_gitManager->addFiles(fileList);
+2025-10-02T07:00:56.3283461Z                                                    ^
+2025-10-02T07:00:56.3283866Z src/qt/utils/GitWorker.cpp:66:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3284324Z void GitWorker::unstageFiles(const QStringList &files)
+2025-10-02T07:00:56.3284599Z                                               ^
+2025-10-02T07:00:56.3285002Z src/qt/utils/GitWorker.cpp:66:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3285454Z void GitWorker::unstageFiles(const QStringList &files)
+2025-10-02T07:00:56.3285719Z                                                 ^
+2025-10-02T07:00:56.3286107Z src/qt/utils/GitWorker.cpp:66:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3286686Z void GitWorker::unstageFiles(const QStringList &files)
+2025-10-02T07:00:56.3286954Z                                                       ^
+2025-10-02T07:00:56.3287335Z src/qt/utils/GitWorker.cpp:68:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3287759Z     emit operationStarted(tr("Unstaging files..."));
+2025-10-02T07:00:56.3288023Z                                                     ^
+2025-10-02T07:00:56.3288400Z src/qt/utils/GitWorker.cpp:71:23: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3288800Z     for (const QString &file : files) {
+2025-10-02T07:00:56.3289012Z                       ^
+2025-10-02T07:00:56.3289349Z src/qt/utils/GitWorker.cpp:71:25: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3289735Z     for (const QString &file : files) {
+2025-10-02T07:00:56.3289948Z                         ^
+2025-10-02T07:00:56.3290303Z src/qt/utils/GitWorker.cpp:73:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3290977Z     }
+2025-10-02T07:00:56.3291216Z      ^
+2025-10-02T07:00:56.3291879Z src/qt/utils/GitWorker.cpp:75:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3292553Z     auto result = m_gitManager->resetFiles(fileList);
+2025-10-02T07:00:56.3292819Z                                                      ^
+2025-10-02T07:00:56.3293222Z src/qt/utils/GitWorker.cpp:86:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3293669Z void GitWorker::commitChanges(const QString &message)
+2025-10-02T07:00:56.3293932Z                                            ^
+2025-10-02T07:00:56.3294317Z src/qt/utils/GitWorker.cpp:86:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3294742Z void GitWorker::commitChanges(const QString &message)
+2025-10-02T07:00:56.3295003Z                                              ^
+2025-10-02T07:00:56.3295405Z src/qt/utils/GitWorker.cpp:86:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3295856Z void GitWorker::commitChanges(const QString &message)
+2025-10-02T07:00:56.3296123Z                                                      ^
+2025-10-02T07:00:56.3296518Z src/qt/utils/GitWorker.cpp:88:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3296951Z     emit operationStarted(tr("Creating commit..."));
+2025-10-02T07:00:56.3297205Z                                                     ^
+2025-10-02T07:00:56.3297593Z src/qt/utils/GitWorker.cpp:90:63: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3298040Z     auto result = m_gitManager->commit(message.toStdString());
+2025-10-02T07:00:56.3298337Z                                                               ^
+2025-10-02T07:00:56.3298745Z src/qt/utils/GitWorker.cpp:101:34: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3299316Z void GitWorker::fetchRepository()
+2025-10-02T07:00:56.3299533Z                                  ^
+2025-10-02T07:00:56.3299903Z src/qt/utils/GitWorker.cpp:103:58: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3300353Z     emit operationStarted(tr("Fetching from remote..."));
+2025-10-02T07:00:56.3300626Z                                                          ^
+2025-10-02T07:00:56.3301021Z src/qt/utils/GitWorker.cpp:105:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3301432Z     auto result = m_gitManager->fetch();
+2025-10-02T07:00:56.3301891Z                                         ^
+2025-10-02T07:00:56.3302289Z src/qt/utils/GitWorker.cpp:116:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3302701Z void GitWorker::pullRepository()
+2025-10-02T07:00:56.3302912Z                                 ^
+2025-10-02T07:00:56.3303287Z src/qt/utils/GitWorker.cpp:118:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3303917Z     emit operationStarted(tr("Pulling from remote..."));
+2025-10-02T07:00:56.3304190Z                                                         ^
+2025-10-02T07:00:56.3304594Z src/qt/utils/GitWorker.cpp:120:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3305013Z     auto result = m_gitManager->pull();
+2025-10-02T07:00:56.3305238Z                                        ^
+2025-10-02T07:00:56.3305630Z src/qt/utils/GitWorker.cpp:131:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3306039Z void GitWorker::pushRepository()
+2025-10-02T07:00:56.3306252Z                                 ^
+2025-10-02T07:00:56.3306615Z src/qt/utils/GitWorker.cpp:133:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3307054Z     emit operationStarted(tr("Pushing to remote..."));
+2025-10-02T07:00:56.3307335Z                                                       ^
+2025-10-02T07:00:56.3307723Z src/qt/utils/GitWorker.cpp:135:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3308129Z     auto result = m_gitManager->push();
+2025-10-02T07:00:56.3308346Z                                        ^
+2025-10-02T07:00:56.3308748Z src/qt/utils/GitWorker.h:3:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3309136Z #include <QObject>
+2025-10-02T07:00:56.3309296Z ^
+2025-10-02T07:00:56.3309603Z src/qt/utils/GitWorker.h:9:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3309991Z class GitWorker : public QObject
+2025-10-02T07:00:56.3310200Z                                 ^
+2025-10-02T07:00:56.3310568Z src/qt/utils/GitWorker.h:11:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3310949Z     Q_OBJECT
+2025-10-02T07:00:56.3311099Z             ^
+2025-10-02T07:00:56.3311421Z src/qt/utils/GitWorker.h:14:34: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3312165Z     explicit GitWorker(GitManager *gitManager, QObject *parent = nullptr);
+2025-10-02T07:00:56.3312491Z                                  ^
+2025-10-02T07:00:56.3312861Z src/qt/utils/GitWorker.h:14:36: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3313354Z     explicit GitWorker(GitManager *gitManager, QObject *parent = nullptr);
+2025-10-02T07:00:56.3313681Z                                    ^
+2025-10-02T07:00:56.3314059Z src/qt/utils/GitWorker.h:14:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3314535Z     explicit GitWorker(GitManager *gitManager, QObject *parent = nullptr);
+2025-10-02T07:00:56.3314863Z                                                       ^
+2025-10-02T07:00:56.3315249Z src/qt/utils/GitWorker.h:14:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3315889Z     explicit GitWorker(GitManager *gitManager, QObject *parent = nullptr);
+2025-10-02T07:00:56.3316212Z                                                         ^
+2025-10-02T07:00:56.3316601Z src/qt/utils/GitWorker.h:14:75: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3317081Z     explicit GitWorker(GitManager *gitManager, QObject *parent = nullptr);
+2025-10-02T07:00:56.3317414Z                                                                           ^
+2025-10-02T07:00:56.3318005Z src/qt/utils/GitWorker.h:17:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3378562Z     void openRepository(const QString &path);
+2025-10-02T07:00:56.3379038Z                                      ^
+2025-10-02T07:00:56.3379818Z src/qt/utils/GitWorker.h:17:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3380646Z     void openRepository(const QString &path);
+2025-10-02T07:00:56.3381031Z                                        ^
+2025-10-02T07:00:56.3382183Z src/qt/utils/GitWorker.h:19:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3382832Z     void stageFiles(const QStringList &files);
+2025-10-02T07:00:56.3383196Z                                      ^
+2025-10-02T07:00:56.3383769Z src/qt/utils/GitWorker.h:19:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3384386Z     void stageFiles(const QStringList &files);
+2025-10-02T07:00:56.3384756Z                                        ^
+2025-10-02T07:00:56.3385352Z src/qt/utils/GitWorker.h:20:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3385986Z     void unstageFiles(const QStringList &files);
+2025-10-02T07:00:56.3386360Z                                        ^
+2025-10-02T07:00:56.3387056Z src/qt/utils/GitWorker.h:20:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3387749Z     void unstageFiles(const QStringList &files);
+2025-10-02T07:00:56.3388180Z                                          ^
+2025-10-02T07:00:56.3388852Z src/qt/utils/GitWorker.h:21:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3389577Z     void commitChanges(const QString &message);
+2025-10-02T07:00:56.3389999Z                                     ^
+2025-10-02T07:00:56.3390644Z src/qt/utils/GitWorker.h:21:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3391363Z     void commitChanges(const QString &message);
+2025-10-02T07:00:56.3391993Z                                       ^
+2025-10-02T07:00:56.3392666Z src/qt/utils/GitWorker.h:24:27: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3393441Z     void pushRepository();
+2025-10-02T07:00:56.3393773Z                           ^
+2025-10-02T07:00:56.3394389Z src/qt/utils/GitWorker.h:27:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3395170Z     void repositoryOpened(const QString &path);
+2025-10-02T07:00:56.3395596Z                                        ^
+2025-10-02T07:00:56.3396256Z src/qt/utils/GitWorker.h:27:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3397016Z     void repositoryOpened(const QString &path);
+2025-10-02T07:00:56.3397453Z                                          ^
+2025-10-02T07:00:56.3398127Z src/qt/utils/GitWorker.h:29:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3398859Z     void operationStarted(const QString &operation);
+2025-10-02T07:00:56.3399135Z                                        ^
+2025-10-02T07:00:56.3399516Z src/qt/utils/GitWorker.h:29:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3399963Z     void operationStarted(const QString &operation);
+2025-10-02T07:00:56.3400220Z                                          ^
+2025-10-02T07:00:56.3400836Z src/qt/utils/GitWorker.h:30:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3401306Z     void operationFinished(const QString &operation, bool success);
+2025-10-02T07:00:56.3401905Z                                         ^
+2025-10-02T07:00:56.3402311Z src/qt/utils/GitWorker.h:30:43: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3402766Z     void operationFinished(const QString &operation, bool success);
+2025-10-02T07:00:56.3403064Z                                           ^
+2025-10-02T07:00:56.3403432Z src/qt/utils/GitWorker.h:31:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3403833Z     void errorOccurred(const QString &error);
+2025-10-02T07:00:56.3404061Z                                     ^
+2025-10-02T07:00:56.3404423Z src/qt/utils/GitWorker.h:31:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3404818Z     void errorOccurred(const QString &error);
+2025-10-02T07:00:56.3405180Z                                       ^
+2025-10-02T07:00:56.3405550Z src/qt/utils/GitWorker.h:31:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3405947Z     void errorOccurred(const QString &error);
+2025-10-02T07:00:56.3406179Z                                              ^
+2025-10-02T07:00:56.3406543Z src/qt/utils/GitWorker.h:34:15: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3406931Z     GitManager *m_gitManager;
+2025-10-02T07:00:56.3407127Z               ^
+2025-10-02T07:00:56.3407440Z src/qt/utils/GitWorker.h:34:17: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3407824Z     GitManager *m_gitManager;
+2025-10-02T07:00:56.3408013Z                 ^
+2025-10-02T07:00:56.3408370Z src/qt/utils/ThemeManager.h:7:19: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3408772Z class ThemeManager
+2025-10-02T07:00:56.3408950Z                   ^
+2025-10-02T07:00:56.3409313Z src/qt/utils/ThemeManager.h:8:2: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3409711Z {
+2025-10-02T07:00:56.3409849Z  ^
+2025-10-02T07:00:56.3410169Z src/qt/utils/ThemeManager.h:10:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3410617Z     static void applyModernTheme(QApplication *app);
+2025-10-02T07:00:56.3410946Z                                              ^
+2025-10-02T07:00:56.3411790Z src/qt/utils/ThemeManager.h:10:48: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3412534Z     static void applyModernTheme(QApplication *app);
+2025-10-02T07:00:56.3412971Z                                                ^
+2025-10-02T07:00:56.3413626Z src/qt/utils/ThemeManager.h:11:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3414352Z     static void applyDarkTheme(QApplication *app);
+2025-10-02T07:00:56.3414847Z                                            ^
+2025-10-02T07:00:56.3415504Z src/qt/utils/ThemeManager.h:11:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3416219Z     static void applyDarkTheme(QApplication *app);
+2025-10-02T07:00:56.3416643Z                                              ^
+2025-10-02T07:00:56.3417289Z src/qt/utils/ThemeManager.h:12:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3418015Z     static void applyLightTheme(QApplication *app);
+2025-10-02T07:00:56.3418449Z                                             ^
+2025-10-02T07:00:56.3419095Z src/qt/utils/ThemeManager.h:12:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3419824Z     static void applyLightTheme(QApplication *app);
+2025-10-02T07:00:56.3420247Z                                               ^
+2025-10-02T07:00:56.3420903Z src/qt/utils/ThemeManager.h:12:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3421954Z     static void applyLightTheme(QApplication *app);
+2025-10-02T07:00:56.3422399Z                                                    ^
+2025-10-02T07:00:56.3423071Z src/qt/utils/ThemeManager.h:15:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3423827Z     static void setModernPalette(QPalette &palette);
+2025-10-02T07:00:56.3424260Z                                          ^
+2025-10-02T07:00:56.3424920Z src/qt/utils/ThemeManager.h:15:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3425650Z     static void setModernPalette(QPalette &palette);
+2025-10-02T07:00:56.3426081Z                                            ^
+2025-10-02T07:00:56.3426738Z src/qt/utils/ThemeManager.h:16:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3427460Z     static void setDarkPalette(QPalette &palette);
+2025-10-02T07:00:56.3427872Z                                        ^
+2025-10-02T07:00:56.3428690Z src/qt/utils/ThemeManager.h:16:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3429401Z     static void setDarkPalette(QPalette &palette);
+2025-10-02T07:00:56.3429817Z                                          ^
+2025-10-02T07:00:56.3430461Z src/qt/utils/ThemeManager.h:17:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3431186Z     static void setLightPalette(QPalette &palette);
+2025-10-02T07:00:56.3431744Z                                         ^
+2025-10-02T07:00:56.3432387Z src/qt/utils/ThemeManager.h:17:43: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3433107Z     static void setLightPalette(QPalette &palette);
+2025-10-02T07:00:56.3433523Z                                           ^
+2025-10-02T07:00:56.3434184Z src/qt/utils/ThemeManager.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3434864Z #include "ThemeManager.h"
+2025-10-02T07:00:56.3435182Z ^
+2025-10-02T07:00:56.3435739Z src/qt/utils/ThemeManager.cpp:7:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3436576Z void ThemeManager::applyModernTheme(QApplication *app)
+2025-10-02T07:00:56.3437037Z                                                 ^
+2025-10-02T07:00:56.3437707Z src/qt/utils/ThemeManager.cpp:7:51: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3438478Z void ThemeManager::applyModernTheme(QApplication *app)
+2025-10-02T07:00:56.3438928Z                                                   ^
+2025-10-02T07:00:56.3439600Z src/qt/utils/ThemeManager.cpp:7:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3440363Z void ThemeManager::applyModernTheme(QApplication *app)
+2025-10-02T07:00:56.3440814Z                                                       ^
+2025-10-02T07:00:56.3441627Z src/qt/utils/ThemeManager.cpp:19:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3442340Z     app->setPalette(palette);
+2025-10-02T07:00:56.3442676Z                              ^
+2025-10-02T07:00:56.3443295Z src/qt/utils/ThemeManager.cpp:24:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3444059Z void ThemeManager::applyDarkTheme(QApplication *app)
+2025-10-02T07:00:56.3444501Z                                               ^
+2025-10-02T07:00:56.3445166Z src/qt/utils/ThemeManager.cpp:24:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3445925Z void ThemeManager::applyDarkTheme(QApplication *app)
+2025-10-02T07:00:56.3446361Z                                                 ^
+2025-10-02T07:00:56.3447038Z src/qt/utils/ThemeManager.cpp:24:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3447790Z void ThemeManager::applyDarkTheme(QApplication *app)
+2025-10-02T07:00:56.3448235Z                                                     ^
+2025-10-02T07:00:56.3449081Z src/qt/utils/ThemeManager.cpp:26:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3449820Z     app->setStyle(QStyleFactory::create("Fusion"));
+2025-10-02T07:00:56.3450235Z                                                    ^
+2025-10-02T07:00:56.3450901Z src/qt/utils/ThemeManager.cpp:33:48: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3451811Z void ThemeManager::applyLightTheme(QApplication *app)
+2025-10-02T07:00:56.3452261Z                                                ^
+2025-10-02T07:00:56.3452938Z src/qt/utils/ThemeManager.cpp:33:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3453713Z void ThemeManager::applyLightTheme(QApplication *app)
+2025-10-02T07:00:56.3454160Z                                                  ^
+2025-10-02T07:00:56.3454847Z src/qt/utils/ThemeManager.cpp:33:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3455804Z void ThemeManager::applyLightTheme(QApplication *app)
+2025-10-02T07:00:56.3456263Z                                                      ^
+2025-10-02T07:00:56.3456946Z src/qt/utils/ThemeManager.cpp:35:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3457689Z     app->setStyle(QStyleFactory::create("Fusion"));
+2025-10-02T07:00:56.3458113Z                                                    ^
+2025-10-02T07:00:56.3458662Z src/qt/utils/ThemeManager.cpp:42:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3459148Z void ThemeManager::setModernPalette(QPalette &palette)
+2025-10-02T07:00:56.3459414Z                                             ^
+2025-10-02T07:00:56.3459817Z src/qt/utils/ThemeManager.cpp:42:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3460277Z void ThemeManager::setModernPalette(QPalette &palette)
+2025-10-02T07:00:56.3460548Z                                               ^
+2025-10-02T07:00:56.3460964Z src/qt/utils/ThemeManager.cpp:42:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3461424Z void ThemeManager::setModernPalette(QPalette &palette)
+2025-10-02T07:00:56.3462381Z                                                       ^
+2025-10-02T07:00:56.3462803Z src/qt/utils/ThemeManager.cpp:57:72: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3463314Z     palette.setColor(QPalette::HighlightedText, QColor(255, 255, 255));
+2025-10-02T07:00:56.3463645Z                                                                        ^
+2025-10-02T07:00:56.3464066Z src/qt/utils/ThemeManager.cpp:65:43: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3464528Z void ThemeManager::setDarkPalette(QPalette &palette)
+2025-10-02T07:00:56.3464790Z                                           ^
+2025-10-02T07:00:56.3465188Z src/qt/utils/ThemeManager.cpp:65:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3465646Z void ThemeManager::setDarkPalette(QPalette &palette)
+2025-10-02T07:00:56.3465911Z                                             ^
+2025-10-02T07:00:56.3466309Z src/qt/utils/ThemeManager.cpp:65:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3466746Z void ThemeManager::setDarkPalette(QPalette &palette)
+2025-10-02T07:00:56.3467013Z                                                     ^
+2025-10-02T07:00:56.3467406Z src/qt/utils/ThemeManager.cpp:80:66: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3467890Z     palette.setColor(QPalette::HighlightedText, QColor(0, 0, 0));
+2025-10-02T07:00:56.3468199Z                                                                  ^
+2025-10-02T07:00:56.3468606Z src/qt/utils/ThemeManager.cpp:87:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3469056Z void ThemeManager::setLightPalette(QPalette &palette)
+2025-10-02T07:00:56.3469467Z                                            ^
+2025-10-02T07:00:56.3469865Z src/qt/utils/ThemeManager.cpp:87:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3470309Z void ThemeManager::setLightPalette(QPalette &palette)
+2025-10-02T07:00:56.3470572Z                                              ^
+2025-10-02T07:00:56.3470962Z src/qt/utils/ThemeManager.cpp:87:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3471407Z void ThemeManager::setLightPalette(QPalette &palette)
+2025-10-02T07:00:56.3471860Z                                                      ^
+2025-10-02T07:00:56.3472265Z src/qt/utils/ThemeManager.cpp:95:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3472699Z QString ThemeManager::getModernStyleSheet()
+2025-10-02T07:00:56.3472934Z                                            ^
+2025-10-02T07:00:56.3473350Z src/qt/VersionToolsMainWindow.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3473924Z #include "VersionToolsMainWindow.h"
+2025-10-02T07:00:56.3474141Z ^
+2025-10-02T07:00:56.3474498Z src/qt/VersionToolsMainWindow.cpp:10:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3474927Z #include <QApplication>
+2025-10-02T07:00:56.3475102Z ^
+2025-10-02T07:00:56.3475445Z src/qt/VersionToolsMainWindow.cpp:27:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3475967Z VersionToolsMainWindow::VersionToolsMainWindow(QWidget *parent)
+2025-10-02T07:00:56.3476279Z                                                       ^
+2025-10-02T07:00:56.3476711Z src/qt/VersionToolsMainWindow.cpp:27:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3477224Z VersionToolsMainWindow::VersionToolsMainWindow(QWidget *parent)
+2025-10-02T07:00:56.3477767Z                                                         ^
+2025-10-02T07:00:56.3478512Z src/qt/VersionToolsMainWindow.cpp:28:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3479233Z     : QMainWindow(parent)
+2025-10-02T07:00:56.3479535Z                          ^
+2025-10-02T07:00:56.3480183Z src/qt/VersionToolsMainWindow.cpp:29:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3480917Z     , m_centralSplitter(nullptr)
+2025-10-02T07:00:56.3481297Z                                 ^
+2025-10-02T07:00:56.3482093Z src/qt/VersionToolsMainWindow.cpp:30:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3482825Z     , m_contentStack(nullptr)
+2025-10-02T07:00:56.3483148Z                              ^
+2025-10-02T07:00:56.3483812Z src/qt/VersionToolsMainWindow.cpp:31:31: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3484526Z     , m_sidebarWidget(nullptr)
+2025-10-02T07:00:56.3484847Z                               ^
+2025-10-02T07:00:56.3485520Z src/qt/VersionToolsMainWindow.cpp:32:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3486238Z     , m_changesWidget(nullptr)
+2025-10-02T07:00:56.3486557Z      ^
+2025-10-02T07:00:56.3487141Z src/qt/VersionToolsMainWindow.cpp:32:31: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3487863Z     , m_changesWidget(nullptr)
+2025-10-02T07:00:56.3488177Z                               ^
+2025-10-02T07:00:56.3488830Z src/qt/VersionToolsMainWindow.cpp:33:31: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3489540Z     , m_historyWidget(nullptr)
+2025-10-02T07:00:56.3489857Z                               ^
+2025-10-02T07:00:56.3490511Z src/qt/VersionToolsMainWindow.cpp:34:32: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3491223Z     , m_branchesWidget(nullptr)
+2025-10-02T07:00:56.3491679Z                                ^
+2025-10-02T07:00:56.3492545Z src/qt/VersionToolsMainWindow.cpp:35:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3493364Z     , m_gitManager(std::make_unique<GitManager>())
+2025-10-02T07:00:56.3493750Z      ^
+2025-10-02T07:00:56.3494352Z src/qt/VersionToolsMainWindow.cpp:35:51: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3495039Z     , m_gitManager(std::make_unique<GitManager>())
+2025-10-02T07:00:56.3495371Z                                                   ^
+2025-10-02T07:00:56.3495807Z src/qt/VersionToolsMainWindow.cpp:36:27: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3496246Z     , m_gitWorker(nullptr)
+2025-10-02T07:00:56.3496436Z                           ^
+2025-10-02T07:00:56.3496826Z src/qt/VersionToolsMainWindow.cpp:40:23: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3497250Z     resize(1400, 900);
+2025-10-02T07:00:56.3497424Z                       ^
+2025-10-02T07:00:56.3497940Z src/qt/VersionToolsMainWindow.cpp:43:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3498417Z     m_gitWorker = new GitWorker(m_gitManager.get(), this);
+2025-10-02T07:00:56.3498696Z                                                           ^
+2025-10-02T07:00:56.3499135Z src/qt/VersionToolsMainWindow.cpp:50:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3499554Z     connectSignals();
+2025-10-02T07:00:56.3499727Z                      ^
+2025-10-02T07:00:56.3500099Z src/qt/VersionToolsMainWindow.cpp:52:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3500510Z     loadSettings();
+2025-10-02T07:00:56.3500676Z                    ^
+2025-10-02T07:00:56.3501039Z src/qt/VersionToolsMainWindow.cpp:58:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3501647Z         QTimer::singleShot(100, [this, lastRepo]() {
+2025-10-02T07:00:56.3501915Z                                                     ^
+2025-10-02T07:00:56.3502360Z src/qt/VersionToolsMainWindow.cpp:59:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3502803Z             onRepositoryOpened(lastRepo);
+2025-10-02T07:00:56.3503034Z                                          ^
+2025-10-02T07:00:56.3503449Z src/qt/VersionToolsMainWindow.cpp:64:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3503918Z VersionToolsMainWindow::~VersionToolsMainWindow()
+2025-10-02T07:00:56.3504186Z                                                  ^
+2025-10-02T07:00:56.3504602Z src/qt/VersionToolsMainWindow.cpp:69:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3505056Z void VersionToolsMainWindow::createActions()
+2025-10-02T07:00:56.3505299Z                                             ^
+2025-10-02T07:00:56.3505711Z src/qt/VersionToolsMainWindow.cpp:75:95: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3506306Z     connect(m_openAction, &QAction::triggered, this, &VersionToolsMainWindow::openRepository);
+2025-10-02T07:00:56.3506705Z                                                                                               ^
+2025-10-02T07:00:56.3507153Z src/qt/VersionToolsMainWindow.cpp:80:97: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3507744Z     connect(m_cloneAction, &QAction::triggered, this, &VersionToolsMainWindow::cloneRepository);
+2025-10-02T07:00:56.3508143Z                                                                                                 ^
+2025-10-02T07:00:56.3508599Z src/qt/VersionToolsMainWindow.cpp:85:101: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3509200Z     connect(m_refreshAction, &QAction::triggered, this, &VersionToolsMainWindow::refreshRepository);
+2025-10-02T07:00:56.3509617Z                                                                                                     ^
+2025-10-02T07:00:56.3510568Z src/qt/VersionToolsMainWindow.cpp:90:97: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3511705Z     connect(m_settingsAction, &QAction::triggered, this, &VersionToolsMainWindow::showSettings);
+2025-10-02T07:00:56.3512396Z                                                                                                 ^
+2025-10-02T07:00:56.3513154Z src/qt/VersionToolsMainWindow.cpp:95:71: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3514017Z     connect(m_exitAction, &QAction::triggered, this, &QWidget::close);
+2025-10-02T07:00:56.3514541Z                                                                       ^
+2025-10-02T07:00:56.3515284Z src/qt/VersionToolsMainWindow.cpp:100:91: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3516257Z     connect(m_aboutAction, &QAction::triggered, this, &VersionToolsMainWindow::showAbout);
+2025-10-02T07:00:56.3517074Z                                                                                           ^
+2025-10-02T07:00:56.3517842Z src/qt/VersionToolsMainWindow.cpp:107:43: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3518620Z void VersionToolsMainWindow::createMenus()
+2025-10-02T07:00:56.3519013Z                                           ^
+2025-10-02T07:00:56.3519725Z src/qt/VersionToolsMainWindow.cpp:117:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3520468Z     m_fileMenu->addAction(m_exitAction);
+2025-10-02T07:00:56.3520845Z                                         ^
+2025-10-02T07:00:56.3521679Z src/qt/VersionToolsMainWindow.cpp:120:48: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3522456Z     // View menu items will be added by widgets
+2025-10-02T07:00:56.3522850Z                                                ^
+2025-10-02T07:00:56.3523291Z src/qt/VersionToolsMainWindow.cpp:123:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3523766Z     // Git menu items will be added by widgets
+2025-10-02T07:00:56.3523995Z                                               ^
+2025-10-02T07:00:56.3524420Z src/qt/VersionToolsMainWindow.cpp:130:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3524882Z void VersionToolsMainWindow::createToolBars()
+2025-10-02T07:00:56.3525148Z                                              ^
+2025-10-02T07:00:56.3525569Z src/qt/VersionToolsMainWindow.cpp:142:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3526029Z void VersionToolsMainWindow::createStatusBar()
+2025-10-02T07:00:56.3526273Z                                               ^
+2025-10-02T07:00:56.3526695Z src/qt/VersionToolsMainWindow.cpp:146:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3527169Z     statusBar()->addWidget(m_repositoryLabel);
+2025-10-02T07:00:56.3527417Z                                               ^
+2025-10-02T07:00:56.3527847Z src/qt/VersionToolsMainWindow.cpp:148:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3528319Z     statusBar()->addPermanentWidget(new QLabel("|"));
+2025-10-02T07:00:56.3528582Z                                                      ^
+2025-10-02T07:00:56.3529017Z src/qt/VersionToolsMainWindow.cpp:152:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3529478Z     statusBar()->addPermanentWidget(m_branchLabel);
+2025-10-02T07:00:56.3529737Z                                                    ^
+2025-10-02T07:00:56.3530380Z src/qt/VersionToolsMainWindow.cpp:154:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3531173Z     statusBar()->addPermanentWidget(new QLabel("|"));
+2025-10-02T07:00:56.3531723Z                                                      ^
+2025-10-02T07:00:56.3532635Z src/qt/VersionToolsMainWindow.cpp:157:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3533125Z     statusBar()->addPermanentWidget(m_statusLabel);
+2025-10-02T07:00:56.3533381Z                                                    ^
+2025-10-02T07:00:56.3533812Z src/qt/VersionToolsMainWindow.cpp:165:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3534288Z void VersionToolsMainWindow::setupCentralWidget()
+2025-10-02T07:00:56.3534551Z                                                  ^
+2025-10-02T07:00:56.3534978Z src/qt/VersionToolsMainWindow.cpp:168:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3535421Z     setCentralWidget(m_centralSplitter);
+2025-10-02T07:00:56.3535654Z                                         ^
+2025-10-02T07:00:56.3536069Z src/qt/VersionToolsMainWindow.cpp:173:51: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3536531Z     m_centralSplitter->addWidget(m_sidebarWidget);
+2025-10-02T07:00:56.3536909Z                                                   ^
+2025-10-02T07:00:56.3537333Z src/qt/VersionToolsMainWindow.cpp:177:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3537787Z     m_centralSplitter->addWidget(m_contentStack);
+2025-10-02T07:00:56.3538026Z                                                  ^
+2025-10-02T07:00:56.3538447Z src/qt/VersionToolsMainWindow.cpp:182:69: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3538951Z     m_branchesWidget = new BranchesWidget(m_gitManager.get(), this);
+2025-10-02T07:00:56.3539266Z                                                                     ^
+2025-10-02T07:00:56.3539769Z src/qt/VersionToolsMainWindow.cpp:186:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3540547Z     m_contentStack->addWidget(m_branchesWidget);
+2025-10-02T07:00:56.3540961Z                                                 ^
+2025-10-02T07:00:56.3541826Z src/qt/VersionToolsMainWindow.cpp:194:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3542502Z void VersionToolsMainWindow::connectSignals()
+2025-10-02T07:00:56.3542750Z                                              ^
+2025-10-02T07:00:56.3543172Z src/qt/VersionToolsMainWindow.cpp:196:63: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3543669Z     connect(m_sidebarWidget, &SidebarWidget::selectionChanged,
+2025-10-02T07:00:56.3543968Z                                                               ^
+2025-10-02T07:00:56.3544408Z src/qt/VersionToolsMainWindow.cpp:197:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3544905Z             this, &VersionToolsMainWindow::onSidebarSelectionChanged);
+2025-10-02T07:00:56.3545187Z                  ^
+2025-10-02T07:00:56.3545568Z src/qt/VersionToolsMainWindow.cpp:197:71: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3546090Z             this, &VersionToolsMainWindow::onSidebarSelectionChanged);
+2025-10-02T07:00:56.3546392Z                                                                       ^
+2025-10-02T07:00:56.3546827Z src/qt/VersionToolsMainWindow.cpp:199:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3547305Z     connect(m_gitWorker, &GitWorker::repositoryOpened,
+2025-10-02T07:00:56.3547574Z                                                       ^
+2025-10-02T07:00:56.3548006Z src/qt/VersionToolsMainWindow.cpp:201:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3548465Z     connect(m_gitWorker, &GitWorker::statusChanged,
+2025-10-02T07:00:56.3548721Z                                                    ^
+2025-10-02T07:00:56.3549147Z src/qt/VersionToolsMainWindow.cpp:203:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3549612Z     connect(m_gitWorker, &GitWorker::operationStarted,
+2025-10-02T07:00:56.3550230Z                                                       ^
+2025-10-02T07:00:56.3550967Z src/qt/VersionToolsMainWindow.cpp:205:56: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3551917Z     connect(m_gitWorker, &GitWorker::operationFinished,
+2025-10-02T07:00:56.3552373Z                                                        ^
+2025-10-02T07:00:56.3553110Z src/qt/VersionToolsMainWindow.cpp:209:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3553911Z void VersionToolsMainWindow::openRepository()
+2025-10-02T07:00:56.3554324Z                                              ^
+2025-10-02T07:00:56.3555047Z src/qt/VersionToolsMainWindow.cpp:211:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3555802Z     QString dir = QFileDialog::getExistingDirectory(
+2025-10-02T07:00:56.3556070Z                                                     ^
+2025-10-02T07:00:56.3556507Z src/qt/VersionToolsMainWindow.cpp:212:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3557061Z         this,
+2025-10-02T07:00:56.3557215Z              ^
+2025-10-02T07:00:56.3557577Z src/qt/VersionToolsMainWindow.cpp:213:35: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3558018Z         tr("Open Git Repository"),
+2025-10-02T07:00:56.3558227Z                                   ^
+2025-10-02T07:00:56.3558633Z src/qt/VersionToolsMainWindow.cpp:214:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3559067Z         QDir::homePath(),
+2025-10-02T07:00:56.3559249Z                          ^
+2025-10-02T07:00:56.3559638Z src/qt/VersionToolsMainWindow.cpp:215:69: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3560148Z         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+2025-10-02T07:00:56.3560461Z                                                                     ^
+2025-10-02T07:00:56.3560911Z src/qt/VersionToolsMainWindow.cpp:216:7: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3561335Z     );
+2025-10-02T07:00:56.3561618Z       ^
+2025-10-02T07:00:56.3561984Z src/qt/VersionToolsMainWindow.cpp:223:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3562457Z void VersionToolsMainWindow::cloneRepository()
+2025-10-02T07:00:56.3562708Z                                               ^
+2025-10-02T07:00:56.3563149Z src/qt/VersionToolsMainWindow.cpp:226:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3563644Z     QMessageBox::information(this, tr("Clone Repository"), 
+2025-10-02T07:00:56.3563931Z                                                           ^
+2025-10-02T07:00:56.3564368Z src/qt/VersionToolsMainWindow.cpp:230:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3564855Z void VersionToolsMainWindow::refreshRepository()
+2025-10-02T07:00:56.3565124Z                                                 ^
+2025-10-02T07:00:56.3565553Z src/qt/VersionToolsMainWindow.cpp:237:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3566020Z void VersionToolsMainWindow::showSettings()
+2025-10-02T07:00:56.3566269Z                                            ^
+2025-10-02T07:00:56.3566696Z src/qt/VersionToolsMainWindow.cpp:243:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3567151Z void VersionToolsMainWindow::showAbout()
+2025-10-02T07:00:56.3567380Z                                         ^
+2025-10-02T07:00:56.3567799Z src/qt/VersionToolsMainWindow.cpp:245:56: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3568286Z     QMessageBox::about(this, tr("About Version Tools"),
+2025-10-02T07:00:56.3568556Z                                                        ^
+2025-10-02T07:00:56.3569111Z src/qt/VersionToolsMainWindow.cpp:246:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3569556Z         tr("<h2>Version Tools 1.0.0</h2>"
+2025-10-02T07:00:56.3569793Z                                          ^
+2025-10-02T07:00:56.3570209Z src/qt/VersionToolsMainWindow.cpp:247:72: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3570731Z            "<p>A modern Git GUI application built with Qt and C++.</p>"
+2025-10-02T07:00:56.3571027Z                                                                        ^
+2025-10-02T07:00:56.3571608Z src/qt/VersionToolsMainWindow.cpp:248:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3572315Z            "<p>Copyright © 2024 VersionTools Project</p>"
+2025-10-02T07:00:56.3572781Z src/qt/VersionToolsMainWindow.cpp:249:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3573246Z            "<p>Built with Qt %1</p>").arg(QT_VERSION_STR));
+2025-10-02T07:00:56.3573625Z                                      ^
+2025-10-02T07:00:56.3574048Z src/qt/VersionToolsMainWindow.cpp:252:66: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3574582Z void VersionToolsMainWindow::onSidebarSelectionChanged(int index)
+2025-10-02T07:00:56.3574911Z                                                                  ^
+2025-10-02T07:00:56.3575353Z src/qt/VersionToolsMainWindow.cpp:255:48: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3575802Z         m_contentStack->setCurrentIndex(index);
+2025-10-02T07:00:56.3576048Z                                                ^
+2025-10-02T07:00:56.3576471Z src/qt/VersionToolsMainWindow.cpp:265:62: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3577010Z void VersionToolsMainWindow::onRepositoryOpened(const QString &path)
+2025-10-02T07:00:56.3577338Z                                                              ^
+2025-10-02T07:00:56.3577788Z src/qt/VersionToolsMainWindow.cpp:265:64: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3578317Z void VersionToolsMainWindow::onRepositoryOpened(const QString &path)
+2025-10-02T07:00:56.3578643Z                                                                ^
+2025-10-02T07:00:56.3579085Z src/qt/VersionToolsMainWindow.cpp:265:69: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3579607Z void VersionToolsMainWindow::onRepositoryOpened(const QString &path)
+2025-10-02T07:00:56.3579939Z                                                                     ^
+2025-10-02T07:00:56.3580371Z src/qt/VersionToolsMainWindow.cpp:269:23: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3580803Z     updateStatusBar();
+2025-10-02T07:00:56.3580984Z                       ^
+2025-10-02T07:00:56.3581406Z src/qt/VersionToolsMainWindow.cpp:273:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3582034Z     settings.setValue("lastRepository", path);
+2025-10-02T07:00:56.3582277Z                                               ^
+2025-10-02T07:00:56.3582707Z src/qt/VersionToolsMainWindow.cpp:276:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3583163Z     m_sidebarWidget->setRepositoryPath(path);
+2025-10-02T07:00:56.3583408Z                                              ^
+2025-10-02T07:00:56.3583829Z src/qt/VersionToolsMainWindow.cpp:281:43: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3584279Z     m_branchesWidget->setRepository(path);
+2025-10-02T07:00:56.3584512Z                                           ^
+2025-10-02T07:00:56.3584930Z src/qt/VersionToolsMainWindow.cpp:287:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3585430Z void VersionToolsMainWindow::onRepositoryStatusChanged()
+2025-10-02T07:00:56.3585719Z                                                         ^
+2025-10-02T07:00:56.3586282Z src/qt/VersionToolsMainWindow.cpp:290:23: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3586713Z     updateStatusBar();
+2025-10-02T07:00:56.3586887Z                       ^
+2025-10-02T07:00:56.3587266Z src/qt/VersionToolsMainWindow.cpp:297:65: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3587817Z void VersionToolsMainWindow::onGitOperationStarted(const QString &operation)
+2025-10-02T07:00:56.3588179Z                                                                 ^
+2025-10-02T07:00:56.3588614Z src/qt/VersionToolsMainWindow.cpp:297:67: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3589170Z void VersionToolsMainWindow::onGitOperationStarted(const QString &operation)
+2025-10-02T07:00:56.3589692Z                                                                   ^
+2025-10-02T07:00:56.3590432Z src/qt/VersionToolsMainWindow.cpp:297:77: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3591684Z void VersionToolsMainWindow::onGitOperationStarted(const QString &operation)
+2025-10-02T07:00:56.3592305Z                                                                             ^
+2025-10-02T07:00:56.3593067Z src/qt/VersionToolsMainWindow.cpp:304:66: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3594114Z void VersionToolsMainWindow::onGitOperationFinished(const QString &operation, bool success)
+2025-10-02T07:00:56.3594812Z                                                                  ^
+2025-10-02T07:00:56.3595557Z src/qt/VersionToolsMainWindow.cpp:304:68: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3596586Z void VersionToolsMainWindow::onGitOperationFinished(const QString &operation, bool success)
+2025-10-02T07:00:56.3597279Z                                                                    ^
+2025-10-02T07:00:56.3598017Z src/qt/VersionToolsMainWindow.cpp:304:92: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3599065Z void VersionToolsMainWindow::onGitOperationFinished(const QString &operation, bool success)
+2025-10-02T07:00:56.3599770Z                                                                                            ^
+2025-10-02T07:00:56.3600523Z src/qt/VersionToolsMainWindow.cpp:306:24: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3601254Z     Q_UNUSED(operation)
+2025-10-02T07:00:56.3601662Z                        ^
+2025-10-02T07:00:56.3602330Z src/qt/VersionToolsMainWindow.cpp:313:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3602790Z         QTimer::singleShot(3000, [this]() {
+2025-10-02T07:00:56.3603023Z                                            ^
+2025-10-02T07:00:56.3603446Z src/qt/VersionToolsMainWindow.cpp:314:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3603899Z             m_statusLabel->setText(tr("Ready"));
+2025-10-02T07:00:56.3604151Z                                                 ^
+2025-10-02T07:00:56.3604575Z src/qt/VersionToolsMainWindow.cpp:319:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3605058Z void VersionToolsMainWindow::updateWindowTitle()
+2025-10-02T07:00:56.3605315Z                                                 ^
+2025-10-02T07:00:56.3605736Z src/qt/VersionToolsMainWindow.cpp:321:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3606179Z     QString title = "Version Tools";
+2025-10-02T07:00:56.3606391Z                                     ^
+2025-10-02T07:00:56.3606802Z src/qt/VersionToolsMainWindow.cpp:325:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3607236Z         title += " - " + dir.dirName();
+2025-10-02T07:00:56.3607459Z                                        ^
+2025-10-02T07:00:56.3607881Z src/qt/VersionToolsMainWindow.cpp:330:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3608455Z     }
+2025-10-02T07:00:56.3608599Z      ^
+2025-10-02T07:00:56.3608954Z src/qt/VersionToolsMainWindow.cpp:335:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3609427Z void VersionToolsMainWindow::updateStatusBar()
+2025-10-02T07:00:56.3609677Z                                               ^
+2025-10-02T07:00:56.3610102Z src/qt/VersionToolsMainWindow.cpp:347:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3610555Z void VersionToolsMainWindow::loadSettings()
+2025-10-02T07:00:56.3610797Z                                            ^
+2025-10-02T07:00:56.3611219Z src/qt/VersionToolsMainWindow.cpp:350:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3611825Z     settings.beginGroup("MainWindow");
+2025-10-02T07:00:56.3612057Z                                       ^
+2025-10-02T07:00:56.3612482Z src/qt/VersionToolsMainWindow.cpp:354:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3613108Z     restoreState(settings.value("state").toByteArray());
+2025-10-02T07:00:56.3613385Z                                                         ^
+2025-10-02T07:00:56.3613828Z src/qt/VersionToolsMainWindow.cpp:359:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3614249Z     }
+2025-10-02T07:00:56.3614383Z      ^
+2025-10-02T07:00:56.3614803Z src/qt/VersionToolsMainWindow.cpp:364:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3615585Z void VersionToolsMainWindow::saveSettings()
+2025-10-02T07:00:56.3615997Z                                            ^
+2025-10-02T07:00:56.3616705Z src/qt/VersionToolsMainWindow.cpp:367:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3617460Z     settings.beginGroup("MainWindow");
+2025-10-02T07:00:56.3617840Z                                       ^
+2025-10-02T07:00:56.3618549Z src/qt/VersionToolsMainWindow.cpp:371:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3619316Z     settings.setValue("state", saveState());
+2025-10-02T07:00:56.3619707Z                                             ^
+2025-10-02T07:00:56.3620419Z src/qt/VersionToolsMainWindow.cpp:376:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3621120Z     }
+2025-10-02T07:00:56.3621348Z      ^
+2025-10-02T07:00:56.3622087Z src/qt/VersionToolsMainWindow.cpp:381:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3622944Z void VersionToolsMainWindow::closeEvent(QCloseEvent *event)
+2025-10-02T07:00:56.3623436Z                                                    ^
+2025-10-02T07:00:56.3624165Z src/qt/VersionToolsMainWindow.cpp:381:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3625015Z void VersionToolsMainWindow::closeEvent(QCloseEvent *event)
+2025-10-02T07:00:56.3625518Z                                                      ^
+2025-10-02T07:00:56.3625994Z src/qt/VersionToolsMainWindow.cpp:381:60: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3626499Z void VersionToolsMainWindow::closeEvent(QCloseEvent *event)
+2025-10-02T07:00:56.3626792Z                                                            ^
+2025-10-02T07:00:56.3627222Z src/qt/VersionToolsMainWindow.h:3:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3627642Z #include <QMainWindow>
+2025-10-02T07:00:56.3627813Z ^
+2025-10-02T07:00:56.3628158Z src/qt/VersionToolsMainWindow.h:26:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3628625Z class VersionToolsMainWindow : public QMainWindow
+2025-10-02T07:00:56.3628885Z                                                  ^
+2025-10-02T07:00:56.3629310Z src/qt/VersionToolsMainWindow.h:28:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3629864Z     Q_OBJECT
+2025-10-02T07:00:56.3630011Z             ^
+2025-10-02T07:00:56.3630364Z src/qt/VersionToolsMainWindow.h:31:35: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3630826Z     VersionToolsMainWindow(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3631087Z                                   ^
+2025-10-02T07:00:56.3631619Z src/qt/VersionToolsMainWindow.h:31:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3632100Z     VersionToolsMainWindow(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3632360Z                                     ^
+2025-10-02T07:00:56.3632761Z src/qt/VersionToolsMainWindow.h:32:31: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3633189Z     ~VersionToolsMainWindow();
+2025-10-02T07:00:56.3633388Z                               ^
+2025-10-02T07:00:56.3633773Z src/qt/VersionToolsMainWindow.h:35:32: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3634695Z     void closeEvent(QCloseEvent *event) override;
+2025-10-02T07:00:56.3635105Z                                ^
+2025-10-02T07:00:56.3635776Z src/qt/VersionToolsMainWindow.h:35:34: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3636529Z     void closeEvent(QCloseEvent *event) override;
+2025-10-02T07:00:56.3636935Z                                  ^
+2025-10-02T07:00:56.3637603Z src/qt/VersionToolsMainWindow.h:35:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3638190Z     void closeEvent(QCloseEvent *event) override;
+2025-10-02T07:00:56.3638446Z                                                  ^
+2025-10-02T07:00:56.3638869Z src/qt/VersionToolsMainWindow.h:44:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3639323Z     void onRepositoryOpened(const QString &path);
+2025-10-02T07:00:56.3639572Z                                          ^
+2025-10-02T07:00:56.3639996Z src/qt/VersionToolsMainWindow.h:44:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3640442Z     void onRepositoryOpened(const QString &path);
+2025-10-02T07:00:56.3640687Z                                            ^
+2025-10-02T07:00:56.3641092Z src/qt/VersionToolsMainWindow.h:46:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3641695Z     void onGitOperationStarted(const QString &operation);
+2025-10-02T07:00:56.3641977Z                                             ^
+2025-10-02T07:00:56.3642388Z src/qt/VersionToolsMainWindow.h:46:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3642857Z     void onGitOperationStarted(const QString &operation);
+2025-10-02T07:00:56.3643126Z                                               ^
+2025-10-02T07:00:56.3643539Z src/qt/VersionToolsMainWindow.h:47:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3644060Z     void onGitOperationFinished(const QString &operation, bool success);
+2025-10-02T07:00:56.3644382Z                                              ^
+2025-10-02T07:00:56.3644791Z src/qt/VersionToolsMainWindow.h:47:48: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3645600Z     void onGitOperationFinished(const QString &operation, bool success);
+2025-10-02T07:00:56.3646153Z                                                ^
+2025-10-02T07:00:56.3646848Z src/qt/VersionToolsMainWindow.h:47:73: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3647618Z     void onGitOperationFinished(const QString &operation, bool success);
+2025-10-02T07:00:56.3647947Z                                                                         ^
+2025-10-02T07:00:56.3648382Z src/qt/VersionToolsMainWindow.h:62:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3648959Z     QSplitter *m_centralSplitter;
+2025-10-02T07:00:56.3649168Z              ^
+2025-10-02T07:00:56.3649526Z src/qt/VersionToolsMainWindow.h:62:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3649947Z     QSplitter *m_centralSplitter;
+2025-10-02T07:00:56.3650149Z                ^
+2025-10-02T07:00:56.3650503Z src/qt/VersionToolsMainWindow.h:63:19: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3650930Z     QStackedWidget *m_contentStack;
+2025-10-02T07:00:56.3651140Z                   ^
+2025-10-02T07:00:56.3651609Z src/qt/VersionToolsMainWindow.h:63:21: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3652049Z     QStackedWidget *m_contentStack;
+2025-10-02T07:00:56.3652251Z                     ^
+2025-10-02T07:00:56.3652618Z src/qt/VersionToolsMainWindow.h:64:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3653038Z     SidebarWidget *m_sidebarWidget;
+2025-10-02T07:00:56.3653359Z                  ^
+2025-10-02T07:00:56.3653711Z src/qt/VersionToolsMainWindow.h:64:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3654135Z     SidebarWidget *m_sidebarWidget;
+2025-10-02T07:00:56.3654338Z                    ^
+2025-10-02T07:00:56.3654696Z src/qt/VersionToolsMainWindow.h:65:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3655118Z     ChangesWidget *m_changesWidget;
+2025-10-02T07:00:56.3655314Z                  ^
+2025-10-02T07:00:56.3655666Z src/qt/VersionToolsMainWindow.h:65:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3656084Z     ChangesWidget *m_changesWidget;
+2025-10-02T07:00:56.3656288Z                    ^
+2025-10-02T07:00:56.3656802Z src/qt/VersionToolsMainWindow.h:66:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3657524Z     HistoryWidget *m_historyWidget;
+2025-10-02T07:00:56.3657872Z                  ^
+2025-10-02T07:00:56.3658479Z src/qt/VersionToolsMainWindow.h:66:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3659198Z     HistoryWidget *m_historyWidget;
+2025-10-02T07:00:56.3659532Z                    ^
+2025-10-02T07:00:56.3660117Z src/qt/VersionToolsMainWindow.h:67:19: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3660550Z     BranchesWidget *m_branchesWidget;
+2025-10-02T07:00:56.3660773Z                   ^
+2025-10-02T07:00:56.3661132Z src/qt/VersionToolsMainWindow.h:67:21: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3661684Z     BranchesWidget *m_branchesWidget;
+2025-10-02T07:00:56.3661898Z                     ^
+2025-10-02T07:00:56.3662260Z src/qt/VersionToolsMainWindow.h:67:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3662690Z     BranchesWidget *m_branchesWidget;
+2025-10-02T07:00:56.3662909Z                                      ^
+2025-10-02T07:00:56.3663329Z src/qt/VersionToolsMainWindow.h:70:10: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3663744Z     QMenu *m_fileMenu;
+2025-10-02T07:00:56.3663915Z          ^
+2025-10-02T07:00:56.3664266Z src/qt/VersionToolsMainWindow.h:70:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3664677Z     QMenu *m_fileMenu;
+2025-10-02T07:00:56.3664849Z            ^
+2025-10-02T07:00:56.3665195Z src/qt/VersionToolsMainWindow.h:71:10: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3665608Z     QMenu *m_viewMenu;
+2025-10-02T07:00:56.3665768Z          ^
+2025-10-02T07:00:56.3666116Z src/qt/VersionToolsMainWindow.h:71:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3666527Z     QMenu *m_viewMenu;
+2025-10-02T07:00:56.3666686Z            ^
+2025-10-02T07:00:56.3667034Z src/qt/VersionToolsMainWindow.h:72:10: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3667589Z     QMenu *m_gitMenu;
+2025-10-02T07:00:56.3667755Z          ^
+2025-10-02T07:00:56.3668092Z src/qt/VersionToolsMainWindow.h:72:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3668503Z     QMenu *m_gitMenu;
+2025-10-02T07:00:56.3668660Z            ^
+2025-10-02T07:00:56.3669006Z src/qt/VersionToolsMainWindow.h:73:10: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3669552Z     QMenu *m_helpMenu;
+2025-10-02T07:00:56.3669830Z          ^
+2025-10-02T07:00:56.3670416Z src/qt/VersionToolsMainWindow.h:73:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3671113Z     QMenu *m_helpMenu;
+2025-10-02T07:00:56.3671391Z            ^
+2025-10-02T07:00:56.3672111Z src/qt/VersionToolsMainWindow.h:73:23: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3672603Z     QMenu *m_helpMenu;
+2025-10-02T07:00:56.3672777Z                       ^
+2025-10-02T07:00:56.3673276Z src/qt/VersionToolsMainWindow.h:75:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3673694Z     QAction *m_openAction;
+2025-10-02T07:00:56.3673870Z            ^
+2025-10-02T07:00:56.3674216Z src/qt/VersionToolsMainWindow.h:75:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3674625Z     QAction *m_openAction;
+2025-10-02T07:00:56.3674803Z              ^
+2025-10-02T07:00:56.3675150Z src/qt/VersionToolsMainWindow.h:76:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3675570Z     QAction *m_cloneAction;
+2025-10-02T07:00:56.3675750Z            ^
+2025-10-02T07:00:56.3676102Z src/qt/VersionToolsMainWindow.h:76:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3676523Z     QAction *m_cloneAction;
+2025-10-02T07:00:56.3676703Z              ^
+2025-10-02T07:00:56.3677056Z src/qt/VersionToolsMainWindow.h:77:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3677484Z     QAction *m_refreshAction;
+2025-10-02T07:00:56.3677676Z            ^
+2025-10-02T07:00:56.3678021Z src/qt/VersionToolsMainWindow.h:77:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3678443Z     QAction *m_refreshAction;
+2025-10-02T07:00:56.3678628Z              ^
+2025-10-02T07:00:56.3679100Z src/qt/VersionToolsMainWindow.h:78:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3679822Z     QAction *m_settingsAction;
+2025-10-02T07:00:56.3680138Z            ^
+2025-10-02T07:00:56.3680734Z src/qt/VersionToolsMainWindow.h:78:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3681188Z     QAction *m_settingsAction;
+2025-10-02T07:00:56.3681410Z              ^
+2025-10-02T07:00:56.3681890Z src/qt/VersionToolsMainWindow.h:79:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3682317Z     QAction *m_exitAction;
+2025-10-02T07:00:56.3682501Z            ^
+2025-10-02T07:00:56.3682851Z src/qt/VersionToolsMainWindow.h:79:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3683269Z     QAction *m_exitAction;
+2025-10-02T07:00:56.3683444Z              ^
+2025-10-02T07:00:56.3683796Z src/qt/VersionToolsMainWindow.h:80:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3684210Z     QAction *m_aboutAction;
+2025-10-02T07:00:56.3684389Z            ^
+2025-10-02T07:00:56.3684731Z src/qt/VersionToolsMainWindow.h:80:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3685148Z     QAction *m_aboutAction;
+2025-10-02T07:00:56.3685323Z              ^
+2025-10-02T07:00:56.3685672Z src/qt/VersionToolsMainWindow.h:81:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3686092Z     QAction *m_aboutQtAction;
+2025-10-02T07:00:56.3686273Z            ^
+2025-10-02T07:00:56.3686758Z src/qt/VersionToolsMainWindow.h:81:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3687177Z     QAction *m_aboutQtAction;
+2025-10-02T07:00:56.3687364Z              ^
+2025-10-02T07:00:56.3687710Z src/qt/VersionToolsMainWindow.h:81:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3688129Z     QAction *m_aboutQtAction;
+2025-10-02T07:00:56.3688314Z                              ^
+2025-10-02T07:00:56.3688693Z src/qt/VersionToolsMainWindow.h:84:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3689111Z     QToolBar *m_mainToolBar;
+2025-10-02T07:00:56.3689293Z             ^
+2025-10-02T07:00:56.3689644Z src/qt/VersionToolsMainWindow.h:84:15: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3690058Z     QToolBar *m_mainToolBar;
+2025-10-02T07:00:56.3690246Z               ^
+2025-10-02T07:00:56.3690597Z src/qt/VersionToolsMainWindow.h:84:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3691181Z     QToolBar *m_mainToolBar;
+2025-10-02T07:00:56.3691376Z                             ^
+2025-10-02T07:00:56.3691889Z src/qt/VersionToolsMainWindow.h:87:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3692315Z     QLabel *m_repositoryLabel;
+2025-10-02T07:00:56.3692499Z           ^
+2025-10-02T07:00:56.3692846Z src/qt/VersionToolsMainWindow.h:87:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3693261Z     QLabel *m_repositoryLabel;
+2025-10-02T07:00:56.3693450Z             ^
+2025-10-02T07:00:56.3693797Z src/qt/VersionToolsMainWindow.h:88:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3694212Z     QLabel *m_branchLabel;
+2025-10-02T07:00:56.3694392Z           ^
+2025-10-02T07:00:56.3694736Z src/qt/VersionToolsMainWindow.h:88:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3695165Z     QLabel *m_branchLabel;
+2025-10-02T07:00:56.3695338Z             ^
+2025-10-02T07:00:56.3695685Z src/qt/VersionToolsMainWindow.h:89:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3696100Z     QLabel *m_statusLabel;
+2025-10-02T07:00:56.3696277Z           ^
+2025-10-02T07:00:56.3696617Z src/qt/VersionToolsMainWindow.h:89:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3697035Z     QLabel *m_statusLabel;
+2025-10-02T07:00:56.3697210Z             ^
+2025-10-02T07:00:56.3697554Z src/qt/VersionToolsMainWindow.h:90:17: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3697981Z     QProgressBar *m_progressBar;
+2025-10-02T07:00:56.3698180Z                 ^
+2025-10-02T07:00:56.3698539Z src/qt/VersionToolsMainWindow.h:90:19: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3698960Z     QProgressBar *m_progressBar;
+2025-10-02T07:00:56.3699160Z                   ^
+2025-10-02T07:00:56.3699515Z src/qt/VersionToolsMainWindow.h:90:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3699937Z     QProgressBar *m_progressBar;
+2025-10-02T07:00:56.3700139Z                                 ^
+2025-10-02T07:00:56.3700526Z src/qt/VersionToolsMainWindow.h:94:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3700943Z     GitWorker *m_gitWorker;
+2025-10-02T07:00:56.3701124Z              ^
+2025-10-02T07:00:56.3701594Z src/qt/VersionToolsMainWindow.h:94:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3702016Z     GitWorker *m_gitWorker;
+2025-10-02T07:00:56.3702197Z                ^
+2025-10-02T07:00:56.3702654Z src/qt/widgets/ChangesWidget.h:3:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3703062Z #include <QWidget>
+2025-10-02T07:00:56.3703223Z ^
+2025-10-02T07:00:56.3703557Z src/qt/widgets/ChangesWidget.h:23:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3704119Z class ChangesWidget : public QWidget
+2025-10-02T07:00:56.3704338Z                                     ^
+2025-10-02T07:00:56.3704738Z src/qt/widgets/ChangesWidget.h:25:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3705145Z     Q_OBJECT
+2025-10-02T07:00:56.3705292Z             ^
+2025-10-02T07:00:56.3705637Z src/qt/widgets/ChangesWidget.h:28:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3706165Z     explicit ChangesWidget(GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:00:56.3706505Z                                      ^
+2025-10-02T07:00:56.3706899Z src/qt/widgets/ChangesWidget.h:28:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3707539Z     explicit ChangesWidget(GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:00:56.3708107Z                                        ^
+2025-10-02T07:00:56.3708955Z src/qt/widgets/ChangesWidget.h:28:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3709840Z     explicit ChangesWidget(GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:00:56.3710408Z                                                           ^
+2025-10-02T07:00:56.3711113Z src/qt/widgets/ChangesWidget.h:28:61: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3712129Z     explicit ChangesWidget(GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:00:56.3712715Z                                                             ^
+2025-10-02T07:00:56.3713425Z src/qt/widgets/ChangesWidget.h:30:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3714086Z     void setRepository(const QString &path);
+2025-10-02T07:00:56.3714325Z                                     ^
+2025-10-02T07:00:56.3714713Z src/qt/widgets/ChangesWidget.h:30:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3715154Z     void setRepository(const QString &path);
+2025-10-02T07:00:56.3715381Z                                       ^
+2025-10-02T07:00:56.3715779Z src/qt/widgets/ChangesWidget.h:31:27: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3716196Z     void refreshChanges();
+2025-10-02T07:00:56.3716380Z                           ^
+2025-10-02T07:00:56.3716751Z src/qt/widgets/ChangesWidget.h:37:43: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3717194Z     void onFileItemChanged(QListWidgetItem *item);
+2025-10-02T07:00:56.3717449Z                                           ^
+2025-10-02T07:00:56.3717842Z src/qt/widgets/ChangesWidget.h:37:45: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3718286Z     void onFileItemChanged(QListWidgetItem *item);
+2025-10-02T07:00:56.3718533Z                                             ^
+2025-10-02T07:00:56.3718940Z src/qt/widgets/ChangesWidget.h:39:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3719358Z     void showCommitDialog();
+2025-10-02T07:00:56.3719551Z                             ^
+2025-10-02T07:00:56.3719926Z src/qt/widgets/ChangesWidget.h:45:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3720350Z     void stageFile(const QString &filePath);
+2025-10-02T07:00:56.3720579Z                                 ^
+2025-10-02T07:00:56.3720966Z src/qt/widgets/ChangesWidget.h:45:35: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3721390Z     void stageFile(const QString &filePath);
+2025-10-02T07:00:56.3721748Z                                   ^
+2025-10-02T07:00:56.3722134Z src/qt/widgets/ChangesWidget.h:46:35: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3722568Z     void unstageFile(const QString &filePath);
+2025-10-02T07:00:56.3722930Z                                   ^
+2025-10-02T07:00:56.3723326Z src/qt/widgets/ChangesWidget.h:46:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3723766Z     void unstageFile(const QString &filePath);
+2025-10-02T07:00:56.3724008Z                                     ^
+2025-10-02T07:00:56.3724412Z src/qt/widgets/ChangesWidget.h:48:15: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3724836Z     GitManager *m_gitManager;
+2025-10-02T07:00:56.3725027Z               ^
+2025-10-02T07:00:56.3725375Z src/qt/widgets/ChangesWidget.h:48:17: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3725786Z     GitManager *m_gitManager;
+2025-10-02T07:00:56.3725971Z                 ^
+2025-10-02T07:00:56.3726324Z src/qt/widgets/ChangesWidget.h:52:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3726728Z     QVBoxLayout *m_layout;
+2025-10-02T07:00:56.3726916Z                ^
+2025-10-02T07:00:56.3727369Z src/qt/widgets/ChangesWidget.h:52:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3727773Z     QVBoxLayout *m_layout;
+2025-10-02T07:00:56.3727953Z                  ^
+2025-10-02T07:00:56.3728299Z src/qt/widgets/ChangesWidget.h:53:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3728707Z     QToolBar *m_toolbar;
+2025-10-02T07:00:56.3728879Z             ^
+2025-10-02T07:00:56.3729220Z src/qt/widgets/ChangesWidget.h:53:15: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3729627Z     QToolBar *m_toolbar;
+2025-10-02T07:00:56.3729796Z               ^
+2025-10-02T07:00:56.3730140Z src/qt/widgets/ChangesWidget.h:54:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3730545Z     QSplitter *m_splitter;
+2025-10-02T07:00:56.3730725Z              ^
+2025-10-02T07:00:56.3731059Z src/qt/widgets/ChangesWidget.h:54:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3731609Z     QSplitter *m_splitter;
+2025-10-02T07:00:56.3731793Z                ^
+2025-10-02T07:00:56.3732151Z src/qt/widgets/ChangesWidget.h:54:27: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3749503Z     QSplitter *m_splitter;
+2025-10-02T07:00:56.3749778Z                           ^
+2025-10-02T07:00:56.3750191Z src/qt/widgets/ChangesWidget.h:57:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3750648Z     QWidget *m_fileListPanel;
+2025-10-02T07:00:56.3750851Z            ^
+2025-10-02T07:00:56.3751211Z src/qt/widgets/ChangesWidget.h:57:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3751766Z     QWidget *m_fileListPanel;
+2025-10-02T07:00:56.3751968Z              ^
+2025-10-02T07:00:56.3752335Z src/qt/widgets/ChangesWidget.h:58:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3752767Z     QListWidget *m_stagedList;
+2025-10-02T07:00:56.3752969Z                ^
+2025-10-02T07:00:56.3753327Z src/qt/widgets/ChangesWidget.h:58:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3753739Z     QListWidget *m_stagedList;
+2025-10-02T07:00:56.3753929Z                  ^
+2025-10-02T07:00:56.3754272Z src/qt/widgets/ChangesWidget.h:59:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3754686Z     QListWidget *m_unstagedList;
+2025-10-02T07:00:56.3754912Z                ^
+2025-10-02T07:00:56.3755262Z src/qt/widgets/ChangesWidget.h:59:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3755678Z     QListWidget *m_unstagedList;
+2025-10-02T07:00:56.3755875Z                  ^
+2025-10-02T07:00:56.3756224Z src/qt/widgets/ChangesWidget.h:59:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3756626Z     QListWidget *m_unstagedList;
+2025-10-02T07:00:56.3757014Z                                 ^
+2025-10-02T07:00:56.3757398Z src/qt/widgets/ChangesWidget.h:62:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3757809Z     QWidget *m_diffPanel;
+2025-10-02T07:00:56.3757988Z            ^
+2025-10-02T07:00:56.3758331Z src/qt/widgets/ChangesWidget.h:62:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3758735Z     QWidget *m_diffPanel;
+2025-10-02T07:00:56.3758910Z              ^
+2025-10-02T07:00:56.3759259Z src/qt/widgets/ChangesWidget.h:63:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3759662Z     QTextEdit *m_diffView;
+2025-10-02T07:00:56.3759843Z              ^
+2025-10-02T07:00:56.3760178Z src/qt/widgets/ChangesWidget.h:63:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3760583Z     QTextEdit *m_diffView;
+2025-10-02T07:00:56.3760756Z                ^
+2025-10-02T07:00:56.3761099Z src/qt/widgets/ChangesWidget.h:63:27: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3761742Z     QTextEdit *m_diffView;
+2025-10-02T07:00:56.3761933Z                           ^
+2025-10-02T07:00:56.3762321Z src/qt/widgets/ChangesWidget.h:66:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3762757Z     QPushButton *m_stageAllButton;
+2025-10-02T07:00:56.3762970Z                ^
+2025-10-02T07:00:56.3763322Z src/qt/widgets/ChangesWidget.h:66:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3763739Z     QPushButton *m_stageAllButton;
+2025-10-02T07:00:56.3763941Z                  ^
+2025-10-02T07:00:56.3764291Z src/qt/widgets/ChangesWidget.h:67:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3764707Z     QPushButton *m_unstageAllButton;
+2025-10-02T07:00:56.3764914Z                ^
+2025-10-02T07:00:56.3765260Z src/qt/widgets/ChangesWidget.h:67:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3765681Z     QPushButton *m_unstageAllButton;
+2025-10-02T07:00:56.3765891Z                  ^
+2025-10-02T07:00:56.3766230Z src/qt/widgets/ChangesWidget.h:68:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3766641Z     QPushButton *m_commitButton;
+2025-10-02T07:00:56.3766845Z                ^
+2025-10-02T07:00:56.3767185Z src/qt/widgets/ChangesWidget.h:68:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3767599Z     QPushButton *m_commitButton;
+2025-10-02T07:00:56.3767793Z                  ^
+2025-10-02T07:00:56.3768137Z src/qt/widgets/ChangesWidget.h:68:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3768543Z     QPushButton *m_commitButton;
+2025-10-02T07:00:56.3768746Z                                 ^
+2025-10-02T07:00:56.3769133Z src/qt/widgets/ChangesWidget.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3769585Z #include "ChangesWidget.h"
+2025-10-02T07:00:56.3769770Z ^
+2025-10-02T07:00:56.3770105Z src/qt/widgets/ChangesWidget.cpp:5:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3770592Z ChangesWidget::ChangesWidget(QWidget *parent)
+2025-10-02T07:00:56.3770836Z                                     ^
+2025-10-02T07:00:56.3771247Z src/qt/widgets/ChangesWidget.cpp:5:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3771807Z ChangesWidget::ChangesWidget(QWidget *parent)
+2025-10-02T07:00:56.3772055Z                                       ^
+2025-10-02T07:00:56.3772465Z src/qt/widgets/ChangesWidget.cpp:5:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3772914Z ChangesWidget::ChangesWidget(QWidget *parent)
+2025-10-02T07:00:56.3773158Z                                              ^
+2025-10-02T07:00:56.3773562Z src/qt/widgets/ChangesWidget.cpp:6:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3774098Z     : QWidget(parent)
+2025-10-02T07:00:56.3774269Z                      ^
+2025-10-02T07:00:56.3774639Z src/qt/widgets/ChangesWidget.cpp:8:9: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3775067Z     auto *layout = new QVBoxLayout(this);
+2025-10-02T07:00:56.3775288Z         ^
+2025-10-02T07:00:56.3775632Z src/qt/widgets/ChangesWidget.cpp:8:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3776055Z     auto *layout = new QVBoxLayout(this);
+2025-10-02T07:00:56.3776272Z           ^
+2025-10-02T07:00:56.3776526Z src/qt/widgets/HistoryWidget.h:9:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3776586Z     Q_OBJECT
+2025-10-02T07:00:56.3776649Z             ^
+2025-10-02T07:00:56.3776900Z src/qt/widgets/HistoryWidget.h:12:35: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3777014Z     explicit HistoryWidget(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3777191Z                                   ^
+2025-10-02T07:00:56.3777455Z src/qt/widgets/HistoryWidget.h:12:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3777573Z     explicit HistoryWidget(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3777643Z                                     ^
+2025-10-02T07:00:56.3777906Z src/qt/widgets/HistoryWidget.h:12:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3778016Z     explicit HistoryWidget(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3778093Z                                                       ^
+2025-10-02T07:00:56.3778353Z src/qt/widgets/HistoryWidget.h:15:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3778501Z     void commitSelected(const QString& commitHash);
+2025-10-02T07:00:56.3778577Z                                                    ^
+2025-10-02T07:00:56.3778850Z src/qt/widgets/BranchesWidget.h:9:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3778943Z class BranchesWidget : public QWidget
+2025-10-02T07:00:56.3779011Z                                      ^
+2025-10-02T07:00:56.3779274Z src/qt/widgets/BranchesWidget.h:11:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3779341Z     Q_OBJECT
+2025-10-02T07:00:56.3779400Z             ^
+2025-10-02T07:00:56.3779660Z src/qt/widgets/BranchesWidget.h:14:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3779907Z     explicit BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:00:56.3779984Z                                                     ^
+2025-10-02T07:00:56.3780238Z src/qt/widgets/BranchesWidget.h:14:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3780477Z     explicit BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:00:56.3780561Z                                                       ^
+2025-10-02T07:00:56.3780815Z src/qt/widgets/BranchesWidget.h:14:74: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3781046Z     explicit BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:00:56.3781130Z                                                                          ^
+2025-10-02T07:00:56.3781417Z src/qt/widgets/BranchesWidget.h:14:76: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3781753Z     explicit BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:00:56.3781840Z                                                                            ^
+2025-10-02T07:00:56.3782110Z src/qt/widgets/BranchesWidget.h:15:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3782196Z     ~BranchesWidget() override = default;
+2025-10-02T07:00:56.3782391Z                                          ^
+2025-10-02T07:00:56.3782650Z src/qt/widgets/BranchesWidget.h:18:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3782752Z     void branchChanged(const QString &branchName);
+2025-10-02T07:00:56.3782822Z                                     ^
+2025-10-02T07:00:56.3783079Z src/qt/widgets/BranchesWidget.h:18:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3783183Z     void branchChanged(const QString &branchName);
+2025-10-02T07:00:56.3783256Z                                       ^
+2025-10-02T07:00:56.3783511Z src/qt/widgets/BranchesWidget.h:18:51: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3783609Z     void branchChanged(const QString &branchName);
+2025-10-02T07:00:56.3783687Z                                                   ^
+2025-10-02T07:00:56.3783948Z src/qt/widgets/BranchesWidget.h:21:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3784167Z     VersionTools::GitManager *m_gitManager;
+2025-10-02T07:00:56.3784233Z                             ^
+2025-10-02T07:00:56.3784514Z src/qt/widgets/BranchesWidget.h:21:31: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3784606Z     VersionTools::GitManager *m_gitManager;
+2025-10-02T07:00:56.3784670Z                               ^
+2025-10-02T07:00:56.3784941Z src/qt/widgets/SidebarWidget.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3785018Z #include "SidebarWidget.h"
+2025-10-02T07:00:56.3785076Z ^
+2025-10-02T07:00:56.3785348Z src/qt/widgets/SidebarWidget.cpp:11:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3785453Z SidebarWidget::SidebarWidget(QWidget *parent)
+2025-10-02T07:00:56.3785519Z                                     ^
+2025-10-02T07:00:56.3785778Z src/qt/widgets/SidebarWidget.cpp:11:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3785892Z SidebarWidget::SidebarWidget(QWidget *parent)
+2025-10-02T07:00:56.3785959Z                                       ^
+2025-10-02T07:00:56.3786220Z src/qt/widgets/SidebarWidget.cpp:12:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3786293Z     : QWidget(parent)
+2025-10-02T07:00:56.3786354Z                      ^
+2025-10-02T07:00:56.3786611Z src/qt/widgets/SidebarWidget.cpp:13:24: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3786684Z     , m_layout(nullptr)
+2025-10-02T07:00:56.3786748Z                        ^
+2025-10-02T07:00:56.3787008Z src/qt/widgets/SidebarWidget.cpp:14:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3787087Z     , m_repositoryLabel(nullptr)
+2025-10-02T07:00:56.3787157Z                                 ^
+2025-10-02T07:00:56.3787416Z src/qt/widgets/SidebarWidget.cpp:15:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3787500Z     , m_branchLabel(nullptr)
+2025-10-02T07:00:56.3787570Z                             ^
+2025-10-02T07:00:56.3787826Z src/qt/widgets/SidebarWidget.cpp:16:32: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3787900Z     , m_navigationList(nullptr)
+2025-10-02T07:00:56.3787967Z                                ^
+2025-10-02T07:00:56.3788223Z src/qt/widgets/SidebarWidget.cpp:17:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3788295Z     , m_statusLabel(nullptr)
+2025-10-02T07:00:56.3788354Z      ^
+2025-10-02T07:00:56.3788616Z src/qt/widgets/SidebarWidget.cpp:17:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3788687Z     , m_statusLabel(nullptr)
+2025-10-02T07:00:56.3788751Z                             ^
+2025-10-02T07:00:56.3789011Z src/qt/widgets/SidebarWidget.cpp:18:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3789168Z     , m_changesItem(nullptr)
+2025-10-02T07:00:56.3789230Z                             ^
+2025-10-02T07:00:56.3789485Z src/qt/widgets/SidebarWidget.cpp:19:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3789560Z     , m_historyItem(nullptr)
+2025-10-02T07:00:56.3789622Z                             ^
+2025-10-02T07:00:56.3789878Z src/qt/widgets/SidebarWidget.cpp:20:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3789958Z     , m_branchesItem(nullptr)
+2025-10-02T07:00:56.3790024Z                              ^
+2025-10-02T07:00:56.3790278Z src/qt/widgets/SidebarWidget.cpp:21:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3790353Z     , m_remotesItem(nullptr)
+2025-10-02T07:00:56.3790410Z      ^
+2025-10-02T07:00:56.3790663Z src/qt/widgets/SidebarWidget.cpp:21:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3790738Z     , m_remotesItem(nullptr)
+2025-10-02T07:00:56.3790878Z                             ^
+2025-10-02T07:00:56.3791136Z src/qt/widgets/SidebarWidget.cpp:22:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3791207Z     , m_tagsItem(nullptr)
+2025-10-02T07:00:56.3791275Z                          ^
+2025-10-02T07:00:56.3791629Z src/qt/widgets/SidebarWidget.cpp:23:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3791706Z     , m_stashesItem(nullptr)
+2025-10-02T07:00:56.3791770Z                             ^
+2025-10-02T07:00:56.3792044Z src/qt/widgets/SidebarWidget.cpp:29:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3792127Z void SidebarWidget::setupUI()
+2025-10-02T07:00:56.3792190Z                              ^
+2025-10-02T07:00:56.3792464Z src/qt/widgets/SidebarWidget.cpp:117:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3792594Z     connect(m_navigationList, &QListWidget::itemClicked,
+2025-10-02T07:00:56.3792677Z                                                         ^
+2025-10-02T07:00:56.3792948Z src/qt/widgets/SidebarWidget.cpp:121:44: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3793048Z void SidebarWidget::createNavigationItems()
+2025-10-02T07:00:56.3793119Z                                            ^
+2025-10-02T07:00:56.3793383Z src/qt/widgets/SidebarWidget.cpp:159:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3793526Z void SidebarWidget::setRepositoryPath(const QString &path)
+2025-10-02T07:00:56.3793602Z                                                    ^
+2025-10-02T07:00:56.3793870Z src/qt/widgets/SidebarWidget.cpp:159:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3794003Z void SidebarWidget::setRepositoryPath(const QString &path)
+2025-10-02T07:00:56.3794075Z                                                      ^
+2025-10-02T07:00:56.3794346Z src/qt/widgets/SidebarWidget.cpp:159:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3794483Z void SidebarWidget::setRepositoryPath(const QString &path)
+2025-10-02T07:00:56.3794564Z                                                           ^
+2025-10-02T07:00:56.3794826Z src/qt/widgets/SidebarWidget.cpp:172:63: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3795004Z void SidebarWidget::updateStatus(const VersionTools::GitStatus &status)
+2025-10-02T07:00:56.3795083Z                                                               ^
+2025-10-02T07:00:56.3795345Z src/qt/widgets/SidebarWidget.cpp:172:65: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3795518Z void SidebarWidget::updateStatus(const VersionTools::GitStatus &status)
+2025-10-02T07:00:56.3795600Z                                                                 ^
+2025-10-02T07:00:56.3795987Z src/qt/widgets/SidebarWidget.cpp:172:72: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3796170Z void SidebarWidget::updateStatus(const VersionTools::GitStatus &status)
+2025-10-02T07:00:56.3796252Z                                                                        ^
+2025-10-02T07:00:56.3796523Z src/qt/widgets/SidebarWidget.cpp:180:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3796808Z             branchText += QString(" (%1↑ %2↓)")
+2025-10-02T07:00:56.3797082Z src/qt/widgets/SidebarWidget.cpp:181:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3797166Z                          .arg(status.aheadCount)
+2025-10-02T07:00:56.3797239Z                                                 ^
+2025-10-02T07:00:56.3797509Z src/qt/widgets/SidebarWidget.cpp:193:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3797608Z void SidebarWidget::updateStatusCounts()
+2025-10-02T07:00:56.3797684Z                                         ^
+2025-10-02T07:00:56.3798065Z src/qt/widgets/SidebarWidget.cpp:199:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3798183Z     for (const auto &change : m_currentStatus.changes) {
+2025-10-02T07:00:56.3798245Z                    ^
+2025-10-02T07:00:56.3798516Z src/qt/widgets/SidebarWidget.cpp:199:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3798637Z     for (const auto &change : m_currentStatus.changes) {
+2025-10-02T07:00:56.3798698Z                      ^
+2025-10-02T07:00:56.3798965Z src/qt/widgets/SidebarWidget.cpp:232:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3799099Z void SidebarWidget::onItemClicked(QListWidgetItem *item)
+2025-10-02T07:00:56.3799177Z                                                  ^
+2025-10-02T07:00:56.3799442Z src/qt/widgets/SidebarWidget.cpp:232:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3799583Z void SidebarWidget::onItemClicked(QListWidgetItem *item)
+2025-10-02T07:00:56.3799657Z                                                    ^
+2025-10-02T07:00:56.3799918Z src/qt/widgets/SidebarWidget.cpp:232:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3800044Z void SidebarWidget::onItemClicked(QListWidgetItem *item)
+2025-10-02T07:00:56.3800122Z                                                         ^
+2025-10-02T07:00:56.3800376Z src/qt/widgets/SidebarWidget.h:3:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3800443Z #include <QWidget>
+2025-10-02T07:00:56.3800505Z ^
+2025-10-02T07:00:56.3800762Z src/qt/widgets/SidebarWidget.h:15:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3800849Z class SidebarWidget : public QWidget
+2025-10-02T07:00:56.3800924Z                                     ^
+2025-10-02T07:00:56.3801175Z src/qt/widgets/SidebarWidget.h:17:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3801244Z     Q_OBJECT
+2025-10-02T07:00:56.3801308Z             ^
+2025-10-02T07:00:56.3801665Z src/qt/widgets/SidebarWidget.h:20:35: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3801789Z     explicit SidebarWidget(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3801857Z                                   ^
+2025-10-02T07:00:56.3802275Z src/qt/widgets/SidebarWidget.h:20:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3802470Z     explicit SidebarWidget(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3802540Z                                     ^
+2025-10-02T07:00:56.3802801Z src/qt/widgets/SidebarWidget.h:22:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3802906Z     void setRepositoryPath(const QString &path);
+2025-10-02T07:00:56.3802976Z                                         ^
+2025-10-02T07:00:56.3803425Z src/qt/widgets/SidebarWidget.h:22:43: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3803532Z     void setRepositoryPath(const QString &path);
+2025-10-02T07:00:56.3803602Z                                           ^
+2025-10-02T07:00:56.3803857Z src/qt/widgets/SidebarWidget.h:23:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3804005Z     void updateStatus(const VersionTools::GitStatus &status);
+2025-10-02T07:00:56.3804080Z                                                    ^
+2025-10-02T07:00:56.3804334Z src/qt/widgets/SidebarWidget.h:23:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3804469Z     void updateStatus(const VersionTools::GitStatus &status);
+2025-10-02T07:00:56.3804542Z                                                      ^
+2025-10-02T07:00:56.3804791Z src/qt/widgets/SidebarWidget.h:23:62: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3805040Z     void updateStatus(const VersionTools::GitStatus &status);
+2025-10-02T07:00:56.3805120Z                                                              ^
+2025-10-02T07:00:56.3805371Z src/qt/widgets/SidebarWidget.h:26:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3805457Z     void selectionChanged(int index);
+2025-10-02T07:00:56.3805524Z                                      ^
+2025-10-02T07:00:56.3805775Z src/qt/widgets/SidebarWidget.h:29:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3805876Z     void onItemClicked(QListWidgetItem *item);
+2025-10-02T07:00:56.3805943Z                                       ^
+2025-10-02T07:00:56.3806192Z src/qt/widgets/SidebarWidget.h:29:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3806285Z     void onItemClicked(QListWidgetItem *item);
+2025-10-02T07:00:56.3806357Z                                         ^
+2025-10-02T07:00:56.3806610Z src/qt/widgets/SidebarWidget.h:29:47: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3806706Z     void onItemClicked(QListWidgetItem *item);
+2025-10-02T07:00:56.3806784Z                                               ^
+2025-10-02T07:00:56.3807032Z src/qt/widgets/SidebarWidget.h:36:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3807105Z     QVBoxLayout *m_layout;
+2025-10-02T07:00:56.3807168Z                ^
+2025-10-02T07:00:56.3807415Z src/qt/widgets/SidebarWidget.h:36:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3807485Z     QVBoxLayout *m_layout;
+2025-10-02T07:00:56.3807547Z                  ^
+2025-10-02T07:00:56.3807799Z src/qt/widgets/SidebarWidget.h:37:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3807877Z     QLabel *m_repositoryLabel;
+2025-10-02T07:00:56.3807935Z           ^
+2025-10-02T07:00:56.3808187Z src/qt/widgets/SidebarWidget.h:37:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3808271Z     QLabel *m_repositoryLabel;
+2025-10-02T07:00:56.3808329Z             ^
+2025-10-02T07:00:56.3808577Z src/qt/widgets/SidebarWidget.h:38:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3808651Z     QLabel *m_branchLabel;
+2025-10-02T07:00:56.3808710Z           ^
+2025-10-02T07:00:56.3808962Z src/qt/widgets/SidebarWidget.h:38:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3809032Z     QLabel *m_branchLabel;
+2025-10-02T07:00:56.3809090Z             ^
+2025-10-02T07:00:56.3809342Z src/qt/widgets/SidebarWidget.h:39:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3809422Z     QListWidget *m_navigationList;
+2025-10-02T07:00:56.3809481Z                ^
+2025-10-02T07:00:56.3809732Z src/qt/widgets/SidebarWidget.h:39:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3809896Z     QListWidget *m_navigationList;
+2025-10-02T07:00:56.3809955Z                  ^
+2025-10-02T07:00:56.3810203Z src/qt/widgets/SidebarWidget.h:40:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3810277Z     QLabel *m_statusLabel;
+2025-10-02T07:00:56.3810334Z           ^
+2025-10-02T07:00:56.3810581Z src/qt/widgets/SidebarWidget.h:40:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3810656Z     QLabel *m_statusLabel;
+2025-10-02T07:00:56.3810714Z             ^
+2025-10-02T07:00:56.3810960Z src/qt/widgets/SidebarWidget.h:46:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3811045Z     QListWidgetItem *m_changesItem;
+2025-10-02T07:00:56.3811105Z                    ^
+2025-10-02T07:00:56.3811349Z src/qt/widgets/SidebarWidget.h:46:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3811426Z     QListWidgetItem *m_changesItem;
+2025-10-02T07:00:56.3811714Z                      ^
+2025-10-02T07:00:56.3811981Z src/qt/widgets/SidebarWidget.h:47:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3812065Z     QListWidgetItem *m_historyItem;
+2025-10-02T07:00:56.3812130Z                    ^
+2025-10-02T07:00:56.3812381Z src/qt/widgets/SidebarWidget.h:47:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3812461Z     QListWidgetItem *m_historyItem;
+2025-10-02T07:00:56.3812526Z                      ^
+2025-10-02T07:00:56.3812778Z src/qt/widgets/SidebarWidget.h:48:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3812858Z     QListWidgetItem *m_branchesItem;
+2025-10-02T07:00:56.3812915Z                    ^
+2025-10-02T07:00:56.3813168Z src/qt/widgets/SidebarWidget.h:48:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3813246Z     QListWidgetItem *m_branchesItem;
+2025-10-02T07:00:56.3813311Z                      ^
+2025-10-02T07:00:56.3813570Z src/qt/widgets/SidebarWidget.h:49:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3813649Z     QListWidgetItem *m_remotesItem;
+2025-10-02T07:00:56.3813707Z                    ^
+2025-10-02T07:00:56.3813958Z src/qt/widgets/SidebarWidget.h:49:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3814036Z     QListWidgetItem *m_remotesItem;
+2025-10-02T07:00:56.3814094Z                      ^
+2025-10-02T07:00:56.3814340Z src/qt/widgets/SidebarWidget.h:50:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3814423Z     QListWidgetItem *m_tagsItem;
+2025-10-02T07:00:56.3814483Z                    ^
+2025-10-02T07:00:56.3814729Z src/qt/widgets/SidebarWidget.h:50:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3814810Z     QListWidgetItem *m_tagsItem;
+2025-10-02T07:00:56.3814871Z                      ^
+2025-10-02T07:00:56.3815118Z src/qt/widgets/SidebarWidget.h:51:20: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3815204Z     QListWidgetItem *m_stashesItem;
+2025-10-02T07:00:56.3815263Z                    ^
+2025-10-02T07:00:56.3815510Z src/qt/widgets/SidebarWidget.h:51:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3815587Z     QListWidgetItem *m_stashesItem;
+2025-10-02T07:00:56.3815649Z                      ^
+2025-10-02T07:00:56.3815921Z src/qt/widgets/BranchesWidget.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3815997Z #include "BranchesWidget.h"
+2025-10-02T07:00:56.3816060Z ^
+2025-10-02T07:00:56.3816334Z src/qt/widgets/BranchesWidget.cpp:6:56: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3816570Z BranchesWidget::BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent)
+2025-10-02T07:00:56.3816649Z                                                        ^
+2025-10-02T07:00:56.3817047Z src/qt/widgets/BranchesWidget.cpp:6:58: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3817268Z BranchesWidget::BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent)
+2025-10-02T07:00:56.3817347Z                                                          ^
+2025-10-02T07:00:56.3817620Z src/qt/widgets/BranchesWidget.cpp:6:77: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3817836Z BranchesWidget::BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent)
+2025-10-02T07:00:56.3817920Z                                                                             ^
+2025-10-02T07:00:56.3818189Z src/qt/widgets/BranchesWidget.cpp:6:79: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3818403Z BranchesWidget::BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent)
+2025-10-02T07:00:56.3818486Z                                                                               ^
+2025-10-02T07:00:56.3818930Z src/qt/widgets/BranchesWidget.cpp:7:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3818999Z     : QWidget(parent)
+2025-10-02T07:00:56.3819059Z                      ^
+2025-10-02T07:00:56.3819326Z src/qt/widgets/BranchesWidget.cpp:8:31: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3819399Z     , m_gitManager(gitManager)
+2025-10-02T07:00:56.3819463Z                               ^
+2025-10-02T07:00:56.3819723Z src/qt/widgets/BranchesWidget.cpp:10:9: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3819816Z     auto *layout = new QVBoxLayout(this);
+2025-10-02T07:00:56.3819875Z         ^
+2025-10-02T07:00:56.3820142Z src/qt/widgets/BranchesWidget.cpp:10:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3820228Z     auto *layout = new QVBoxLayout(this);
+2025-10-02T07:00:56.3820290Z           ^
+2025-10-02T07:00:56.3820554Z src/qt/widgets/HistoryWidget.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3820633Z #include "HistoryWidget.h"
+2025-10-02T07:00:56.3820691Z ^
+2025-10-02T07:00:56.3820951Z src/qt/widgets/HistoryWidget.cpp:5:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3821056Z HistoryWidget::HistoryWidget(QWidget *parent)
+2025-10-02T07:00:56.3821129Z                                     ^
+2025-10-02T07:00:56.3821394Z src/qt/widgets/HistoryWidget.cpp:5:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3821592Z HistoryWidget::HistoryWidget(QWidget *parent)
+2025-10-02T07:00:56.3821668Z                                       ^
+2025-10-02T07:00:56.3821945Z src/qt/widgets/HistoryWidget.cpp:5:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3822048Z HistoryWidget::HistoryWidget(QWidget *parent)
+2025-10-02T07:00:56.3822128Z                                              ^
+2025-10-02T07:00:56.3822400Z src/qt/widgets/HistoryWidget.cpp:6:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3822468Z     : QWidget(parent)
+2025-10-02T07:00:56.3822529Z                      ^
+2025-10-02T07:00:56.3822803Z src/qt/widgets/HistoryWidget.cpp:8:9: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3822886Z     auto *layout = new QVBoxLayout(this);
+2025-10-02T07:00:56.3822944Z         ^
+2025-10-02T07:00:56.3823225Z src/qt/widgets/HistoryWidget.cpp:8:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3823309Z     auto *layout = new QVBoxLayout(this);
+2025-10-02T07:00:56.3823366Z           ^
+2025-10-02T07:00:56.3823565Z src/qt/main.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3823643Z #include <QApplication>
+2025-10-02T07:00:56.3823701Z ^
+2025-10-02T07:00:56.3823894Z src/qt/main.cpp:8:24: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3824098Z int main(int argc, char *argv[])
+2025-10-02T07:00:56.3824161Z                        ^
+2025-10-02T07:00:56.3824346Z src/qt/main.cpp:8:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3824424Z int main(int argc, char *argv[])
+2025-10-02T07:00:56.3824489Z                          ^
+2025-10-02T07:00:56.3824673Z src/qt/main.cpp:8:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3824745Z int main(int argc, char *argv[])
+2025-10-02T07:00:56.3824815Z                                 ^
+2025-10-02T07:00:56.3825006Z src/qt/main.cpp:10:34: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3825087Z     QApplication app(argc, argv);
+2025-10-02T07:00:56.3825158Z                                  ^
+2025-10-02T07:00:56.3825346Z src/qt/main.cpp:16:51: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3825566Z     app.setOrganizationDomain("versiontools.dev");
+2025-10-02T07:00:56.3825647Z                                                   ^
+2025-10-02T07:00:56.3825837Z src/qt/main.cpp:19:58: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3825973Z     app.setWindowIcon(QIcon(":/icons/versiontools.png"));
+2025-10-02T07:00:56.3826049Z                                                          ^
+2025-10-02T07:00:56.3826245Z src/qt/main.cpp:22:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3826348Z     ThemeManager::applyModernTheme(&app);
+2025-10-02T07:00:56.3826416Z                                          ^
+2025-10-02T07:00:56.3826612Z src/qt/main.cpp:26:19: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3826680Z     window.show();
+2025-10-02T07:00:56.3826740Z                   ^
+2025-10-02T07:00:56.3827017Z src/qt/dialogs/SettingsDialog.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3827103Z #include "SettingsDialog.h"
+2025-10-02T07:00:56.3827159Z ^
+2025-10-02T07:00:56.3827424Z src/qt/dialogs/SettingsDialog.cpp:6:39: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3827540Z SettingsDialog::SettingsDialog(QWidget *parent)
+2025-10-02T07:00:56.3827607Z                                       ^
+2025-10-02T07:00:56.3827872Z src/qt/dialogs/SettingsDialog.cpp:6:41: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3827982Z SettingsDialog::SettingsDialog(QWidget *parent)
+2025-10-02T07:00:56.3828048Z                                         ^
+2025-10-02T07:00:56.3828309Z src/qt/dialogs/SettingsDialog.cpp:6:48: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3828415Z SettingsDialog::SettingsDialog(QWidget *parent)
+2025-10-02T07:00:56.3828488Z                                                ^
+2025-10-02T07:00:56.3828749Z src/qt/dialogs/SettingsDialog.cpp:7:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3828824Z     : QDialog(parent)
+2025-10-02T07:00:56.3828889Z                      ^
+2025-10-02T07:00:56.3829150Z src/qt/dialogs/SettingsDialog.cpp:11:9: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3829232Z     auto *layout = new QVBoxLayout(this);
+2025-10-02T07:00:56.3829296Z         ^
+2025-10-02T07:00:56.3829565Z src/qt/dialogs/SettingsDialog.cpp:11:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3829646Z     auto *layout = new QVBoxLayout(this);
+2025-10-02T07:00:56.3829713Z           ^
+2025-10-02T07:00:56.3829976Z src/qt/dialogs/SettingsDialog.cpp:14:9: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3830223Z     auto *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+2025-10-02T07:00:56.3830282Z         ^
+2025-10-02T07:00:56.3830634Z src/qt/dialogs/SettingsDialog.cpp:14:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3830876Z     auto *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+2025-10-02T07:00:56.3830936Z           ^
+2025-10-02T07:00:56.3831206Z src/qt/dialogs/SettingsDialog.h:5:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3831295Z class SettingsDialog : public QDialog
+2025-10-02T07:00:56.3831362Z                                      ^
+2025-10-02T07:00:56.3831719Z src/qt/dialogs/SettingsDialog.h:7:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3831782Z     Q_OBJECT
+2025-10-02T07:00:56.3831845Z             ^
+2025-10-02T07:00:56.3832113Z src/qt/dialogs/SettingsDialog.h:10:36: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3832237Z     explicit SettingsDialog(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3832304Z                                    ^
+2025-10-02T07:00:56.3832680Z src/qt/dialogs/SettingsDialog.h:10:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3832796Z     explicit SettingsDialog(QWidget *parent = nullptr);
+2025-10-02T07:00:56.3832862Z                                      ^
+2025-10-02T07:00:56.3833113Z src/core/GitUtils.h:3:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3833184Z #include <string>
+2025-10-02T07:00:56.3833238Z ^
+2025-10-02T07:00:56.3833449Z src/core/GitUtils.h:12:17: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3833520Z class GitUtils {
+2025-10-02T07:00:56.3833579Z                 ^
+2025-10-02T07:00:56.3833785Z src/core/GitUtils.h:23:56: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3833903Z     static std::string toUpper(const std::string& str);
+2025-10-02T07:00:56.3833980Z                                                        ^
+2025-10-02T07:00:56.3834189Z src/core/GitUtils.h:32:89: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3834402Z     static std::string makeRelativePath(const std::string& from, const std::string& to);
+2025-10-02T07:00:56.3834493Z                                                                                         ^
+2025-10-02T07:00:56.3834699Z src/core/GitUtils.h:41:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3834813Z     static std::string formatFileSize(size_t bytes);
+2025-10-02T07:00:56.3834894Z                                                     ^
+2025-10-02T07:00:56.3835099Z src/core/GitUtils.h:48:75: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3835265Z     static std::string getRemoteFromBranch(const std::string& branchName);
+2025-10-02T07:00:56.3835350Z                                                                           ^
+2025-10-02T07:00:56.3835556Z src/core/GitUtils.h:55:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3835666Z     static bool isSshUrl(const std::string& url);
+2025-10-02T07:00:56.3835746Z                                                  ^
+2025-10-02T07:00:56.3835951Z src/core/GitUtils.h:61:67: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3836091Z     static std::string extractHunkHeader(const std::string& line);
+2025-10-02T07:00:56.3836178Z                                                                   ^
+2025-10-02T07:00:56.3836384Z src/core/GitUtils.h:66:81: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3836568Z     static std::vector<std::string> parseGitConfigLine(const std::string& line);
+2025-10-02T07:00:56.3836650Z                                                                                 ^
+2025-10-02T07:00:56.3836874Z src/core/GitUtils.h:72:72: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3837148Z     static std::string detectFileEncoding(const std::string& filePath);
+2025-10-02T07:00:56.3837237Z                                                                        ^
+2025-10-02T07:00:56.3837459Z src/core/GitUtils.h:77:82: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3837649Z     static std::string formatDuration(const std::chrono::milliseconds& duration);
+2025-10-02T07:00:56.3837732Z                                                                                  ^
+2025-10-02T07:00:56.3837952Z src/core/GitUtils.h:85:2: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3838009Z }
+2025-10-02T07:00:56.3838066Z  ^
+2025-10-02T07:00:56.3878087Z src/core/GitTypes.h:3:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3878240Z #include <string>
+2025-10-02T07:00:56.3878363Z ^
+2025-10-02T07:00:56.3878843Z src/core/GitTypes.h:11:24: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3879225Z enum class FileStatus {
+2025-10-02T07:00:56.3879356Z                        ^
+2025-10-02T07:00:56.3879809Z src/core/GitTypes.h:12:15: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3879951Z     Untracked,
+2025-10-02T07:00:56.3880076Z               ^
+2025-10-02T07:00:56.3880521Z src/core/GitTypes.h:13:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3880657Z     Modified,
+2025-10-02T07:00:56.3880780Z              ^
+2025-10-02T07:00:56.3881217Z src/core/GitTypes.h:14:11: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3881349Z     Added,
+2025-10-02T07:00:56.3881668Z           ^
+2025-10-02T07:00:56.3882114Z src/core/GitTypes.h:15:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3882193Z     Deleted,
+2025-10-02T07:00:56.3882272Z             ^
+2025-10-02T07:00:56.3882556Z src/core/GitTypes.h:16:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3882646Z     Renamed,
+2025-10-02T07:00:56.3882726Z             ^
+2025-10-02T07:00:56.3882995Z src/core/GitTypes.h:17:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3883072Z     Copied,
+2025-10-02T07:00:56.3883144Z            ^
+2025-10-02T07:00:56.3883421Z src/core/GitTypes.h:18:16: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3883499Z     Conflicted,
+2025-10-02T07:00:56.3883572Z                ^
+2025-10-02T07:00:56.3883828Z src/core/GitTypes.h:19:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3883901Z     Ignored
+2025-10-02T07:00:56.3883972Z            ^
+2025-10-02T07:00:56.3884230Z src/core/GitTypes.h:22:24: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3884322Z enum class ChangeType {
+2025-10-02T07:00:56.3884399Z                        ^
+2025-10-02T07:00:56.3884651Z src/core/GitTypes.h:23:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3884741Z     Addition,
+2025-10-02T07:00:56.3884813Z              ^
+2025-10-02T07:00:56.3885062Z src/core/GitTypes.h:24:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3885142Z     Deletion,
+2025-10-02T07:00:56.3885215Z              ^
+2025-10-02T07:00:56.3885464Z src/core/GitTypes.h:25:17: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3885548Z     Modification
+2025-10-02T07:00:56.3885620Z                 ^
+2025-10-02T07:00:56.3885871Z src/core/GitTypes.h:37:27: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3886036Z     bool isMerge() const { return parentHashes.size() > 1; }
+2025-10-02T07:00:56.3886122Z                           ^
+2025-10-02T07:00:56.3886386Z src/core/GitTypes.h:37:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3886545Z     bool isMerge() const { return parentHashes.size() > 1; }
+2025-10-02T07:00:56.3886796Z                                                           ^
+2025-10-02T07:00:56.3887014Z src/core/GitTypes.h:117:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3887130Z     std::string date;  // Date string for display
+2025-10-02T07:00:56.3887197Z                      ^
+2025-10-02T07:00:56.3887410Z src/core/GitTypes.h:146:2: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3887470Z }
+2025-10-02T07:00:56.3887527Z  ^
+2025-10-02T07:00:56.3928378Z src/core/GitManager.h:3:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3928621Z #include "GitTypes.h"
+2025-10-02T07:00:56.3928741Z ^
+2025-10-02T07:00:56.3929222Z src/core/GitManager.h:12:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3929387Z enum class GitCommandResult {
+2025-10-02T07:00:56.3929521Z                              ^
+2025-10-02T07:00:56.3930252Z src/core/GitManager.h:13:13: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3930379Z     Success,
+2025-10-02T07:00:56.3930501Z             ^
+2025-10-02T07:00:56.3930955Z src/core/GitManager.h:14:12: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3931087Z     Failed,
+2025-10-02T07:00:56.3931208Z            ^
+2025-10-02T07:00:56.3931853Z src/core/GitManager.h:15:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3931991Z     NotFound,
+2025-10-02T07:00:56.3932114Z              ^
+2025-10-02T07:00:56.3932568Z src/core/GitManager.h:16:23: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3932724Z     InvalidRepository,
+2025-10-02T07:00:56.3932850Z                       ^
+2025-10-02T07:00:56.3933300Z src/core/GitManager.h:17:18: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3933435Z     NetworkError,
+2025-10-02T07:00:56.3933600Z                  ^
+2025-10-02T07:00:56.3934051Z src/core/GitManager.h:18:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3934198Z     PermissionDenied,
+2025-10-02T07:00:56.3934331Z                      ^
+2025-10-02T07:00:56.3934791Z src/core/GitManager.h:19:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3934917Z     Cancelled
+2025-10-02T07:00:56.3935044Z              ^
+2025-10-02T07:00:56.3935498Z src/core/GitManager.h:26:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3935638Z     int exitCode = 0;
+2025-10-02T07:00:56.3935763Z                      ^
+2025-10-02T07:00:56.3936225Z src/core/GitManager.h:28:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3936588Z     bool isSuccess() const { return result == GitCommandResult::Success; }
+2025-10-02T07:00:56.3936727Z                             ^
+2025-10-02T07:00:56.3937105Z src/core/GitManager.h:28:73: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3937379Z     bool isSuccess() const { return result == GitCommandResult::Success; }
+2025-10-02T07:00:56.3937514Z                                                                         ^
+2025-10-02T07:00:56.3937884Z src/core/GitManager.h:29:28: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3938122Z     bool hasError() const { return !error.empty() || exitCode != 0; }
+2025-10-02T07:00:56.3938229Z                            ^
+2025-10-02T07:00:56.3938597Z src/core/GitManager.h:29:68: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3938828Z     bool hasError() const { return !error.empty() || exitCode != 0; }
+2025-10-02T07:00:56.3938959Z                                                                    ^
+2025-10-02T07:00:56.3939324Z src/core/GitManager.h:35:19: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3939604Z class GitManager {
+2025-10-02T07:00:56.3939705Z                   ^
+2025-10-02T07:00:56.3940068Z src/core/GitManager.h:42:88: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3940456Z     GitOperationResult cloneRepository(const std::string& url, const std::string& path, 
+2025-10-02T07:00:56.3940595Z                                                                                        ^
+2025-10-02T07:00:56.3940959Z src/core/GitManager.h:45:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3941174Z     bool isValidRepository(const std::string& path) const;
+2025-10-02T07:00:56.3941303Z                                                           ^
+2025-10-02T07:00:56.3941795Z src/core/GitManager.h:51:43: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3941958Z     std::string getRepositoryPath() const;
+2025-10-02T07:00:56.3942075Z                                           ^
+2025-10-02T07:00:56.3942597Z src/core/GitManager.h:60:67: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3942872Z     GitOperationResult commitWithFiles(const std::string& message, 
+2025-10-02T07:00:56.3943022Z                                                                   ^
+2025-10-02T07:00:56.3943391Z src/core/GitManager.h:61:77: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3943567Z                                      const std::vector<std::string>& files);
+2025-10-02T07:00:56.3943704Z                                                                             ^
+2025-10-02T07:00:56.3944068Z src/core/GitManager.h:64:64: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3944301Z     std::vector<GitCommit> getCommitHistory(int maxCount = 100, 
+2025-10-02T07:00:56.3944430Z                                                                ^
+2025-10-02T07:00:56.3944802Z src/core/GitManager.h:65:87: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3945016Z                                           GitLogOptions options = GitLogOptions::None,
+2025-10-02T07:00:56.3945158Z                                                                                       ^
+2025-10-02T07:00:56.3945527Z src/core/GitManager.h:66:74: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3945691Z                                           const std::string& branch = "",
+2025-10-02T07:00:56.3945831Z                                                                          ^
+2025-10-02T07:00:56.3946195Z src/core/GitManager.h:69:71: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3946451Z     std::vector<GitCommit> getCommitRange(const std::string& fromHash, 
+2025-10-02T07:00:56.3946596Z                                                                       ^
+2025-10-02T07:00:56.3946960Z src/core/GitManager.h:70:74: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3947128Z                                         const std::string& toHash) const;
+2025-10-02T07:00:56.3947270Z                                                                          ^
+2025-10-02T07:00:56.3947633Z src/core/GitManager.h:74:61: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3947865Z     GitOperationResult createBranch(const std::string& name, 
+2025-10-02T07:00:56.3947995Z                                                             ^
+2025-10-02T07:00:56.3948356Z src/core/GitManager.h:80:68: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3948621Z     GitOperationResult rebaseBranch(const std::string& branchName);
+2025-10-02T07:00:56.3948760Z                                                                    ^
+2025-10-02T07:00:56.3949123Z src/core/GitManager.h:87:67: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3949600Z     GitOperationResult fetch(const std::string& remote = "origin", 
+2025-10-02T07:00:56.3949734Z                                                                   ^
+2025-10-02T07:00:56.3950117Z src/core/GitManager.h:89:66: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3950376Z     GitOperationResult pull(const std::string& remote = "origin", 
+2025-10-02T07:00:56.3950503Z                                                                  ^
+2025-10-02T07:00:56.3950882Z src/core/GitManager.h:90:58: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3951037Z                           const std::string& branch = "",
+2025-10-02T07:00:56.3951162Z                                                          ^
+2025-10-02T07:00:56.3951662Z src/core/GitManager.h:92:66: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3951916Z     GitOperationResult push(const std::string& remote = "origin", 
+2025-10-02T07:00:56.3952198Z                                                                  ^
+2025-10-02T07:00:56.3952569Z src/core/GitManager.h:93:58: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3952716Z                           const std::string& branch = "",
+2025-10-02T07:00:56.3952839Z                                                          ^
+2025-10-02T07:00:56.3953208Z src/core/GitManager.h:94:46: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3953336Z                           bool force = false,
+2025-10-02T07:00:56.3953453Z                                              ^
+2025-10-02T07:00:56.3953819Z src/core/GitManager.h:95:72: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3954016Z                           ProgressCallback progressCallback = nullptr);
+2025-10-02T07:00:56.3954152Z                                                                        ^
+2025-10-02T07:00:56.3954534Z src/core/GitManager.h:102:63: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3954786Z     GitDiff getDiffBetweenCommits(const std::string& fromHash, 
+2025-10-02T07:00:56.3954932Z                                                               ^
+2025-10-02T07:00:56.3955318Z src/core/GitManager.h:103:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3955465Z                                 const std::string& toHash,
+2025-10-02T07:00:56.3955590Z                                                           ^
+2025-10-02T07:00:56.3955962Z src/core/GitManager.h:104:73: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3956136Z                                 const std::string& filePath = "") const;
+2025-10-02T07:00:56.3956270Z                                                                         ^
+2025-10-02T07:00:56.3956639Z src/core/GitManager.h:108:91: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3957050Z     GitOperationResult createTag(const std::string& name, const std::string& message = "",
+2025-10-02T07:00:56.3957196Z                                                                                           ^
+2025-10-02T07:00:56.3957575Z src/core/GitManager.h:111:71: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3957860Z     GitOperationResult pushTags(const std::string& remote = "origin");
+2025-10-02T07:00:56.3957992Z                                                                       ^
+2025-10-02T07:00:56.3958364Z src/core/GitManager.h:119:37: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3958512Z     GitOperationResult stashClear();
+2025-10-02T07:00:56.3958623Z                                     ^
+2025-10-02T07:00:56.3959041Z src/core/GitManager.h:122:83: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3959358Z     GitOperationResult setConfig(const std::string& key, const std::string& value, 
+2025-10-02T07:00:56.3959581Z                                                                                   ^
+2025-10-02T07:00:56.3959823Z src/core/GitManager.h:125:86: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3960047Z     GitOperationResult setUserInfo(const std::string& name, const std::string& email,
+2025-10-02T07:00:56.3960134Z                                                                                      ^
+2025-10-02T07:00:56.3960362Z src/core/GitManager.h:126:55: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3960444Z                                  bool global = false);
+2025-10-02T07:00:56.3960541Z                                                       ^
+2025-10-02T07:00:56.3960764Z src/core/GitManager.h:132:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3960852Z     std::string getLastError() const;
+2025-10-02T07:00:56.3960924Z                                      ^
+2025-10-02T07:00:56.3961222Z src/core/GitManager.h:135:81: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3961424Z     std::future<GitOperationResult> cloneRepositoryAsync(const std::string& url, 
+2025-10-02T07:00:56.3961661Z                                                                                 ^
+2025-10-02T07:00:56.3961903Z src/core/GitManager.h:136:80: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3962008Z                                                        const std::string& path,
+2025-10-02T07:00:56.3962095Z                                                                                ^
+2025-10-02T07:00:56.3962321Z src/core/GitManager.h:138:85: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3962526Z     std::future<GitOperationResult> fetchAsync(const std::string& remote = "origin",
+2025-10-02T07:00:56.3962623Z                                                                                     ^
+2025-10-02T07:00:56.3962854Z src/core/GitManager.h:140:84: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3963046Z     std::future<GitOperationResult> pullAsync(const std::string& remote = "origin",
+2025-10-02T07:00:56.3963132Z                                                                                    ^
+2025-10-02T07:00:56.3963354Z src/core/GitManager.h:141:76: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3963450Z                                             const std::string& branch = "",
+2025-10-02T07:00:56.3963537Z                                                                            ^
+2025-10-02T07:00:56.3963754Z src/core/GitManager.h:143:84: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3963943Z     std::future<GitOperationResult> pushAsync(const std::string& remote = "origin",
+2025-10-02T07:00:56.3964030Z                                                                                    ^
+2025-10-02T07:00:56.3964251Z src/core/GitManager.h:144:76: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3964347Z                                             const std::string& branch = "",
+2025-10-02T07:00:56.3964425Z                                                                            ^
+2025-10-02T07:00:56.3964659Z src/core/GitManager.h:145:64: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3964748Z                                             bool force = false,
+2025-10-02T07:00:56.3964827Z                                                                ^
+2025-10-02T07:00:56.3965055Z src/core/GitManager.h:146:90: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3965177Z                                             ProgressCallback progressCallback = nullptr);
+2025-10-02T07:00:56.3965381Z                                                                                          ^
+2025-10-02T07:00:56.3965615Z src/core/GitManager.h:150:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3965744Z     void setProgressCallback(ProgressCallback callback);
+2025-10-02T07:00:56.3965834Z                                                         ^
+2025-10-02T07:00:56.3966060Z src/core/GitManager.h:154:33: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3966147Z     std::unique_ptr<Impl> pImpl;
+2025-10-02T07:00:56.3966218Z                                 ^
+2025-10-02T07:00:56.3966442Z src/core/GitManager.h:156:79: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3966642Z     GitOperationResult executeGitCommand(const std::vector<std::string>& args,
+2025-10-02T07:00:56.3966722Z                                                                               ^
+2025-10-02T07:00:56.3966947Z src/core/GitManager.h:157:75: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3967153Z                                        const std::string& workingDir = "",
+2025-10-02T07:00:56.3967233Z                                                                           ^
+2025-10-02T07:00:56.3967451Z src/core/GitManager.h:158:91: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3967585Z                                        ProgressCallback progressCallback = nullptr) const;
+2025-10-02T07:00:56.3967670Z                                                                                           ^
+2025-10-02T07:00:56.3967885Z src/core/GitManager.h:160:71: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3968038Z     std::vector<std::string> parseGitOutput(const std::string& output, 
+2025-10-02T07:00:56.3968114Z                                                                       ^
+2025-10-02T07:00:56.3968339Z src/core/GitManager.h:168:2: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.3968411Z }
+2025-10-02T07:00:56.3968471Z  ^
+2025-10-02T07:00:56.4147646Z src/core/GitManager.cpp:1:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4147839Z #include "GitManager.h"
+2025-10-02T07:00:56.4147962Z ^
+2025-10-02T07:00:56.4148454Z src/core/GitManager.cpp:20:25: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4148634Z class GitManager::Impl {
+2025-10-02T07:00:56.4148766Z                         ^
+2025-10-02T07:00:56.4149248Z src/core/GitManager.cpp:59:58: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4149545Z GitManager::GitManager(const std::string& repositoryPath) 
+2025-10-02T07:00:56.4149706Z                                                          ^
+2025-10-02T07:00:56.4150183Z src/core/GitManager.cpp:60:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4150428Z     : pImpl(std::make_unique<Impl>(repositoryPath)) {
+2025-10-02T07:00:56.4150602Z                                                      ^
+2025-10-02T07:00:56.4151078Z src/core/GitManager.cpp:70:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4151230Z     args.push_back(path);
+2025-10-02T07:00:56.4151366Z                          ^
+2025-10-02T07:00:56.4152052Z src/core/GitManager.cpp:79:96: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4152595Z GitOperationResult GitManager::cloneRepository(const std::string& url, const std::string& path,
+2025-10-02T07:00:56.4152782Z                                                                                                ^
+2025-10-02T07:00:56.4153255Z src/core/GitManager.cpp:81:72: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4153551Z     std::vector<std::string> args = {"clone", "--progress", url, path};
+2025-10-02T07:00:56.4154040Z                                                                        ^
+2025-10-02T07:00:56.4154529Z src/core/GitManager.cpp:93:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4154652Z     }
+2025-10-02T07:00:56.4154773Z      ^
+2025-10-02T07:00:56.4155273Z src/core/GitManager.cpp:118:88: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4155902Z     return std::filesystem::exists(headPath) && std::filesystem::exists(objectsPath) && std::filesystem::exists(refsPath);
+2025-10-02T07:00:56.4156083Z                                                                                        ^
+2025-10-02T07:00:56.4156599Z src/core/GitManager.cpp:155:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4156750Z     }
+2025-10-02T07:00:56.4156911Z      ^
+2025-10-02T07:00:56.4157417Z src/core/GitManager.cpp:158:48: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4157624Z     auto lines = parseGitOutput(result.output);
+2025-10-02T07:00:56.4157921Z                                                ^
+2025-10-02T07:00:56.4158419Z src/core/GitManager.cpp:161:53: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4158619Z         std::string branchLine = lines[0].substr(3);
+2025-10-02T07:00:56.4158767Z                                                     ^
+2025-10-02T07:00:56.4159258Z src/core/GitManager.cpp:165:29: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4159414Z         std::smatch matches;
+2025-10-02T07:00:56.4159545Z                             ^
+2025-10-02T07:00:56.4160064Z src/core/GitManager.cpp:171:14: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4160188Z             }
+2025-10-02T07:00:56.4160311Z              ^
+2025-10-02T07:00:56.4160807Z src/core/GitManager.cpp:177:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4160975Z                 std::sregex_iterator end;
+2025-10-02T07:00:56.4161122Z                                          ^
+2025-10-02T07:00:56.4161747Z src/core/GitManager.cpp:188:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4161877Z     }
+2025-10-02T07:00:56.4161998Z      ^
+2025-10-02T07:00:56.4162482Z src/core/GitManager.cpp:206:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4162610Z     }
+2025-10-02T07:00:56.4162730Z      ^
+2025-10-02T07:00:56.4163216Z src/core/GitManager.cpp:215:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4163338Z     }
+2025-10-02T07:00:56.4163466Z      ^
+2025-10-02T07:00:56.4163954Z src/core/GitManager.cpp:221:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4164073Z     }
+2025-10-02T07:00:56.4164199Z      ^
+2025-10-02T07:00:56.4164683Z src/core/GitManager.cpp:227:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4164819Z     }
+2025-10-02T07:00:56.4164939Z      ^
+2025-10-02T07:00:56.4165430Z src/core/GitManager.cpp:239:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4165550Z     }
+2025-10-02T07:00:56.4165671Z      ^
+2025-10-02T07:00:56.4166164Z src/core/GitManager.cpp:242:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4166396Z     args.insert(args.end(), files.begin(), files.end());
+2025-10-02T07:00:56.4166548Z                                                         ^
+2025-10-02T07:00:56.4167046Z src/core/GitManager.cpp:254:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4167168Z     }
+2025-10-02T07:00:56.4167288Z      ^
+2025-10-02T07:00:56.4167766Z src/core/GitManager.cpp:260:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4167955Z     args.insert(args.end(), files.begin(), files.end());
+2025-10-02T07:00:56.4168265Z                                                         ^
+2025-10-02T07:00:56.4168674Z src/core/GitManager.cpp:268:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4168778Z     }
+2025-10-02T07:00:56.4168874Z      ^
+2025-10-02T07:00:56.4169267Z src/core/GitManager.cpp:271:57: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4169461Z     args.insert(args.end(), files.begin(), files.end());
+2025-10-02T07:00:56.4169583Z                                                         ^
+2025-10-02T07:00:56.4169974Z src/core/GitManager.cpp:284:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4170071Z     }
+2025-10-02T07:00:56.4170172Z      ^
+2025-10-02T07:00:56.4170562Z src/core/GitManager.cpp:289:75: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4170892Z GitOperationResult GitManager::commitWithFiles(const std::string& message, 
+2025-10-02T07:00:56.4171029Z                                                                           ^
+2025-10-02T07:00:56.4171679Z src/core/GitManager.cpp:295:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4171779Z     }
+2025-10-02T07:00:56.4171881Z      ^
+2025-10-02T07:00:56.4172271Z src/core/GitManager.cpp:301:66: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4172524Z std::vector<GitCommit> GitManager::getCommitHistory(int maxCount,
+2025-10-02T07:00:56.4172658Z                                                                  ^
+2025-10-02T07:00:56.4173051Z src/core/GitManager.cpp:302:74: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4173206Z                                                    GitLogOptions options,
+2025-10-02T07:00:56.4173342Z                                                                          ^
+2025-10-02T07:00:56.4173734Z src/core/GitManager.cpp:303:78: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4173914Z                                                    const std::string& branch,
+2025-10-02T07:00:56.4174065Z                                                                              ^
+2025-10-02T07:00:56.4174463Z src/core/GitManager.cpp:305:94: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4174800Z     std::vector<std::string> args = {"log", "--pretty=format:%H|%h|%an|%ae|%s|%ct|%P", "-z"};
+2025-10-02T07:00:56.4174947Z                                                                                              ^
+2025-10-02T07:00:56.4175348Z src/core/GitManager.cpp:309:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4175446Z     }
+2025-10-02T07:00:56.4175544Z      ^
+2025-10-02T07:00:56.4175821Z src/core/GitManager.cpp:313:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4175885Z     }
+2025-10-02T07:00:56.4175944Z      ^
+2025-10-02T07:00:56.4176182Z src/core/GitManager.cpp:317:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4176254Z     }
+2025-10-02T07:00:56.4176311Z      ^
+2025-10-02T07:00:56.4176552Z src/core/GitManager.cpp:321:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4176613Z     }
+2025-10-02T07:00:56.4176669Z      ^
+2025-10-02T07:00:56.4176896Z src/core/GitManager.cpp:325:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4176953Z     }
+2025-10-02T07:00:56.4177021Z      ^
+2025-10-02T07:00:56.4177243Z src/core/GitManager.cpp:330:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4177299Z     }
+2025-10-02T07:00:56.4177359Z      ^
+2025-10-02T07:00:56.4177589Z src/core/GitManager.cpp:351:91: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4177794Z     auto result = executeGitCommand({"show", "--pretty=format:%H|%h|%an|%ae|%s|%B|%ct|%P", 
+2025-10-02T07:00:56.4178038Z                                                                                           ^
+2025-10-02T07:00:56.4178271Z src/core/GitManager.cpp:355:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4178329Z     }
+2025-10-02T07:00:56.4178390Z      ^
+2025-10-02T07:00:56.4178616Z src/core/GitManager.cpp:360:87: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4178846Z GitOperationResult GitManager::executeGitCommand(const std::vector<std::string>& args,
+2025-10-02T07:00:56.4178938Z                                                                                       ^
+2025-10-02T07:00:56.4179169Z src/core/GitManager.cpp:361:78: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4179270Z                                                const std::string& workingDir,
+2025-10-02T07:00:56.4179356Z                                                                              ^
+2025-10-02T07:00:56.4179588Z src/core/GitManager.cpp:364:79: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4179865Z     std::string dir = workingDir.empty() ? pImpl->repositoryPath : workingDir;
+2025-10-02T07:00:56.4179947Z                                                                               ^
+2025-10-02T07:00:56.4180178Z src/core/GitManager.cpp:367:54: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4180287Z     auto result = cmd.execute(gitCommand, args, dir);
+2025-10-02T07:00:56.4180362Z                                                      ^
+2025-10-02T07:00:56.4180594Z src/core/GitManager.cpp:378:6: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4180653Z     }
+2025-10-02T07:00:56.4180708Z      ^
+2025-10-02T07:00:56.4180942Z src/core/GitManager.cpp:383:79: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4181120Z std::vector<std::string> GitManager::parseGitOutput(const std::string& output, 
+2025-10-02T07:00:56.4181206Z                                                                               ^
+2025-10-02T07:00:56.4181436Z src/core/GitManager.cpp:400:31: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4181762Z     commit.message = parts[4];  // Use the subject as the full message
+2025-10-02T07:00:56.4181832Z                               ^
+2025-10-02T07:00:56.4182073Z src/core/GitManager.cpp:501:89: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4182311Z std::future<GitOperationResult> GitManager::cloneRepositoryAsync(const std::string& url, 
+2025-10-02T07:00:56.4182396Z                                                                                         ^
+2025-10-02T07:00:56.4182627Z src/core/GitManager.cpp:502:88: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4182730Z                                                                const std::string& path,
+2025-10-02T07:00:56.4182824Z                                                                                        ^
+2025-10-02T07:00:56.4183052Z src/core/GitManager.cpp:504:42: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4183235Z     return std::async(std::launch::async, [this, url, path, progressCallback]() {
+2025-10-02T07:00:56.4183306Z                                          ^
+2025-10-02T07:00:56.4183533Z src/core/GitManager.cpp:504:82: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4183707Z     return std::async(std::launch::async, [this, url, path, progressCallback]() {
+2025-10-02T07:00:56.4183791Z                                                                                  ^
+2025-10-02T07:00:56.4184017Z src/core/GitManager.cpp:505:61: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4184151Z         return cloneRepository(url, path, progressCallback);
+2025-10-02T07:00:56.4184349Z                                                             ^
+2025-10-02T07:00:56.4184600Z src/core/GitManager.cpp:520:117: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4185025Z     std::vector<std::string> args = {"for-each-ref", "--format=%(refname:short)|%(objectname:short)|%(committerdate:iso)|%(upstream:short)|%(upstream:track)|%(subject)"};
+2025-10-02T07:00:56.4185126Z                                                                                                                     ^
+2025-10-02T07:00:56.4185370Z src/core/GitManager.cpp:536:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4185454Z         if (line.empty()) continue;
+2025-10-02T07:00:56.4185518Z                          ^
+2025-10-02T07:00:56.4185748Z src/core/GitManager.cpp:539:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4185827Z         if (parts.size() < 6) continue;
+2025-10-02T07:00:56.4185902Z                              ^
+2025-10-02T07:00:56.4186254Z src/core/GitManager.cpp:645:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4186331Z         if (line.empty()) continue;
+2025-10-02T07:00:56.4186399Z                          ^
+2025-10-02T07:00:56.4186635Z src/core/GitManager.cpp:648:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4186716Z         if (parts.size() < 4) continue;
+2025-10-02T07:00:56.4186783Z                              ^
+2025-10-02T07:00:56.4187019Z src/core/GitManager.cpp:769:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4187093Z         if (line.empty()) continue;
+2025-10-02T07:00:56.4187154Z                          ^
+2025-10-02T07:00:56.4187391Z src/core/GitManager.cpp:796:86: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4187540Z             } else if (line.substr(0, 4) == "diff" || line.substr(0, 5) == "index" ||
+2025-10-02T07:00:56.4187629Z                                                                                      ^
+2025-10-02T07:00:56.4187871Z src/core/GitManager.cpp:797:52: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4187993Z                       line.substr(0, 3) == "+++" || line.substr(0, 3) == "---") {
+2025-10-02T07:00:56.4188071Z                                                    ^
+2025-10-02T07:00:56.4188304Z src/core/GitManager.cpp:822:26: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4188378Z         if (file.empty()) continue;
+2025-10-02T07:00:56.4188439Z                          ^
+2025-10-02T07:00:56.4188665Z src/core/GitManager.cpp:825:34: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4188755Z         if (fileParts.size() < 2) continue;
+2025-10-02T07:00:56.4188821Z                                  ^
+2025-10-02T07:00:56.4189046Z src/core/GitManager.cpp:862:30: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4189138Z             if (line.empty()) continue;
+2025-10-02T07:00:56.4189201Z                              ^
+2025-10-02T07:00:56.4189427Z src/core/GitManager.cpp:895:90: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4189575Z                 } else if (line.substr(0, 4) == "diff" || line.substr(0, 5) == "index" ||
+2025-10-02T07:00:56.4189663Z                                                                                          ^
+2025-10-02T07:00:56.4189890Z src/core/GitManager.cpp:896:56: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4190013Z                           line.substr(0, 3) == "+++" || line.substr(0, 3) == "---") {
+2025-10-02T07:00:56.4190095Z                                                        ^
+2025-10-02T07:00:56.4190340Z src/core/GitManager.cpp:1001:112: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4190679Z         "for-each-ref --format='%(refname:short)|%(objectname:short)|%(taggerdate:short)|%(subject)' refs/tags"
+2025-10-02T07:00:56.4190788Z                                                                                                                ^
+2025-10-02T07:00:56.4191029Z src/core/GitManager.cpp:1039:94: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4191283Z GitOperationResult GitManager::createTag(const std::string& name, const std::string& message,
+2025-10-02T07:00:56.4191376Z                                                                                              ^
+2025-10-02T07:00:56.4191828Z src/core/GitManager.cpp:1082:2: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4191894Z }
+2025-10-02T07:00:56.4191959Z  ^
+2025-10-02T07:00:56.4201341Z src/core/SystemCommand.h:3:1: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4201460Z #include <string>
+2025-10-02T07:00:56.4201708Z ^
+2025-10-02T07:00:56.4202358Z src/core/SystemCommand.h:14:27: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4202475Z     bool success() const { return exitCode == 0; }
+2025-10-02T07:00:56.4202547Z                           ^
+2025-10-02T07:00:56.4202791Z src/core/SystemCommand.h:14:49: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4202894Z     bool success() const { return exitCode == 0; }
+2025-10-02T07:00:56.4202967Z                                                 ^
+2025-10-02T07:00:56.4203204Z src/core/SystemCommand.h:19:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4203275Z class SystemCommand {
+2025-10-02T07:00:56.4204677Z                      ^
+2025-10-02T07:00:56.4205155Z src/core/SystemCommand.h:22:22: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4205276Z     ~SystemCommand();
+2025-10-02T07:00:56.4205379Z                      ^
+2025-10-02T07:00:56.4205806Z src/core/SystemCommand.h:25:60: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4206080Z     SystemCommandResult execute(const std::string& command, 
+2025-10-02T07:00:56.4206208Z                                                            ^
+2025-10-02T07:00:56.4206612Z src/core/SystemCommand.h:26:74: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4206789Z                                const std::vector<std::string>& args = {},
+2025-10-02T07:00:56.4206926Z                                                                          ^
+2025-10-02T07:00:56.4207333Z src/core/SystemCommand.h:27:74: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4207522Z                                const std::string& workingDirectory = "");
+2025-10-02T07:00:56.4207654Z                                                                          ^
+2025-10-02T07:00:56.4208062Z src/core/SystemCommand.h:30:72: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4208384Z     SystemCommandResult executeWithCallback(const std::string& command,
+2025-10-02T07:00:56.4208523Z                                                                        ^
+2025-10-02T07:00:56.4208929Z src/core/SystemCommand.h:31:81: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4209106Z                                            const std::vector<std::string>& args,
+2025-10-02T07:00:56.4209246Z                                                                                 ^
+2025-10-02T07:00:56.4209643Z src/core/SystemCommand.h:32:74: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4209815Z                                            OutputCallback outputCallback,
+2025-10-02T07:00:56.4209969Z                                                                          ^
+2025-10-02T07:00:56.4210362Z src/core/SystemCommand.h:33:86: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4210813Z                                            const std::string& workingDirectory = "");
+2025-10-02T07:00:56.4210957Z                                                                                      ^
+2025-10-02T07:00:56.4211355Z src/core/SystemCommand.h:36:50: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4211691Z     void executeAsync(const std::string& command,
+2025-10-02T07:00:56.4211817Z                                                  ^
+2025-10-02T07:00:56.4212240Z src/core/SystemCommand.h:37:59: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4212418Z                      const std::vector<std::string>& args,
+2025-10-02T07:00:56.4212562Z                                                           ^
+2025-10-02T07:00:56.4213037Z src/core/SystemCommand.h:38:79: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4213312Z                      std::function<void(const SystemCommandResult&)> callback,
+2025-10-02T07:00:56.4213650Z                                                                               ^
+2025-10-02T07:00:56.4214067Z src/core/SystemCommand.h:39:64: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4214254Z                      const std::string& workingDirectory = "");
+2025-10-02T07:00:56.4214394Z                                                                ^
+2025-10-02T07:00:56.4214816Z src/core/SystemCommand.h:42:19: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4214937Z     void cancel();
+2025-10-02T07:00:56.4215054Z                   ^
+2025-10-02T07:00:56.4215463Z src/core/SystemCommand.h:46:38: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4215622Z     void clearEnvironmentVariables();
+2025-10-02T07:00:56.4215744Z                                      ^
+2025-10-02T07:00:56.4216179Z src/core/SystemCommand.h:49:36: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4216329Z     void setTimeout(int timeoutMs);
+2025-10-02T07:00:56.4216444Z                                    ^
+2025-10-02T07:00:56.4216861Z src/core/SystemCommand.h:52:64: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4217120Z     static bool isCommandAvailable(const std::string& command);
+2025-10-02T07:00:56.4217272Z                                                                ^
+2025-10-02T07:00:56.4217700Z src/core/SystemCommand.h:55:40: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4217857Z     static std::string getGitCommand();
+2025-10-02T07:00:56.4217974Z                                        ^
+2025-10-02T07:00:56.4218386Z src/core/SystemCommand.h:62:67: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4218658Z     SystemCommandResult executeWindows(const std::string& command,
+2025-10-02T07:00:56.4218804Z                                                                   ^
+2025-10-02T07:00:56.4219220Z src/core/SystemCommand.h:66:64: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4219481Z     SystemCommandResult executeUnix(const std::string& command,
+2025-10-02T07:00:56.4219612Z                                                                ^
+2025-10-02T07:00:56.4220017Z src/core/SystemCommand.h:72:2: error: code should be clang-formatted [-Wclang-format-violations]
+2025-10-02T07:00:56.4220119Z }
+2025-10-02T07:00:56.4220227Z  ^

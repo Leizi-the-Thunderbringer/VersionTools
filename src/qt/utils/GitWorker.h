@@ -4,14 +4,16 @@
 #include <QThread>
 #include <QString>
 
+namespace VersionTools {
 class GitManager;
+}
 
 class GitWorker : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit GitWorker(GitManager *gitManager, QObject *parent = nullptr);
+    explicit GitWorker(VersionTools::GitManager *gitManager, QObject *parent = nullptr);
 
 public slots:
     void openRepository(const QString &path);
@@ -31,5 +33,5 @@ signals:
     void errorOccurred(const QString &error);
 
 private:
-    GitManager *m_gitManager;
+    VersionTools::GitManager *m_gitManager;
 };

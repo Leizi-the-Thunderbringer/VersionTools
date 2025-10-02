@@ -1,0 +1,977 @@
+﻿2025-10-02T06:58:42.8756026Z Current runner version: '2.328.0'
+2025-10-02T06:58:42.8780622Z ##[group]Runner Image Provisioner
+2025-10-02T06:58:42.8781468Z Hosted Compute Agent
+2025-10-02T06:58:42.8782019Z Version: 20250912.392
+2025-10-02T06:58:42.8782634Z Commit: d921fda672a98b64f4f82364647e2f10b2267d0b
+2025-10-02T06:58:42.8783339Z Build Date: 2025-09-12T15:23:14Z
+2025-10-02T06:58:42.8783899Z ##[endgroup]
+2025-10-02T06:58:42.8784491Z ##[group]Operating System
+2025-10-02T06:58:42.8785036Z Ubuntu
+2025-10-02T06:58:42.8785528Z 24.04.3
+2025-10-02T06:58:42.8785950Z LTS
+2025-10-02T06:58:42.8786475Z ##[endgroup]
+2025-10-02T06:58:42.8786934Z ##[group]Runner Image
+2025-10-02T06:58:42.8787675Z Image: ubuntu-24.04
+2025-10-02T06:58:42.8788277Z Version: 20250922.53.1
+2025-10-02T06:58:42.8789252Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250922.53/images/ubuntu/Ubuntu2404-Readme.md
+2025-10-02T06:58:42.8790841Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250922.53
+2025-10-02T06:58:42.8791840Z ##[endgroup]
+2025-10-02T06:58:42.8794284Z ##[group]GITHUB_TOKEN Permissions
+2025-10-02T06:58:42.8796509Z Actions: write
+2025-10-02T06:58:42.8797061Z Attestations: write
+2025-10-02T06:58:42.8797831Z Checks: write
+2025-10-02T06:58:42.8798349Z Contents: write
+2025-10-02T06:58:42.8798817Z Deployments: write
+2025-10-02T06:58:42.8799392Z Discussions: write
+2025-10-02T06:58:42.8799900Z Issues: write
+2025-10-02T06:58:42.8800396Z Metadata: read
+2025-10-02T06:58:42.8800884Z Models: read
+2025-10-02T06:58:42.8801408Z Packages: write
+2025-10-02T06:58:42.8801892Z Pages: write
+2025-10-02T06:58:42.8802429Z PullRequests: write
+2025-10-02T06:58:42.8803020Z RepositoryProjects: write
+2025-10-02T06:58:42.8803566Z SecurityEvents: write
+2025-10-02T06:58:42.8804246Z Statuses: write
+2025-10-02T06:58:42.8804737Z ##[endgroup]
+2025-10-02T06:58:42.8807009Z Secret source: Actions
+2025-10-02T06:58:42.8808116Z Prepare workflow directory
+2025-10-02T06:58:42.9157134Z Prepare all required actions
+2025-10-02T06:58:42.9197919Z Getting action download info
+2025-10-02T06:58:43.3288722Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-10-02T06:58:43.5252005Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-10-02T06:58:43.7167881Z Complete job name: Build Linux
+2025-10-02T06:58:43.7854951Z ##[group]Run actions/checkout@v4
+2025-10-02T06:58:43.7855816Z with:
+2025-10-02T06:58:43.7856228Z   repository: Zixiao-Tech/VersionTools
+2025-10-02T06:58:43.7856935Z   token: ***
+2025-10-02T06:58:43.7857498Z   ssh-strict: true
+2025-10-02T06:58:43.7857896Z   ssh-user: git
+2025-10-02T06:58:43.7858302Z   persist-credentials: true
+2025-10-02T06:58:43.7858756Z   clean: true
+2025-10-02T06:58:43.7859149Z   sparse-checkout-cone-mode: true
+2025-10-02T06:58:43.7859638Z   fetch-depth: 1
+2025-10-02T06:58:43.7860019Z   fetch-tags: false
+2025-10-02T06:58:43.7860422Z   show-progress: true
+2025-10-02T06:58:43.7860828Z   lfs: false
+2025-10-02T06:58:43.7861195Z   submodules: false
+2025-10-02T06:58:43.7861622Z   set-safe-directory: true
+2025-10-02T06:58:43.7862316Z ##[endgroup]
+2025-10-02T06:58:43.9017976Z Syncing repository: Zixiao-Tech/VersionTools
+2025-10-02T06:58:43.9020244Z ##[group]Getting Git version info
+2025-10-02T06:58:43.9021100Z Working directory is '/home/runner/work/VersionTools/VersionTools'
+2025-10-02T06:58:43.9022087Z [command]/usr/bin/git version
+2025-10-02T06:58:43.9094186Z git version 2.51.0
+2025-10-02T06:58:43.9121445Z ##[endgroup]
+2025-10-02T06:58:43.9143170Z Temporarily overriding HOME='/home/runner/work/_temp/b7d6cf37-54b7-466c-9abb-495af70b7790' before making global git config changes
+2025-10-02T06:58:43.9148776Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-02T06:58:43.9150716Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/VersionTools/VersionTools
+2025-10-02T06:58:43.9191042Z Deleting the contents of '/home/runner/work/VersionTools/VersionTools'
+2025-10-02T06:58:43.9194593Z ##[group]Initializing the repository
+2025-10-02T06:58:43.9198880Z [command]/usr/bin/git init /home/runner/work/VersionTools/VersionTools
+2025-10-02T06:58:43.9301789Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-10-02T06:58:43.9303516Z hint: is subject to change. To configure the initial branch name to use in all
+2025-10-02T06:58:43.9305088Z hint: of your new repositories, which will suppress this warning, call:
+2025-10-02T06:58:43.9306256Z hint:
+2025-10-02T06:58:43.9307085Z hint: 	git config --global init.defaultBranch <name>
+2025-10-02T06:58:43.9308530Z hint:
+2025-10-02T06:58:43.9309485Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-10-02T06:58:43.9311021Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-10-02T06:58:43.9312235Z hint:
+2025-10-02T06:58:43.9312908Z hint: 	git branch -m <name>
+2025-10-02T06:58:43.9313670Z hint:
+2025-10-02T06:58:43.9314672Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-10-02T06:58:43.9316393Z Initialized empty Git repository in /home/runner/work/VersionTools/VersionTools/.git/
+2025-10-02T06:58:43.9319643Z [command]/usr/bin/git remote add origin https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:58:43.9360839Z ##[endgroup]
+2025-10-02T06:58:43.9362147Z ##[group]Disabling automatic garbage collection
+2025-10-02T06:58:43.9365031Z [command]/usr/bin/git config --local gc.auto 0
+2025-10-02T06:58:43.9397855Z ##[endgroup]
+2025-10-02T06:58:43.9398988Z ##[group]Setting up auth
+2025-10-02T06:58:43.9405487Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-02T06:58:43.9438239Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-02T06:58:43.9808779Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-02T06:58:43.9841408Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-02T06:58:44.0068151Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-10-02T06:58:44.0102962Z ##[endgroup]
+2025-10-02T06:58:44.0121123Z ##[group]Fetching the repository
+2025-10-02T06:58:44.0123693Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bc026dd79f178c1866687aca1f3d84bc25841d3f:refs/remotes/origin/main
+2025-10-02T06:58:44.9959324Z From https://github.com/Zixiao-Tech/VersionTools
+2025-10-02T06:58:44.9961021Z  * [new ref]         bc026dd79f178c1866687aca1f3d84bc25841d3f -> origin/main
+2025-10-02T06:58:44.9993080Z ##[endgroup]
+2025-10-02T06:58:44.9994287Z ##[group]Determining the checkout info
+2025-10-02T06:58:44.9995917Z ##[endgroup]
+2025-10-02T06:58:45.0001129Z [command]/usr/bin/git sparse-checkout disable
+2025-10-02T06:58:45.0044459Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-10-02T06:58:45.0076744Z ##[group]Checking out the ref
+2025-10-02T06:58:45.0081810Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-10-02T06:58:45.0598123Z Switched to a new branch 'main'
+2025-10-02T06:58:45.0599571Z branch 'main' set up to track 'origin/main'.
+2025-10-02T06:58:45.0610757Z ##[endgroup]
+2025-10-02T06:58:45.0651536Z [command]/usr/bin/git log -1 --format=%H
+2025-10-02T06:58:45.0675019Z bc026dd79f178c1866687aca1f3d84bc25841d3f
+2025-10-02T06:58:45.0887731Z ##[group]Run sudo apt-get update
+2025-10-02T06:58:45.0889119Z [36;1msudo apt-get update[0m
+2025-10-02T06:58:45.0890289Z [36;1msudo apt-get install -y \[0m
+2025-10-02T06:58:45.0891528Z [36;1m  build-essential \[0m
+2025-10-02T06:58:45.0892633Z [36;1m  cmake \[0m
+2025-10-02T06:58:45.0893639Z [36;1m  ninja-build \[0m
+2025-10-02T06:58:45.0894935Z [36;1m  git \[0m
+2025-10-02T06:58:45.0895905Z [36;1m  libgit2-dev \[0m
+2025-10-02T06:58:45.0896976Z [36;1m  qt6-base-dev \[0m
+2025-10-02T06:58:45.0898218Z [36;1m  qt6-tools-dev \[0m
+2025-10-02T06:58:45.0899308Z [36;1m  qt6-l10n-tools[0m
+2025-10-02T06:58:45.0937462Z shell: /usr/bin/bash -e {0}
+2025-10-02T06:58:45.0938614Z ##[endgroup]
+2025-10-02T06:58:45.1753014Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-10-02T06:58:45.2119575Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2025-10-02T06:58:45.2144777Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2025-10-02T06:58:45.2203887Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2025-10-02T06:58:45.2239374Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2025-10-02T06:58:45.2258709Z Hit:6 https://packages.microsoft.com/repos/azure-cli noble InRelease
+2025-10-02T06:58:45.2329064Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2025-10-02T06:58:45.3392510Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1475 kB]
+2025-10-02T06:58:45.3543016Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [285 kB]
+2025-10-02T06:58:45.3580169Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [175 kB]
+2025-10-02T06:58:45.3619179Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [15.3 kB]
+2025-10-02T06:58:45.3632159Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1486 kB]
+2025-10-02T06:58:45.3834096Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [300 kB]
+2025-10-02T06:58:45.3870133Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [377 kB]
+2025-10-02T06:58:45.3907826Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [31.1 kB]
+2025-10-02T06:58:45.3994863Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2034 kB]
+2025-10-02T06:58:45.4027595Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [458 kB]
+2025-10-02T06:58:45.4517661Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Components [212 B]
+2025-10-02T06:58:45.4531052Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [6116 B]
+2025-10-02T06:58:45.4543964Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+2025-10-02T06:58:45.4554173Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [40.4 kB]
+2025-10-02T06:58:45.4569980Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-backports/main Translation-en [9208 B]
+2025-10-02T06:58:45.4585168Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [7148 B]
+2025-10-02T06:58:45.4600615Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 c-n-f Metadata [368 B]
+2025-10-02T06:58:45.4614005Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [28.9 kB]
+2025-10-02T06:58:45.4627073Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe Translation-en [17.5 kB]
+2025-10-02T06:58:45.4640209Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [11.0 kB]
+2025-10-02T06:58:45.4655116Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 c-n-f Metadata [1444 B]
+2025-10-02T06:58:45.4666613Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble-backports/restricted amd64 Components [212 B]
+2025-10-02T06:58:45.4679499Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Components [212 B]
+2025-10-02T06:58:45.4694211Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1198 kB]
+2025-10-02T06:58:45.5208593Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [201 kB]
+2025-10-02T06:58:45.5221975Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [21.5 kB]
+2025-10-02T06:58:45.5284991Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [8744 B]
+2025-10-02T06:58:45.5297704Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [881 kB]
+2025-10-02T06:58:45.5359076Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [196 kB]
+2025-10-02T06:58:45.5387835Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [52.3 kB]
+2025-10-02T06:58:45.5404624Z Get:38 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [18.0 kB]
+2025-10-02T06:58:45.5418602Z Get:39 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1933 kB]
+2025-10-02T06:58:45.5538369Z Get:40 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [438 kB]
+2025-10-02T06:58:45.5549136Z Get:44 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [10.4 kB]
+2025-10-02T06:58:45.5576463Z Get:41 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Components [208 B]
+2025-10-02T06:58:45.5589731Z Get:42 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [5844 B]
+2025-10-02T06:58:45.5598788Z Get:45 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [58.8 kB]
+2025-10-02T06:58:45.5602112Z Get:43 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Components [208 B]
+2025-10-02T06:58:45.5664065Z Get:46 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [42.0 kB]
+2025-10-02T06:58:53.8835257Z Fetched 12.2 MB in 1s (8651 kB/s)
+2025-10-02T06:58:54.6008690Z Reading package lists...
+2025-10-02T06:58:54.6328295Z Reading package lists...
+2025-10-02T06:58:54.7952749Z Building dependency tree...
+2025-10-02T06:58:54.7959408Z Reading state information...
+2025-10-02T06:58:54.9590251Z git is already the newest version (1:2.51.0-0ppa2~ubuntu24.04.1).
+2025-10-02T06:58:54.9591019Z git set to manually installed.
+2025-10-02T06:58:54.9591601Z The following additional packages will be installed:
+2025-10-02T06:58:54.9593345Z   assistant-qt6 cmake-data designer-qt6 libb2-1 libclang-cpp15t64
+2025-10-02T06:58:54.9594280Z   libclang1-15t64 libdouble-conversion3 libegl-mesa0 libegl1 libgit2-1.7
+2025-10-02T06:58:54.9595272Z   libgl-dev libglx-dev libgumbo2 libhttp-parser-dev libhttp-parser2.9
+2025-10-02T06:58:54.9596406Z   libinput-bin libinput10 libjsoncpp25 liblitehtml0t64 libllvm15t64 libmd4c0
+2025-10-02T06:58:54.9597734Z   libmtdev1t64 libopengl-dev libopengl0 libproxy1v5 libpthread-stubs0-dev
+2025-10-02T06:58:54.9598836Z   libqt6concurrent6t64 libqt6core6t64 libqt6dbus6t64 libqt6designer6
+2025-10-02T06:58:54.9599927Z   libqt6designercomponents6 libqt6gui6t64 libqt6help6 libqt6network6t64
+2025-10-02T06:58:54.9601089Z   libqt6opengl6t64 libqt6openglwidgets6t64 libqt6printsupport6t64 libqt6qml6
+2025-10-02T06:58:54.9602208Z   libqt6qmlmodels6 libqt6quick6 libqt6quickwidgets6 libqt6sql6-sqlite
+2025-10-02T06:58:54.9603285Z   libqt6sql6t64 libqt6test6t64 libqt6uitools6 libqt6waylandclient6
+2025-10-02T06:58:54.9604130Z   libqt6waylandcompositor6 libqt6waylandeglclienthwintegration6
+2025-10-02T06:58:54.9604946Z   libqt6waylandeglcompositorhwintegration6 libqt6widgets6t64
+2025-10-02T06:58:54.9606013Z   libqt6wlshellintegration6 libqt6xml6t64 librhash0 libssh2-1-dev libts0t64
+2025-10-02T06:58:54.9607788Z   libvulkan-dev libwacom-common libwacom9 libx11-dev libxau-dev libxcb-icccm4
+2025-10-02T06:58:54.9609259Z   libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-shape0 libxcb-util1
+2025-10-02T06:58:54.9609967Z   libxcb-xkb1 libxcb1-dev libxdmcp-dev libxkbcommon-x11-0 linguist-qt6
+2025-10-02T06:58:54.9610453Z   qdbus-qt6 qmake6 qmake6-bin qt6-base-dev-tools qt6-documentation-tools
+2025-10-02T06:58:54.9610896Z   qt6-gtk-platformtheme qt6-qpa-plugins qt6-tools-dev-tools
+2025-10-02T06:58:54.9611555Z   qt6-translations-l10n qt6-wayland x11proto-dev xorg-sgml-doctools xtrans-dev
+2025-10-02T06:58:54.9611925Z Suggested packages:
+2025-10-02T06:58:54.9612246Z   cmake-doc cmake-format elpa-cmake-mode qt6-qmltooling-plugins libwacom-bin
+2025-10-02T06:58:54.9612683Z   libx11-doc libxcb-doc
+2025-10-02T06:58:55.0158637Z The following NEW packages will be installed:
+2025-10-02T06:58:55.0159855Z   assistant-qt6 build-essential cmake cmake-data designer-qt6 libb2-1
+2025-10-02T06:58:55.0160803Z   libclang-cpp15t64 libclang1-15t64 libdouble-conversion3 libegl-mesa0 libegl1
+2025-10-02T06:58:55.0161796Z   libgit2-1.7 libgit2-dev libgl-dev libglx-dev libgumbo2 libhttp-parser-dev
+2025-10-02T06:58:55.0162713Z   libhttp-parser2.9 libinput-bin libinput10 libjsoncpp25 liblitehtml0t64
+2025-10-02T06:58:55.0163586Z   libllvm15t64 libmd4c0 libmtdev1t64 libopengl-dev libopengl0 libproxy1v5
+2025-10-02T06:58:55.0164458Z   libpthread-stubs0-dev libqt6concurrent6t64 libqt6core6t64 libqt6dbus6t64
+2025-10-02T06:58:55.0165548Z   libqt6designer6 libqt6designercomponents6 libqt6gui6t64 libqt6help6
+2025-10-02T06:58:55.0166322Z   libqt6network6t64 libqt6opengl6t64 libqt6openglwidgets6t64
+2025-10-02T06:58:55.0167115Z   libqt6printsupport6t64 libqt6qml6 libqt6qmlmodels6 libqt6quick6
+2025-10-02T06:58:55.0168127Z   libqt6quickwidgets6 libqt6sql6-sqlite libqt6sql6t64 libqt6test6t64
+2025-10-02T06:58:55.0168886Z   libqt6uitools6 libqt6waylandclient6 libqt6waylandcompositor6
+2025-10-02T06:58:55.0169487Z   libqt6waylandeglclienthwintegration6
+2025-10-02T06:58:55.0170091Z   libqt6waylandeglcompositorhwintegration6 libqt6widgets6t64
+2025-10-02T06:58:55.0170945Z   libqt6wlshellintegration6 libqt6xml6t64 librhash0 libssh2-1-dev libts0t64
+2025-10-02T06:58:55.0171812Z   libvulkan-dev libwacom-common libwacom9 libx11-dev libxau-dev libxcb-icccm4
+2025-10-02T06:58:55.0172646Z   libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-shape0 libxcb-util1
+2025-10-02T06:58:55.0173462Z   libxcb-xkb1 libxcb1-dev libxdmcp-dev libxkbcommon-x11-0 linguist-qt6
+2025-10-02T06:58:55.0174259Z   ninja-build qdbus-qt6 qmake6 qmake6-bin qt6-base-dev qt6-base-dev-tools
+2025-10-02T06:58:55.0175076Z   qt6-documentation-tools qt6-gtk-platformtheme qt6-l10n-tools qt6-qpa-plugins
+2025-10-02T06:58:55.0175894Z   qt6-tools-dev qt6-tools-dev-tools qt6-translations-l10n qt6-wayland
+2025-10-02T06:58:55.0176584Z   x11proto-dev xorg-sgml-doctools xtrans-dev
+2025-10-02T06:58:55.0373447Z 0 upgraded, 91 newly installed, 0 to remove and 27 not upgraded.
+2025-10-02T06:58:55.0374080Z Need to get 90.6 MB of archives.
+2025-10-02T06:58:55.0374666Z After this operation, 411 MB of additional disk space will be used.
+2025-10-02T06:58:55.0375310Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2025-10-02T06:58:55.1197975Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libgumbo2 amd64 0.12.0+dfsg-2build1 [126 kB]
+2025-10-02T06:58:55.1920188Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 liblitehtml0t64 amd64 0.6-1.2ubuntu2 [208 kB]
+2025-10-02T06:58:55.2644570Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libb2-1 amd64 0.98.1-1.1build1 [45.0 kB]
+2025-10-02T06:58:55.3354661Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libdouble-conversion3 amd64 3.3.0-1build1 [40.3 kB]
+2025-10-02T06:58:55.4144138Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6core6t64 amd64 6.4.2+dfsg-21.1build5 [1789 kB]
+2025-10-02T06:58:55.6948872Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libegl-mesa0 amd64 25.0.7-0ubuntu0.24.04.2 [124 kB]
+2025-10-02T06:58:55.7668792Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libegl1 amd64 1.7.0-1build1 [28.7 kB]
+2025-10-02T06:58:55.8348038Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libmtdev1t64 amd64 1.1.6-1.1build1 [14.4 kB]
+2025-10-02T06:58:55.9035001Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libwacom-common all 2.10.0-2 [63.4 kB]
+2025-10-02T06:58:55.9745503Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libwacom9 amd64 2.10.0-2 [23.9 kB]
+2025-10-02T06:58:56.0427172Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libinput-bin amd64 1.25.0-1ubuntu3.1 [22.6 kB]
+2025-10-02T06:58:56.1108711Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libinput10 amd64 1.25.0-1ubuntu3.1 [133 kB]
+2025-10-02T06:58:56.1820953Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libmd4c0 amd64 0.4.8-1build1 [42.3 kB]
+2025-10-02T06:58:56.2503312Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libopengl0 amd64 1.7.0-1build1 [32.8 kB]
+2025-10-02T06:58:56.3191842Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6dbus6t64 amd64 6.4.2+dfsg-21.1build5 [267 kB]
+2025-10-02T06:58:56.3923322Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libts0t64 amd64 1.22-1.1build1 [63.8 kB]
+2025-10-02T06:58:56.4615913Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxcb-icccm4 amd64 0.4.1-1.1build3 [10.8 kB]
+2025-10-02T06:58:56.5295732Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxcb-util1 amd64 0.4.0-1build3 [10.7 kB]
+2025-10-02T06:58:56.5998087Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxcb-image0 amd64 0.4.0-2build1 [10.8 kB]
+2025-10-02T06:58:56.6700939Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxcb-keysyms1 amd64 0.4.0-1build4 [7956 B]
+2025-10-02T06:58:56.7376896Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxcb-render-util0 amd64 0.3.9-1build4 [9608 B]
+2025-10-02T06:58:56.8051951Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxcb-shape0 amd64 1.15-1ubuntu2 [6100 B]
+2025-10-02T06:58:56.8731312Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxcb-xkb1 amd64 1.15-1ubuntu2 [32.3 kB]
+2025-10-02T06:58:56.9432155Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxkbcommon-x11-0 amd64 1.6.0-1build1 [14.5 kB]
+2025-10-02T06:58:57.0110356Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6gui6t64 amd64 6.4.2+dfsg-21.1build5 [3119 kB]
+2025-10-02T06:58:57.3444398Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6sql6t64 amd64 6.4.2+dfsg-21.1build5 [141 kB]
+2025-10-02T06:58:57.4125268Z Get:28 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6widgets6t64 amd64 6.4.2+dfsg-21.1build5 [2648 kB]
+2025-10-02T06:58:57.7050209Z Get:29 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6help6 amd64 6.4.2-3build3 [189 kB]
+2025-10-02T06:58:57.7761145Z Get:30 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6printsupport6t64 amd64 6.4.2+dfsg-21.1build5 [222 kB]
+2025-10-02T06:58:57.8460117Z Get:31 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 assistant-qt6 amd64 6.4.2-3build3 [272 kB]
+2025-10-02T06:58:57.9196954Z Get:32 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 build-essential amd64 12.10ubuntu1 [4928 B]
+2025-10-02T06:58:57.9909304Z Get:33 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libjsoncpp25 amd64 1.9.5-6build1 [82.8 kB]
+2025-10-02T06:58:58.0601036Z Get:34 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 librhash0 amd64 1.4.3-3build1 [129 kB]
+2025-10-02T06:58:58.1288123Z Get:35 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 cmake-data all 3.28.3-1build7 [2155 kB]
+2025-10-02T06:58:58.3922907Z Get:36 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 cmake amd64 3.28.3-1build7 [11.2 MB]
+2025-10-02T06:58:59.1288380Z Get:37 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6opengl6t64 amd64 6.4.2+dfsg-21.1build5 [420 kB]
+2025-10-02T06:58:59.1963855Z Get:38 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6openglwidgets6t64 amd64 6.4.2+dfsg-21.1build5 [40.4 kB]
+2025-10-02T06:58:59.2704748Z Get:39 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6xml6t64 amd64 6.4.2+dfsg-21.1build5 [75.9 kB]
+2025-10-02T06:58:59.3654367Z Get:40 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6designer6 amd64 6.4.2-3build3 [2923 kB]
+2025-10-02T06:58:59.7429167Z Get:41 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6designercomponents6 amd64 6.4.2-3build3 [878 kB]
+2025-10-02T06:58:59.9301020Z Get:42 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libproxy1v5 amd64 0.5.4-4build1 [26.5 kB]
+2025-10-02T06:58:59.9956466Z Get:43 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6network6t64 amd64 6.4.2+dfsg-21.1build5 [740 kB]
+2025-10-02T06:59:00.1278103Z Get:44 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6qml6 amd64 6.4.2+dfsg-4build3 [1619 kB]
+2025-10-02T06:59:00.3811484Z Get:45 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6qmlmodels6 amd64 6.4.2+dfsg-4build3 [267 kB]
+2025-10-02T06:59:00.4498882Z Get:46 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6quick6 amd64 6.4.2+dfsg-4build3 [2001 kB]
+2025-10-02T06:59:00.7028668Z Get:47 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6quickwidgets6 amd64 6.4.2+dfsg-4build3 [43.8 kB]
+2025-10-02T06:59:00.7691056Z Get:48 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 designer-qt6 amd64 6.4.2-3build3 [175 kB]
+2025-10-02T06:59:00.8354500Z Get:49 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libllvm15t64 amd64 1:15.0.7-14build3 [25.5 MB]
+2025-10-02T06:59:03.2958548Z Get:50 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libclang-cpp15t64 amd64 1:15.0.7-14build3 [12.6 MB]
+2025-10-02T06:59:04.5212303Z Get:51 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libclang1-15t64 amd64 1:15.0.7-14build3 [6958 kB]
+2025-10-02T06:59:05.1737757Z Get:52 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libhttp-parser2.9 amd64 2.9.4-6build1 [22.3 kB]
+2025-10-02T06:59:05.2416088Z Get:53 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libgit2-1.7 amd64 1.7.2+ds-1ubuntu3 [529 kB]
+2025-10-02T06:59:05.3741964Z Get:54 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xorg-sgml-doctools all 1:1.11-1.1 [10.9 kB]
+2025-10-02T06:59:05.4423181Z Get:55 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 x11proto-dev all 2023.2-1 [602 kB]
+2025-10-02T06:59:05.5759911Z Get:56 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxau-dev amd64 1:1.0.9-1build6 [9570 B]
+2025-10-02T06:59:05.6518385Z Get:57 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxdmcp-dev amd64 1:1.1.3-0ubuntu6 [26.5 kB]
+2025-10-02T06:59:05.7156431Z Get:58 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xtrans-dev all 1.4.0-1 [68.9 kB]
+2025-10-02T06:59:05.7810370Z Get:59 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libpthread-stubs0-dev amd64 0.4-1build3 [4746 B]
+2025-10-02T06:59:05.8448474Z Get:60 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libxcb1-dev amd64 1.15-1ubuntu2 [85.8 kB]
+2025-10-02T06:59:05.9122321Z Get:61 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libx11-dev amd64 2:1.8.7-1build1 [732 kB]
+2025-10-02T06:59:06.0994737Z Get:62 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libglx-dev amd64 1.7.0-1build1 [14.2 kB]
+2025-10-02T06:59:06.1637946Z Get:63 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libgl-dev amd64 1.7.0-1build1 [102 kB]
+2025-10-02T06:59:06.2277662Z Get:64 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libopengl-dev amd64 1.7.0-1build1 [3454 B]
+2025-10-02T06:59:06.2923187Z Get:65 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6concurrent6t64 amd64 6.4.2+dfsg-21.1build5 [33.4 kB]
+2025-10-02T06:59:06.3567032Z Get:66 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6sql6-sqlite amd64 6.4.2+dfsg-21.1build5 [57.8 kB]
+2025-10-02T06:59:06.4207965Z Get:67 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6test6t64 amd64 6.4.2+dfsg-21.1build5 [167 kB]
+2025-10-02T06:59:06.4880265Z Get:68 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6uitools6 amd64 6.4.2-3build3 [173 kB]
+2025-10-02T06:59:06.6412974Z Get:69 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6waylandclient6 amd64 6.4.2-5build3 [251 kB]
+2025-10-02T06:59:06.7089448Z Get:70 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6waylandcompositor6 amd64 6.4.2-5build3 [427 kB]
+2025-10-02T06:59:06.8348001Z Get:71 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6waylandeglclienthwintegration6 amd64 6.4.2-5build3 [19.5 kB]
+2025-10-02T06:59:06.8987634Z Get:72 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6waylandeglcompositorhwintegration6 amd64 6.4.2-5build3 [15.2 kB]
+2025-10-02T06:59:06.9625427Z Get:73 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 libqt6wlshellintegration6 amd64 6.4.2-5build3 [38.0 kB]
+2025-10-02T06:59:07.0269439Z Get:74 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libssh2-1-dev amd64 1.11.0-4.1build2 [259 kB]
+2025-10-02T06:59:07.0990746Z Get:75 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libvulkan-dev amd64 1.3.275.0-1build1 [1239 kB]
+2025-10-02T06:59:07.3013005Z Get:76 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 linguist-qt6 amd64 6.4.2-3build3 [368 kB]
+2025-10-02T06:59:07.4291563Z Get:77 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 ninja-build amd64 1.11.1-2 [129 kB]
+2025-10-02T06:59:07.4945773Z Get:78 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qdbus-qt6 amd64 6.4.2-3build3 [30.7 kB]
+2025-10-02T06:59:07.5601076Z Get:79 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qmake6-bin amd64 6.4.2+dfsg-21.1build5 [624 kB]
+2025-10-02T06:59:07.6911586Z Get:80 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qmake6 amd64 6.4.2+dfsg-21.1build5 [178 kB]
+2025-10-02T06:59:07.7587735Z Get:81 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-base-dev-tools amd64 6.4.2+dfsg-21.1build5 [970 kB]
+2025-10-02T06:59:07.9471145Z Get:82 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-qpa-plugins amd64 6.4.2+dfsg-21.1build5 [89.3 kB]
+2025-10-02T06:59:08.0131022Z Get:83 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-base-dev amd64 6.4.2+dfsg-21.1build5 [1458 kB]
+2025-10-02T06:59:08.2629632Z Get:84 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-documentation-tools amd64 6.4.2-3build3 [646 kB]
+2025-10-02T06:59:08.3948098Z Get:85 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-gtk-platformtheme amd64 6.4.2+dfsg-21.1build5 [55.1 kB]
+2025-10-02T06:59:08.4587664Z Get:86 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-l10n-tools amd64 6.4.2-3build3 [486 kB]
+2025-10-02T06:59:08.5870074Z Get:87 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-tools-dev-tools amd64 6.4.2-3build3 [274 kB]
+2025-10-02T06:59:08.6588460Z Get:88 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-tools-dev amd64 6.4.2-3build3 [64.8 kB]
+2025-10-02T06:59:08.7229174Z Get:89 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-translations-l10n all 6.4.2-1 [1761 kB]
+2025-10-02T06:59:08.9796080Z Get:90 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 qt6-wayland amd64 6.4.2-5build3 [127 kB]
+2025-10-02T06:59:09.0443333Z Get:91 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libhttp-parser-dev amd64 2.9.4-6build1 [21.5 kB]
+2025-10-02T06:59:09.1082862Z Get:92 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 libgit2-dev amd64 1.7.2+ds-1ubuntu3 [814 kB]
+2025-10-02T06:59:09.5450407Z Fetched 90.6 MB in 14s (6399 kB/s)
+2025-10-02T06:59:09.6011401Z Selecting previously unselected package libgumbo2:amd64.
+2025-10-02T06:59:09.6411372Z (Reading database ... 
+2025-10-02T06:59:09.6411872Z (Reading database ... 5%
+2025-10-02T06:59:09.6412237Z (Reading database ... 10%
+2025-10-02T06:59:09.6412865Z (Reading database ... 15%
+2025-10-02T06:59:09.6413229Z (Reading database ... 20%
+2025-10-02T06:59:09.6413567Z (Reading database ... 25%
+2025-10-02T06:59:09.6413901Z (Reading database ... 30%
+2025-10-02T06:59:09.6414173Z (Reading database ... 35%
+2025-10-02T06:59:09.6414448Z (Reading database ... 40%
+2025-10-02T06:59:09.6414717Z (Reading database ... 45%
+2025-10-02T06:59:09.6415151Z (Reading database ... 50%
+2025-10-02T06:59:09.7685371Z (Reading database ... 55%
+2025-10-02T06:59:10.3053208Z (Reading database ... 60%
+2025-10-02T06:59:10.8180953Z (Reading database ... 65%
+2025-10-02T06:59:11.3073715Z (Reading database ... 70%
+2025-10-02T06:59:11.8010743Z (Reading database ... 75%
+2025-10-02T06:59:12.3327109Z (Reading database ... 80%
+2025-10-02T06:59:12.8905908Z (Reading database ... 85%
+2025-10-02T06:59:13.5323843Z (Reading database ... 90%
+2025-10-02T06:59:14.1822980Z (Reading database ... 95%
+2025-10-02T06:59:14.1823331Z (Reading database ... 100%
+2025-10-02T06:59:14.1823742Z (Reading database ... 214164 files and directories currently installed.)
+2025-10-02T06:59:14.1868779Z Preparing to unpack .../00-libgumbo2_0.12.0+dfsg-2build1_amd64.deb ...
+2025-10-02T06:59:14.1962708Z Unpacking libgumbo2:amd64 (0.12.0+dfsg-2build1) ...
+2025-10-02T06:59:14.2218405Z Selecting previously unselected package liblitehtml0t64:amd64.
+2025-10-02T06:59:14.2352481Z Preparing to unpack .../01-liblitehtml0t64_0.6-1.2ubuntu2_amd64.deb ...
+2025-10-02T06:59:14.2364797Z Unpacking liblitehtml0t64:amd64 (0.6-1.2ubuntu2) ...
+2025-10-02T06:59:14.2640295Z Selecting previously unselected package libb2-1:amd64.
+2025-10-02T06:59:14.2771920Z Preparing to unpack .../02-libb2-1_0.98.1-1.1build1_amd64.deb ...
+2025-10-02T06:59:14.2782834Z Unpacking libb2-1:amd64 (0.98.1-1.1build1) ...
+2025-10-02T06:59:14.3037445Z Selecting previously unselected package libdouble-conversion3:amd64.
+2025-10-02T06:59:14.3168484Z Preparing to unpack .../03-libdouble-conversion3_3.3.0-1build1_amd64.deb ...
+2025-10-02T06:59:14.3179825Z Unpacking libdouble-conversion3:amd64 (3.3.0-1build1) ...
+2025-10-02T06:59:14.3420812Z Selecting previously unselected package libqt6core6t64:amd64.
+2025-10-02T06:59:14.3553547Z Preparing to unpack .../04-libqt6core6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:14.3565293Z Unpacking libqt6core6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:14.4022914Z Selecting previously unselected package libegl-mesa0:amd64.
+2025-10-02T06:59:14.4154209Z Preparing to unpack .../05-libegl-mesa0_25.0.7-0ubuntu0.24.04.2_amd64.deb ...
+2025-10-02T06:59:14.4168048Z Unpacking libegl-mesa0:amd64 (25.0.7-0ubuntu0.24.04.2) ...
+2025-10-02T06:59:14.4422718Z Selecting previously unselected package libegl1:amd64.
+2025-10-02T06:59:14.4553374Z Preparing to unpack .../06-libegl1_1.7.0-1build1_amd64.deb ...
+2025-10-02T06:59:14.4565494Z Unpacking libegl1:amd64 (1.7.0-1build1) ...
+2025-10-02T06:59:14.4804555Z Selecting previously unselected package libmtdev1t64:amd64.
+2025-10-02T06:59:14.4936122Z Preparing to unpack .../07-libmtdev1t64_1.1.6-1.1build1_amd64.deb ...
+2025-10-02T06:59:14.4947012Z Unpacking libmtdev1t64:amd64 (1.1.6-1.1build1) ...
+2025-10-02T06:59:14.5168014Z Selecting previously unselected package libwacom-common.
+2025-10-02T06:59:14.5301806Z Preparing to unpack .../08-libwacom-common_2.10.0-2_all.deb ...
+2025-10-02T06:59:14.5313061Z Unpacking libwacom-common (2.10.0-2) ...
+2025-10-02T06:59:14.6347562Z Selecting previously unselected package libwacom9:amd64.
+2025-10-02T06:59:14.6479949Z Preparing to unpack .../09-libwacom9_2.10.0-2_amd64.deb ...
+2025-10-02T06:59:14.6491816Z Unpacking libwacom9:amd64 (2.10.0-2) ...
+2025-10-02T06:59:14.6716589Z Selecting previously unselected package libinput-bin.
+2025-10-02T06:59:14.6849696Z Preparing to unpack .../10-libinput-bin_1.25.0-1ubuntu3.1_amd64.deb ...
+2025-10-02T06:59:14.6860822Z Unpacking libinput-bin (1.25.0-1ubuntu3.1) ...
+2025-10-02T06:59:14.7154813Z Selecting previously unselected package libinput10:amd64.
+2025-10-02T06:59:14.7289929Z Preparing to unpack .../11-libinput10_1.25.0-1ubuntu3.1_amd64.deb ...
+2025-10-02T06:59:14.7301239Z Unpacking libinput10:amd64 (1.25.0-1ubuntu3.1) ...
+2025-10-02T06:59:14.7555607Z Selecting previously unselected package libmd4c0:amd64.
+2025-10-02T06:59:14.7687106Z Preparing to unpack .../12-libmd4c0_0.4.8-1build1_amd64.deb ...
+2025-10-02T06:59:14.7697856Z Unpacking libmd4c0:amd64 (0.4.8-1build1) ...
+2025-10-02T06:59:14.7935087Z Selecting previously unselected package libopengl0:amd64.
+2025-10-02T06:59:14.8066369Z Preparing to unpack .../13-libopengl0_1.7.0-1build1_amd64.deb ...
+2025-10-02T06:59:14.8078966Z Unpacking libopengl0:amd64 (1.7.0-1build1) ...
+2025-10-02T06:59:14.8308703Z Selecting previously unselected package libqt6dbus6t64:amd64.
+2025-10-02T06:59:14.8440501Z Preparing to unpack .../14-libqt6dbus6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:14.8452874Z Unpacking libqt6dbus6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:14.8755569Z Selecting previously unselected package libts0t64:amd64.
+2025-10-02T06:59:14.8888237Z Preparing to unpack .../15-libts0t64_1.22-1.1build1_amd64.deb ...
+2025-10-02T06:59:14.8918806Z Unpacking libts0t64:amd64 (1.22-1.1build1) ...
+2025-10-02T06:59:15.1074328Z Selecting previously unselected package libxcb-icccm4:amd64.
+2025-10-02T06:59:15.1208842Z Preparing to unpack .../16-libxcb-icccm4_0.4.1-1.1build3_amd64.deb ...
+2025-10-02T06:59:15.1222398Z Unpacking libxcb-icccm4:amd64 (0.4.1-1.1build3) ...
+2025-10-02T06:59:15.1462745Z Selecting previously unselected package libxcb-util1:amd64.
+2025-10-02T06:59:15.1599370Z Preparing to unpack .../17-libxcb-util1_0.4.0-1build3_amd64.deb ...
+2025-10-02T06:59:15.1614152Z Unpacking libxcb-util1:amd64 (0.4.0-1build3) ...
+2025-10-02T06:59:15.1840381Z Selecting previously unselected package libxcb-image0:amd64.
+2025-10-02T06:59:15.1974238Z Preparing to unpack .../18-libxcb-image0_0.4.0-2build1_amd64.deb ...
+2025-10-02T06:59:15.1986402Z Unpacking libxcb-image0:amd64 (0.4.0-2build1) ...
+2025-10-02T06:59:15.2205819Z Selecting previously unselected package libxcb-keysyms1:amd64.
+2025-10-02T06:59:15.2338102Z Preparing to unpack .../19-libxcb-keysyms1_0.4.0-1build4_amd64.deb ...
+2025-10-02T06:59:15.2350903Z Unpacking libxcb-keysyms1:amd64 (0.4.0-1build4) ...
+2025-10-02T06:59:15.2573505Z Selecting previously unselected package libxcb-render-util0:amd64.
+2025-10-02T06:59:15.2704487Z Preparing to unpack .../20-libxcb-render-util0_0.3.9-1build4_amd64.deb ...
+2025-10-02T06:59:15.2717144Z Unpacking libxcb-render-util0:amd64 (0.3.9-1build4) ...
+2025-10-02T06:59:15.2947566Z Selecting previously unselected package libxcb-shape0:amd64.
+2025-10-02T06:59:15.3080612Z Preparing to unpack .../21-libxcb-shape0_1.15-1ubuntu2_amd64.deb ...
+2025-10-02T06:59:15.3103350Z Unpacking libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+2025-10-02T06:59:15.3327141Z Selecting previously unselected package libxcb-xkb1:amd64.
+2025-10-02T06:59:15.3457719Z Preparing to unpack .../22-libxcb-xkb1_1.15-1ubuntu2_amd64.deb ...
+2025-10-02T06:59:15.3469171Z Unpacking libxcb-xkb1:amd64 (1.15-1ubuntu2) ...
+2025-10-02T06:59:15.3697591Z Selecting previously unselected package libxkbcommon-x11-0:amd64.
+2025-10-02T06:59:15.3827069Z Preparing to unpack .../23-libxkbcommon-x11-0_1.6.0-1build1_amd64.deb ...
+2025-10-02T06:59:15.3838831Z Unpacking libxkbcommon-x11-0:amd64 (1.6.0-1build1) ...
+2025-10-02T06:59:15.4067770Z Selecting previously unselected package libqt6gui6t64:amd64.
+2025-10-02T06:59:15.4199316Z Preparing to unpack .../24-libqt6gui6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:15.4224407Z Unpacking libqt6gui6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:15.4863511Z Selecting previously unselected package libqt6sql6t64:amd64.
+2025-10-02T06:59:15.4996948Z Preparing to unpack .../25-libqt6sql6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:15.5008348Z Unpacking libqt6sql6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:15.5267492Z Selecting previously unselected package libqt6widgets6t64:amd64.
+2025-10-02T06:59:15.5399465Z Preparing to unpack .../26-libqt6widgets6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:15.5411873Z Unpacking libqt6widgets6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:15.5962731Z Selecting previously unselected package libqt6help6:amd64.
+2025-10-02T06:59:15.6092203Z Preparing to unpack .../27-libqt6help6_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:15.6103020Z Unpacking libqt6help6:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:15.6368371Z Selecting previously unselected package libqt6printsupport6t64:amd64.
+2025-10-02T06:59:15.6501607Z Preparing to unpack .../28-libqt6printsupport6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:15.6515590Z Unpacking libqt6printsupport6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:15.6793563Z Selecting previously unselected package assistant-qt6.
+2025-10-02T06:59:15.6924823Z Preparing to unpack .../29-assistant-qt6_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:15.6948116Z Unpacking assistant-qt6 (6.4.2-3build3) ...
+2025-10-02T06:59:15.7247006Z Selecting previously unselected package build-essential.
+2025-10-02T06:59:15.7380166Z Preparing to unpack .../30-build-essential_12.10ubuntu1_amd64.deb ...
+2025-10-02T06:59:15.7397801Z Unpacking build-essential (12.10ubuntu1) ...
+2025-10-02T06:59:15.7661473Z Selecting previously unselected package libjsoncpp25:amd64.
+2025-10-02T06:59:15.7792973Z Preparing to unpack .../31-libjsoncpp25_1.9.5-6build1_amd64.deb ...
+2025-10-02T06:59:15.7810361Z Unpacking libjsoncpp25:amd64 (1.9.5-6build1) ...
+2025-10-02T06:59:15.8050687Z Selecting previously unselected package librhash0:amd64.
+2025-10-02T06:59:15.8180942Z Preparing to unpack .../32-librhash0_1.4.3-3build1_amd64.deb ...
+2025-10-02T06:59:15.8192336Z Unpacking librhash0:amd64 (1.4.3-3build1) ...
+2025-10-02T06:59:15.8434972Z Selecting previously unselected package cmake-data.
+2025-10-02T06:59:15.8565670Z Preparing to unpack .../33-cmake-data_3.28.3-1build7_all.deb ...
+2025-10-02T06:59:15.8715489Z Unpacking cmake-data (3.28.3-1build7) ...
+2025-10-02T06:59:16.4735564Z Selecting previously unselected package cmake.
+2025-10-02T06:59:16.4881099Z Preparing to unpack .../34-cmake_3.28.3-1build7_amd64.deb ...
+2025-10-02T06:59:16.4891969Z Unpacking cmake (3.28.3-1build7) ...
+2025-10-02T06:59:16.6826539Z Selecting previously unselected package libqt6opengl6t64:amd64.
+2025-10-02T06:59:16.6958562Z Preparing to unpack .../35-libqt6opengl6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:16.6967437Z Unpacking libqt6opengl6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:16.7271790Z Selecting previously unselected package libqt6openglwidgets6t64:amd64.
+2025-10-02T06:59:16.7405618Z Preparing to unpack .../36-libqt6openglwidgets6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:16.7417599Z Unpacking libqt6openglwidgets6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:16.7651428Z Selecting previously unselected package libqt6xml6t64:amd64.
+2025-10-02T06:59:16.7784825Z Preparing to unpack .../37-libqt6xml6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:16.7796787Z Unpacking libqt6xml6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:16.8046035Z Selecting previously unselected package libqt6designer6:amd64.
+2025-10-02T06:59:16.8179312Z Preparing to unpack .../38-libqt6designer6_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:16.8190103Z Unpacking libqt6designer6:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:16.8619092Z Selecting previously unselected package libqt6designercomponents6:amd64.
+2025-10-02T06:59:16.8751588Z Preparing to unpack .../39-libqt6designercomponents6_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:16.8763062Z Unpacking libqt6designercomponents6:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:16.9109908Z Selecting previously unselected package libproxy1v5:amd64.
+2025-10-02T06:59:16.9240780Z Preparing to unpack .../40-libproxy1v5_0.5.4-4build1_amd64.deb ...
+2025-10-02T06:59:16.9250793Z Unpacking libproxy1v5:amd64 (0.5.4-4build1) ...
+2025-10-02T06:59:16.9484166Z Selecting previously unselected package libqt6network6t64:amd64.
+2025-10-02T06:59:16.9615894Z Preparing to unpack .../41-libqt6network6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:16.9626613Z Unpacking libqt6network6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:16.9954484Z Selecting previously unselected package libqt6qml6:amd64.
+2025-10-02T06:59:17.0088133Z Preparing to unpack .../42-libqt6qml6_6.4.2+dfsg-4build3_amd64.deb ...
+2025-10-02T06:59:17.0099181Z Unpacking libqt6qml6:amd64 (6.4.2+dfsg-4build3) ...
+2025-10-02T06:59:17.0586012Z Selecting previously unselected package libqt6qmlmodels6:amd64.
+2025-10-02T06:59:17.0719523Z Preparing to unpack .../43-libqt6qmlmodels6_6.4.2+dfsg-4build3_amd64.deb ...
+2025-10-02T06:59:17.0731184Z Unpacking libqt6qmlmodels6:amd64 (6.4.2+dfsg-4build3) ...
+2025-10-02T06:59:17.1012619Z Selecting previously unselected package libqt6quick6:amd64.
+2025-10-02T06:59:17.1145713Z Preparing to unpack .../44-libqt6quick6_6.4.2+dfsg-4build3_amd64.deb ...
+2025-10-02T06:59:17.1159968Z Unpacking libqt6quick6:amd64 (6.4.2+dfsg-4build3) ...
+2025-10-02T06:59:17.1690112Z Selecting previously unselected package libqt6quickwidgets6:amd64.
+2025-10-02T06:59:17.1826202Z Preparing to unpack .../45-libqt6quickwidgets6_6.4.2+dfsg-4build3_amd64.deb ...
+2025-10-02T06:59:17.1842682Z Unpacking libqt6quickwidgets6:amd64 (6.4.2+dfsg-4build3) ...
+2025-10-02T06:59:17.2061262Z Selecting previously unselected package designer-qt6.
+2025-10-02T06:59:17.2196790Z Preparing to unpack .../46-designer-qt6_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:17.2208576Z Unpacking designer-qt6 (6.4.2-3build3) ...
+2025-10-02T06:59:17.2458553Z Selecting previously unselected package libllvm15t64:amd64.
+2025-10-02T06:59:17.2592660Z Preparing to unpack .../47-libllvm15t64_1%3a15.0.7-14build3_amd64.deb ...
+2025-10-02T06:59:17.2604095Z Unpacking libllvm15t64:amd64 (1:15.0.7-14build3) ...
+2025-10-02T06:59:17.7319854Z Selecting previously unselected package libclang-cpp15t64.
+2025-10-02T06:59:17.7461262Z Preparing to unpack .../48-libclang-cpp15t64_1%3a15.0.7-14build3_amd64.deb ...
+2025-10-02T06:59:17.7487422Z Unpacking libclang-cpp15t64 (1:15.0.7-14build3) ...
+2025-10-02T06:59:17.9946926Z Selecting previously unselected package libclang1-15t64.
+2025-10-02T06:59:18.0082166Z Preparing to unpack .../49-libclang1-15t64_1%3a15.0.7-14build3_amd64.deb ...
+2025-10-02T06:59:18.0092989Z Unpacking libclang1-15t64 (1:15.0.7-14build3) ...
+2025-10-02T06:59:18.1525842Z Selecting previously unselected package libhttp-parser2.9:amd64.
+2025-10-02T06:59:18.1662221Z Preparing to unpack .../50-libhttp-parser2.9_2.9.4-6build1_amd64.deb ...
+2025-10-02T06:59:18.1674626Z Unpacking libhttp-parser2.9:amd64 (2.9.4-6build1) ...
+2025-10-02T06:59:18.1928924Z Selecting previously unselected package libgit2-1.7:amd64.
+2025-10-02T06:59:18.2064887Z Preparing to unpack .../51-libgit2-1.7_1.7.2+ds-1ubuntu3_amd64.deb ...
+2025-10-02T06:59:18.2099464Z Unpacking libgit2-1.7:amd64 (1.7.2+ds-1ubuntu3) ...
+2025-10-02T06:59:18.2386305Z Selecting previously unselected package xorg-sgml-doctools.
+2025-10-02T06:59:18.2523544Z Preparing to unpack .../52-xorg-sgml-doctools_1%3a1.11-1.1_all.deb ...
+2025-10-02T06:59:18.2536678Z Unpacking xorg-sgml-doctools (1:1.11-1.1) ...
+2025-10-02T06:59:18.2806979Z Selecting previously unselected package x11proto-dev.
+2025-10-02T06:59:18.2942285Z Preparing to unpack .../53-x11proto-dev_2023.2-1_all.deb ...
+2025-10-02T06:59:18.2953705Z Unpacking x11proto-dev (2023.2-1) ...
+2025-10-02T06:59:18.3514017Z Selecting previously unselected package libxau-dev:amd64.
+2025-10-02T06:59:18.3650717Z Preparing to unpack .../54-libxau-dev_1%3a1.0.9-1build6_amd64.deb ...
+2025-10-02T06:59:18.3664370Z Unpacking libxau-dev:amd64 (1:1.0.9-1build6) ...
+2025-10-02T06:59:18.3895398Z Selecting previously unselected package libxdmcp-dev:amd64.
+2025-10-02T06:59:18.4030519Z Preparing to unpack .../55-libxdmcp-dev_1%3a1.1.3-0ubuntu6_amd64.deb ...
+2025-10-02T06:59:18.4042327Z Unpacking libxdmcp-dev:amd64 (1:1.1.3-0ubuntu6) ...
+2025-10-02T06:59:18.4262251Z Selecting previously unselected package xtrans-dev.
+2025-10-02T06:59:18.4397764Z Preparing to unpack .../56-xtrans-dev_1.4.0-1_all.deb ...
+2025-10-02T06:59:18.4409352Z Unpacking xtrans-dev (1.4.0-1) ...
+2025-10-02T06:59:18.4672324Z Selecting previously unselected package libpthread-stubs0-dev:amd64.
+2025-10-02T06:59:18.4805400Z Preparing to unpack .../57-libpthread-stubs0-dev_0.4-1build3_amd64.deb ...
+2025-10-02T06:59:18.4819982Z Unpacking libpthread-stubs0-dev:amd64 (0.4-1build3) ...
+2025-10-02T06:59:18.5031051Z Selecting previously unselected package libxcb1-dev:amd64.
+2025-10-02T06:59:18.5163929Z Preparing to unpack .../58-libxcb1-dev_1.15-1ubuntu2_amd64.deb ...
+2025-10-02T06:59:18.5173549Z Unpacking libxcb1-dev:amd64 (1.15-1ubuntu2) ...
+2025-10-02T06:59:18.5418648Z Selecting previously unselected package libx11-dev:amd64.
+2025-10-02T06:59:18.5554596Z Preparing to unpack .../59-libx11-dev_2%3a1.8.7-1build1_amd64.deb ...
+2025-10-02T06:59:18.5564955Z Unpacking libx11-dev:amd64 (2:1.8.7-1build1) ...
+2025-10-02T06:59:18.5892723Z Selecting previously unselected package libglx-dev:amd64.
+2025-10-02T06:59:18.6029561Z Preparing to unpack .../60-libglx-dev_1.7.0-1build1_amd64.deb ...
+2025-10-02T06:59:18.6039249Z Unpacking libglx-dev:amd64 (1.7.0-1build1) ...
+2025-10-02T06:59:18.6254712Z Selecting previously unselected package libgl-dev:amd64.
+2025-10-02T06:59:18.6388588Z Preparing to unpack .../61-libgl-dev_1.7.0-1build1_amd64.deb ...
+2025-10-02T06:59:18.6398403Z Unpacking libgl-dev:amd64 (1.7.0-1build1) ...
+2025-10-02T06:59:18.6655717Z Selecting previously unselected package libopengl-dev:amd64.
+2025-10-02T06:59:18.6792015Z Preparing to unpack .../62-libopengl-dev_1.7.0-1build1_amd64.deb ...
+2025-10-02T06:59:18.6800978Z Unpacking libopengl-dev:amd64 (1.7.0-1build1) ...
+2025-10-02T06:59:18.7032467Z Selecting previously unselected package libqt6concurrent6t64:amd64.
+2025-10-02T06:59:18.7169237Z Preparing to unpack .../63-libqt6concurrent6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:18.7178866Z Unpacking libqt6concurrent6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:18.7392823Z Selecting previously unselected package libqt6sql6-sqlite:amd64.
+2025-10-02T06:59:18.7529739Z Preparing to unpack .../64-libqt6sql6-sqlite_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:18.7539237Z Unpacking libqt6sql6-sqlite:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:18.7771854Z Selecting previously unselected package libqt6test6t64:amd64.
+2025-10-02T06:59:18.7906110Z Preparing to unpack .../65-libqt6test6t64_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:18.7915798Z Unpacking libqt6test6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:18.8183208Z Selecting previously unselected package libqt6uitools6:amd64.
+2025-10-02T06:59:18.8319546Z Preparing to unpack .../66-libqt6uitools6_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:18.8329044Z Unpacking libqt6uitools6:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:18.8584447Z Selecting previously unselected package libqt6waylandclient6:amd64.
+2025-10-02T06:59:18.8718792Z Preparing to unpack .../67-libqt6waylandclient6_6.4.2-5build3_amd64.deb ...
+2025-10-02T06:59:18.8728292Z Unpacking libqt6waylandclient6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:18.9038030Z Selecting previously unselected package libqt6waylandcompositor6:amd64.
+2025-10-02T06:59:18.9173565Z Preparing to unpack .../68-libqt6waylandcompositor6_6.4.2-5build3_amd64.deb ...
+2025-10-02T06:59:18.9184832Z Unpacking libqt6waylandcompositor6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:18.9535825Z Selecting previously unselected package libqt6waylandeglclienthwintegration6:amd64.
+2025-10-02T06:59:18.9673461Z Preparing to unpack .../69-libqt6waylandeglclienthwintegration6_6.4.2-5build3_amd64.deb ...
+2025-10-02T06:59:18.9689526Z Unpacking libqt6waylandeglclienthwintegration6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:18.9943269Z Selecting previously unselected package libqt6waylandeglcompositorhwintegration6:amd64.
+2025-10-02T06:59:19.0077632Z Preparing to unpack .../70-libqt6waylandeglcompositorhwintegration6_6.4.2-5build3_amd64.deb ...
+2025-10-02T06:59:19.0087137Z Unpacking libqt6waylandeglcompositorhwintegration6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:19.0324128Z Selecting previously unselected package libqt6wlshellintegration6:amd64.
+2025-10-02T06:59:19.0463793Z Preparing to unpack .../71-libqt6wlshellintegration6_6.4.2-5build3_amd64.deb ...
+2025-10-02T06:59:19.0475082Z Unpacking libqt6wlshellintegration6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:19.0701054Z Selecting previously unselected package libssh2-1-dev:amd64.
+2025-10-02T06:59:19.0836568Z Preparing to unpack .../72-libssh2-1-dev_1.11.0-4.1build2_amd64.deb ...
+2025-10-02T06:59:19.0847352Z Unpacking libssh2-1-dev:amd64 (1.11.0-4.1build2) ...
+2025-10-02T06:59:19.1446598Z Selecting previously unselected package libvulkan-dev:amd64.
+2025-10-02T06:59:19.1584178Z Preparing to unpack .../73-libvulkan-dev_1.3.275.0-1build1_amd64.deb ...
+2025-10-02T06:59:19.1595428Z Unpacking libvulkan-dev:amd64 (1.3.275.0-1build1) ...
+2025-10-02T06:59:19.2657468Z Selecting previously unselected package linguist-qt6.
+2025-10-02T06:59:19.2794351Z Preparing to unpack .../74-linguist-qt6_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:19.2809587Z Unpacking linguist-qt6 (6.4.2-3build3) ...
+2025-10-02T06:59:19.3075744Z Selecting previously unselected package ninja-build.
+2025-10-02T06:59:19.3210906Z Preparing to unpack .../75-ninja-build_1.11.1-2_amd64.deb ...
+2025-10-02T06:59:19.3222184Z Unpacking ninja-build (1.11.1-2) ...
+2025-10-02T06:59:19.3779809Z Selecting previously unselected package qdbus-qt6.
+2025-10-02T06:59:19.3912693Z Preparing to unpack .../76-qdbus-qt6_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:19.3923822Z Unpacking qdbus-qt6 (6.4.2-3build3) ...
+2025-10-02T06:59:19.4159732Z Selecting previously unselected package qmake6-bin.
+2025-10-02T06:59:19.4293815Z Preparing to unpack .../77-qmake6-bin_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:19.4305206Z Unpacking qmake6-bin (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:19.4616384Z Selecting previously unselected package qmake6:amd64.
+2025-10-02T06:59:19.4753634Z Preparing to unpack .../78-qmake6_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:19.4764375Z Unpacking qmake6:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:19.5847402Z Selecting previously unselected package qt6-base-dev-tools.
+2025-10-02T06:59:19.5989647Z Preparing to unpack .../79-qt6-base-dev-tools_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:19.6003214Z Unpacking qt6-base-dev-tools (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:19.6396381Z Selecting previously unselected package qt6-qpa-plugins:amd64.
+2025-10-02T06:59:19.6535649Z Preparing to unpack .../80-qt6-qpa-plugins_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:19.6546809Z Unpacking qt6-qpa-plugins:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:19.6827459Z Selecting previously unselected package qt6-base-dev:amd64.
+2025-10-02T06:59:19.6968395Z Preparing to unpack .../81-qt6-base-dev_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:19.6987026Z Unpacking qt6-base-dev:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.1480473Z Selecting previously unselected package qt6-documentation-tools.
+2025-10-02T06:59:20.1630741Z Preparing to unpack .../82-qt6-documentation-tools_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:20.1642909Z Unpacking qt6-documentation-tools (6.4.2-3build3) ...
+2025-10-02T06:59:20.1949242Z Selecting previously unselected package qt6-gtk-platformtheme:amd64.
+2025-10-02T06:59:20.2086380Z Preparing to unpack .../83-qt6-gtk-platformtheme_6.4.2+dfsg-21.1build5_amd64.deb ...
+2025-10-02T06:59:20.2096791Z Unpacking qt6-gtk-platformtheme:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.2330808Z Selecting previously unselected package qt6-l10n-tools.
+2025-10-02T06:59:20.2468341Z Preparing to unpack .../84-qt6-l10n-tools_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:20.2482668Z Unpacking qt6-l10n-tools (6.4.2-3build3) ...
+2025-10-02T06:59:20.2803924Z Selecting previously unselected package qt6-tools-dev-tools.
+2025-10-02T06:59:20.2939772Z Preparing to unpack .../85-qt6-tools-dev-tools_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:20.2951131Z Unpacking qt6-tools-dev-tools (6.4.2-3build3) ...
+2025-10-02T06:59:20.3214334Z Selecting previously unselected package qt6-tools-dev:amd64.
+2025-10-02T06:59:20.3354128Z Preparing to unpack .../86-qt6-tools-dev_6.4.2-3build3_amd64.deb ...
+2025-10-02T06:59:20.3365259Z Unpacking qt6-tools-dev:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:20.3969337Z Selecting previously unselected package qt6-translations-l10n.
+2025-10-02T06:59:20.4105190Z Preparing to unpack .../87-qt6-translations-l10n_6.4.2-1_all.deb ...
+2025-10-02T06:59:20.4119205Z Unpacking qt6-translations-l10n (6.4.2-1) ...
+2025-10-02T06:59:20.5109448Z Selecting previously unselected package qt6-wayland:amd64.
+2025-10-02T06:59:20.5246067Z Preparing to unpack .../88-qt6-wayland_6.4.2-5build3_amd64.deb ...
+2025-10-02T06:59:20.5260838Z Unpacking qt6-wayland:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:20.5535980Z Selecting previously unselected package libhttp-parser-dev:amd64.
+2025-10-02T06:59:20.5674019Z Preparing to unpack .../89-libhttp-parser-dev_2.9.4-6build1_amd64.deb ...
+2025-10-02T06:59:20.5684087Z Unpacking libhttp-parser-dev:amd64 (2.9.4-6build1) ...
+2025-10-02T06:59:20.5916409Z Selecting previously unselected package libgit2-dev:amd64.
+2025-10-02T06:59:20.6053230Z Preparing to unpack .../90-libgit2-dev_1.7.2+ds-1ubuntu3_amd64.deb ...
+2025-10-02T06:59:20.6062922Z Unpacking libgit2-dev:amd64 (1.7.2+ds-1ubuntu3) ...
+2025-10-02T06:59:20.6809743Z Setting up libb2-1:amd64 (0.98.1-1.1build1) ...
+2025-10-02T06:59:20.6848563Z Setting up libdouble-conversion3:amd64 (3.3.0-1build1) ...
+2025-10-02T06:59:20.6880284Z Setting up libproxy1v5:amd64 (0.5.4-4build1) ...
+2025-10-02T06:59:20.7007902Z Setting up libvulkan-dev:amd64 (1.3.275.0-1build1) ...
+2025-10-02T06:59:20.7044318Z Setting up libllvm15t64:amd64 (1:15.0.7-14build3) ...
+2025-10-02T06:59:20.7079570Z Setting up libts0t64:amd64 (1.22-1.1build1) ...
+2025-10-02T06:59:20.7131897Z Setting up libxcb-keysyms1:amd64 (0.4.0-1build4) ...
+2025-10-02T06:59:20.7199472Z Setting up libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+2025-10-02T06:59:20.7243824Z Setting up libxcb-render-util0:amd64 (0.3.9-1build4) ...
+2025-10-02T06:59:20.7280898Z Setting up libxcb-icccm4:amd64 (0.4.1-1.1build3) ...
+2025-10-02T06:59:20.7319878Z Setting up libpthread-stubs0-dev:amd64 (0.4-1build3) ...
+2025-10-02T06:59:20.7356341Z Setting up libopengl0:amd64 (1.7.0-1build1) ...
+2025-10-02T06:59:20.7392044Z Setting up ninja-build (1.11.1-2) ...
+2025-10-02T06:59:20.7429922Z Setting up libxcb-util1:amd64 (0.4.0-1build3) ...
+2025-10-02T06:59:20.7469094Z Setting up libxcb-xkb1:amd64 (1.15-1ubuntu2) ...
+2025-10-02T06:59:20.7503243Z Setting up libxcb-image0:amd64 (0.4.0-2build1) ...
+2025-10-02T06:59:20.7543380Z Setting up qt6-translations-l10n (6.4.2-1) ...
+2025-10-02T06:59:20.7583856Z Setting up xtrans-dev (1.4.0-1) ...
+2025-10-02T06:59:20.7632365Z Setting up libegl-mesa0:amd64 (25.0.7-0ubuntu0.24.04.2) ...
+2025-10-02T06:59:20.7668709Z Setting up libgumbo2:amd64 (0.12.0+dfsg-2build1) ...
+2025-10-02T06:59:20.7704770Z Setting up libxkbcommon-x11-0:amd64 (1.6.0-1build1) ...
+2025-10-02T06:59:20.7735311Z Setting up libjsoncpp25:amd64 (1.9.5-6build1) ...
+2025-10-02T06:59:20.7765868Z Setting up libclang1-15t64 (1:15.0.7-14build3) ...
+2025-10-02T06:59:20.7792161Z Setting up libssh2-1-dev:amd64 (1.11.0-4.1build2) ...
+2025-10-02T06:59:20.7823726Z Setting up libmtdev1t64:amd64 (1.1.6-1.1build1) ...
+2025-10-02T06:59:20.7860387Z Setting up librhash0:amd64 (1.4.3-3build1) ...
+2025-10-02T06:59:20.7911178Z Setting up libegl1:amd64 (1.7.0-1build1) ...
+2025-10-02T06:59:20.7947430Z Setting up libmd4c0:amd64 (0.4.8-1build1) ...
+2025-10-02T06:59:20.7976586Z Setting up build-essential (12.10ubuntu1) ...
+2025-10-02T06:59:20.8009094Z Setting up xorg-sgml-doctools (1:1.11-1.1) ...
+2025-10-02T06:59:20.8052201Z Setting up cmake-data (3.28.3-1build7) ...
+2025-10-02T06:59:20.8127072Z Setting up libopengl-dev:amd64 (1.7.0-1build1) ...
+2025-10-02T06:59:20.8162073Z Setting up libclang-cpp15t64 (1:15.0.7-14build3) ...
+2025-10-02T06:59:20.8192608Z Setting up libhttp-parser2.9:amd64 (2.9.4-6build1) ...
+2025-10-02T06:59:20.8224685Z Setting up libwacom-common (2.10.0-2) ...
+2025-10-02T06:59:20.8257923Z Setting up libhttp-parser-dev:amd64 (2.9.4-6build1) ...
+2025-10-02T06:59:20.8286722Z Setting up libqt6core6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8321841Z Setting up libwacom9:amd64 (2.10.0-2) ...
+2025-10-02T06:59:20.8376895Z Setting up liblitehtml0t64:amd64 (0.6-1.2ubuntu2) ...
+2025-10-02T06:59:20.8405602Z Setting up libqt6sql6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8439893Z Setting up libqt6test6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8500113Z Setting up libqt6dbus6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8527850Z Setting up libqt6concurrent6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8557936Z Setting up libqt6xml6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8589788Z Setting up libinput-bin (1.25.0-1ubuntu3.1) ...
+2025-10-02T06:59:20.8626143Z Setting up libqt6sql6-sqlite:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8664231Z Setting up qmake6-bin (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8701478Z Setting up cmake (3.28.3-1build7) ...
+2025-10-02T06:59:20.8748703Z Setting up libgit2-1.7:amd64 (1.7.2+ds-1ubuntu3) ...
+2025-10-02T06:59:20.8790366Z Setting up libqt6network6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8837643Z Setting up libgit2-dev:amd64 (1.7.2+ds-1ubuntu3) ...
+2025-10-02T06:59:20.8888100Z Setting up libinput10:amd64 (1.25.0-1ubuntu3.1) ...
+2025-10-02T06:59:20.8923342Z Setting up qt6-base-dev-tools (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.8958332Z Setting up qdbus-qt6 (6.4.2-3build3) ...
+2025-10-02T06:59:20.9013499Z Setting up libqt6qml6:amd64 (6.4.2+dfsg-4build3) ...
+2025-10-02T06:59:20.9046334Z Setting up libqt6qmlmodels6:amd64 (6.4.2+dfsg-4build3) ...
+2025-10-02T06:59:20.9079404Z Setting up qmake6:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.9111741Z Setting up libqt6gui6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.9146014Z Setting up libqt6widgets6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.9175498Z Setting up qt6-qpa-plugins:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.9208359Z Setting up qt6-l10n-tools (6.4.2-3build3) ...
+2025-10-02T06:59:20.9241253Z Setting up libqt6help6:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:20.9270520Z Setting up qt6-documentation-tools (6.4.2-3build3) ...
+2025-10-02T06:59:20.9305827Z Setting up libqt6opengl6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.9339103Z Setting up libqt6waylandclient6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:20.9365863Z Setting up qt6-gtk-platformtheme:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.9392502Z Setting up libqt6printsupport6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.9422190Z Setting up libqt6quick6:amd64 (6.4.2+dfsg-4build3) ...
+2025-10-02T06:59:20.9451395Z Setting up assistant-qt6 (6.4.2-3build3) ...
+2025-10-02T06:59:20.9483342Z Setting up libqt6wlshellintegration6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:20.9526664Z Setting up libqt6waylandcompositor6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:20.9580158Z Setting up libqt6openglwidgets6t64:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T06:59:20.9605637Z Setting up libqt6waylandeglcompositorhwintegration6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:20.9629562Z Setting up libqt6waylandeglclienthwintegration6:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:20.9654889Z Setting up libqt6quickwidgets6:amd64 (6.4.2+dfsg-4build3) ...
+2025-10-02T06:59:20.9687750Z Setting up libqt6uitools6:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:20.9720732Z Setting up qt6-wayland:amd64 (6.4.2-5build3) ...
+2025-10-02T06:59:20.9760244Z Setting up libqt6designer6:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:20.9799126Z Setting up linguist-qt6 (6.4.2-3build3) ...
+2025-10-02T06:59:20.9830495Z Setting up libqt6designercomponents6:amd64 (6.4.2-3build3) ...
+2025-10-02T06:59:20.9866267Z Setting up designer-qt6 (6.4.2-3build3) ...
+2025-10-02T06:59:20.9893237Z Setting up qt6-tools-dev-tools (6.4.2-3build3) ...
+2025-10-02T06:59:21.0000716Z Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+2025-10-02T06:59:21.0937674Z Processing triggers for man-db (2.12.0-4build2) ...
+2025-10-02T07:00:42.4679563Z Processing triggers for udev (255.4-1ubuntu8.10) ...
+2025-10-02T07:00:42.9377821Z Processing triggers for sgml-base (1.31) ...
+2025-10-02T07:00:42.9607598Z Setting up x11proto-dev (2023.2-1) ...
+2025-10-02T07:00:42.9632609Z Setting up libxau-dev:amd64 (1:1.0.9-1build6) ...
+2025-10-02T07:00:42.9670257Z Setting up libxdmcp-dev:amd64 (1:1.1.3-0ubuntu6) ...
+2025-10-02T07:00:42.9717573Z Setting up libxcb1-dev:amd64 (1.15-1ubuntu2) ...
+2025-10-02T07:00:42.9742937Z Setting up libx11-dev:amd64 (2:1.8.7-1build1) ...
+2025-10-02T07:00:42.9799317Z Setting up libglx-dev:amd64 (1.7.0-1build1) ...
+2025-10-02T07:00:42.9830067Z Setting up libgl-dev:amd64 (1.7.0-1build1) ...
+2025-10-02T07:00:42.9865102Z Setting up qt6-base-dev:amd64 (6.4.2+dfsg-21.1build5) ...
+2025-10-02T07:00:42.9901409Z Setting up qt6-tools-dev:amd64 (6.4.2-3build3) ...
+2025-10-02T07:00:44.2777480Z 
+2025-10-02T07:00:44.2777883Z Running kernel seems to be up-to-date.
+2025-10-02T07:00:44.2778242Z 
+2025-10-02T07:00:44.2778400Z Restarting services...
+2025-10-02T07:00:44.2849243Z 
+2025-10-02T07:00:44.2849536Z Service restarts being deferred:
+2025-10-02T07:00:44.2853024Z  systemctl restart hosted-compute-agent.service
+2025-10-02T07:00:44.2854591Z 
+2025-10-02T07:00:44.2855124Z No containers need to be restarted.
+2025-10-02T07:00:44.2855418Z 
+2025-10-02T07:00:44.2855603Z No user sessions are running outdated binaries.
+2025-10-02T07:00:44.2855930Z 
+2025-10-02T07:00:44.2856165Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2025-10-02T07:00:45.1365443Z ##[group]Run mkdir build
+2025-10-02T07:00:45.1365704Z [36;1mmkdir build[0m
+2025-10-02T07:00:45.1365889Z [36;1mcd build[0m
+2025-10-02T07:00:45.1366130Z [36;1mcmake .. -GNinja -DCMAKE_BUILD_TYPE=Release[0m
+2025-10-02T07:00:45.1399307Z shell: /usr/bin/bash -e {0}
+2025-10-02T07:00:45.1399527Z ##[endgroup]
+2025-10-02T07:00:46.8054952Z -- The CXX compiler identification is GNU 13.3.0
+2025-10-02T07:00:47.5321837Z -- The C compiler identification is GNU 13.3.0
+2025-10-02T07:00:47.6375142Z -- Detecting CXX compiler ABI info
+2025-10-02T07:00:47.8202557Z -- Detecting CXX compiler ABI info - done
+2025-10-02T07:00:47.8364738Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2025-10-02T07:00:47.8408601Z -- Detecting CXX compile features
+2025-10-02T07:00:47.8455798Z -- Detecting CXX compile features - done
+2025-10-02T07:00:47.8894637Z -- Detecting C compiler ABI info
+2025-10-02T07:00:47.9713527Z -- Detecting C compiler ABI info - done
+2025-10-02T07:00:47.9874028Z -- Check for working C compiler: /usr/bin/cc - skipped
+2025-10-02T07:00:47.9877568Z -- Detecting C compile features
+2025-10-02T07:00:47.9882173Z -- Detecting C compile features - done
+2025-10-02T07:00:47.9988423Z -- Building for Linux with Qt
+2025-10-02T07:00:48.0541647Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2025-10-02T07:00:48.3399440Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+2025-10-02T07:00:48.3522332Z -- Found Threads: TRUE
+2025-10-02T07:00:48.3538824Z -- Performing Test HAVE_STDATOMIC
+2025-10-02T07:00:48.6816429Z -- Performing Test HAVE_STDATOMIC - Success
+2025-10-02T07:00:48.6825089Z -- Found WrapAtomic: TRUE
+2025-10-02T07:00:48.7316615Z -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+2025-10-02T07:00:48.7327394Z -- Found WrapOpenGL: TRUE
+2025-10-02T07:00:48.8012881Z -- Could NOT find XKB (missing: XKB_LIBRARY XKB_INCLUDE_DIR) (Required is at least version "0.5.0")
+2025-10-02T07:00:48.8878032Z -- Found WrapVulkanHeaders: /usr/include
+2025-10-02T07:00:48.9035958Z -- Found Qt6: 6.4.2
+2025-10-02T07:00:48.9071998Z -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+2025-10-02T07:00:48.9080394Z -- Checking for module 'libgit2'
+2025-10-02T07:00:48.9171146Z --   Found libgit2, version 1.7.2
+2025-10-02T07:00:48.9401139Z -- Found libgit2: 1.7.2
+2025-10-02T07:00:49.0141110Z -- Configuring done (3.5s)
+2025-10-02T07:00:49.1093971Z -- Generating done (0.1s)
+2025-10-02T07:00:49.1102411Z -- Build files have been written to: /home/runner/work/VersionTools/VersionTools/build
+2025-10-02T07:00:49.1205945Z ##[group]Run cd build
+2025-10-02T07:00:49.1206201Z [36;1mcd build[0m
+2025-10-02T07:00:49.1206371Z [36;1mninja[0m
+2025-10-02T07:00:49.1238695Z shell: /usr/bin/bash -e {0}
+2025-10-02T07:00:49.1238927Z ##[endgroup]
+2025-10-02T07:00:49.1554059Z [1/20] Automatic MOC and UIC for target GitCore
+2025-10-02T07:00:49.1669347Z [2/20] Building CXX object src/core/CMakeFiles/GitCore.dir/GitCore_autogen/mocs_compilation.cpp.o
+2025-10-02T07:00:51.5165551Z [3/20] Building CXX object src/core/CMakeFiles/GitCore.dir/SystemCommand.cpp.o
+2025-10-02T07:00:54.1621505Z [4/20] Building CXX object src/core/CMakeFiles/GitCore.dir/GitUtils.cpp.o
+2025-10-02T07:00:55.9087795Z [5/20] Building CXX object src/core/CMakeFiles/GitCore.dir/GitManager.cpp.o
+2025-10-02T07:01:02.0753947Z [6/20] Linking CXX static library lib/libGitCore.a
+2025-10-02T07:01:03.1051544Z [7/20] Automatic MOC and UIC for target VersionTools
+2025-10-02T07:01:03.1052056Z AutoMoc warning
+2025-10-02T07:01:03.1052340Z ---------------
+2025-10-02T07:01:03.1052772Z "SRC:/src/qt/VersionToolsMainWindow.cpp"
+2025-10-02T07:01:03.1053819Z includes the moc file "VersionToolsMainWindow.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-10-02T07:01:03.1054670Z 
+2025-10-02T07:01:03.1054785Z AutoMoc warning
+2025-10-02T07:01:03.1055069Z ---------------
+2025-10-02T07:01:03.1055387Z "SRC:/src/qt/utils/GitWorker.cpp"
+2025-10-02T07:01:03.1056214Z includes the moc file "GitWorker.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-10-02T07:01:03.1056957Z 
+2025-10-02T07:01:03.1057038Z AutoMoc warning
+2025-10-02T07:01:03.1057204Z ---------------
+2025-10-02T07:01:03.1057659Z "SRC:/src/qt/widgets/SidebarWidget.cpp"
+2025-10-02T07:01:03.1058248Z includes the moc file "SidebarWidget.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_GADGET_EXPORT, Q_NAMESPACE or Q_NAMESPACE_EXPORT macro.
+2025-10-02T07:01:03.1058829Z 
+2025-10-02T07:01:03.1059312Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:385:1: note: No relevant classes found. No output generated.
+2025-10-02T07:01:03.1060273Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:144:1: note: No relevant classes found. No output generated.
+2025-10-02T07:01:03.1061206Z AutoMoc: /home/runner/work/VersionTools/VersionTools/src/qt/widgets/SidebarWidget.cpp:197:1: note: No relevant classes found. No output generated.
+2025-10-02T07:01:03.1124062Z [8/20] Automatic RCC for resources/resources.qrc
+2025-10-02T07:01:05.8148616Z [9/20] Building CXX object src/qt/CMakeFiles/VersionTools.dir/main.cpp.o
+2025-10-02T07:01:05.8693605Z [10/20] Building CXX object src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o
+2025-10-02T07:01:05.8700659Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o 
+2025-10-02T07:01:05.8710704Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/utils/GitWorker.cpp.o -c /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp
+2025-10-02T07:01:05.8745621Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:7:21: error: expected constructor, destructor, or type conversion before ‘(’ token
+2025-10-02T07:01:05.8753268Z     7 | GitWorker::GitWorker(GitManager *gitManager, QObject *parent)
+2025-10-02T07:01:05.8757952Z       |                     ^
+2025-10-02T07:01:05.8759672Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::openRepository(const QString&)’:
+2025-10-02T07:01:05.8761685Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:17:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:05.8763255Z    17 |     auto result = m_gitManager->openRepository(path.toStdString());
+2025-10-02T07:01:05.8764457Z       |                               ^~
+2025-10-02T07:01:05.8766650Z In file included from /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:1:
+2025-10-02T07:01:05.8769100Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:05.8771513Z     7 | class GitManager;
+2025-10-02T07:01:05.8771851Z       |       ^~~~~~~~~~
+2025-10-02T07:01:05.8773069Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::refreshStatus()’:
+2025-10-02T07:01:05.8774878Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:37:35: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:05.8775912Z    37 |         auto status = m_gitManager->getStatus();
+2025-10-02T07:01:05.8776460Z       |                                   ^~
+2025-10-02T07:01:05.8777785Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:05.8778752Z     7 | class GitManager;
+2025-10-02T07:01:05.8779088Z       |       ^~~~~~~~~~
+2025-10-02T07:01:05.8780447Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::stageFiles(const QStringList&)’:
+2025-10-02T07:01:05.8782393Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:55:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:05.8783494Z    55 |     auto result = m_gitManager->addFiles(fileList);
+2025-10-02T07:01:05.8783974Z       |                               ^~
+2025-10-02T07:01:05.8785136Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:05.8786127Z     7 | class GitManager;
+2025-10-02T07:01:05.8786556Z       |       ^~~~~~~~~~
+2025-10-02T07:01:05.8792485Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::unstageFiles(const QStringList&)’:
+2025-10-02T07:01:05.8794442Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:75:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:05.8795537Z    75 |     auto result = m_gitManager->resetFiles(fileList);
+2025-10-02T07:01:05.8796026Z       |                               ^~
+2025-10-02T07:01:05.8797464Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:05.8798467Z     7 | class GitManager;
+2025-10-02T07:01:05.8798813Z       |       ^~~~~~~~~~
+2025-10-02T07:01:05.8800177Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::commitChanges(const QString&)’:
+2025-10-02T07:01:05.8802089Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:90:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:05.8803255Z    90 |     auto result = m_gitManager->commit(message.toStdString());
+2025-10-02T07:01:05.8803792Z       |                               ^~
+2025-10-02T07:01:05.8804948Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:05.8805911Z     7 | class GitManager;
+2025-10-02T07:01:05.8806246Z       |       ^~~~~~~~~~
+2025-10-02T07:01:05.8807961Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::fetchRepository()’:
+2025-10-02T07:01:05.8809756Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:105:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:05.8810825Z   105 |     auto result = m_gitManager->fetch();
+2025-10-02T07:01:05.8811249Z       |                               ^~
+2025-10-02T07:01:05.8812557Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:05.8813497Z     7 | class GitManager;
+2025-10-02T07:01:05.8813810Z       |       ^~~~~~~~~~
+2025-10-02T07:01:05.8814991Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::pullRepository()’:
+2025-10-02T07:01:05.8816651Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:120:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:05.8817997Z   120 |     auto result = m_gitManager->pull();
+2025-10-02T07:01:05.8818416Z       |                               ^~
+2025-10-02T07:01:05.8819494Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:05.8820411Z     7 | class GitManager;
+2025-10-02T07:01:05.8820719Z       |       ^~~~~~~~~~
+2025-10-02T07:01:05.8821891Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp: In member function ‘void GitWorker::pushRepository()’:
+2025-10-02T07:01:05.8823611Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp:135:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:05.8824650Z   135 |     auto result = m_gitManager->push();
+2025-10-02T07:01:05.8825069Z       |                               ^~
+2025-10-02T07:01:05.8826121Z /home/runner/work/VersionTools/VersionTools/src/qt/utils/GitWorker.h:7:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:05.8827051Z     7 | class GitManager;
+2025-10-02T07:01:05.8827607Z       |       ^~~~~~~~~~
+2025-10-02T07:01:05.8828206Z [11/20] Building CXX object src/qt/CMakeFiles/VersionTools.dir/utils/ThemeManager.cpp.o
+2025-10-02T07:01:06.3850782Z [12/20] Building CXX object src/qt/CMakeFiles/VersionTools.dir/VersionTools_autogen/mocs_compilation.cpp.o
+2025-10-02T07:01:06.4962422Z [13/20] Building CXX object src/qt/CMakeFiles/VersionTools.dir/widgets/SidebarWidget.cpp.o
+2025-10-02T07:01:06.7069777Z [14/20] Building CXX object src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o
+2025-10-02T07:01:06.7070801Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o 
+2025-10-02T07:01:06.7076833Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/VersionToolsMainWindow.cpp.o -c /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp
+2025-10-02T07:01:06.7084081Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp: In constructor ‘VersionToolsMainWindow::VersionToolsMainWindow(QWidget*)’:
+2025-10-02T07:01:06.7085855Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:35:25: error: parse error in template argument list
+2025-10-02T07:01:06.7088069Z    35 |     , m_gitManager(std::make_unique<GitManager>())
+2025-10-02T07:01:06.7088593Z       |                         ^~~~~~~~~~~~~~~~~~~~~~~
+2025-10-02T07:01:06.7090032Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:35:48: error: no matching function for call to ‘make_unique<<expression error> >()’
+2025-10-02T07:01:06.7091253Z    35 |     , m_gitManager(std::make_unique<GitManager>())
+2025-10-02T07:01:06.7091897Z       |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+2025-10-02T07:01:06.7092337Z In file included from /usr/include/c++/13/memory:78,
+2025-10-02T07:01:06.7092951Z                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h:19,
+2025-10-02T07:01:06.7093647Z                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydataops.h:9,
+2025-10-02T07:01:06.7094330Z                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydatapointer.h:7,
+2025-10-02T07:01:06.7094997Z                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h:11,
+2025-10-02T07:01:06.7095632Z                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringview.h:8,
+2025-10-02T07:01:06.7096265Z                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qchar.h:651,
+2025-10-02T07:01:06.7096844Z                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h:14,
+2025-10-02T07:01:06.7097606Z                  from /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h:11,
+2025-10-02T07:01:06.7098216Z                  from /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h:9,
+2025-10-02T07:01:06.7098841Z                  from /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h:8,
+2025-10-02T07:01:06.7099485Z                  from /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow:1,
+2025-10-02T07:01:06.7100272Z                  from /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.h:3,
+2025-10-02T07:01:06.7101230Z                  from /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:1:
+2025-10-02T07:01:06.7102895Z /usr/include/c++/13/bits/unique_ptr.h:1069:5: note: candidate: ‘template<class _Tp, class ... _Args> std::__detail::__unique_ptr_t<_Tp> std::make_unique(_Args&& ...)’
+2025-10-02T07:01:06.7103918Z  1069 |     make_unique(_Args&&... __args)
+2025-10-02T07:01:06.7104294Z       |     ^~~~~~~~~~~
+2025-10-02T07:01:06.7104899Z /usr/include/c++/13/bits/unique_ptr.h:1069:5: note:   template argument deduction/substitution failed:
+2025-10-02T07:01:06.7106169Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:35:48: error: template argument 1 is invalid
+2025-10-02T07:01:06.7107161Z    35 |     , m_gitManager(std::make_unique<GitManager>())
+2025-10-02T07:01:06.7107742Z       |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+2025-10-02T07:01:06.7109040Z /usr/include/c++/13/bits/unique_ptr.h:1084:5: note: candidate: ‘template<class _Tp> std::__detail::__unique_ptr_array_t<_Tp> std::make_unique(size_t)’
+2025-10-02T07:01:06.7138888Z  1084 |     make_unique(size_t __num)
+2025-10-02T07:01:06.7139297Z       |     ^~~~~~~~~~~
+2025-10-02T07:01:06.7139882Z /usr/include/c++/13/bits/unique_ptr.h:1084:5: note:   candidate expects 1 argument, 0 provided
+2025-10-02T07:01:06.7141624Z /usr/include/c++/13/bits/unique_ptr.h:1094:5: note: candidate: ‘template<class _Tp, class ... _Args> std::__detail::__invalid_make_unique_t<_Tp> std::make_unique(_Args&& ...)’ (deleted)
+2025-10-02T07:01:06.7142737Z  1094 |     make_unique(_Args&&...) = delete;
+2025-10-02T07:01:06.7143117Z       |     ^~~~~~~~~~~
+2025-10-02T07:01:06.7143737Z /usr/include/c++/13/bits/unique_ptr.h:1094:5: note:   template argument deduction/substitution failed:
+2025-10-02T07:01:06.7144982Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:35:48: error: template argument 1 is invalid
+2025-10-02T07:01:06.7145977Z    35 |     , m_gitManager(std::make_unique<GitManager>())
+2025-10-02T07:01:06.7146409Z       |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+2025-10-02T07:01:06.7148241Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp: In member function ‘void VersionToolsMainWindow::setupCentralWidget()’:
+2025-10-02T07:01:06.7150817Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:181:65: error: no matching function for call to ‘HistoryWidget::HistoryWidget(std::unique_ptr<GitManager>::pointer, VersionToolsMainWindow*)’
+2025-10-02T07:01:06.7152562Z   181 |     m_historyWidget = new HistoryWidget(m_gitManager.get(), this);
+2025-10-02T07:01:06.7153106Z       |                                                                 ^
+2025-10-02T07:01:06.7153873Z In file included from /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:4:
+2025-10-02T07:01:06.7155520Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/HistoryWidget.h:12:14: note: candidate: ‘HistoryWidget::HistoryWidget(QWidget*)’
+2025-10-02T07:01:06.7156607Z    12 |     explicit HistoryWidget(QWidget *parent = nullptr);
+2025-10-02T07:01:06.7157053Z       |              ^~~~~~~~~~~~~
+2025-10-02T07:01:06.7158144Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/HistoryWidget.h:12:14: note:   candidate expects 1 argument, 2 provided
+2025-10-02T07:01:06.7160542Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:182:67: error: no matching function for call to ‘BranchesWidget::BranchesWidget(std::unique_ptr<GitManager>::pointer, VersionToolsMainWindow*)’
+2025-10-02T07:01:06.7162158Z   182 |     m_branchesWidget = new BranchesWidget(m_gitManager.get(), this);
+2025-10-02T07:01:06.7162711Z       |                                                                   ^
+2025-10-02T07:01:06.7163476Z In file included from /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:5:
+2025-10-02T07:01:06.7165322Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/BranchesWidget.h:14:14: note: candidate: ‘BranchesWidget::BranchesWidget(VersionTools::GitManager*, QWidget*)’
+2025-10-02T07:01:06.7166803Z    14 |     explicit BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:01:06.7167617Z       |              ^~~~~~~~~~~~~~
+2025-10-02T07:01:06.7169375Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/BranchesWidget.h:14:55: note:   no known conversion for argument 1 from ‘std::unique_ptr<GitManager>::pointer’ {aka ‘GitManager*’} to ‘VersionTools::GitManager*’
+2025-10-02T07:01:06.7171117Z    14 |     explicit BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:01:06.7171822Z       |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+2025-10-02T07:01:06.7173343Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp: In member function ‘void VersionToolsMainWindow::onRepositoryOpened(const QString&)’:
+2025-10-02T07:01:06.7175666Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:280:22: error: ‘class HistoryWidget’ has no member named ‘setRepository’; did you mean ‘setGeometry’?
+2025-10-02T07:01:06.7176988Z   280 |     m_historyWidget->setRepository(path);
+2025-10-02T07:01:06.7177597Z       |                      ^~~~~~~~~~~~~
+2025-10-02T07:01:06.7177971Z       |                      setGeometry
+2025-10-02T07:01:06.7179453Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:281:23: error: ‘class BranchesWidget’ has no member named ‘setRepository’; did you mean ‘setGeometry’?
+2025-10-02T07:01:06.7180784Z   281 |     m_branchesWidget->setRepository(path);
+2025-10-02T07:01:06.7181206Z       |                       ^~~~~~~~~~~~~
+2025-10-02T07:01:06.7181571Z       |                       setGeometry
+2025-10-02T07:01:06.7183013Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp: In member function ‘void VersionToolsMainWindow::onRepositoryStatusChanged()’:
+2025-10-02T07:01:06.7185030Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:289:58: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:06.7186470Z   289 |     m_currentBranch = QString::fromStdString(m_gitManager->getCurrentBranch());
+2025-10-02T07:01:06.7187089Z       |                                                          ^~
+2025-10-02T07:01:06.7188426Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.h:24:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:06.7190850Z    24 | class GitManager;
+2025-10-02T07:01:06.7191165Z       |       ^~~~~~~~~~
+2025-10-02T07:01:06.7192382Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:293:31: error: invalid use of incomplete type ‘class GitManager’
+2025-10-02T07:01:06.7193491Z   293 |     auto status = m_gitManager->getStatus();
+2025-10-02T07:01:06.7193911Z       |                               ^~
+2025-10-02T07:01:06.7195039Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.h:24:7: note: forward declaration of ‘class GitManager’
+2025-10-02T07:01:06.7196009Z    24 | class GitManager;
+2025-10-02T07:01:06.7196326Z       |       ^~~~~~~~~~
+2025-10-02T07:01:06.7197596Z /usr/include/c++/13/bits/unique_ptr.h: In instantiation of ‘void std::default_delete<_Tp>::operator()(_Tp*) const [with _Tp = GitManager]’:
+2025-10-02T07:01:06.7199363Z /usr/include/c++/13/bits/unique_ptr.h:404:17:   required from ‘std::unique_ptr<_Tp, _Dp>::~unique_ptr() [with _Tp = GitManager; _Dp = std::default_delete<GitManager>]’
+2025-10-02T07:01:06.7200794Z /home/runner/work/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp:35:7:   required from here
+2025-10-02T07:01:06.7202172Z /usr/include/c++/13/bits/unique_ptr.h:97:23: error: invalid application of ‘sizeof’ to incomplete type ‘GitManager’
+2025-10-02T07:01:06.7202979Z    97 |         static_assert(sizeof(_Tp)>0,
+2025-10-02T07:01:06.7203364Z       |                       ^~~~~~~~~~~
+2025-10-02T07:01:07.2980451Z [15/20] Building CXX object src/qt/CMakeFiles/VersionTools.dir/widgets/ChangesWidget.cpp.o
+2025-10-02T07:01:07.2981359Z FAILED: [code=1] src/qt/CMakeFiles/VersionTools.dir/widgets/ChangesWidget.cpp.o 
+2025-10-02T07:01:07.2986998Z /usr/bin/c++ -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/runner/work/VersionTools/VersionTools/build/src/qt/VersionTools_autogen/include -I/home/runner/work/VersionTools/VersionTools/src -I/home/runner/work/VersionTools/VersionTools/src/qt -I/home/runner/work/VersionTools/VersionTools/src/core -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -Wall -Wextra -Wpedantic -O3 -DNDEBUG -std=gnu++17 -O3 -fPIC -MD -MT src/qt/CMakeFiles/VersionTools.dir/widgets/ChangesWidget.cpp.o -MF src/qt/CMakeFiles/VersionTools.dir/widgets/ChangesWidget.cpp.o.d -o src/qt/CMakeFiles/VersionTools.dir/widgets/ChangesWidget.cpp.o -c /home/runner/work/VersionTools/VersionTools/src/qt/widgets/ChangesWidget.cpp
+2025-10-02T07:01:07.2991994Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/ChangesWidget.cpp:5:1: error: no declaration matches ‘ChangesWidget::ChangesWidget(QWidget*)’
+2025-10-02T07:01:07.2992699Z     5 | ChangesWidget::ChangesWidget(QWidget *parent)
+2025-10-02T07:01:07.2992966Z       | ^~~~~~~~~~~~~
+2025-10-02T07:01:07.2993365Z In file included from /home/runner/work/VersionTools/VersionTools/src/qt/widgets/ChangesWidget.cpp:1:
+2025-10-02T07:01:07.2994352Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/ChangesWidget.h:23:7: note: candidates are: ‘ChangesWidget::ChangesWidget(ChangesWidget&&)’
+2025-10-02T07:01:07.2994989Z    23 | class ChangesWidget : public QWidget
+2025-10-02T07:01:07.2995240Z       |       ^~~~~~~~~~~~~
+2025-10-02T07:01:07.2995950Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/ChangesWidget.h:23:7: note:                 ‘ChangesWidget::ChangesWidget(const ChangesWidget&)’
+2025-10-02T07:01:07.2997423Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/ChangesWidget.h:28:14: note:                 ‘ChangesWidget::ChangesWidget(GitManager*, QWidget*)’
+2025-10-02T07:01:07.2998235Z    28 |     explicit ChangesWidget(GitManager *gitManager, QWidget *parent = nullptr);
+2025-10-02T07:01:07.2998587Z       |              ^~~~~~~~~~~~~
+2025-10-02T07:01:07.2999221Z /home/runner/work/VersionTools/VersionTools/src/qt/widgets/ChangesWidget.h:23:7: note: ‘class ChangesWidget’ defined here
+2025-10-02T07:01:07.2999941Z    23 | class ChangesWidget : public QWidget
+2025-10-02T07:01:07.3000192Z       |       ^~~~~~~~~~~~~
+2025-10-02T07:01:07.3000405Z ninja: build stopped: subcommand failed.
+2025-10-02T07:01:07.3011074Z ##[error]Process completed with exit code 1.
+2025-10-02T07:01:07.3105619Z Post job cleanup.
+2025-10-02T07:01:07.4056597Z [command]/usr/bin/git version
+2025-10-02T07:01:07.4096418Z git version 2.51.0
+2025-10-02T07:01:07.4139881Z Temporarily overriding HOME='/home/runner/work/_temp/d01af443-5994-464b-bfc3-fa666e53db47' before making global git config changes
+2025-10-02T07:01:07.4141047Z Adding repository directory to the temporary git global config as a safe directory
+2025-10-02T07:01:07.4146452Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/VersionTools/VersionTools
+2025-10-02T07:01:07.4184689Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-10-02T07:01:07.4219855Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-10-02T07:01:07.4450802Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-10-02T07:01:07.4473739Z http.https://github.com/.extraheader
+2025-10-02T07:01:07.4486472Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-10-02T07:01:07.4518309Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-10-02T07:01:07.4852581Z Cleaning up orphan processes

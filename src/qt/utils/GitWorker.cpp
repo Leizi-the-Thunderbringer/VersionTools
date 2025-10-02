@@ -4,7 +4,7 @@
 
 using namespace VersionTools;
 
-GitWorker::GitWorker(GitManager *gitManager, QObject *parent)
+GitWorker::GitWorker(VersionTools::GitManager *gitManager, QObject *parent)
     : QObject(parent)
     , m_gitManager(gitManager)
 {

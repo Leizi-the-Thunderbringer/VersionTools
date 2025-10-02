@@ -21,7 +21,10 @@ class HistoryWidget;
 class BranchesWidget;
 class DiffViewerWidget;
 class GitWorker;
+
+namespace VersionTools {
 class GitManager;
+}
 
 class VersionToolsMainWindow : public QMainWindow
 {
@@ -90,7 +93,7 @@ private:
     QProgressBar *m_progressBar;
     
     // Git integration
-    std::unique_ptr<GitManager> m_gitManager;
+    std::unique_ptr<VersionTools::GitManager> m_gitManager;
     GitWorker *m_gitWorker;
 
     QString m_currentRepositoryPath;

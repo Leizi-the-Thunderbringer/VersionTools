@@ -14,6 +14,8 @@ public:
     explicit BranchesWidget(VersionTools::GitManager *gitManager, QWidget *parent = nullptr);
     ~BranchesWidget() override = default;
 
+    void setRepository(const QString &path);
+
 signals:
     void branchChanged(const QString &branchName);
 

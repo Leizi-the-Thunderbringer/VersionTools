@@ -1,0 +1,336 @@
+﻿2025-10-02T06:58:51.8803152Z ##[group]Run jurplel/install-qt-action@v4
+2025-10-02T06:58:51.8803503Z with:
+2025-10-02T06:58:51.8803685Z   version: 6.7.0
+2025-10-02T06:58:51.8803870Z   host: windows
+2025-10-02T06:58:51.8804044Z   target: desktop
+2025-10-02T06:58:51.8804205Z   arch: win64_msvc2019_64
+2025-10-02T06:58:51.8804391Z   install-deps: true
+2025-10-02T06:58:51.8804578Z   cache: false
+2025-10-02T06:58:51.8804759Z   cache-key-prefix: install-qt-action
+2025-10-02T06:58:51.8804988Z   setup-python: true
+2025-10-02T06:58:51.8805168Z   add-tools-to-path: true
+2025-10-02T06:58:51.8805340Z   set-env: true
+2025-10-02T06:58:51.8805500Z   no-qt-binaries: false
+2025-10-02T06:58:51.8805674Z   tools-only: false
+2025-10-02T06:58:51.8805832Z   aqtversion: ==3.3.*
+2025-10-02T06:58:51.8805992Z   py7zrversion: ==1.0.*
+2025-10-02T06:58:51.8806157Z   source: false
+2025-10-02T06:58:51.8806312Z   documentation: false
+2025-10-02T06:58:51.8806476Z   examples: false
+2025-10-02T06:58:51.8806657Z   use-official: false
+2025-10-02T06:58:51.8806854Z ##[endgroup]
+2025-10-02T06:58:51.9029169Z ##[group]Run actions/setup-python@v5
+2025-10-02T06:58:51.9029401Z with:
+2025-10-02T06:58:51.9029551Z   python-version: >=3.9.0 <=3.13.3
+2025-10-02T06:58:51.9029759Z   check-latest: false
+2025-10-02T06:58:51.9030030Z   token: ***
+2025-10-02T06:58:51.9030200Z   update-environment: true
+2025-10-02T06:58:51.9030402Z   allow-prereleases: false
+2025-10-02T06:58:51.9030580Z   freethreaded: false
+2025-10-02T06:58:51.9030747Z ##[endgroup]
+2025-10-02T06:58:52.1250379Z ##[group]Installed versions
+2025-10-02T06:58:52.1532351Z Successfully set up CPython (3.12.10)
+2025-10-02T06:58:52.1533066Z ##[endgroup]
+2025-10-02T06:58:52.1809330Z ##[group]Run jurplel/install-qt-action/action@v4
+2025-10-02T06:58:52.1809595Z with:
+2025-10-02T06:58:52.1809742Z   version: 6.7.0
+2025-10-02T06:58:52.1809890Z   host: windows
+2025-10-02T06:58:52.1810041Z   target: desktop
+2025-10-02T06:58:52.1810195Z   arch: win64_msvc2019_64
+2025-10-02T06:58:52.1810394Z   install-deps: true
+2025-10-02T06:58:52.1810570Z   cache: false
+2025-10-02T06:58:52.1810740Z   cache-key-prefix: install-qt-action
+2025-10-02T06:58:52.1810969Z   add-tools-to-path: true
+2025-10-02T06:58:52.1811141Z   set-env: true
+2025-10-02T06:58:52.1811298Z   no-qt-binaries: false
+2025-10-02T06:58:52.1811465Z   tools-only: false
+2025-10-02T06:58:52.1811626Z   aqtversion: ==3.3.*
+2025-10-02T06:58:52.1811788Z   py7zrversion: ==1.0.*
+2025-10-02T06:58:52.1812053Z   source: false
+2025-10-02T06:58:52.1812325Z   documentation: false
+2025-10-02T06:58:52.1812538Z   examples: false
+2025-10-02T06:58:52.1812699Z   use-official: false
+2025-10-02T06:58:52.1812849Z env:
+2025-10-02T06:58:52.1813069Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:58:52.1813498Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2025-10-02T06:58:52.1813896Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:58:52.1814251Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:58:52.1814610Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T06:58:52.1814882Z ##[endgroup]
+2025-10-02T06:58:52.6277029Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:58:52.6303874Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m pip install setuptools>=70.1.0 py7zr==1.0.*
+2025-10-02T06:58:56.6933406Z Collecting setuptools>=70.1.0
+2025-10-02T06:58:56.7417767Z   Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+2025-10-02T06:58:56.8277637Z Collecting py7zr==1.0.*
+2025-10-02T06:58:56.8362362Z   Downloading py7zr-1.0.0-py3-none-any.whl.metadata (17 kB)
+2025-10-02T06:58:56.9005322Z Collecting texttable (from py7zr==1.0.*)
+2025-10-02T06:58:56.9089213Z   Downloading texttable-1.7.0-py2.py3-none-any.whl.metadata (9.8 kB)
+2025-10-02T06:58:57.0376700Z Collecting pycryptodomex>=3.20.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.0477487Z   Downloading pycryptodomex-3.23.0-cp37-abi3-win_amd64.whl.metadata (3.5 kB)
+2025-10-02T06:58:57.1228161Z Collecting brotli>=1.1.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.1325041Z   Downloading Brotli-1.1.0-cp312-cp312-win_amd64.whl.metadata (5.6 kB)
+2025-10-02T06:58:57.2439471Z Collecting psutil (from py7zr==1.0.*)
+2025-10-02T06:58:57.2524124Z   Downloading psutil-7.1.0-cp37-abi3-win_amd64.whl.metadata (23 kB)
+2025-10-02T06:58:57.4075677Z Collecting pyzstd>=0.16.1 (from py7zr==1.0.*)
+2025-10-02T06:58:57.4169911Z   Downloading pyzstd-0.17.0-cp312-cp312-win_amd64.whl.metadata (2.6 kB)
+2025-10-02T06:58:57.5350950Z Collecting pyppmd<1.3.0,>=1.1.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.5481463Z   Downloading pyppmd-1.2.0-cp312-cp312-win_amd64.whl.metadata (5.6 kB)
+2025-10-02T06:58:57.6297097Z Collecting pybcj<1.1.0,>=1.0.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.6393876Z   Downloading pybcj-1.0.6-cp312-cp312-win_amd64.whl.metadata (3.8 kB)
+2025-10-02T06:58:57.6849988Z Collecting multivolumefile>=0.2.3 (from py7zr==1.0.*)
+2025-10-02T06:58:57.6932570Z   Downloading multivolumefile-0.2.3-py3-none-any.whl.metadata (6.3 kB)
+2025-10-02T06:58:57.7848167Z Collecting inflate64<1.1.0,>=1.0.0 (from py7zr==1.0.*)
+2025-10-02T06:58:57.7947879Z   Downloading inflate64-1.0.3-cp312-cp312-win_amd64.whl.metadata (4.5 kB)
+2025-10-02T06:58:57.8592733Z Collecting typing-extensions>=4.13.2 (from pyzstd>=0.16.1->py7zr==1.0.*)
+2025-10-02T06:58:57.8676038Z   Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+2025-10-02T06:58:57.8984050Z Downloading py7zr-1.0.0-py3-none-any.whl (69 kB)
+2025-10-02T06:58:57.9298759Z Downloading inflate64-1.0.3-cp312-cp312-win_amd64.whl (35 kB)
+2025-10-02T06:58:57.9945431Z Downloading pybcj-1.0.6-cp312-cp312-win_amd64.whl (24 kB)
+2025-10-02T06:58:58.0226094Z Downloading pyppmd-1.2.0-cp312-cp312-win_amd64.whl (46 kB)
+2025-10-02T06:58:58.0523210Z Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+2025-10-02T06:58:58.0983227Z    ---------------------------------------- 1.2/1.2 MB 20.0 MB/s  0:00:00
+2025-10-02T06:58:58.1081234Z Downloading Brotli-1.1.0-cp312-cp312-win_amd64.whl (357 kB)
+2025-10-02T06:58:58.1365245Z Downloading multivolumefile-0.2.3-py3-none-any.whl (17 kB)
+2025-10-02T06:58:58.1694098Z Downloading pycryptodomex-3.23.0-cp37-abi3-win_amd64.whl (1.8 MB)
+2025-10-02T06:58:58.2286142Z    ---------------------------------------- 1.8/1.8 MB 32.8 MB/s  0:00:00
+2025-10-02T06:58:58.2383119Z Downloading pyzstd-0.17.0-cp312-cp312-win_amd64.whl (246 kB)
+2025-10-02T06:58:58.2663055Z Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+2025-10-02T06:58:58.2919363Z Downloading psutil-7.1.0-cp37-abi3-win_amd64.whl (247 kB)
+2025-10-02T06:58:58.3174304Z Downloading texttable-1.7.0-py2.py3-none-any.whl (10 kB)
+2025-10-02T06:58:58.4227200Z Installing collected packages: texttable, brotli, typing-extensions, setuptools, pyppmd, pycryptodomex, pybcj, psutil, multivolumefile, inflate64, pyzstd, py7zr
+2025-10-02T06:59:02.9037052Z 
+2025-10-02T06:59:02.9059872Z Successfully installed brotli-1.1.0 inflate64-1.0.3 multivolumefile-0.2.3 psutil-7.1.0 py7zr-1.0.0 pybcj-1.0.6 pycryptodomex-3.23.0 pyppmd-1.2.0 pyzstd-0.17.0 setuptools-80.9.0 texttable-1.7.0 typing-extensions-4.15.0
+2025-10-02T06:59:03.2351692Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:59:03.2361732Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m pip install aqtinstall==3.3.*
+2025-10-02T06:59:04.7248571Z Collecting aqtinstall==3.3.*
+2025-10-02T06:59:04.7885760Z   Downloading aqtinstall-3.3.0-py3-none-any.whl.metadata (11 kB)
+2025-10-02T06:59:04.8390723Z Collecting bs4 (from aqtinstall==3.3.*)
+2025-10-02T06:59:04.8565233Z   Downloading bs4-0.0.2-py2.py3-none-any.whl.metadata (411 bytes)
+2025-10-02T06:59:04.9052057Z Collecting defusedxml (from aqtinstall==3.3.*)
+2025-10-02T06:59:04.9226555Z   Downloading defusedxml-0.7.1-py2.py3-none-any.whl.metadata (32 kB)
+2025-10-02T06:59:04.9871801Z Collecting humanize (from aqtinstall==3.3.*)
+2025-10-02T06:59:05.0045665Z   Downloading humanize-4.13.0-py3-none-any.whl.metadata (7.8 kB)
+2025-10-02T06:59:05.0649776Z Collecting patch-ng (from aqtinstall==3.3.*)
+2025-10-02T06:59:05.0869371Z   Downloading patch-ng-1.18.1.tar.gz (17 kB)
+2025-10-02T06:59:05.1315687Z   Installing build dependencies: started
+2025-10-02T06:59:07.8038219Z   Installing build dependencies: finished with status 'done'
+2025-10-02T06:59:07.8053964Z   Getting requirements to build wheel: started
+2025-10-02T06:59:08.4067962Z   Getting requirements to build wheel: finished with status 'done'
+2025-10-02T06:59:08.4100233Z   Preparing metadata (pyproject.toml): started
+2025-10-02T06:59:08.7199621Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2025-10-02T06:59:08.7231524Z Requirement already satisfied: py7zr>=0.22.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from aqtinstall==3.3.*) (1.0.0)
+2025-10-02T06:59:08.7756670Z Collecting requests>=2.31.0 (from aqtinstall==3.3.*)
+2025-10-02T06:59:08.7932701Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+2025-10-02T06:59:08.8517062Z Collecting semantic-version (from aqtinstall==3.3.*)
+2025-10-02T06:59:08.8740486Z   Downloading semantic_version-2.10.0-py2.py3-none-any.whl.metadata (9.7 kB)
+2025-10-02T06:59:08.8999050Z Requirement already satisfied: texttable in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from aqtinstall==3.3.*) (1.7.0)
+2025-10-02T06:59:08.9018497Z Requirement already satisfied: pycryptodomex>=3.20.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (3.23.0)
+2025-10-02T06:59:08.9026594Z Requirement already satisfied: brotli>=1.1.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.1.0)
+2025-10-02T06:59:08.9049059Z Requirement already satisfied: psutil in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (7.1.0)
+2025-10-02T06:59:08.9056219Z Requirement already satisfied: pyzstd>=0.16.1 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (0.17.0)
+2025-10-02T06:59:08.9063046Z Requirement already satisfied: pyppmd<1.3.0,>=1.1.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.2.0)
+2025-10-02T06:59:08.9073724Z Requirement already satisfied: pybcj<1.1.0,>=1.0.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.0.6)
+2025-10-02T06:59:08.9080662Z Requirement already satisfied: multivolumefile>=0.2.3 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (0.2.3)
+2025-10-02T06:59:08.9087488Z Requirement already satisfied: inflate64<1.1.0,>=1.0.0 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from py7zr>=0.22.0->aqtinstall==3.3.*) (1.0.3)
+2025-10-02T06:59:08.9206099Z Requirement already satisfied: typing-extensions>=4.13.2 in c:\hostedtoolcache\windows\python\3.12.10\x64\lib\site-packages (from pyzstd>=0.16.1->py7zr>=0.22.0->aqtinstall==3.3.*) (4.15.0)
+2025-10-02T06:59:09.0545366Z Collecting charset_normalizer<4,>=2 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:59:09.0753417Z   Downloading charset_normalizer-3.4.3-cp312-cp312-win_amd64.whl.metadata (37 kB)
+2025-10-02T06:59:09.1416857Z Collecting idna<4,>=2.5 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:59:09.1622308Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+2025-10-02T06:59:09.2560781Z Collecting urllib3<3,>=1.21.1 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:59:09.2762491Z   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+2025-10-02T06:59:09.3463292Z Collecting certifi>=2017.4.17 (from requests>=2.31.0->aqtinstall==3.3.*)
+2025-10-02T06:59:09.3673293Z   Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+2025-10-02T06:59:09.4455087Z Collecting beautifulsoup4 (from bs4->aqtinstall==3.3.*)
+2025-10-02T06:59:09.4657634Z   Downloading beautifulsoup4-4.14.2-py3-none-any.whl.metadata (3.8 kB)
+2025-10-02T06:59:09.5312018Z Collecting soupsieve>1.2 (from beautifulsoup4->bs4->aqtinstall==3.3.*)
+2025-10-02T06:59:09.5513446Z   Downloading soupsieve-2.8-py3-none-any.whl.metadata (4.6 kB)
+2025-10-02T06:59:09.6088507Z Downloading aqtinstall-3.3.0-py3-none-any.whl (71 kB)
+2025-10-02T06:59:09.6656882Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+2025-10-02T06:59:09.7087661Z Downloading charset_normalizer-3.4.3-cp312-cp312-win_amd64.whl (107 kB)
+2025-10-02T06:59:09.7480501Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+2025-10-02T06:59:09.7882668Z Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+2025-10-02T06:59:09.8341461Z Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+2025-10-02T06:59:09.8742875Z Downloading bs4-0.0.2-py2.py3-none-any.whl (1.2 kB)
+2025-10-02T06:59:09.9134612Z Downloading beautifulsoup4-4.14.2-py3-none-any.whl (106 kB)
+2025-10-02T06:59:09.9618626Z Downloading soupsieve-2.8-py3-none-any.whl (36 kB)
+2025-10-02T06:59:10.0028805Z Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+2025-10-02T06:59:10.0444679Z Downloading humanize-4.13.0-py3-none-any.whl (128 kB)
+2025-10-02T06:59:10.0871531Z Downloading semantic_version-2.10.0-py2.py3-none-any.whl (15 kB)
+2025-10-02T06:59:10.1482704Z Building wheels for collected packages: patch-ng
+2025-10-02T06:59:10.1584016Z   Building wheel for patch-ng (pyproject.toml): started
+2025-10-02T06:59:10.5152512Z   Building wheel for patch-ng (pyproject.toml): finished with status 'done'
+2025-10-02T06:59:10.5173936Z   Created wheel for patch-ng: filename=patch_ng-1.18.1-py3-none-any.whl size=17028 sha256=7c4eb51cc1c7b959319c98e3a2609a3ee86a74cd747bf389277768116ad83b0e
+2025-10-02T06:59:10.5175680Z   Stored in directory: c:\users\runneradmin\appdata\local\pip\cache\wheels\4b\c7\08\eacf6adfcdfc005d1d86534183df45e060e1c7454de0db26e2
+2025-10-02T06:59:10.5205298Z Successfully built patch-ng
+2025-10-02T06:59:10.5582854Z Installing collected packages: urllib3, soupsieve, semantic-version, patch-ng, idna, humanize, defusedxml, charset_normalizer, certifi, requests, beautifulsoup4, bs4, aqtinstall
+2025-10-02T06:59:12.1062466Z 
+2025-10-02T06:59:12.1093553Z Successfully installed aqtinstall-3.3.0 beautifulsoup4-4.14.2 bs4-0.0.2 certifi-2025.8.3 charset_normalizer-3.4.3 defusedxml-0.7.1 humanize-4.13.0 idna-3.10 patch-ng-1.18.1 requests-2.32.5 semantic-version-2.10.0 soupsieve-2.8 urllib3-2.5.0
+2025-10-02T06:59:12.4193863Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:59:12.4202821Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m aqt version
+2025-10-02T06:59:13.0744622Z INFO    : aqtinstall(aqt) v3.3.0 on Python 3.12.10 [CPython MSC v.1943 64 bit (AMD64)]
+2025-10-02T06:59:13.1898127Z Unexpected error attempting to determine if executable file exists 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE': Error: EACCES: permission denied, stat 'C:\Users\runneradmin\AppData\Local\Microsoft\WindowsApps\python.EXE'
+2025-10-02T06:59:13.1907605Z [command]C:\hostedtoolcache\windows\Python\3.12.10\x64\python.exe -m aqt install-qt windows desktop 6.7.0 win64_msvc2019_64 --autodesktop --outputdir D:\a\VersionTools\Qt
+2025-10-02T06:59:13.5151864Z INFO    : aqtinstall(aqt) v3.3.0 on Python 3.12.10 [CPython MSC v.1943 64 bit (AMD64)]
+2025-10-02T06:59:16.6175545Z INFO    : Downloading qtsvg...
+2025-10-02T06:59:16.6185710Z INFO    : Downloading qtbase...
+2025-10-02T06:59:16.6591265Z INFO    : Downloading qtdeclarative...
+2025-10-02T06:59:16.6684172Z INFO    : Downloading qttools...
+2025-10-02T06:59:17.4007796Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:17.4869247Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:17.5019441Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:17.5212125Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:18.3752098Z INFO    : Finished installation of qtsvg-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 2.59668480
+2025-10-02T06:59:19.2371631Z INFO    : Downloading qttranslations...
+2025-10-02T06:59:20.2704088Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:21.3597268Z INFO    : Finished installation of qttranslations-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 2.96294720
+2025-10-02T06:59:22.6296466Z INFO    : Downloading d3dcompiler_47...
+2025-10-02T06:59:22.9406499Z INFO    : Finished installation of qttools-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 7.14044320
+2025-10-02T06:59:23.5627692Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:23.8043840Z INFO    : Downloading opengl32sw...
+2025-10-02T06:59:24.2866291Z INFO    : Finished installation of d3dcompiler_47-x64.7z in 2.89447170
+2025-10-02T06:59:24.7368158Z INFO    : Redirected: qt.mirror.constant.com
+2025-10-02T06:59:25.9538735Z INFO    : Finished installation of qtbase-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 10.17835950
+2025-10-02T06:59:26.1465265Z INFO    : Finished installation of opengl32sw-64-mesa_11_2_2-signed_sha256.7z in 3.17064850
+2025-10-02T06:59:37.6969872Z INFO    : Finished installation of qtdeclarative-Windows-Windows_10_22H2-MSVC2019-Windows-Windows_10_22H2-X86_64.7z in 21.91243790
+2025-10-02T06:59:37.8164145Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\bin\qmake.exe
+2025-10-02T06:59:37.8205310Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Concurrent.prl
+2025-10-02T06:59:37.8210377Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Concurrentd.prl
+2025-10-02T06:59:37.8215002Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Core.prl
+2025-10-02T06:59:37.8220366Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Cored.prl
+2025-10-02T06:59:37.8224769Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DBus.prl
+2025-10-02T06:59:37.8229465Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DBusd.prl
+2025-10-02T06:59:37.8234058Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Designer.prl
+2025-10-02T06:59:37.8238879Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DesignerComponents.prl
+2025-10-02T06:59:37.8243715Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DesignerComponentsd.prl
+2025-10-02T06:59:37.8248301Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Designerd.prl
+2025-10-02T06:59:37.8253139Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DeviceDiscoverySupport.prl
+2025-10-02T06:59:37.8257824Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6DeviceDiscoverySupportd.prl
+2025-10-02T06:59:37.8262825Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6EntryPoint.prl
+2025-10-02T06:59:37.8267576Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6EntryPointd.prl
+2025-10-02T06:59:37.8272141Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6ExampleIcons.prl
+2025-10-02T06:59:37.8276916Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6ExampleIconsd.prl
+2025-10-02T06:59:37.8281861Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6FbSupport.prl
+2025-10-02T06:59:37.8286391Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6FbSupportd.prl
+2025-10-02T06:59:37.8290928Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Gui.prl
+2025-10-02T06:59:37.8295852Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Guid.prl
+2025-10-02T06:59:37.8300725Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Help.prl
+2025-10-02T06:59:37.8305623Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Helpd.prl
+2025-10-02T06:59:37.8310178Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsAnimation.prl
+2025-10-02T06:59:37.8314888Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsAnimationd.prl
+2025-10-02T06:59:37.8319819Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsFolderListModel.prl
+2025-10-02T06:59:37.8324550Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsFolderListModeld.prl
+2025-10-02T06:59:37.8329445Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsQmlModels.prl
+2025-10-02T06:59:37.8334145Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsQmlModelsd.prl
+2025-10-02T06:59:37.8339751Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsSettings.prl
+2025-10-02T06:59:37.8344633Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsSettingsd.prl
+2025-10-02T06:59:37.8349060Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsSharedImage.prl
+2025-10-02T06:59:37.8353669Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsSharedImaged.prl
+2025-10-02T06:59:37.8358286Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsWavefrontMesh.prl
+2025-10-02T06:59:37.8363186Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6LabsWavefrontMeshd.prl
+2025-10-02T06:59:37.8367682Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Network.prl
+2025-10-02T06:59:37.8372255Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Networkd.prl
+2025-10-02T06:59:37.8376743Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6OpenGL.prl
+2025-10-02T06:59:37.8381815Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6OpenGLd.prl
+2025-10-02T06:59:37.8386396Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6OpenGLWidgets.prl
+2025-10-02T06:59:37.8390980Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6OpenGLWidgetsd.prl
+2025-10-02T06:59:37.8395597Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6PacketProtocol.prl
+2025-10-02T06:59:37.8400756Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6PacketProtocold.prl
+2025-10-02T06:59:37.8405552Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6PrintSupport.prl
+2025-10-02T06:59:37.8410220Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6PrintSupportd.prl
+2025-10-02T06:59:37.8414709Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Qml.prl
+2025-10-02T06:59:37.8419786Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlBuiltins.prl
+2025-10-02T06:59:37.8426249Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlBuiltinsd.prl
+2025-10-02T06:59:37.8431353Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlCompiler.prl
+2025-10-02T06:59:37.8436038Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlCompilerd.prl
+2025-10-02T06:59:37.8440887Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlCore.prl
+2025-10-02T06:59:37.8447303Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlCored.prl
+2025-10-02T06:59:37.8452046Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Qmld.prl
+2025-10-02T06:59:37.8456703Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlDebug.prl
+2025-10-02T06:59:37.8462533Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlDebugd.prl
+2025-10-02T06:59:37.8467242Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlDom.prl
+2025-10-02T06:59:37.8471892Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlDomd.prl
+2025-10-02T06:59:37.8476758Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlLocalStorage.prl
+2025-10-02T06:59:37.8482255Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlLocalStoraged.prl
+2025-10-02T06:59:37.8486844Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlLS.prl
+2025-10-02T06:59:37.8491684Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlLSd.prl
+2025-10-02T06:59:37.8496640Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlModels.prl
+2025-10-02T06:59:37.8501489Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlModelsd.prl
+2025-10-02T06:59:37.8505944Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlNetwork.prl
+2025-10-02T06:59:37.8510516Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlNetworkd.prl
+2025-10-02T06:59:37.8515115Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlToolingSettings.prl
+2025-10-02T06:59:37.8520222Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlToolingSettingsd.prl
+2025-10-02T06:59:37.8524838Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlTypeRegistrar.prl
+2025-10-02T06:59:37.8529589Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlTypeRegistrard.prl
+2025-10-02T06:59:37.8534284Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlWorkerScript.prl
+2025-10-02T06:59:37.8539234Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlWorkerScriptd.prl
+2025-10-02T06:59:37.8543906Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlXmlListModel.prl
+2025-10-02T06:59:37.8548460Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QmlXmlListModeld.prl
+2025-10-02T06:59:37.8552967Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Quick.prl
+2025-10-02T06:59:37.8557838Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2.prl
+2025-10-02T06:59:37.8562426Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Basic.prl
+2025-10-02T06:59:37.8567048Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Basicd.prl
+2025-10-02T06:59:37.8571700Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2BasicStyleImpl.prl
+2025-10-02T06:59:37.8576549Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2BasicStyleImpld.prl
+2025-10-02T06:59:37.8581311Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2d.prl
+2025-10-02T06:59:37.8585898Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Fusion.prl
+2025-10-02T06:59:37.8590944Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Fusiond.prl
+2025-10-02T06:59:37.8595517Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2FusionStyleImpl.prl
+2025-10-02T06:59:37.8600642Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2FusionStyleImpld.prl
+2025-10-02T06:59:37.8605229Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Imagine.prl
+2025-10-02T06:59:37.8609862Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Imagined.prl
+2025-10-02T06:59:37.8614552Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2ImagineStyleImpl.prl
+2025-10-02T06:59:37.8620055Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2ImagineStyleImpld.prl
+2025-10-02T06:59:37.8624653Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Impl.prl
+2025-10-02T06:59:37.8629455Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Impld.prl
+2025-10-02T06:59:37.8634106Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Material.prl
+2025-10-02T06:59:37.8638764Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Materiald.prl
+2025-10-02T06:59:37.8644011Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2MaterialStyleImpl.prl
+2025-10-02T06:59:37.8648848Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2MaterialStyleImpld.prl
+2025-10-02T06:59:37.8654161Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Universal.prl
+2025-10-02T06:59:37.8664238Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2Universald.prl
+2025-10-02T06:59:37.8669921Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2UniversalStyleImpl.prl
+2025-10-02T06:59:37.8674777Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2UniversalStyleImpld.prl
+2025-10-02T06:59:37.8679884Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2WindowsStyleImpl.prl
+2025-10-02T06:59:37.8684519Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControls2WindowsStyleImpld.prl
+2025-10-02T06:59:37.8689233Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControlsTestUtils.prl
+2025-10-02T06:59:37.8694471Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickControlsTestUtilsd.prl
+2025-10-02T06:59:37.8699311Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Quickd.prl
+2025-10-02T06:59:37.8704043Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2.prl
+2025-10-02T06:59:37.8708726Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2d.prl
+2025-10-02T06:59:37.8713340Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2QuickImpl.prl
+2025-10-02T06:59:37.8718380Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2QuickImpld.prl
+2025-10-02T06:59:37.8722876Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2Utils.prl
+2025-10-02T06:59:37.8727623Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickDialogs2Utilsd.prl
+2025-10-02T06:59:37.8732277Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickEffects.prl
+2025-10-02T06:59:37.8737365Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickEffectsd.prl
+2025-10-02T06:59:37.8742030Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickLayouts.prl
+2025-10-02T06:59:37.8746599Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickLayoutsd.prl
+2025-10-02T06:59:37.8751239Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickParticles.prl
+2025-10-02T06:59:37.8756268Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickParticlesd.prl
+2025-10-02T06:59:37.8760636Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickShapes.prl
+2025-10-02T06:59:37.8765444Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickShapesd.prl
+2025-10-02T06:59:37.8770298Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTemplates2.prl
+2025-10-02T06:59:37.8775691Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTemplates2d.prl
+2025-10-02T06:59:37.8780675Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTest.prl
+2025-10-02T06:59:37.8784895Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTestd.prl
+2025-10-02T06:59:37.8789502Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTestUtils.prl
+2025-10-02T06:59:37.8795201Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickTestUtilsd.prl
+2025-10-02T06:59:37.8799517Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickWidgets.prl
+2025-10-02T06:59:37.8804134Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6QuickWidgetsd.prl
+2025-10-02T06:59:37.8808634Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Sql.prl
+2025-10-02T06:59:37.8814225Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Sqld.prl
+2025-10-02T06:59:37.8819607Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Svg.prl
+2025-10-02T06:59:37.8823993Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Svgd.prl
+2025-10-02T06:59:37.8828690Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6SvgWidgets.prl
+2025-10-02T06:59:37.8833585Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6SvgWidgetsd.prl
+2025-10-02T06:59:37.8838346Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Test.prl
+2025-10-02T06:59:37.8843154Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Testd.prl
+2025-10-02T06:59:37.8847488Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6UiTools.prl
+2025-10-02T06:59:37.8851964Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6UiToolsd.prl
+2025-10-02T06:59:37.8857044Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Widgets.prl
+2025-10-02T06:59:37.8861474Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Widgetsd.prl
+2025-10-02T06:59:37.8865903Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Xml.prl
+2025-10-02T06:59:37.8870369Z INFO    : Patching D:\a\VersionTools\Qt\6.7.0\msvc2019_64\lib\Qt6Xmld.prl
+2025-10-02T06:59:37.8878377Z INFO    : Finished installation
+2025-10-02T06:59:37.8878859Z INFO    : Time elapsed: 24.37271130 second

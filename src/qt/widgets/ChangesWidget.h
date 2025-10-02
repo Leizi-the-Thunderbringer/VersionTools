@@ -17,7 +17,10 @@ class QTextEdit;
 class QLineEdit;
 QT_END_NAMESPACE
 
+namespace VersionTools {
 class GitManager;
+}
+
 class FileStatusItem;
 
 class ChangesWidget : public QWidget
@@ -25,7 +28,7 @@ class ChangesWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit ChangesWidget(GitManager *gitManager, QWidget *parent = nullptr);
+    explicit ChangesWidget(VersionTools::GitManager *gitManager, QWidget *parent = nullptr);
 
     void setRepository(const QString &path);
     void refreshChanges();
@@ -45,7 +48,7 @@ private:
     void stageFile(const QString &filePath);
     void unstageFile(const QString &filePath);
 
-    GitManager *m_gitManager;
+    VersionTools::GitManager *m_gitManager;
     QString m_repositoryPath;
 
     // UI Components

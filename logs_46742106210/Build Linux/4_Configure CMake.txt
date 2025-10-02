@@ -1,0 +1,37 @@
+﻿2025-10-02T07:00:45.1365433Z ##[group]Run mkdir build
+2025-10-02T07:00:45.1365701Z [36;1mmkdir build[0m
+2025-10-02T07:00:45.1365887Z [36;1mcd build[0m
+2025-10-02T07:00:45.1366127Z [36;1mcmake .. -GNinja -DCMAKE_BUILD_TYPE=Release[0m
+2025-10-02T07:00:45.1399301Z shell: /usr/bin/bash -e {0}
+2025-10-02T07:00:45.1399525Z ##[endgroup]
+2025-10-02T07:00:46.8054908Z -- The CXX compiler identification is GNU 13.3.0
+2025-10-02T07:00:47.5321798Z -- The C compiler identification is GNU 13.3.0
+2025-10-02T07:00:47.6375119Z -- Detecting CXX compiler ABI info
+2025-10-02T07:00:47.8202514Z -- Detecting CXX compiler ABI info - done
+2025-10-02T07:00:47.8364720Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2025-10-02T07:00:47.8408589Z -- Detecting CXX compile features
+2025-10-02T07:00:47.8455786Z -- Detecting CXX compile features - done
+2025-10-02T07:00:47.8894602Z -- Detecting C compiler ABI info
+2025-10-02T07:00:47.9713485Z -- Detecting C compiler ABI info - done
+2025-10-02T07:00:47.9873905Z -- Check for working C compiler: /usr/bin/cc - skipped
+2025-10-02T07:00:47.9877561Z -- Detecting C compile features
+2025-10-02T07:00:47.9882167Z -- Detecting C compile features - done
+2025-10-02T07:00:47.9988410Z -- Building for Linux with Qt
+2025-10-02T07:00:48.0541636Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2025-10-02T07:00:48.3399400Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+2025-10-02T07:00:48.3522319Z -- Found Threads: TRUE
+2025-10-02T07:00:48.3538811Z -- Performing Test HAVE_STDATOMIC
+2025-10-02T07:00:48.6816391Z -- Performing Test HAVE_STDATOMIC - Success
+2025-10-02T07:00:48.6825082Z -- Found WrapAtomic: TRUE
+2025-10-02T07:00:48.7316582Z -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so
+2025-10-02T07:00:48.7327385Z -- Found WrapOpenGL: TRUE
+2025-10-02T07:00:48.8012849Z -- Could NOT find XKB (missing: XKB_LIBRARY XKB_INCLUDE_DIR) (Required is at least version "0.5.0")
+2025-10-02T07:00:48.8878009Z -- Found WrapVulkanHeaders: /usr/include
+2025-10-02T07:00:48.9035950Z -- Found Qt6: 6.4.2
+2025-10-02T07:00:48.9071967Z -- Found PkgConfig: /usr/bin/pkg-config (found version "1.8.1")
+2025-10-02T07:00:48.9080386Z -- Checking for module 'libgit2'
+2025-10-02T07:00:48.9171133Z --   Found libgit2, version 1.7.2
+2025-10-02T07:00:48.9401127Z -- Found libgit2: 1.7.2
+2025-10-02T07:00:49.0141093Z -- Configuring done (3.5s)
+2025-10-02T07:00:49.1093948Z -- Generating done (0.1s)
+2025-10-02T07:00:49.1102405Z -- Build files have been written to: /home/runner/work/VersionTools/VersionTools/build
