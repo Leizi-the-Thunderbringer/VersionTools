@@ -67,8 +67,12 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Release
-          make -j$(sysctl -n hw.ncpu)
+          # 设置libgit2路径
+          export PKG_CONFIG_PATH="$(brew --prefix libgit2)/lib/pkgconfig:$PKG_CONFIG_PATH"
+          cmake .. -GXcode -DCMAKE_BUILD_TYPE=Release \
+            -DLIBGIT2_INCLUDE_DIR=$(brew --prefix libgit2)/include \
+            -DLIBGIT2_LIBRARY=$(brew --prefix libgit2)/lib/libgit2.dylib
+          cmake --build . --config Release
 
       - name: Create DMG
         run: |
@@ -118,12 +122,16 @@ jobs:
         run: |
           cd build
           cpack -G DEB
+          # 查看生成的文件
+          ls -la *.deb
 
       - name: Create RPM package
         run: |
           sudo apt-get install -y rpm
           cd build
           cpack -G RPM
+          # 查看生成的文件
+          ls -la *.rpm || true
 
       - name: Upload DEB package
         uses: actions/upload-release-asset@v1
@@ -131,7 +139,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: build/VersionTools-${{ needs.create-release.outputs.version }}-Linux.deb
+          asset_path: build/VersionTools-0.1.0-Linux.deb
           asset_name: VersionTools-${{ needs.create-release.outputs.version }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
 
@@ -141,7 +149,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: build/VersionTools-${{ needs.create-release.outputs.version }}-Linux.rpm
+          asset_path: build/VersionTools-0.1.0-Linux.rpm
           asset_name: VersionTools-${{ needs.create-release.outputs.version }}-Linux.rpm
           asset_content_type: application/x-rpm
 
@@ -164,7 +172,6 @@ jobs:
           host: 'windows'
           target: 'desktop'
           arch: 'win64_msvc2019_64'
-          modules: 'qtbase qttools'
 
       - name: Build
         run: |
