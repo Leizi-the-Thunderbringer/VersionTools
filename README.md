@@ -1,5 +1,9 @@
 # Version Tools - Modern Git GUI
 
+[![Build & Test](https://github.com/Zixiao-Tech/VersionTools/actions/workflows/build.yml/badge.svg)](https://github.com/Zixiao-Tech/VersionTools/actions/workflows/build.yml)
+[![Release](https://github.com/Zixiao-Tech/VersionTools/actions/workflows/release.yml/badge.svg)](https://github.com/Zixiao-Tech/VersionTools/actions/workflows/release.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 一个现代化的Git图形界面工具，使用C++核心和平台特定的GUI实现。
 
 ## 特性
@@ -70,6 +74,13 @@ cmake -DBUILD_TESTS=ON ..
 # 指定Qt安装路径 (如需要)
 cmake -DQt6_DIR=/path/to/qt6 ..
 ```
+
+## 下载
+
+从 [Releases](https://github.com/Zixiao-Tech/VersionTools/releases) 页面下载最新版本：
+- **macOS**: VersionTools-x.x.x-macOS.dmg
+- **Linux**: VersionTools-x.x.x-Linux.deb 或 .rpm
+- **Windows**: VersionTools-x.x.x-Windows.zip
 
 ## 安装
 
