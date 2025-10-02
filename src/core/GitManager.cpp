@@ -992,6 +992,53 @@ GitOperationResult GitManager::renameRemote(const std::string& oldName, const st
     return pImpl->executeGitCommand(command);
 }
 
+GitOperationResult GitManager::fetch(const std::string& remote, ProgressCallback progressCallback) {
+    if (remote.empty()) {
+        GitOperationResult result;
+        result.result = GitCommandResult::Failed;
+        result.error = "Remote name cannot be empty";
+        return result;
+    }
+
+    std::vector<std::string> args = {"fetch", remote};
+    return executeGitCommand(args, "", progressCallback);
+}
+
+GitOperationResult GitManager::pull(const std::string& remote, const std::string& branch, ProgressCallback progressCallback) {
+    if (remote.empty()) {
+        GitOperationResult result;
+        result.result = GitCommandResult::Failed;
+        result.error = "Remote name cannot be empty";
+        return result;
+    }
+
+    std::vector<std::string> args = {"pull", remote};
+    if (!branch.empty()) {
+        args.push_back(branch);
+    }
+
+    return executeGitCommand(args, "", progressCallback);
+}
+
+GitOperationResult GitManager::push(const std::string& remote, const std::string& branch, bool force, ProgressCallback progressCallback) {
+    if (remote.empty()) {
+        GitOperationResult result;
+        result.result = GitCommandResult::Failed;
+        result.error = "Remote name cannot be empty";
+        return result;
+    }
+
+    std::vector<std::string> args = {"push", remote};
+    if (!branch.empty()) {
+        args.push_back(branch);
+    }
+    if (force) {
+        args.push_back("--force");
+    }
+
+    return executeGitCommand(args, "", progressCallback);
+}
+
 // Tag operations
 std::vector<GitTag> GitManager::getTags() const {
     std::vector<GitTag> tags;

@@ -1,5 +1,0 @@
-2025-10-02T07:04:52.6520000Z Requested labels: ubuntu-latest
-2025-10-02T07:04:52.6520000Z Job defined at: Zixiao-Tech/VersionTools/.github/workflows/build.yml@refs/heads/main
-2025-10-02T07:04:52.6520000Z Waiting for a runner to pick up this job...
-2025-10-02T07:04:53.1400000Z Job is waiting for a hosted runner to come online.
-2025-10-02T07:04:53.1410000Z Job is about to start running on the hosted runner: GitHub Actions 1000000472
