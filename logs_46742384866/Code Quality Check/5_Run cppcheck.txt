@@ -1,0 +1,354 @@
+﻿2025-10-02T07:07:12.4376582Z ##[group]Run cppcheck --enable=all --suppress=missingIncludeSystem src/core/ || true
+2025-10-02T07:07:12.4376854Z [36;1mcppcheck --enable=all --suppress=missingIncludeSystem src/core/ || true[0m
+2025-10-02T07:07:12.4409186Z shell: /usr/bin/bash -e {0}
+2025-10-02T07:07:12.4409452Z ##[endgroup]
+2025-10-02T07:07:12.4686123Z Checking src/core/GitManager.cpp ...
+2025-10-02T07:07:13.1591480Z src/core/GitManager.cpp:27:5: style: Class 'Impl' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+2025-10-02T07:07:13.1593569Z     Impl(const std::string& repoPath) : repositoryPath(repoPath) {
+2025-10-02T07:07:13.1594345Z     ^
+2025-10-02T07:07:13.1702989Z src/core/GitManager.cpp:785:35: style: Condition '!line.empty()' is always true [knownConditionTrueFalse]
+2025-10-02T07:07:13.1703993Z         } else if (currentHunk && !line.empty()) {
+2025-10-02T07:07:13.1704486Z                                   ^
+2025-10-02T07:07:13.1704975Z src/core/GitManager.cpp:769:23: note: Assuming that condition 'line.empty()' is not redundant
+2025-10-02T07:07:13.1705542Z         if (line.empty()) continue;
+2025-10-02T07:07:13.1705819Z                       ^
+2025-10-02T07:07:13.1706195Z src/core/GitManager.cpp:785:35: note: Condition '!line.empty()' is always true
+2025-10-02T07:07:13.1706614Z         } else if (currentHunk && !line.empty()) {
+2025-10-02T07:07:13.1706868Z                                   ^
+2025-10-02T07:07:13.1707305Z src/core/GitManager.cpp:880:39: style: Condition '!line.empty()' is always true [knownConditionTrueFalse]
+2025-10-02T07:07:13.1707776Z             } else if (currentHunk && !line.empty()) {
+2025-10-02T07:07:13.1708030Z                                       ^
+2025-10-02T07:07:13.1708427Z src/core/GitManager.cpp:862:27: note: Assuming that condition 'line.empty()' is not redundant
+2025-10-02T07:07:13.1708829Z             if (line.empty()) continue;
+2025-10-02T07:07:13.1709051Z                           ^
+2025-10-02T07:07:13.1709647Z src/core/GitManager.cpp:880:39: note: Condition '!line.empty()' is always true
+2025-10-02T07:07:13.1710034Z             } else if (currentHunk && !line.empty()) {
+2025-10-02T07:07:13.1710275Z                                       ^
+2025-10-02T07:07:13.1754671Z src/core/GitManager.cpp:394:15: style: Local variable 'commit' shadows outer function [shadowFunction]
+2025-10-02T07:07:13.1755579Z     GitCommit commit;
+2025-10-02T07:07:13.1755921Z               ^
+2025-10-02T07:07:13.1756208Z src/core/GitManager.h:59:24: note: Shadowed declaration
+2025-10-02T07:07:13.1756797Z     GitOperationResult commit(const std::string& message, bool amend = false);
+2025-10-02T07:07:13.1757527Z                        ^
+2025-10-02T07:07:13.1758014Z src/core/GitManager.cpp:394:15: note: Shadow variable
+2025-10-02T07:07:13.1758343Z     GitCommit commit;
+2025-10-02T07:07:13.1758555Z               ^
+2025-10-02T07:07:13.1759013Z src/core/GitManager.cpp:580:23: style: Local variable 'commit' shadows outer function [shadowFunction]
+2025-10-02T07:07:13.1759807Z             GitCommit commit;
+2025-10-02T07:07:13.1760063Z                       ^
+2025-10-02T07:07:13.1760346Z src/core/GitManager.h:59:24: note: Shadowed declaration
+2025-10-02T07:07:13.1760839Z     GitOperationResult commit(const std::string& message, bool amend = false);
+2025-10-02T07:07:13.1761250Z                        ^
+2025-10-02T07:07:13.1761534Z src/core/GitManager.cpp:580:23: note: Shadow variable
+2025-10-02T07:07:13.1761859Z             GitCommit commit;
+2025-10-02T07:07:13.1762098Z                       ^
+2025-10-02T07:07:13.1762543Z src/core/GitManager.cpp:650:18: style: Local variable 'stash' shadows outer function [shadowFunction]
+2025-10-02T07:07:13.1763050Z         GitStash stash;
+2025-10-02T07:07:13.1763266Z                  ^
+2025-10-02T07:07:13.1763551Z src/core/GitManager.h:115:24: note: Shadowed declaration
+2025-10-02T07:07:13.1764134Z     GitOperationResult stash(const std::string& message = "", bool includeUntracked = false);
+2025-10-02T07:07:13.1764608Z                        ^
+2025-10-02T07:07:13.1764904Z src/core/GitManager.cpp:650:18: note: Shadow variable
+2025-10-02T07:07:13.1765544Z         GitStash stash;
+2025-10-02T07:07:13.1765758Z                  ^
+2025-10-02T07:07:13.1766749Z src/core/GitManager.cpp:546:20: performance: Inefficient usage of string::find() in condition; string::starts_with() could be faster. [stlIfStrFind]
+2025-10-02T07:07:13.1767567Z         if (branch.name.find("origin/") == 0 || branch.name.find("remotes/") == 0) {
+2025-10-02T07:07:13.1767888Z                    ^
+2025-10-02T07:07:13.1768543Z src/core/GitManager.cpp:549:24: performance: Inefficient usage of string::find() in condition; string::starts_with() could be faster. [stlIfStrFind]
+2025-10-02T07:07:13.1769104Z             if (branch.name.find("remotes/") == 0) {
+2025-10-02T07:07:13.1769460Z                        ^
+2025-10-02T07:07:13.1876806Z Checking src/core/GitManager.cpp: USE_LIBGIT2...
+2025-10-02T07:07:13.8957871Z Checking src/core/GitManager.cpp: _WIN32...
+2025-10-02T07:07:14.6050913Z 1/3 files checked 56% done
+2025-10-02T07:07:14.6051396Z Checking src/core/GitUtils.cpp ...
+2025-10-02T07:07:14.6522533Z src/core/GitUtils.cpp:339:18: performance: Ineffective call of function 'substr' because a prefix of the string is assigned to itself. Use resize() or pop_back() instead. [uselessCallsSubstr]
+2025-10-02T07:07:14.6524186Z         result = result.substr(0, result.length() - 4);
+2025-10-02T07:07:14.6524740Z                  ^
+2025-10-02T07:07:14.6525716Z src/core/GitUtils.cpp:226:5: style: Consider using std::all_of or std::none_of algorithm instead of a raw loop. [useStlAlgorithm]
+2025-10-02T07:07:14.6526847Z     for (const auto& invalid : INVALID_BRANCH_CHARS) {
+2025-10-02T07:07:14.6527199Z     ^
+2025-10-02T07:07:14.6527716Z src/core/GitUtils.cpp:434:21: style: Consider using std::any_of algorithm instead of a raw loop. [useStlAlgorithm]
+2025-10-02T07:07:14.6528325Z         if (c == 0) {
+2025-10-02T07:07:14.6528558Z                     ^
+2025-10-02T07:07:14.6529104Z src/core/GitUtils.cpp:468:13: style: Consider using std::count_if algorithm instead of a raw loop. [useStlAlgorithm]
+2025-10-02T07:07:14.6530062Z             count++;
+2025-10-02T07:07:14.6530295Z             ^
+2025-10-02T07:07:14.6530831Z src/core/GitUtils.cpp:481:13: style: Consider using std::count_if algorithm instead of a raw loop. [useStlAlgorithm]
+2025-10-02T07:07:14.6531445Z             count++;
+2025-10-02T07:07:14.6531669Z             ^
+2025-10-02T07:07:14.6552097Z 2/3 files checked 80% done
+2025-10-02T07:07:14.6552502Z Checking src/core/SystemCommand.cpp ...
+2025-10-02T07:07:14.6723346Z src/core/SystemCommand.cpp:305:21: style: Local variable 'bytesRead' shadows outer variable [shadowVariable]
+2025-10-02T07:07:14.6724096Z             ssize_t bytesRead;
+2025-10-02T07:07:14.6724380Z                     ^
+2025-10-02T07:07:14.6724744Z src/core/SystemCommand.cpp:293:17: note: Shadowed declaration
+2025-10-02T07:07:14.6725182Z         ssize_t bytesRead;
+2025-10-02T07:07:14.6725435Z                 ^
+2025-10-02T07:07:14.6725808Z src/core/SystemCommand.cpp:305:21: note: Shadow variable
+2025-10-02T07:07:14.6726229Z             ssize_t bytesRead;
+2025-10-02T07:07:14.6726663Z                     ^
+2025-10-02T07:07:14.6727391Z src/core/SystemCommand.cpp:320:33: style: Local variable 'result' shadows outer variable [shadowVariable]
+2025-10-02T07:07:14.6728013Z             SystemCommandResult result;
+2025-10-02T07:07:14.6728329Z                                 ^
+2025-10-02T07:07:14.6728711Z src/core/SystemCommand.cpp:290:15: note: Shadowed declaration
+2025-10-02T07:07:14.6729176Z         pid_t result = waitpid(pid, &status, WNOHANG);
+2025-10-02T07:07:14.6729822Z               ^
+2025-10-02T07:07:14.6730139Z src/core/SystemCommand.cpp:320:33: note: Shadow variable
+2025-10-02T07:07:14.6730535Z             SystemCommandResult result;
+2025-10-02T07:07:14.6730845Z                                 ^
+2025-10-02T07:07:14.6731502Z src/core/SystemCommand.cpp:244:19: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]
+2025-10-02T07:07:14.6732229Z             cArgs.push_back(const_cast<char*>(arg.c_str()));
+2025-10-02T07:07:14.6732973Z                   ^
+2025-10-02T07:07:14.6746052Z Checking src/core/SystemCommand.cpp: _WIN32...
+2025-10-02T07:07:14.6890106Z src/core/SystemCommand.cpp:416:73: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+2025-10-02T07:07:14.6890796Z         if (GetFileAttributes(path.c_str()) != INVALID_FILE_ATTRIBUTES) {
+2025-10-02T07:07:14.6891186Z                                                                         ^
+2025-10-02T07:07:14.6902253Z 3/3 files checked 100% done
+2025-10-02T07:07:14.6904418Z src/core/GitManager.cpp:65:0: style: The function 'initRepository' is never used. [unusedFunction]
+2025-10-02T07:07:14.6905487Z GitOperationResult GitManager::initRepository(const std::string& path, bool bare) {
+2025-10-02T07:07:14.6906173Z ^
+2025-10-02T07:07:14.6906763Z src/core/GitManager.cpp:90:0: style: The function 'openRepository' is never used. [unusedFunction]
+2025-10-02T07:07:14.6907714Z GitOperationResult GitManager::openRepository(const std::string& path) {
+2025-10-02T07:07:14.6908316Z ^
+2025-10-02T07:07:14.6908918Z src/core/GitManager.cpp:121:0: style: The function 'getRepositoryInfo' is never used. [unusedFunction]
+2025-10-02T07:07:14.6910149Z GitRepository GitManager::getRepositoryInfo() const {
+2025-10-02T07:07:14.6910646Z ^
+2025-10-02T07:07:14.6911255Z src/core/GitManager.cpp:232:0: style: The function 'getRepositoryPath' is never used. [unusedFunction]
+2025-10-02T07:07:14.6912076Z std::string GitManager::getRepositoryPath() const {
+2025-10-02T07:07:14.6912566Z ^
+2025-10-02T07:07:14.6913119Z src/core/GitManager.cpp:247:0: style: The function 'addAllFiles' is never used. [unusedFunction]
+2025-10-02T07:07:14.6913884Z GitOperationResult GitManager::addAllFiles() {
+2025-10-02T07:07:14.6914318Z ^
+2025-10-02T07:07:14.6914852Z src/core/GitManager.cpp:251:0: style: The function 'removeFiles' is never used. [unusedFunction]
+2025-10-02T07:07:14.6915906Z GitOperationResult GitManager::removeFiles(const std::vector<std::string>& files, bool cached) {
+2025-10-02T07:07:14.6916671Z ^
+2025-10-02T07:07:14.6917219Z src/core/GitManager.cpp:265:0: style: The function 'resetFiles' is never used. [unusedFunction]
+2025-10-02T07:07:14.6918162Z GitOperationResult GitManager::resetFiles(const std::vector<std::string>& files) {
+2025-10-02T07:07:14.6918804Z ^
+2025-10-02T07:07:14.6919514Z src/core/GitManager.cpp:276:0: style: The function 'resetHard' is never used. [unusedFunction]
+2025-10-02T07:07:14.6920406Z GitOperationResult GitManager::resetHard(const std::string& commitHash) {
+2025-10-02T07:07:14.6921008Z ^
+2025-10-02T07:07:14.6921596Z src/core/GitManager.cpp:289:0: style: The function 'commitWithFiles' is never used. [unusedFunction]
+2025-10-02T07:07:14.6922540Z GitOperationResult GitManager::commitWithFiles(const std::string& message,
+2025-10-02T07:07:14.6923144Z ^
+2025-10-02T07:07:14.6923736Z src/core/GitManager.cpp:301:0: style: The function 'getCommitHistory' is never used. [unusedFunction]
+2025-10-02T07:07:14.6924637Z std::vector<GitCommit> GitManager::getCommitHistory(int maxCount,
+2025-10-02T07:07:14.6925154Z ^
+2025-10-02T07:07:14.6925695Z src/core/GitManager.cpp:350:0: style: The function 'getCommit' is never used. [unusedFunction]
+2025-10-02T07:07:14.6926591Z std::optional<GitCommit> GitManager::getCommit(const std::string& hash) const {
+2025-10-02T07:07:14.6927181Z ^
+2025-10-02T07:07:14.6927746Z src/core/GitManager.cpp:477:0: style: The function 'getLastError' is never used. [unusedFunction]
+2025-10-02T07:07:14.6928516Z std::string GitManager::getLastError() const {
+2025-10-02T07:07:14.6928969Z ^
+2025-10-02T07:07:14.6929925Z src/core/GitManager.cpp:481:0: style: The function 'hasUncommittedChanges' is never used. [unusedFunction]
+2025-10-02T07:07:14.6930797Z bool GitManager::hasUncommittedChanges() const {
+2025-10-02T07:07:14.6931230Z ^
+2025-10-02T07:07:14.6931844Z src/core/GitManager.cpp:485:0: style: The function 'hasUnstagedChanges' is never used. [unusedFunction]
+2025-10-02T07:07:14.6932671Z bool GitManager::hasUnstagedChanges() const {
+2025-10-02T07:07:14.6933347Z ^
+2025-10-02T07:07:14.6933948Z src/core/GitManager.cpp:489:0: style: The function 'hasStagedChanges' is never used. [unusedFunction]
+2025-10-02T07:07:14.6934827Z bool GitManager::hasStagedChanges() const {
+2025-10-02T07:07:14.6935233Z ^
+2025-10-02T07:07:14.6935797Z src/core/GitManager.cpp:493:0: style: The function 'setLogCallback' is never used. [unusedFunction]
+2025-10-02T07:07:14.6936589Z void GitManager::setLogCallback(LogCallback callback) {
+2025-10-02T07:07:14.6937199Z ^
+2025-10-02T07:07:14.6937779Z src/core/GitManager.cpp:497:0: style: The function 'setProgressCallback' is never used. [unusedFunction]
+2025-10-02T07:07:14.6938695Z void GitManager::setProgressCallback(ProgressCallback callback) {
+2025-10-02T07:07:14.6939423Z ^
+2025-10-02T07:07:14.6940068Z src/core/GitManager.cpp:501:0: style: The function 'cloneRepositoryAsync' is never used. [unusedFunction]
+2025-10-02T07:07:14.6941157Z std::future<GitOperationResult> GitManager::cloneRepositoryAsync(const std::string& url,
+2025-10-02T07:07:14.6941714Z ^
+2025-10-02T07:07:14.6942150Z src/core/GitManager.cpp:513:0: style: The function 'getBranches' is never used. [unusedFunction]
+2025-10-02T07:07:14.6942868Z std::vector<GitBranch> GitManager::getBranches(bool includeRemote) const {
+2025-10-02T07:07:14.6943366Z ^
+2025-10-02T07:07:14.6943798Z src/core/GitManager.cpp:606:0: style: The function 'createBranch' is never used. [unusedFunction]
+2025-10-02T07:07:14.6944722Z GitOperationResult GitManager::createBranch(const std::string& name, const std::string& startPoint) {
+2025-10-02T07:07:14.6945369Z ^
+2025-10-02T07:07:14.6945910Z src/core/GitManager.cpp:617:0: style: The function 'deleteBranch' is never used. [unusedFunction]
+2025-10-02T07:07:14.6946810Z GitOperationResult GitManager::deleteBranch(const std::string& name, bool force) {
+2025-10-02T07:07:14.6947379Z ^
+2025-10-02T07:07:14.6947905Z src/core/GitManager.cpp:627:0: style: The function 'checkoutBranch' is never used. [unusedFunction]
+2025-10-02T07:07:14.6948773Z GitOperationResult GitManager::checkoutBranch(const std::string& name) {
+2025-10-02T07:07:14.6949496Z ^
+2025-10-02T07:07:14.6949984Z src/core/GitManager.cpp:632:0: style: The function 'getStashes' is never used. [unusedFunction]
+2025-10-02T07:07:14.6950709Z std::vector<GitStash> GitManager::getStashes() const {
+2025-10-02T07:07:14.6951103Z ^
+2025-10-02T07:07:14.6951553Z src/core/GitManager.cpp:677:0: style: The function 'stash' is never used. [unusedFunction]
+2025-10-02T07:07:14.6952397Z GitOperationResult GitManager::stash(const std::string& message, bool includeUntracked) {
+2025-10-02T07:07:14.6952999Z ^
+2025-10-02T07:07:14.6953523Z src/core/GitManager.cpp:692:0: style: The function 'stashPop' is never used. [unusedFunction]
+2025-10-02T07:07:14.6954232Z GitOperationResult GitManager::stashPop(int index) {
+2025-10-02T07:07:14.6954677Z ^
+2025-10-02T07:07:14.6955182Z src/core/GitManager.cpp:702:0: style: The function 'stashApply' is never used. [unusedFunction]
+2025-10-02T07:07:14.6955892Z GitOperationResult GitManager::stashApply(int index) {
+2025-10-02T07:07:14.6956366Z ^
+2025-10-02T07:07:14.6956873Z src/core/GitManager.cpp:712:0: style: The function 'stashDrop' is never used. [unusedFunction]
+2025-10-02T07:07:14.6957591Z GitOperationResult GitManager::stashDrop(int index) {
+2025-10-02T07:07:14.6957992Z ^
+2025-10-02T07:07:14.6958459Z src/core/GitManager.cpp:722:0: style: The function 'stashClear' is never used. [unusedFunction]
+2025-10-02T07:07:14.6959135Z GitOperationResult GitManager::stashClear() {
+2025-10-02T07:07:14.6959727Z ^
+2025-10-02T07:07:14.6960270Z src/core/GitManager.cpp:727:0: style: The function 'getCommitDiff' is never used. [unusedFunction]
+2025-10-02T07:07:14.6961136Z GitDiff GitManager::getCommitDiff(const std::string& commitHash) const {
+2025-10-02T07:07:14.6961689Z ^
+2025-10-02T07:07:14.6962253Z src/core/GitManager.cpp:810:0: style: The function 'getCommitDiffAll' is never used. [unusedFunction]
+2025-10-02T07:07:14.6963209Z std::vector<GitDiff> GitManager::getCommitDiffAll(const std::string& commitHash) const {
+2025-10-02T07:07:14.6964013Z ^
+2025-10-02T07:07:14.6964503Z src/core/GitManager.cpp:913:0: style: The function 'getRemotes' is never used. [unusedFunction]
+2025-10-02T07:07:14.6964947Z std::vector<GitRemote> GitManager::getRemotes() const {
+2025-10-02T07:07:14.6965188Z ^
+2025-10-02T07:07:14.6965483Z src/core/GitManager.cpp:959:0: style: The function 'addRemote' is never used. [unusedFunction]
+2025-10-02T07:07:14.6966068Z GitOperationResult GitManager::addRemote(const std::string& name, const std::string& url) {
+2025-10-02T07:07:14.6966619Z ^
+2025-10-02T07:07:14.6966945Z src/core/GitManager.cpp:971:0: style: The function 'removeRemote' is never used. [unusedFunction]
+2025-10-02T07:07:14.6967438Z GitOperationResult GitManager::removeRemote(const std::string& name) {
+2025-10-02T07:07:14.6967754Z ^
+2025-10-02T07:07:14.6968091Z src/core/GitManager.cpp:983:0: style: The function 'renameRemote' is never used. [unusedFunction]
+2025-10-02T07:07:14.6969109Z GitOperationResult GitManager::renameRemote(const std::string& oldName, const std::string& newName) {
+2025-10-02T07:07:14.6970145Z ^
+2025-10-02T07:07:14.6970669Z src/core/GitManager.cpp:996:0: style: The function 'getTags' is never used. [unusedFunction]
+2025-10-02T07:07:14.6971230Z std::vector<GitTag> GitManager::getTags() const {
+2025-10-02T07:07:14.6971467Z ^
+2025-10-02T07:07:14.6971776Z src/core/GitManager.cpp:1039:0: style: The function 'createTag' is never used. [unusedFunction]
+2025-10-02T07:07:14.6972326Z GitOperationResult GitManager::createTag(const std::string& name, const std::string& message,
+2025-10-02T07:07:14.6972721Z ^
+2025-10-02T07:07:14.6973011Z src/core/GitManager.cpp:1065:0: style: The function 'deleteTag' is never used. [unusedFunction]
+2025-10-02T07:07:14.6973498Z GitOperationResult GitManager::deleteTag(const std::string& name) {
+2025-10-02T07:07:14.6973812Z ^
+2025-10-02T07:07:14.6974109Z src/core/GitManager.cpp:1077:0: style: The function 'pushTags' is never used. [unusedFunction]
+2025-10-02T07:07:14.6974597Z GitOperationResult GitManager::pushTags(const std::string& remote) {
+2025-10-02T07:07:14.6974909Z ^
+2025-10-02T07:07:14.6975196Z src/core/GitManager.h:29:0: style: The function 'hasError' is never used. [unusedFunction]
+2025-10-02T07:07:14.6975629Z     bool hasError() const { return !error.empty() || exitCode != 0; }
+2025-10-02T07:07:14.6975916Z ^
+2025-10-02T07:07:14.6976186Z src/core/GitTypes.h:37:0: style: The function 'isMerge' is never used. [unusedFunction]
+2025-10-02T07:07:14.6976591Z     bool isMerge() const { return parentHashes.size() > 1; }
+2025-10-02T07:07:14.6976858Z ^
+2025-10-02T07:07:14.6977123Z src/core/GitUtils.cpp:48:0: style: The function 'join' is never used. [unusedFunction]
+2025-10-02T07:07:14.6977630Z std::string GitUtils::join(const std::vector<std::string>& parts, const std::string& delimiter) {
+2025-10-02T07:07:14.6977999Z ^
+2025-10-02T07:07:14.6978276Z src/core/GitUtils.cpp:73:0: style: The function 'toUpper' is never used. [unusedFunction]
+2025-10-02T07:07:14.6978675Z std::string GitUtils::toUpper(const std::string& str) {
+2025-10-02T07:07:14.6978933Z ^
+2025-10-02T07:07:14.6979433Z src/core/GitUtils.cpp:80:0: style: The function 'normalizePath' is never used. [unusedFunction]
+2025-10-02T07:07:14.6979955Z std::string GitUtils::normalizePath(const std::string& path) {
+2025-10-02T07:07:14.6980228Z ^
+2025-10-02T07:07:14.6980517Z src/core/GitUtils.cpp:89:0: style: The function 'getFileName' is never used. [unusedFunction]
+2025-10-02T07:07:14.6980948Z std::string GitUtils::getFileName(const std::string& path) {
+2025-10-02T07:07:14.6981214Z ^
+2025-10-02T07:07:14.6981506Z src/core/GitUtils.cpp:99:0: style: The function 'getDirectory' is never used. [unusedFunction]
+2025-10-02T07:07:14.6981937Z std::string GitUtils::getDirectory(const std::string& path) {
+2025-10-02T07:07:14.6982209Z ^
+2025-10-02T07:07:14.6982485Z src/core/GitUtils.cpp:104:0: style: The function 'joinPaths' is never used. [unusedFunction]
+2025-10-02T07:07:14.6982979Z std::string GitUtils::joinPaths(const std::string& path1, const std::string& path2) {
+2025-10-02T07:07:14.6983469Z ^
+2025-10-02T07:07:14.6983778Z src/core/GitUtils.cpp:109:0: style: The function 'isAbsolutePath' is never used. [unusedFunction]
+2025-10-02T07:07:14.6984221Z bool GitUtils::isAbsolutePath(const std::string& path) {
+2025-10-02T07:07:14.6984473Z ^
+2025-10-02T07:07:14.6984790Z src/core/GitUtils.cpp:114:0: style: The function 'makeRelativePath' is never used. [unusedFunction]
+2025-10-02T07:07:14.6985323Z std::string GitUtils::makeRelativePath(const std::string& from, const std::string& to) {
+2025-10-02T07:07:14.6985830Z ^
+2025-10-02T07:07:14.6986116Z src/core/GitUtils.cpp:124:0: style: The function 'shortenHash' is never used. [unusedFunction]
+2025-10-02T07:07:14.6986587Z std::string GitUtils::shortenHash(const std::string& hash, int length) {
+2025-10-02T07:07:14.6986896Z ^
+2025-10-02T07:07:14.6987186Z src/core/GitUtils.cpp:131:0: style: The function 'isValidHash' is never used. [unusedFunction]
+2025-10-02T07:07:14.6987607Z bool GitUtils::isValidHash(const std::string& hash) {
+2025-10-02T07:07:14.6987860Z ^
+2025-10-02T07:07:14.6988186Z src/core/GitUtils.cpp:139:0: style: The function 'formatCommitMessage' is never used. [unusedFunction]
+2025-10-02T07:07:14.6988735Z std::string GitUtils::formatCommitMessage(const std::string& message, int maxLength) {
+2025-10-02T07:07:14.6989096Z ^
+2025-10-02T07:07:14.6989584Z src/core/GitUtils.cpp:156:0: style: The function 'formatAuthor' is never used. [unusedFunction]
+2025-10-02T07:07:14.6990108Z std::string GitUtils::formatAuthor(const std::string& name, const std::string& email) {
+2025-10-02T07:07:14.6990457Z ^
+2025-10-02T07:07:14.6990767Z src/core/GitUtils.cpp:169:0: style: The function 'formatTimestamp' is never used. [unusedFunction]
+2025-10-02T07:07:14.6991325Z std::string GitUtils::formatTimestamp(const std::chrono::system_clock::time_point& timestamp) {
+2025-10-02T07:07:14.6991698Z ^
+2025-10-02T07:07:14.6992023Z src/core/GitUtils.cpp:176:0: style: The function 'formatRelativeTime' is never used. [unusedFunction]
+2025-10-02T07:07:14.6992601Z std::string GitUtils::formatRelativeTime(const std::chrono::system_clock::time_point& timestamp) {
+2025-10-02T07:07:14.6992985Z ^
+2025-10-02T07:07:14.6993300Z src/core/GitUtils.cpp:221:0: style: The function 'isValidBranchName' is never used. [unusedFunction]
+2025-10-02T07:07:14.6993755Z bool GitUtils::isValidBranchName(const std::string& name) {
+2025-10-02T07:07:14.6994026Z ^
+2025-10-02T07:07:14.6994341Z src/core/GitUtils.cpp:235:0: style: The function 'sanitizeBranchName' is never used. [unusedFunction]
+2025-10-02T07:07:14.6994839Z std::string GitUtils::sanitizeBranchName(const std::string& name) {
+2025-10-02T07:07:14.6995125Z ^
+2025-10-02T07:07:14.6995444Z src/core/GitUtils.cpp:258:0: style: The function 'getShortBranchName' is never used. [unusedFunction]
+2025-10-02T07:07:14.6995935Z std::string GitUtils::getShortBranchName(const std::string& fullName) {
+2025-10-02T07:07:14.6996233Z ^
+2025-10-02T07:07:14.6996541Z src/core/GitUtils.cpp:271:0: style: The function 'isRemoteBranch' is never used. [unusedFunction]
+2025-10-02T07:07:14.6997006Z bool GitUtils::isRemoteBranch(const std::string& branchName) {
+2025-10-02T07:07:14.6997286Z ^
+2025-10-02T07:07:14.6997604Z src/core/GitUtils.cpp:275:0: style: The function 'getRemoteFromBranch' is never used. [unusedFunction]
+2025-10-02T07:07:14.6998112Z std::string GitUtils::getRemoteFromBranch(const std::string& branchName) {
+2025-10-02T07:07:14.6998430Z ^
+2025-10-02T07:07:14.6998728Z src/core/GitUtils.cpp:290:0: style: The function 'isValidGitUrl' is never used. [unusedFunction]
+2025-10-02T07:07:14.6999170Z bool GitUtils::isValidGitUrl(const std::string& url) {
+2025-10-02T07:07:14.6999634Z ^
+2025-10-02T07:07:14.6999975Z src/core/GitUtils.cpp:313:0: style: The function 'extractRepoNameFromUrl' is never used. [unusedFunction]
+2025-10-02T07:07:14.7000481Z std::string GitUtils::extractRepoNameFromUrl(const std::string& url) {
+2025-10-02T07:07:14.7000790Z ^
+2025-10-02T07:07:14.7001097Z src/core/GitUtils.cpp:351:0: style: The function 'normalizeGitUrl' is never used. [unusedFunction]
+2025-10-02T07:07:14.7001700Z std::string GitUtils::normalizeGitUrl(const std::string& url) {
+2025-10-02T07:07:14.7001977Z ^
+2025-10-02T07:07:14.7002262Z src/core/GitUtils.cpp:371:0: style: The function 'isHttpsUrl' is never used. [unusedFunction]
+2025-10-02T07:07:14.7002674Z bool GitUtils::isHttpsUrl(const std::string& url) {
+2025-10-02T07:07:14.7002915Z ^
+2025-10-02T07:07:14.7003196Z src/core/GitUtils.cpp:375:0: style: The function 'isSshUrl' is never used. [unusedFunction]
+2025-10-02T07:07:14.7003752Z bool GitUtils::isSshUrl(const std::string& url) {
+2025-10-02T07:07:14.7003995Z ^
+2025-10-02T07:07:14.7004295Z src/core/GitUtils.cpp:380:0: style: The function 'isValidEmail' is never used. [unusedFunction]
+2025-10-02T07:07:14.7004737Z bool GitUtils::isValidEmail(const std::string& email) {
+2025-10-02T07:07:14.7004997Z ^
+2025-10-02T07:07:14.7005324Z src/core/GitUtils.cpp:385:0: style: The function 'isValidCommitMessage' is never used. [unusedFunction]
+2025-10-02T07:07:14.7005820Z bool GitUtils::isValidCommitMessage(const std::string& message) {
+2025-10-02T07:07:14.7006114Z ^
+2025-10-02T07:07:14.7006409Z src/core/GitUtils.cpp:399:0: style: The function 'isBinaryFile' is never used. [unusedFunction]
+2025-10-02T07:07:14.7006838Z bool GitUtils::isBinaryFile(const std::string& filePath) {
+2025-10-02T07:07:14.7007102Z ^
+2025-10-02T07:07:14.7007420Z src/core/GitUtils.cpp:404:0: style: The function 'detectFileEncoding' is never used. [unusedFunction]
+2025-10-02T07:07:14.7007913Z std::string GitUtils::detectFileEncoding(const std::string& filePath) {
+2025-10-02T07:07:14.7008222Z ^
+2025-10-02T07:07:14.7008522Z src/core/GitUtils.cpp:443:0: style: The function 'colorizeGitDiff' is never used. [unusedFunction]
+2025-10-02T07:07:14.7008986Z std::string GitUtils::colorizeGitDiff(const std::string& diff) {
+2025-10-02T07:07:14.7009443Z ^
+2025-10-02T07:07:14.7009801Z src/core/GitUtils.cpp:462:0: style: The function 'countLinesAdded' is never used. [unusedFunction]
+2025-10-02T07:07:14.7010243Z int GitUtils::countLinesAdded(const std::string& diff) {
+2025-10-02T07:07:14.7010501Z ^
+2025-10-02T07:07:14.7010814Z src/core/GitUtils.cpp:475:0: style: The function 'countLinesRemoved' is never used. [unusedFunction]
+2025-10-02T07:07:14.7011263Z int GitUtils::countLinesRemoved(const std::string& diff) {
+2025-10-02T07:07:14.7011532Z ^
+2025-10-02T07:07:14.7011837Z src/core/GitUtils.cpp:488:0: style: The function 'extractHunkHeader' is never used. [unusedFunction]
+2025-10-02T07:07:14.7012314Z std::string GitUtils::extractHunkHeader(const std::string& line) {
+2025-10-02T07:07:14.7012600Z ^
+2025-10-02T07:07:14.7012904Z src/core/GitUtils.cpp:499:0: style: The function 'formatProgress' is never used. [unusedFunction]
+2025-10-02T07:07:14.7013446Z std::string GitUtils::formatProgress(int current, int total, const std::string& operation) {
+2025-10-02T07:07:14.7013804Z ^
+2025-10-02T07:07:14.7014145Z src/core/GitUtils.cpp:515:0: style: The function 'formatTransferSpeed' is never used. [unusedFunction]
+2025-10-02T07:07:14.7014638Z std::string GitUtils::formatTransferSpeed(size_t bytesPerSecond) {
+2025-10-02T07:07:14.7014932Z ^
+2025-10-02T07:07:14.7015233Z src/core/GitUtils.cpp:519:0: style: The function 'formatDuration' is never used. [unusedFunction]
+2025-10-02T07:07:14.7015743Z std::string GitUtils::formatDuration(const std::chrono::milliseconds& duration) {
+2025-10-02T07:07:14.7016078Z ^
+2025-10-02T07:07:14.7016428Z src/core/SystemCommand.cpp:343:0: style: The function 'executeWithCallback' is never used. [unusedFunction]
+2025-10-02T07:07:14.7017122Z SystemCommandResult SystemCommand::executeWithCallback(const std::string& command, const std::vector<std::string>& args,
+2025-10-02T07:07:14.7017591Z ^
+2025-10-02T07:07:14.7017909Z src/core/SystemCommand.cpp:358:0: style: The function 'executeAsync' is never used. [unusedFunction]
+2025-10-02T07:07:14.7018477Z void SystemCommand::executeAsync(const std::string& command, const std::vector<std::string>& args,
+2025-10-02T07:07:14.7018865Z ^
+2025-10-02T07:07:14.7019397Z src/core/SystemCommand.cpp:383:0: style: The function 'setEnvironmentVariable' is never used. [unusedFunction]
+2025-10-02T07:07:14.7020255Z void SystemCommand::setEnvironmentVariable(const std::string& name, const std::string& value) {
+2025-10-02T07:07:14.7020654Z ^
+2025-10-02T07:07:14.7021034Z src/core/SystemCommand.cpp:387:0: style: The function 'clearEnvironmentVariables' is never used. [unusedFunction]
+2025-10-02T07:07:14.7021538Z void SystemCommand::clearEnvironmentVariables() {
+2025-10-02T07:07:14.7021783Z ^
+2025-10-02T07:07:14.7022212Z src/core/SystemCommand.cpp:391:0: style: The function 'setTimeout' is never used. [unusedFunction]
+2025-10-02T07:07:14.7022643Z void SystemCommand::setTimeout(int timeoutMs) {
+2025-10-02T07:07:14.7022876Z ^
+2025-10-02T07:07:14.7023207Z src/core/SystemCommand.cpp:405:0: style: The function 'getGitCommand' is never used. [unusedFunction]
+2025-10-02T07:07:14.7023721Z std::string SystemCommand::getGitCommand() {
+2025-10-02T07:07:14.7023951Z ^
+2025-10-02T07:07:14.7024247Z src/core/SystemCommand.h:14:0: style: The function 'success' is never used. [unusedFunction]
+2025-10-02T07:07:14.7024661Z     bool success() const { return exitCode == 0; }
+2025-10-02T07:07:14.7024893Z ^
+2025-10-02T07:07:14.7025266Z nofile:0:0: information: Active checkers: 161/592 (use --checkers-report=<filename> to see details) [checkersReport]
+2025-10-02T07:07:14.7025643Z 

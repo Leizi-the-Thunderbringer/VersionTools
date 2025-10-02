@@ -1,0 +1,143 @@
+﻿2025-10-02T07:06:16.5599375Z ##[group]Run cd build
+2025-10-02T07:06:16.5599662Z [36;1mcd build[0m
+2025-10-02T07:06:16.5599866Z [36;1mcmake --build . --config Release[0m
+2025-10-02T07:06:16.5658812Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-10-02T07:06:16.5659114Z env:
+2025-10-02T07:06:16.5659349Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T07:06:16.5660162Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2025-10-02T07:06:16.5660568Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T07:06:16.5660918Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T07:06:16.5661270Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2025-10-02T07:06:16.5661591Z   QT_ROOT_DIR: D:\a\VersionTools\Qt\6.7.0\msvc2019_64
+2025-10-02T07:06:16.5661910Z   QT_PLUGIN_PATH: D:\a\VersionTools\Qt\6.7.0\msvc2019_64\plugins
+2025-10-02T07:06:16.5662250Z   QML2_IMPORT_PATH: D:\a\VersionTools\Qt\6.7.0\msvc2019_64\qml
+2025-10-02T07:06:16.5662542Z ##[endgroup]
+2025-10-02T07:06:17.0167644Z MSBuild version 17.14.23+b0019275e for .NET Framework
+2025-10-02T07:06:17.0484400Z 
+2025-10-02T07:06:17.4112260Z   1>Checking Build System
+2025-10-02T07:06:17.5136139Z   Automatic MOC and UIC for target GitCore
+2025-10-02T07:06:17.6229333Z   Building Custom Rule D:/a/VersionTools/VersionTools/src/core/CMakeLists.txt
+2025-10-02T07:06:17.7442991Z   GitManager.cpp
+2025-10-02T07:06:20.6443410Z   GitUtils.cpp
+2025-10-02T07:06:21.3462826Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\algorithm(3799,24): warning C4244: '=': conversion from 'int' to 'char', possible loss of data [D:\a\VersionTools\VersionTools\build\src\core\GitCore.vcxproj]
+2025-10-02T07:06:21.3492689Z   (compiling source file '../../../src/core/GitUtils.cpp')
+2025-10-02T07:06:21.3493669Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\algorithm(3799,24):
+2025-10-02T07:06:21.3494684Z       the template instantiation context (the oldest one first) is
+2025-10-02T07:06:21.3495372Z           D:\a\VersionTools\VersionTools\src\core\GitUtils.cpp(69,10):
+2025-10-02T07:06:21.3497272Z           see reference to function template instantiation '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,int(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)' being compiled
+2025-10-02T07:06:21.3499351Z           with
+2025-10-02T07:06:21.3499627Z           [
+2025-10-02T07:06:21.3500112Z               _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+2025-10-02T07:06:21.3500714Z               _Elem=char,
+2025-10-02T07:06:21.3501259Z               _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+2025-10-02T07:06:21.3501869Z               _Fn=int (__cdecl *)(int)
+2025-10-02T07:06:21.3502232Z           ]
+2025-10-02T07:06:21.3502508Z   
+2025-10-02T07:06:21.6688027Z   SystemCommand.cpp
+2025-10-02T07:06:23.1620847Z D:\a\VersionTools\VersionTools\src\core\SystemCommand.cpp(148,39): warning C4245: 'argument': conversion from 'int' to 'UINT', signed/unsigned mismatch [D:\a\VersionTools\VersionTools\build\src\core\GitCore.vcxproj]
+2025-10-02T07:06:23.1679549Z D:\a\VersionTools\VersionTools\src\core\SystemCommand.cpp(374,42): warning C4245: 'argument': conversion from 'int' to 'UINT', signed/unsigned mismatch [D:\a\VersionTools\VersionTools\build\src\core\GitCore.vcxproj]
+2025-10-02T07:06:23.4686851Z   mocs_compilation_Release.cpp
+2025-10-02T07:06:23.4829344Z   Generating Code...
+2025-10-02T07:06:28.1087830Z   GitCore.vcxproj -> D:\a\VersionTools\VersionTools\build\lib\Release\GitCore.lib
+2025-10-02T07:06:28.1626094Z   Automatic MOC and UIC for target VersionTools
+2025-10-02T07:06:28.2035507Z   AutoMoc warning
+2025-10-02T07:06:28.2036540Z   ---------------
+2025-10-02T07:06:28.2036941Z   "SRC:/src/qt/VersionToolsMainWindow.cpp"
+2025-10-02T07:06:28.2040535Z   includes the moc file "VersionToolsMainWindow.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+2025-10-02T07:06:28.2041611Z   
+2025-10-02T07:06:28.2041875Z   AutoMoc warning
+2025-10-02T07:06:28.2042151Z   ---------------
+2025-10-02T07:06:28.2042471Z   "SRC:/src/qt/utils/GitWorker.cpp"
+2025-10-02T07:06:28.2043454Z   includes the moc file "GitWorker.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+2025-10-02T07:06:28.2044402Z   
+2025-10-02T07:06:28.2044654Z   AutoMoc warning
+2025-10-02T07:06:28.2044926Z   ---------------
+2025-10-02T07:06:28.2045266Z   "SRC:/src/qt/widgets/SidebarWidget.cpp"
+2025-10-02T07:06:28.2046292Z   includes the moc file "SidebarWidget.moc", but does not contain a Q_OBJECT, Q_GADGET, Q_NAMESPACE, Q_NAMESPACE_EXPORT, Q_GADGET_EXPORT or Q_ENUM_NS macro.
+2025-10-02T07:06:28.2047289Z   
+2025-10-02T07:06:28.9497794Z   AutoMoc: D:/a/VersionTools/VersionTools/src/qt/VersionToolsMainWindow.cpp(385:1): note: No relevant classes found. No output generated.
+2025-10-02T07:06:29.0240220Z   AutoMoc: D:/a/VersionTools/VersionTools/src/qt/utils/GitWorker.cpp(144:1): note: No relevant classes found. No output generated.
+2025-10-02T07:06:29.1412314Z   AutoMoc: D:/a/VersionTools/VersionTools/src/qt/widgets/SidebarWidget.cpp(197:1): note: No relevant classes found. No output generated.
+2025-10-02T07:06:29.1760458Z   1>Automatic RCC for resources/resources.qrc
+2025-10-02T07:06:29.2398456Z   Building Custom Rule D:/a/VersionTools/VersionTools/src/qt/CMakeLists.txt
+2025-10-02T07:06:29.3061104Z   main.cpp
+2025-10-02T07:06:31.6076452Z   VersionToolsMainWindow.cpp
+2025-10-02T07:06:33.9479931Z D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,19): error C2664: 'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(const std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>> &)': cannot convert argument 1 from 'std::unique_ptr<GitManager,std::default_delete<GitManager>>' to 'const std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>> &' [D:\a\VersionTools\VersionTools\build\src\qt\VersionTools.vcxproj]
+2025-10-02T07:06:33.9483202Z       D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9484477Z       Reason: cannot convert from 'std::unique_ptr<GitManager,std::default_delete<GitManager>>' to 'const std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>'
+2025-10-02T07:06:33.9485354Z       D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9486016Z       No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+2025-10-02T07:06:33.9486776Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3475,5):
+2025-10-02T07:06:33.9488012Z       see declaration of 'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr'
+2025-10-02T07:06:33.9490649Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3393,5):
+2025-10-02T07:06:33.9492138Z       could be 'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(std::unique_ptr<_Ux,_Dx> &&) noexcept'
+2025-10-02T07:06:33.9493422Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,19):
+2025-10-02T07:06:33.9494926Z           'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(std::unique_ptr<_Ux,_Dx> &&) noexcept': could not deduce template argument for '__formal'
+2025-10-02T07:06:33.9496581Z               C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3389,9):
+2025-10-02T07:06:33.9497547Z               'std::enable_if_t<false,int>' : Failed to specialize alias template
+2025-10-02T07:06:33.9499811Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3385,5):
+2025-10-02T07:06:33.9501512Z       or       'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>> &&) noexcept'
+2025-10-02T07:06:33.9502962Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9504397Z           'initializing': cannot convert from 'std::unique_ptr<GitManager,std::default_delete<GitManager>>' to 'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>> &&'
+2025-10-02T07:06:33.9505843Z               D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9507311Z               Reason: cannot convert from 'std::unique_ptr<GitManager,std::default_delete<GitManager>>' to 'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>'
+2025-10-02T07:06:33.9509181Z               D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9510303Z               No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+2025-10-02T07:06:33.9511589Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3382,5):
+2025-10-02T07:06:33.9513257Z       or       'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(VersionTools::GitManager *,std::default_delete<VersionTools::GitManager> &&)'
+2025-10-02T07:06:33.9514742Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,19):
+2025-10-02T07:06:33.9516429Z           'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(VersionTools::GitManager *,std::default_delete<VersionTools::GitManager> &&)': expects 2 arguments - 1 provided
+2025-10-02T07:06:33.9518258Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3377,5):
+2025-10-02T07:06:33.9519742Z       or       'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(VersionTools::GitManager *,_Dx &&) noexcept'
+2025-10-02T07:06:33.9521102Z           with
+2025-10-02T07:06:33.9521364Z           [
+2025-10-02T07:06:33.9521773Z               _Dx=std::default_delete<VersionTools::GitManager>
+2025-10-02T07:06:33.9522245Z           ]
+2025-10-02T07:06:33.9522727Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,19):
+2025-10-02T07:06:33.9524193Z           'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(VersionTools::GitManager *,_Dx &&) noexcept': expects 2 arguments - 1 provided
+2025-10-02T07:06:33.9525410Z           with
+2025-10-02T07:06:33.9525680Z           [
+2025-10-02T07:06:33.9526025Z               _Dx=std::default_delete<VersionTools::GitManager>
+2025-10-02T07:06:33.9526477Z           ]
+2025-10-02T07:06:33.9527117Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3373,5):
+2025-10-02T07:06:33.9528571Z       or       'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(VersionTools::GitManager *,const _Dx &) noexcept'
+2025-10-02T07:06:33.9529988Z           with
+2025-10-02T07:06:33.9530231Z           [
+2025-10-02T07:06:33.9530572Z               _Dx=std::default_delete<VersionTools::GitManager>
+2025-10-02T07:06:33.9530987Z           ]
+2025-10-02T07:06:33.9531447Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,19):
+2025-10-02T07:06:33.9532889Z           'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(VersionTools::GitManager *,const _Dx &) noexcept': expects 2 arguments - 1 provided
+2025-10-02T07:06:33.9534404Z           with
+2025-10-02T07:06:33.9534665Z           [
+2025-10-02T07:06:33.9535003Z               _Dx=std::default_delete<VersionTools::GitManager>
+2025-10-02T07:06:33.9535458Z           ]
+2025-10-02T07:06:33.9536100Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3370,5):
+2025-10-02T07:06:33.9537505Z       or       'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(VersionTools::GitManager *) noexcept'
+2025-10-02T07:06:33.9538749Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9540136Z           'initializing': cannot convert from 'std::unique_ptr<GitManager,std::default_delete<GitManager>>' to 'VersionTools::GitManager *'
+2025-10-02T07:06:33.9541299Z               D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9542388Z               No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+2025-10-02T07:06:33.9543633Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3360,5):
+2025-10-02T07:06:33.9544968Z       or       'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(std::nullptr_t) noexcept'
+2025-10-02T07:06:33.9546135Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9547203Z           'initializing': cannot convert from 'std::unique_ptr<GitManager,std::default_delete<GitManager>>' to 'std::nullptr_t'
+2025-10-02T07:06:33.9548284Z               D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,48):
+2025-10-02T07:06:33.9549725Z               No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+2025-10-02T07:06:33.9551012Z       C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3357,5):
+2025-10-02T07:06:33.9552271Z       or       'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(void) noexcept'
+2025-10-02T07:06:33.9553341Z           D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,19):
+2025-10-02T07:06:33.9554870Z           'std::unique_ptr<VersionTools::GitManager,std::default_delete<VersionTools::GitManager>>::unique_ptr(void) noexcept': expects 0 arguments - 1 provided
+2025-10-02T07:06:33.9556128Z       D:\a\VersionTools\VersionTools\src\qt\VersionToolsMainWindow.cpp(35,19):
+2025-10-02T07:06:33.9557115Z       while trying to match the argument list '(std::unique_ptr<GitManager,std::default_delete<GitManager>>)'
+2025-10-02T07:06:33.9557842Z   
+2025-10-02T07:06:33.9851878Z   SidebarWidget.cpp
+2025-10-02T07:06:36.4848340Z   GitWorker.cpp
+2025-10-02T07:06:38.2287166Z   ThemeManager.cpp
+2025-10-02T07:06:39.8756878Z   ChangesWidget.cpp
+2025-10-02T07:06:42.1889023Z   HistoryWidget.cpp
+2025-10-02T07:06:44.1491716Z   BranchesWidget.cpp
+2025-10-02T07:06:46.1244544Z   SettingsDialog.cpp
+2025-10-02T07:06:47.8576447Z   qrc_resources.cpp
+2025-10-02T07:06:47.8623890Z   mocs_compilation_Release.cpp
+2025-10-02T07:06:50.4755736Z   Generating Code...
+2025-10-02T07:06:51.1391349Z ##[error]Process completed with exit code 1.

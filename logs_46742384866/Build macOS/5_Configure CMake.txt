@@ -1,0 +1,33 @@
+﻿2025-10-02T07:05:07.6690360Z ##[group]Run mkdir build
+2025-10-02T07:05:07.6690600Z [36;1mmkdir build[0m
+2025-10-02T07:05:07.6690830Z [36;1mcd build[0m
+2025-10-02T07:05:07.6691200Z [36;1mcmake .. -GXcode -DCMAKE_BUILD_TYPE=Release[0m
+2025-10-02T07:05:07.6723120Z shell: /bin/bash -e {0}
+2025-10-02T07:05:07.6723350Z env:
+2025-10-02T07:05:07.6723570Z   MD_APPLE_SDK_ROOT: /Applications/Xcode_26.app
+2025-10-02T07:05:07.6723920Z ##[endgroup]
+2025-10-02T07:05:21.0928620Z -- The CXX compiler identification is AppleClang 17.0.0.17000319
+2025-10-02T07:05:25.7786690Z -- The C compiler identification is AppleClang 17.0.0.17000319
+2025-10-02T07:05:25.8208420Z -- Detecting CXX compiler ABI info
+2025-10-02T07:05:27.2429320Z -- Detecting CXX compiler ABI info - done
+2025-10-02T07:05:27.2665810Z -- Check for working CXX compiler: /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ - skipped
+2025-10-02T07:05:27.2673440Z -- Detecting CXX compile features
+2025-10-02T07:05:27.2680700Z -- Detecting CXX compile features - done
+2025-10-02T07:05:27.2772240Z -- Detecting C compiler ABI info
+2025-10-02T07:05:28.6838720Z -- Detecting C compiler ABI info - done
+2025-10-02T07:05:28.7091390Z -- Check for working C compiler: /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang - skipped
+2025-10-02T07:05:28.7092730Z -- Detecting C compile features
+2025-10-02T07:05:28.7095940Z -- Detecting C compile features - done
+2025-10-02T07:05:28.7116740Z -- Building for macOS with SwiftUI
+2025-10-02T07:05:28.7260610Z -- Found PkgConfig: /opt/homebrew/bin/pkg-config (found version "2.5.1")
+2025-10-02T07:05:28.7263720Z -- Checking for module 'libgit2'
+2025-10-02T07:05:28.7372210Z --   Found libgit2, version 1.9.1
+2025-10-02T07:05:28.7674690Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2025-10-02T07:05:30.1464150Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+2025-10-02T07:05:30.1469540Z -- Found Threads: TRUE
+2025-10-02T07:05:33.3558820Z -- The Swift compiler identification is Apple 6.2
+2025-10-02T07:05:33.4698810Z -- Check for working Swift compiler: /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc
+2025-10-02T07:05:35.0520460Z -- Check for working Swift compiler: /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc - works
+2025-10-02T07:05:35.0634270Z -- Configuring done (27.3s)
+2025-10-02T07:05:35.0756540Z -- Generating done (0.0s)
+2025-10-02T07:05:35.0787200Z -- Build files have been written to: /Users/runner/work/VersionTools/VersionTools/build

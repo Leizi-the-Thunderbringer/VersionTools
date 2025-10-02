@@ -32,7 +32,7 @@ VersionToolsMainWindow::VersionToolsMainWindow(QWidget *parent)
     , m_changesWidget(nullptr)
     , m_historyWidget(nullptr)
     , m_branchesWidget(nullptr)
-    , m_gitManager(std::make_unique<GitManager>())
+    , m_gitManager(std::make_unique<VersionTools::GitManager>())
     , m_gitWorker(nullptr)
 {
     setWindowTitle("Version Tools");

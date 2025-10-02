@@ -82,9 +82,17 @@ target_link_libraries(VersionTools
     "-framework AppKit"
 )
 
-# 如果找到了libgit2，确保它被链接
+# libgit2必须直接链接到macOS应用程序
 if(LIBGIT2_FOUND)
     target_link_libraries(VersionTools ${LIBGIT2_LIBRARIES})
+else()
+    # 如果没找到libgit2，尝试直接链接
+    find_library(GIT2_LIBRARY git2 PATHS /usr/local/lib /opt/homebrew/lib)
+    if(GIT2_LIBRARY)
+        target_link_libraries(VersionTools ${GIT2_LIBRARY})
+    else()
+        target_link_libraries(VersionTools git2)
+    endif()
 endif()
 
 # Swift-C++互操作

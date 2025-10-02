@@ -1,0 +1,302 @@
+﻿2025-10-02T07:05:35.0841410Z ##[group]Run cd build
+2025-10-02T07:05:35.0841850Z [36;1mcd build[0m
+2025-10-02T07:05:35.0842000Z [36;1mcmake --build . --config Release[0m
+2025-10-02T07:05:35.1716930Z shell: /bin/bash -e {0}
+2025-10-02T07:05:35.1717250Z env:
+2025-10-02T07:05:35.1717510Z   MD_APPLE_SDK_ROOT: /Applications/Xcode_26.app
+2025-10-02T07:05:35.1717710Z ##[endgroup]
+2025-10-02T07:05:35.7703870Z Command line invocation:
+2025-10-02T07:05:35.7730310Z     /Applications/Xcode_26.app/Contents/Developer/usr/bin/xcodebuild -project VersionTools.xcodeproj build -configuration Release -parallelizeTargets -hideShellScriptEnvironment -target ALL_BUILD
+2025-10-02T07:05:35.7732040Z 
+2025-10-02T07:05:36.0838300Z ComputePackagePrebuildTargetDependencyGraph
+2025-10-02T07:05:36.1543190Z 
+2025-10-02T07:05:36.1584130Z CreateBuildRequest
+2025-10-02T07:05:36.1588730Z 
+2025-10-02T07:05:36.1697780Z SendProjectDescription
+2025-10-02T07:05:36.1790050Z 
+2025-10-02T07:05:36.1790730Z CreateBuildOperation
+2025-10-02T07:05:36.1807970Z 
+2025-10-02T07:05:36.1824540Z ComputeTargetDependencyGraph
+2025-10-02T07:05:36.2047500Z note: Building targets in dependency order
+2025-10-02T07:05:36.2049760Z note: Target dependency graph (4 targets)
+2025-10-02T07:05:36.2050180Z     Target 'ALL_BUILD' in project 'VersionTools'
+2025-10-02T07:05:36.2056830Z         ➜ Explicit dependency on target 'GitCore' in project 'VersionTools'
+2025-10-02T07:05:36.2057700Z         ➜ Explicit dependency on target 'VersionTools' in project 'VersionTools'
+2025-10-02T07:05:36.2058390Z         ➜ Explicit dependency on target 'ZERO_CHECK' in project 'VersionTools'
+2025-10-02T07:05:36.2058800Z     Target 'VersionTools' in project 'VersionTools'
+2025-10-02T07:05:36.2059210Z         ➜ Explicit dependency on target 'GitCore' in project 'VersionTools'
+2025-10-02T07:05:36.2059660Z         ➜ Explicit dependency on target 'ZERO_CHECK' in project 'VersionTools'
+2025-10-02T07:05:36.2060350Z     Target 'GitCore' in project 'VersionTools'
+2025-10-02T07:05:36.2060890Z         ➜ Explicit dependency on target 'ZERO_CHECK' in project 'VersionTools'
+2025-10-02T07:05:36.2061300Z     Target 'ZERO_CHECK' in project 'VersionTools' (no dependencies)
+2025-10-02T07:05:36.2070430Z 
+2025-10-02T07:05:36.2071270Z GatherProvisioningInputs
+2025-10-02T07:05:36.2739240Z 
+2025-10-02T07:05:36.2793280Z CreateBuildDescription
+2025-10-02T07:05:36.2915330Z 
+2025-10-02T07:05:36.2917720Z ExecuteExternalTool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -x c -c /dev/null
+2025-10-02T07:05:36.3517660Z 
+2025-10-02T07:05:36.3525490Z ExecuteExternalTool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -x c++ -c /dev/null
+2025-10-02T07:05:36.3526400Z 
+2025-10-02T07:05:36.3527250Z ExecuteExternalTool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -x objective-c++ -c /dev/null
+2025-10-02T07:05:36.3528140Z 
+2025-10-02T07:05:36.3528970Z ExecuteExternalTool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -x c -c /dev/null
+2025-10-02T07:05:36.3881350Z 
+2025-10-02T07:05:36.3894870Z ExecuteExternalTool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+2025-10-02T07:05:36.4851050Z 
+2025-10-02T07:05:36.4852070Z ExecuteExternalTool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -V
+2025-10-02T07:05:36.4852600Z 
+2025-10-02T07:05:36.4889820Z ExecuteExternalTool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+2025-10-02T07:05:36.4978680Z 
+2025-10-02T07:05:36.5147060Z Build description signature: 0618432c48c6cd2fbded062b812daf4a
+2025-10-02T07:05:36.5169120Z Build description path: /Users/runner/work/VersionTools/VersionTools/build/build/XCBuildData/0618432c48c6cd2fbded062b812daf4a.xcbuilddata
+2025-10-02T07:05:36.5256160Z ClangStatCache /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache
+2025-10-02T07:05:36.5360490Z     cd /Users/runner/work/VersionTools/VersionTools/build/VersionTools.xcodeproj
+2025-10-02T07:05:36.5465950Z     /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -o /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache
+2025-10-02T07:05:36.5621210Z 
+2025-10-02T07:05:36.5723300Z CreateBuildDirectory /Users/runner/work/VersionTools/VersionTools/build/lib/Release
+2025-10-02T07:05:36.5824630Z     cd /Users/runner/work/VersionTools/VersionTools/build/VersionTools.xcodeproj
+2025-10-02T07:05:36.5925080Z     builtin-create-build-directory /Users/runner/work/VersionTools/VersionTools/build/lib/Release
+2025-10-02T07:05:36.6025690Z 
+2025-10-02T07:05:36.6135170Z CreateBuildDirectory /Users/runner/work/VersionTools/VersionTools/build/build
+2025-10-02T07:05:36.6185920Z     cd /Users/runner/work/VersionTools/VersionTools/build/VersionTools.xcodeproj
+2025-10-02T07:05:36.6191140Z     builtin-create-build-directory /Users/runner/work/VersionTools/VersionTools/build/build
+2025-10-02T07:05:36.6195550Z 
+2025-10-02T07:05:36.6196380Z CreateBuildDirectory /Users/runner/work/VersionTools/VersionTools/build/bin/Release
+2025-10-02T07:05:36.6199650Z     cd /Users/runner/work/VersionTools/VersionTools/build/VersionTools.xcodeproj
+2025-10-02T07:05:36.6201680Z     builtin-create-build-directory /Users/runner/work/VersionTools/VersionTools/build/bin/Release
+2025-10-02T07:05:36.6204820Z 
+2025-10-02T07:05:36.6206360Z CreateBuildDirectory /Users/runner/work/VersionTools/VersionTools/build/build/SwiftExplicitPrecompiledModules
+2025-10-02T07:05:36.6206940Z     cd /Users/runner/work/VersionTools/VersionTools/build/VersionTools.xcodeproj
+2025-10-02T07:05:36.6207520Z     builtin-create-build-directory /Users/runner/work/VersionTools/VersionTools/build/build/SwiftExplicitPrecompiledModules
+2025-10-02T07:05:36.6208250Z 
+2025-10-02T07:05:36.6208480Z CreateBuildDirectory /Users/runner/work/VersionTools/VersionTools/build/build/Release
+2025-10-02T07:05:36.6209000Z     cd /Users/runner/work/VersionTools/VersionTools/build/VersionTools.xcodeproj
+2025-10-02T07:05:36.6209610Z     builtin-create-build-directory /Users/runner/work/VersionTools/VersionTools/build/build/Release
+2025-10-02T07:05:36.6209900Z 
+2025-10-02T07:05:36.6210230Z CreateBuildDirectory /Users/runner/work/VersionTools/VersionTools/build/build/ExplicitPrecompiledModules
+2025-10-02T07:05:36.6210900Z     cd /Users/runner/work/VersionTools/VersionTools/build/VersionTools.xcodeproj
+2025-10-02T07:05:36.6211820Z     builtin-create-build-directory /Users/runner/work/VersionTools/VersionTools/build/build/ExplicitPrecompiledModules
+2025-10-02T07:05:36.6212170Z 
+2025-10-02T07:05:36.6212420Z CreateBuildDirectory /Users/runner/work/VersionTools/VersionTools/build/build/EagerLinkingTBDs/Release
+2025-10-02T07:05:36.6213360Z     cd /Users/runner/work/VersionTools/VersionTools/build/VersionTools.xcodeproj
+2025-10-02T07:05:36.6214020Z     builtin-create-build-directory /Users/runner/work/VersionTools/VersionTools/build/build/EagerLinkingTBDs/Release
+2025-10-02T07:05:36.6214560Z 
+2025-10-02T07:05:36.6215310Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/ZERO_CHECK.build/Script-D45A8934F705CCC270636198.sh (in target 'ZERO_CHECK' from project 'VersionTools')
+2025-10-02T07:05:36.6216160Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6216730Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/ZERO_CHECK.build/Script-D45A8934F705CCC270636198.sh
+2025-10-02T07:05:36.6217280Z 
+2025-10-02T07:05:36.6217860Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.DependencyStaticMetadataFileList (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6218810Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6219510Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.DependencyStaticMetadataFileList
+2025-10-02T07:05:36.6219950Z 
+2025-10-02T07:05:36.6220480Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.DependencyMetadataFileList (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6221280Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6222010Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.DependencyMetadataFileList
+2025-10-02T07:05:36.6222440Z 
+2025-10-02T07:05:36.6223130Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6223950Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6224620Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp
+2025-10-02T07:05:36.6228070Z -target arm64-apple-macos26.0 '-std=gnu++17' -fobjc-arc -fpascal-strings -O3 '-DCMAKE_INTDIR="Release"' -DNDEBUG '-DOBJC_OLD_DISPATCH_PROTOTYPES=1' -isysroot /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -I/Users/runner/work/VersionTools/VersionTools/build/bin/Release/include -I/Users/runner/work/VersionTools/VersionTools/src -I/opt/homebrew/Cellar/libgit2/1.9.1/include -I/Users/runner/work/VersionTools/VersionTools/src/macos -I/Users/runner/work/VersionTools/VersionTools/src/core -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources-normal/arm64 -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources/arm64 -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources -F/Users/runner/work/VersionTools/VersionTools/build/bin/Release -DNDEBUG '-std=gnu++17'
+2025-10-02T07:05:36.6230950Z 
+2025-10-02T07:05:36.6231520Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools_const_extract_protocols.json (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6232580Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6233230Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools_const_extract_protocols.json
+2025-10-02T07:05:36.6233790Z 
+2025-10-02T07:05:36.6234320Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.SwiftFileList (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6235220Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6235830Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.SwiftFileList
+2025-10-02T07:05:36.6236440Z 
+2025-10-02T07:05:36.6237010Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.SwiftConstValuesFileList (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6237820Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6238450Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.SwiftConstValuesFileList
+2025-10-02T07:05:36.6238920Z 
+2025-10-02T07:05:36.6239450Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.LinkFileList (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6240230Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6240770Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.LinkFileList
+2025-10-02T07:05:36.6241190Z 
+2025-10-02T07:05:36.6241750Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-OutputFileMap.json (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6242440Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6242990Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-OutputFileMap.json
+2025-10-02T07:05:36.6243440Z 
+2025-10-02T07:05:36.6244010Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources/Entitlements.plist (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6244740Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6245340Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources/Entitlements.plist
+2025-10-02T07:05:36.6245730Z 
+2025-10-02T07:05:36.6246360Z PhaseScriptExecution Generate\ CMakeFiles/ZERO_CHECK /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/ZERO_CHECK.build/Script-D45A8934F705CCC270636198.sh (in target 'ZERO_CHECK' from project 'VersionTools')
+2025-10-02T07:05:36.6247210Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6247850Z     /bin/sh -c /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/ZERO_CHECK.build/Script-D45A8934F705CCC270636198.sh
+2025-10-02T07:05:36.6248600Z make: `/Users/runner/work/VersionTools/VersionTools/build/CMakeFiles/cmake.check_cache' is up to date.
+2025-10-02T07:05:36.6249010Z 
+2025-10-02T07:05:36.6249420Z MkDir /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/Resources (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6250050Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6250560Z     /bin/mkdir -p /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/Resources
+2025-10-02T07:05:36.6250980Z 
+2025-10-02T07:05:36.6251370Z MkDir /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/MacOS (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6252070Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6252550Z     /bin/mkdir -p /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/MacOS
+2025-10-02T07:05:36.6252960Z 
+2025-10-02T07:05:36.6253330Z MkDir /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6254150Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6254760Z     /bin/mkdir -p /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents
+2025-10-02T07:05:36.6255070Z 
+2025-10-02T07:05:36.6255410Z MkDir /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6255960Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6256450Z     /bin/mkdir -p /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app
+2025-10-02T07:05:36.6256720Z 
+2025-10-02T07:05:36.6257290Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitCore.LinkFileList (in target 'GitCore' from project 'VersionTools')
+2025-10-02T07:05:36.6257950Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6258440Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitCore.LinkFileList
+2025-10-02T07:05:36.6258830Z 
+2025-10-02T07:05:36.6260010Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp (in target 'GitCore' from project 'VersionTools')
+2025-10-02T07:05:36.6260840Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6261630Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+2025-10-02T07:05:36.6264770Z -target arm64-apple-macos26.0 -fpascal-strings -O3 '-DCMAKE_INTDIR="Release"' -DUSE_LIBGIT2 -DNDEBUG -isysroot /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -I/Users/runner/work/VersionTools/VersionTools/build/lib/Release/include -I/Users/runner/work/VersionTools/VersionTools/src -I/opt/homebrew/Cellar/libgit2/1.9.1/include -I/Users/runner/work/VersionTools/VersionTools/src/core -I/Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/DerivedSources-normal/arm64 -I/Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/DerivedSources/arm64 -I/Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/DerivedSources -F/Users/runner/work/VersionTools/VersionTools/build/lib/Release -DNDEBUG '-std=gnu++17'
+2025-10-02T07:05:36.6267310Z 
+2025-10-02T07:05:36.6267900Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/GitCore.DependencyStaticMetadataFileList (in target 'GitCore' from project 'VersionTools')
+2025-10-02T07:05:36.6268700Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6269290Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/GitCore.DependencyStaticMetadataFileList
+2025-10-02T07:05:36.6269790Z 
+2025-10-02T07:05:36.6270310Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/GitCore.DependencyMetadataFileList (in target 'GitCore' from project 'VersionTools')
+2025-10-02T07:05:36.6270950Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6271480Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/GitCore.DependencyMetadataFileList
+2025-10-02T07:05:36.6271910Z 
+2025-10-02T07:05:36.6272440Z WriteAuxiliaryFile /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/ALL_BUILD.build/Script-70209F507CE46B87018037C3.sh (in target 'ALL_BUILD' from project 'VersionTools')
+2025-10-02T07:05:36.6273270Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6273790Z     write-file /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/ALL_BUILD.build/Script-70209F507CE46B87018037C3.sh
+2025-10-02T07:05:36.6274520Z 
+2025-10-02T07:05:36.6275100Z ProcessProductPackaging "" /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.app.xcent (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:36.6276070Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6276310Z     
+2025-10-02T07:05:36.6276470Z     Entitlements:
+2025-10-02T07:05:36.6276710Z     
+2025-10-02T07:05:36.6276860Z     {
+2025-10-02T07:05:36.6277090Z     "com.apple.security.get-task-allow" = 1;
+2025-10-02T07:05:36.6277290Z }
+2025-10-02T07:05:36.6277430Z     
+2025-10-02T07:05:36.6278100Z     builtin-productPackagingUtility -entitlements -format xml -o /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.app.xcent
+2025-10-02T07:05:36.6278650Z 
+2025-10-02T07:05:36.6279520Z CompileC /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/SystemCommand.o /Users/runner/work/VersionTools/VersionTools/src/core/SystemCommand.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'GitCore' from project 'VersionTools')
+2025-10-02T07:05:36.6280610Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:36.6280870Z     
+2025-10-02T07:05:36.6281510Z     Using response file: /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+2025-10-02T07:05:36.6282090Z     
+2025-10-02T07:05:36.6287770Z     /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -Wall -Wextra -Wpedantic @/Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/SystemCommand.d --serialize-diagnostics /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/SystemCommand.dia -c /Users/runner/work/VersionTools/VersionTools/src/core/SystemCommand.cpp -o /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/SystemCommand.o
+2025-10-02T07:05:38.1782030Z 
+2025-10-02T07:05:38.1894590Z CompileC /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitUtils.o /Users/runner/work/VersionTools/VersionTools/src/core/GitUtils.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'GitCore' from project 'VersionTools')
+2025-10-02T07:05:38.2018450Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:38.2119560Z     
+2025-10-02T07:05:38.2165410Z     Using response file: /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+2025-10-02T07:05:38.2166820Z     
+2025-10-02T07:05:38.2174140Z     /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -Wall -Wextra -Wpedantic @/Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitUtils.d --serialize-diagnostics /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitUtils.dia -c /Users/runner/work/VersionTools/VersionTools/src/core/GitUtils.cpp -o /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitUtils.o
+2025-10-02T07:05:39.5477000Z 
+2025-10-02T07:05:39.5579150Z CompileC /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitManager.o /Users/runner/work/VersionTools/VersionTools/src/core/GitManager.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'GitCore' from project 'VersionTools')
+2025-10-02T07:05:39.5679380Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:39.5781700Z     
+2025-10-02T07:05:39.5883590Z     Using response file: /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp
+2025-10-02T07:05:39.5898390Z     
+2025-10-02T07:05:39.5908010Z     /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -ivfsstatcache /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -Wall -Wextra -Wpedantic @/Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/82b82416624d2658e5098eb0a28c15c5-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitManager.d --serialize-diagnostics /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitManager.dia -c /Users/runner/work/VersionTools/VersionTools/src/core/GitManager.cpp -o /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitManager.o
+2025-10-02T07:05:40.6982720Z 
+2025-10-02T07:05:40.7067690Z ProcessProductPackagingDER /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.app.xcent /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.app.xcent.der (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:40.7069710Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:40.7147840Z     /usr/bin/derq query -f xml -i /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.app.xcent -o /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/VersionTools.app.xcent.der --raw
+2025-10-02T07:05:40.7154610Z 
+2025-10-02T07:05:40.7155170Z SwiftDriver VersionTools normal arm64 com.apple.xcode.tools.swift.compiler (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:40.7155800Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:40.7241670Z     builtin-SwiftDriver -- /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name VersionTools -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.SwiftFileList -DNDEBUG -swift-version 5.0 -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -target arm64-apple-macos26.0 -Xfrontend -serialize-debugging-options -swift-version 4 -I /Users/runner/work/VersionTools/VersionTools/build/bin/Release -I /Users/runner/work/VersionTools/VersionTools/src -I /opt/homebrew/Cellar/libgit2/1.9.1/include -I /Users/runner/work/VersionTools/VersionTools/src/macos -I /Users/runner/work/VersionTools/VersionTools/src/core -F /Users/runner/work/VersionTools/VersionTools/build/bin/Release -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache -output-file-map /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftmodule -validate-clang-modules-once -clang-build-session-file /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools_const_extract_protocols.json -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/bin/Release/include -Xcc -I/Users/runner/work/VersionTools/VersionTools/src -Xcc -I/opt/homebrew/Cellar/libgit2/1.9.1/include -Xcc -I/Users/runner/work/VersionTools/VersionTools/src/macos -Xcc -I/Users/runner/work/VersionTools/VersionTools/src/core -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources/arm64 -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources -Xcc -DCMAKE_INTDIR\=\"Release\" -Xcc -DNDEBUG -emit-objc-header -emit-objc-header-path /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-Swift.h -import-objc-header /Users/runner/work/VersionTools/VersionTools/src/macos/Utils/GitBridge-Bridging-Header.h -pch-output-dir /Users/runner/work/VersionTools/VersionTools/build/build/SharedPrecompiledHeaders -working-directory /Users/runner/work/VersionTools/VersionTools -no-emit-module-separately-wmo
+2025-10-02T07:05:40.7257800Z 
+2025-10-02T07:05:40.7258100Z SwiftGeneratePch normal arm64 Compiling\ bridging\ header (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:40.7258760Z PrecompileSwiftBridgingHeader normal arm64 (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:40.7259200Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:40.7259460Z     
+2025-10-02T07:05:41.6445160Z 
+2025-10-02T07:05:41.6548300Z SwiftDriver\ Compilation VersionTools normal arm64 com.apple.xcode.tools.swift.compiler (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:41.6555530Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:41.6589520Z     builtin-Swift-Compilation -- /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name VersionTools -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.SwiftFileList -DNDEBUG -swift-version 5.0 -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -target arm64-apple-macos26.0 -Xfrontend -serialize-debugging-options -swift-version 4 -I /Users/runner/work/VersionTools/VersionTools/build/bin/Release -I /Users/runner/work/VersionTools/VersionTools/src -I /opt/homebrew/Cellar/libgit2/1.9.1/include -I /Users/runner/work/VersionTools/VersionTools/src/macos -I /Users/runner/work/VersionTools/VersionTools/src/core -F /Users/runner/work/VersionTools/VersionTools/build/bin/Release -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache -output-file-map /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftmodule -validate-clang-modules-once -clang-build-session-file /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools_const_extract_protocols.json -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/bin/Release/include -Xcc -I/Users/runner/work/VersionTools/VersionTools/src -Xcc -I/opt/homebrew/Cellar/libgit2/1.9.1/include -Xcc -I/Users/runner/work/VersionTools/VersionTools/src/macos -Xcc -I/Users/runner/work/VersionTools/VersionTools/src/core -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources/arm64 -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources -Xcc -DCMAKE_INTDIR\=\"Release\" -Xcc -DNDEBUG -emit-objc-header -emit-objc-header-path /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-Swift.h -import-objc-header /Users/runner/work/VersionTools/VersionTools/src/macos/Utils/GitBridge-Bridging-Header.h -pch-output-dir /Users/runner/work/VersionTools/VersionTools/build/build/SharedPrecompiledHeaders -working-directory /Users/runner/work/VersionTools/VersionTools -no-emit-module-separately-wmo
+2025-10-02T07:05:41.6620090Z 
+2025-10-02T07:05:41.6621270Z Libtool /Users/runner/work/VersionTools/VersionTools/build/lib/Release/libGitCore.a normal (in target 'GitCore' from project 'VersionTools')
+2025-10-02T07:05:41.6623000Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:41.6629510Z     /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only arm64 -D -syslibroot /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -L/Users/runner/work/VersionTools/VersionTools/build/lib/Release -filelist /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitCore.LinkFileList -dependency_info /Users/runner/work/VersionTools/VersionTools/build/build/GitCore.build/Release/Objects-normal/arm64/GitCore_libtool_dependency_info.dat -o /Users/runner/work/VersionTools/VersionTools/build/lib/Release/libGitCore.a
+2025-10-02T07:05:41.6632230Z 
+2025-10-02T07:05:41.6642850Z ProcessInfoPlistFile /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/Info.plist /Users/runner/work/VersionTools/VersionTools/build/src/macos/CMakeFiles/VersionTools.dir/Info.plist (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:41.6643970Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:41.6654060Z     builtin-infoPlistUtility /Users/runner/work/VersionTools/VersionTools/build/src/macos/CMakeFiles/VersionTools.dir/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/Info.plist
+2025-10-02T07:05:41.6655730Z 
+2025-10-02T07:05:41.6656470Z CpResource /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/Resources/AppIcon.icns /Users/runner/work/VersionTools/VersionTools/icons/AppIcon.icns (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:41.6657490Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:41.6659180Z     builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/runner/work/VersionTools/VersionTools/icons/AppIcon.icns /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/Resources
+2025-10-02T07:05:41.6660790Z 
+2025-10-02T07:05:41.6661180Z SwiftDriverJobDiscovery normal arm64 Compiling bridging header (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:41.6661580Z 
+2025-10-02T07:05:41.6666230Z SwiftCompile normal arm64 Compiling\ ContentView.swift,\ GitManagerWrapper.swift,\ VersionToolsApp.swift,\ BranchesView.swift,\ ChangesView.swift,\ Dialogs.swift,\ DiffView.swift,\ HistoryView.swift,\ PlaceholderViews.swift,\ RemotesView.swift,\ SidebarView.swift,\ StashView.swift,\ TagsView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/ContentView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Models/GitManagerWrapper.swift /Users/runner/work/VersionTools/VersionTools/src/macos/VersionToolsApp.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/BranchesView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/ChangesView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/Dialogs.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/DiffView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/HistoryView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/PlaceholderViews.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/RemotesView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/SidebarView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/StashView.swift /Users/runner/work/VersionTools/VersionTools/src/macos/Views/TagsView.swift /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-primary-Bridging-header.pch (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:41.6896600Z 
+2025-10-02T07:05:41.6897150Z CompileSwift normal arm64 (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:41.6898020Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:41.6898250Z     
+2025-10-02T07:05:52.4369490Z /Users/runner/work/VersionTools/VersionTools/src/macos/Models/GitManagerWrapper.swift:331:30: warning: capture of 'self' with non-Sendable type 'GitManagerWrapper' in a '@Sendable' closure
+2025-10-02T07:05:52.4370450Z                 let result = self.gitBridge.executeRawCommand(command)
+2025-10-02T07:05:52.4370840Z                              ^
+2025-10-02T07:05:52.4426970Z /Users/runner/work/VersionTools/VersionTools/src/macos/Models/GitManagerWrapper.swift:5:7: note: class 'GitManagerWrapper' does not conform to the 'Sendable' protocol
+2025-10-02T07:05:52.4427730Z class GitManagerWrapper: ObservableObject {
+2025-10-02T07:05:52.4427930Z       ^
+2025-10-02T07:05:52.4427990Z 
+2025-10-02T07:05:52.4571950Z SwiftDriverJobDiscovery normal arm64 Compiling ContentView.swift, GitManagerWrapper.swift, VersionToolsApp.swift, BranchesView.swift, ChangesView.swift, Dialogs.swift, DiffView.swift, HistoryView.swift, PlaceholderViews.swift, RemotesView.swift, SidebarView.swift, StashView.swift, TagsView.swift (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:52.4575240Z 
+2025-10-02T07:05:52.4575930Z SwiftDriver\ Compilation\ Requirements VersionTools normal arm64 com.apple.xcode.tools.swift.compiler (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:52.4576580Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:52.4586860Z     builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name VersionTools -O -whole-module-optimization -enforce-exclusivity\=checked @/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.SwiftFileList -DNDEBUG -swift-version 5.0 -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -target arm64-apple-macos26.0 -Xfrontend -serialize-debugging-options -swift-version 4 -I /Users/runner/work/VersionTools/VersionTools/build/bin/Release -I /Users/runner/work/VersionTools/VersionTools/src -I /opt/homebrew/Cellar/libgit2/1.9.1/include -I /Users/runner/work/VersionTools/VersionTools/src/macos -I /Users/runner/work/VersionTools/VersionTools/src/core -F /Users/runner/work/VersionTools/VersionTools/build/bin/Release -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache -output-file-map /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftmodule -validate-clang-modules-once -clang-build-session-file /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/org.llvm.clang/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools_const_extract_protocols.json -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/bin/Release/include -Xcc -I/Users/runner/work/VersionTools/VersionTools/src -Xcc -I/opt/homebrew/Cellar/libgit2/1.9.1/include -Xcc -I/Users/runner/work/VersionTools/VersionTools/src/macos -Xcc -I/Users/runner/work/VersionTools/VersionTools/src/core -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources/arm64 -Xcc -I/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources -Xcc -DCMAKE_INTDIR\=\"Release\" -Xcc -DNDEBUG -emit-objc-header -emit-objc-header-path /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-Swift.h -import-objc-header /Users/runner/work/VersionTools/VersionTools/src/macos/Utils/GitBridge-Bridging-Header.h -pch-output-dir /Users/runner/work/VersionTools/VersionTools/build/build/SharedPrecompiledHeaders -working-directory /Users/runner/work/VersionTools/VersionTools -no-emit-module-separately-wmo
+2025-10-02T07:05:52.4616350Z 
+2025-10-02T07:05:52.4617450Z SwiftMergeGeneratedHeaders /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources/VersionTools-Swift.h /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-Swift.h (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:52.4627340Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:52.4628820Z     builtin-swiftHeaderTool -arch arm64 /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools-Swift.h -o /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/DerivedSources/VersionTools-Swift.h
+2025-10-02T07:05:52.4630190Z 
+2025-10-02T07:05:52.4631700Z Copy /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.swiftmodule/arm64-apple-macos.swiftmodule /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftmodule (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:52.4633080Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:52.4635360Z     builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftmodule /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.swiftmodule/arm64-apple-macos.swiftmodule
+2025-10-02T07:05:52.4637150Z 
+2025-10-02T07:05:52.4638050Z Copy /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.swiftmodule/arm64-apple-macos.swiftdoc /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftdoc (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:52.4639500Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:52.4641020Z     builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftdoc /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.swiftmodule/arm64-apple-macos.swiftdoc
+2025-10-02T07:05:52.4642440Z 
+2025-10-02T07:05:52.4643340Z Copy /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.swiftmodule/arm64-apple-macos.abi.json /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.abi.json (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:52.4644330Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:52.4645960Z     builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.abi.json /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.swiftmodule/arm64-apple-macos.abi.json
+2025-10-02T07:05:52.4647440Z 
+2025-10-02T07:05:52.4648330Z Copy /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftsourceinfo (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:52.4649370Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:52.4651050Z     builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.swiftsourceinfo /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.swiftmodule/Project/arm64-apple-macos.swiftsourceinfo
+2025-10-02T07:05:52.4652540Z 
+2025-10-02T07:05:52.4653390Z CompileC /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/GitBridge.o /Users/runner/work/VersionTools/VersionTools/src/macos/Utils/GitBridge.mm normal arm64 objective-c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:52.4654380Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:52.4654570Z     
+2025-10-02T07:05:52.4655080Z     Using response file: /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp
+2025-10-02T07:05:52.4655780Z     
+2025-10-02T07:05:52.4661820Z     /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -ivfsstatcache /var/folders/q0/wmf37v850txck86cpnvwm_zw0000gn/C/com.apple.DeveloperTools/26.0-17A324/Xcode/SDKStatCaches.noindex/macosx26.0-25A352-9ad464969859e5b86a410a6438455e79.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-range-loop-analysis -Wno-semicolon-before-method-body -Wall -Wextra -Wpedantic @/Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/af3fcb34312c57c0f52879cdce924b91-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/GitBridge.d --serialize-diagnostics /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/GitBridge.dia -c /Users/runner/work/VersionTools/VersionTools/src/macos/Utils/GitBridge.mm -o /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/GitBridge.o
+2025-10-02T07:05:53.5181600Z /Users/runner/work/VersionTools/VersionTools/src/macos/Utils/GitBridge.mm:124:42: warning: use of GNU ?: conditional expression extension, omitting middle operand [-Wgnu-conditional-omitted-operand]
+2025-10-02T07:05:53.5182800Z   124 |             @"upstreamBranch": upstream ?: [NSNull null],
+2025-10-02T07:05:53.5183580Z       |                                          ^
+2025-10-02T07:05:53.5184620Z /Users/runner/work/VersionTools/VersionTools/src/macos/Utils/GitBridge.mm:127:44: warning: use of GNU ?: conditional expression extension, omitting middle operand [-Wgnu-conditional-omitted-operand]
+2025-10-02T07:05:53.5185710Z   127 |             @"lastCommit": lastCommitDict ?: [NSNull null]
+2025-10-02T07:05:53.5186250Z       |                                            ^
+2025-10-02T07:05:53.5187960Z /Users/runner/work/VersionTools/VersionTools/src/macos/Utils/GitBridge.mm:156:44: warning: use of GNU ?: conditional expression extension, omitting middle operand [-Wgnu-conditional-omitted-operand]
+2025-10-02T07:05:53.5188730Z   156 |         @"upstreamBranch": upstreamBranch ?: [NSNull null],
+2025-10-02T07:05:53.5189040Z       |                                            ^
+2025-10-02T07:05:53.5189280Z 3 warnings generated.
+2025-10-02T07:05:53.5189470Z 
+2025-10-02T07:05:53.5189930Z Ld /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/MacOS/VersionTools normal (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:53.5190670Z     cd /Users/runner/work/VersionTools/VersionTools
+2025-10-02T07:05:53.5195390Z     /Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -Xlinker -reproducible -target arm64-apple-macos26.0 -isysroot /Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk -O3 -L/Users/runner/work/VersionTools/VersionTools/build/build/EagerLinkingTBDs/Release -L/Users/runner/work/VersionTools/VersionTools/build/bin/Release -L/Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/lib/swift/Release -L/Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/lib/swift -F/Users/runner/work/VersionTools/VersionTools/build/build/EagerLinkingTBDs/Release -F/Users/runner/work/VersionTools/VersionTools/build/bin/Release -filelist /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools.LinkFileList -Xlinker -dependency_info -Xlinker /Users/runner/work/VersionTools/VersionTools/build/build/VersionTools.build/Release/Objects-normal/arm64/VersionTools_dependency_info.dat -fobjc-arc -fobjc-link-runtime -L/Applications/Xcode_26.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx -L/usr/lib/swift /Users/runner/work/VersionTools/VersionTools/build/lib/Release/libGitCore.a -framework SwiftUI -framework Combine -framework Foundation -framework AppKit -lgit2 -lc++ -Xlinker -no_adhoc_codesign -o /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/MacOS/VersionTools
+2025-10-02T07:05:53.5409300Z ld: warning: ignoring duplicate libraries: '-lc++'
+2025-10-02T07:05:53.5410930Z ld: warning: search path '/Applications/Xcode_26.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk/usr/lib/swift/Release' not found
+2025-10-02T07:05:53.5414410Z ld: library 'git2' not found
+2025-10-02T07:05:53.5415090Z clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+2025-10-02T07:05:53.5415560Z 
+2025-10-02T07:05:53.5516900Z note: Run script build phase 'Generate CMakeFiles/ZERO_CHECK' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ZERO_CHECK' from project 'VersionTools')
+2025-10-02T07:05:53.5518160Z note: Run script build phase 'Generate CMakeFiles/ALL_BUILD' will be run during every build because the option to run the script phase "Based on dependency analysis" is unchecked. (in target 'ALL_BUILD' from project 'VersionTools')
+2025-10-02T07:05:53.5519350Z ** BUILD FAILED **
+2025-10-02T07:05:53.5519550Z 
+2025-10-02T07:05:53.5519570Z 
+2025-10-02T07:05:53.5519700Z The following build commands failed:
+2025-10-02T07:05:53.5520390Z 	Ld /Users/runner/work/VersionTools/VersionTools/build/bin/Release/VersionTools.app/Contents/MacOS/VersionTools normal (in target 'VersionTools' from project 'VersionTools')
+2025-10-02T07:05:53.5521030Z (1 failure)
+2025-10-02T07:05:53.5708760Z ##[error]Process completed with exit code 65.
