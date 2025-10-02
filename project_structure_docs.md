@@ -344,6 +344,6 @@ cpack -G ZIP
 
 ## 支持和反馈
 
-- 提交Issue: [GitHub Issues](https://github.com/username/VersionTools/issues)
-- 功能建议: [GitHub Discussions](https://github.com/username/VersionTools/discussions)
+- 提交Issue: [GitHub Issues](https://github.com/Zixiao-Tech/VersionTools/issues)
+- 功能建议: [GitHub Discussions](https://github.com/Zixiao-Tech/VersionTools/discussions)
 - 邮件联系: versiontools@example.com
