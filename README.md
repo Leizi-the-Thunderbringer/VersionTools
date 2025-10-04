@@ -4,6 +4,7 @@
 [![Release](https://github.com/Zixiao-Tech/VersionTools/actions/workflows/release.yml/badge.svg)](https://github.com/Zixiao-Tech/VersionTools/actions/workflows/release.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**由于维护难度过大，本项目将停止维护**
 一个现代化的Git图形界面工具，使用C++核心和平台特定的GUI实现。
 
 ## 特性
